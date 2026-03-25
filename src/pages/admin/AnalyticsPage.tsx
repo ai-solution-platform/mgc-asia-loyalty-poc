@@ -1,5 +1,5 @@
 import { dashboardStats } from '../../data/mockData';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, BarChart, Bar } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, BarChart, Bar } from 'recharts';
 
 export default function AnalyticsPage() {
   const s = dashboardStats;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { members, tierConfig, pointTransactions } from '../../data/mockData';
-import { Search, Filter, Download, ChevronDown, Eye, Edit3, MoreVertical, UserPlus } from 'lucide-react';
+import { Search, Download, Eye, UserPlus } from 'lucide-react';
 
 export default function MembersPage() {
   const [search, setSearch] = useState('');

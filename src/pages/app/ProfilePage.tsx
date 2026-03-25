@@ -65,7 +65,7 @@ export default function ProfilePage() {
             <div key={key} className="flex items-center justify-between">
               <span className="text-xs text-slate-300 capitalize">{key === 'line' ? 'LINE OA' : key.toUpperCase()}</span>
               <button
-                onClick={() => setConsents(prev => ({ ...prev, [key]: !prev[key] }))}
+                onClick={() => setConsents(prev => ({ ...prev, [key]: !(prev as Record<string, boolean>)[key] }))}
                 className={`w-10 h-5 rounded-full transition-all ${value ? 'bg-orange-500' : 'bg-slate-700'}`}
               >
                 <div className={`w-4 h-4 rounded-full bg-white transition-all ${value ? 'translate-x-5.5' : 'translate-x-0.5'}`}></div>

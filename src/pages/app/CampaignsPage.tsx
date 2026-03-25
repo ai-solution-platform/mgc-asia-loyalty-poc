@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { campaigns } from '../../data/mockData';
-import { Search, Filter } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 const categories = ['All', 'Service', 'Experience', 'Merchandise', 'Points Multiplier', 'Birthday', 'Travel', 'Ultra-Premium Experience'];
 

@@ -1,5 +1,5 @@
 import { notifications } from '../../data/mockData';
-import { Bell, Gift, TrendingUp, Settings, Cake, ArrowLeft } from 'lucide-react';
+import { Gift, TrendingUp, Settings, Cake, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const iconMap = {

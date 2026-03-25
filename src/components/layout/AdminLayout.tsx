@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, Gift, Award, BarChart3, Settings, Target, Bell, ChevronDown, LogOut, Megaphone, Ticket } from 'lucide-react';
+import { LayoutDashboard, Users, Award, BarChart3, Settings, Target, Bell, LogOut, Megaphone, Ticket } from 'lucide-react';
 import { useState } from 'react';
 
 const sidebarItems = [
@@ -16,7 +16,7 @@ const sidebarItems = [
 export default function AdminLayout() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white flex">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { campaigns } from '../../data/mockData';
-import { Plus, Search, MoreVertical, Eye, Edit3, Copy, Trash2 } from 'lucide-react';
+import { Plus, Search } from 'lucide-react';
 
 export default function CampaignsAdminPage() {
   const [search, setSearch] = useState('');
