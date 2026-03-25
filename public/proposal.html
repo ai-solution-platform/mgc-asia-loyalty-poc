@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Loyalty Platform — Proposal for MGC-ASIA | ANTS MarTech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mgc: { 50:'#e8f4fc', 100:'#c5e4f8', 200:'#9ed1f3', 300:'#6db9ec', 400:'#45a5e5', 500:'#1a8fd8', 600:'#0d6fb3', 700:'#0a5590', 800:'#073c6a', 900:'#042545' },
+        ants: { 50:'#fff7ed', 100:'#ffedd5', 200:'#fed7aa', 300:'#fdba74', 400:'#fb923c', 500:'#f97316', 600:'#ea580c', 700:'#c2410c', 800:'#9a3412', 900:'#7c2d12' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ===== THEME VARIABLES ===== */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-body-rgb: 255,255,255;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-rgb: 255,255,255;
+  --bg-card-inner: #F1F5F9;
+  --bg-card-inner-rgb: 241,245,249;
+  --bg-nav: rgba(255,255,255,0.92);
+  --bg-glass: rgba(255,255,255,0.8);
+  --bg-glass-rgb: 255,255,255;
+  --border-glass: rgba(226,232,240,0.6);
+  --border-card: #E2E8F0;
+  --border-nav: rgba(226,232,240,0.5);
+  --text-primary: #1B2B5B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #1B2B5B;
+  --accent-primary: #1B2B5B;
+  --accent-secondary: #C9A96E;
+  --accent-primary-rgb: 27,43,91;
+  --accent-secondary-rgb: 201,169,110;
+  --gradient-text-from: #1B2B5B;
+  --gradient-text-via: #2B4A8E;
+  --gradient-text-to: #1a8fd8;
+  --gradient-gold-from: #C9A96E;
+  --gradient-gold-to: #D4A853;
+  --btn-primary-bg: #1B2B5B;
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(27,43,91,0.12);
+  --hover-border: rgba(27,43,91,0.25);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 20px 60px rgba(27,43,91,0.12);
+  --scroll-progress-from: #1B2B5B;
+  --scroll-progress-to: #2B4A8E;
+  --timeline-dot: #1B2B5B;
+  --timeline-dot-ring: rgba(27,43,91,0.25);
+  --timeline-line-from: #1B2B5B;
+  --timeline-line-via: #C9A96E;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(27,43,91,0.08);
+  --hero-bg-1: rgba(27,43,91,0.04);
+  --hero-bg-2: rgba(201,169,110,0.04);
+  --hero-bg-3: rgba(27,43,91,0.02);
+  --section-badge: #C9A96E;
+  --section-badge-text: #1B2B5B;
+  --budget-hover: rgba(27,43,91,0.04);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #1B2B5B;
+  --journey-arrow: #C9A96E;
+  --event-bus-bg: rgba(27,43,91,0.04);
+  --event-bus-border: #1B2B5B;
+  --event-bus-text: #1B2B5B;
+  --svg-bg-grid: rgba(27,43,91,0.04);
+  --counter-accent: #1B2B5B;
+  --stat-accent: #1B2B5B;
+}
+
+[data-theme="dark"] {
+  --bg-body: #020617;
+  --bg-body-rgb: 2,6,23;
+  --bg-secondary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-rgb: 30,41,59;
+  --bg-card-inner: #1e293b;
+  --bg-card-inner-rgb: 30,41,59;
+  --bg-nav: rgba(2,6,23,0.85);
+  --bg-glass: rgba(30,41,59,0.5);
+  --bg-glass-rgb: 30,41,59;
+  --border-glass: rgba(148,163,184,0.1);
+  --border-card: rgba(148,163,184,0.1);
+  --border-nav: rgba(30,41,59,0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #f1f5f9;
+  --accent-primary: #f97316;
+  --accent-secondary: #fb923c;
+  --accent-primary-rgb: 249,115,22;
+  --accent-secondary-rgb: 251,146,60;
+  --gradient-text-from: #fb923c;
+  --gradient-text-via: #f97316;
+  --gradient-text-to: #ea580c;
+  --gradient-gold-from: #fb923c;
+  --gradient-gold-to: #f97316;
+  --btn-primary-bg: linear-gradient(to right, #f97316, #ea580c);
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(249,115,22,0.15);
+  --hover-border: rgba(249,115,22,0.3);
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 60px rgba(249,115,22,0.15);
+  --scroll-progress-from: #f97316;
+  --scroll-progress-to: #fb923c;
+  --timeline-dot: #f97316;
+  --timeline-dot-ring: rgba(249,115,22,0.3);
+  --timeline-line-from: #f97316;
+  --timeline-line-via: #1a8fd8;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(249,115,22,0.15);
+  --hero-bg-1: rgba(249,115,22,0.08);
+  --hero-bg-2: rgba(26,143,216,0.08);
+  --hero-bg-3: rgba(249,115,22,0.04);
+  --section-badge: rgba(249,115,22,0.15);
+  --section-badge-text: #fb923c;
+  --budget-hover: rgba(249,115,22,0.05);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #fb923c;
+  --journey-arrow: #f97316;
+  --event-bus-bg: rgba(249,115,22,0.08);
+  --event-bus-border: #f97316;
+  --event-bus-text: #fb923c;
+  --svg-bg-grid: rgba(148,163,184,0.05);
+  --counter-accent: #fb923c;
+  --stat-accent: #fb923c;
+}
+
+/* ===== BASE STYLES ===== */
+* { font-family: 'Inter', 'Noto Sans Thai', sans-serif; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== THEME TRANSITION ===== */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Navigation */
+.nav-fixed {
+  backdrop-filter: blur(20px);
+  background: var(--bg-nav);
+  border-color: var(--border-nav);
+}
+.nav-link { transition: all 0.3s; color: var(--text-muted); }
+[data-theme="light"] .nav-link:hover, [data-theme="light"] .nav-link.active { color: #1B2B5B; font-weight: 600; }
+[data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active { color: #fb923c; }
+
+/* Sections */
+section { min-height: 100vh; }
+.section-enter { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.section-enter.visible { opacity: 1; transform: translateY(0); }
+
+/* Cards */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow);
+}
+.card-hover { transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: var(--card-hover-shadow); border-color: var(--hover-border); }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-blue { background: linear-gradient(135deg, #45a5e5, #1a8fd8, #0d6fb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gradient-gold-from), var(--gradient-gold-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background */
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, var(--hero-bg-1) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, var(--hero-bg-2) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, var(--hero-bg-3) 0%, transparent 50%);
+}
+
+/* Architecture diagram */
+.arch-node { transition: all 0.3s; cursor: pointer; }
+.arch-node:hover { transform: scale(1.05); filter: brightness(1.2); }
+.arch-line { stroke-dasharray: 8 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* Timeline */
+.timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--timeline-dot); position: relative; z-index: 2; }
+.timeline-dot::after { content:''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--timeline-dot-ring); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0; } }
+
+/* Counter animation */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Slide navigation */
+.slide-indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--slide-indicator); transition: all 0.3s; cursor: pointer; }
+.slide-indicator.active { background: var(--slide-indicator-active); width: 32px; border-radius: 4px; }
+
+/* Feature icon */
+.feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+/* Budget table */
+.budget-row { transition: all 0.3s; }
+.budget-row:hover { background: var(--budget-hover); }
+
+/* Print styles */
+@media print { body { background: white; color: #1e293b; } .glass { background: #f8fafc; border: 1px solid #e2e8f0; } }
+
+/* Floating particles */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) rotate(720deg); opacity: 0; } }
+
+/* Journey flow */
+.journey-step { position: relative; }
+.journey-arrow { color: var(--journey-arrow); animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+
+/* Scroll progress */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--scroll-progress-from), var(--scroll-progress-to)); z-index: 100; transition: width 0.1s; }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+[data-theme="light"] .text-white { color: var(--text-heading) !important; }
+[data-theme="light"] .text-dark-300 { color: var(--text-secondary) !important; }
+[data-theme="light"] .text-dark-400 { color: var(--text-muted) !important; }
+[data-theme="light"] .text-dark-500 { color: var(--text-faint) !important; }
+[data-theme="light"] .text-dark-600 { color: #94a3b8 !important; }
+[data-theme="light"] .text-ants-400 { color: var(--accent-secondary) !important; }
+[data-theme="light"] .text-ants-400.counter, [data-theme="light"] .counter.text-ants-400 { color: var(--accent-primary) !important; }
+[data-theme="light"] .border-dark-800\/50 { border-color: var(--border-nav) !important; }
+[data-theme="light"] .bg-dark-800\/50 {
+  background: var(--bg-card-inner) !important;
+}
+[data-theme="light"] .border-dark-700 { border-color: #E2E8F0 !important; }
+[data-theme="light"] .border-dark-800 { border-color: #E2E8F0 !important; }
+
+/* Light mode nav brand */
+[data-theme="light"] nav .text-white { color: #1B2B5B !important; }
+[data-theme="light"] nav .text-dark-400 { color: #64748b !important; }
+[data-theme="light"] nav .text-dark-500 { color: #94a3b8 !important; }
+
+/* Light mode section headers */
+[data-theme="light"] h2 { color: #1B2B5B; }
+[data-theme="light"] h3 { color: #1B2B5B; }
+[data-theme="light"] h4 { color: #1B2B5B; }
+
+/* Light mode hero stats */
+[data-theme="light"] .text-mgc-400 { color: #1a8fd8 !important; }
+
+/* Light mode CTA button */
+[data-theme="light"] .bg-gradient-to-r.from-ants-500.to-ants-600 {
+  background: linear-gradient(to right, #1B2B5B, #2B4A8E) !important;
+}
+
+/* Keep ANTS logo orange in both modes */
+.ants-logo-bg {
+  background: linear-gradient(to bottom right, #f97316, #ea580c) !important;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 70px;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #fb923c; }
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+[data-theme="light"] #theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+[data-theme="light"] #theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Light mode SVG architecture */
+[data-theme="light"] .arch-svg-grid { fill: var(--svg-bg-grid) !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+  </svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+  </svg>
+</button>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- Navigation -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
+<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl ants-logo-bg flex items-center justify-center font-bold text-white text-sm" style="color:#fff !important;">A</div>
+    <div>
+      <div class="text-sm font-bold text-white">ANTS MarTech</div>
+      <div class="text-[10px] text-dark-400">AI-First Marketing Technology</div>
+    </div>
+  </div>
+  <div class="hidden md:flex items-center gap-6 text-xs font-medium text-dark-400">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#understanding" class="nav-link">Client</a>
+    <a href="#solution" class="nav-link">Solution</a>
+    <a href="#architecture" class="nav-link">Architecture</a>
+    <a href="#journey" class="nav-link">Journey</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#ai" class="nav-link">AI</a>
+    <a href="#timeline" class="nav-link">Timeline</a>
+    <a href="#budget" class="nav-link">Budget</a>
+    <a href="#why-us" class="nav-link">Why Us</a>
+  </div>
+  <div class="text-xs text-dark-500">Confidential</div>
+</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="relative flex items-center justify-center hero-bg overflow-hidden">
+  <!-- Particles -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="particle" style="width:6px;height:6px;left:10%;animation-duration:15s;animation-delay:0s"></div>
+    <div class="particle" style="width:4px;height:4px;left:25%;animation-duration:20s;animation-delay:3s"></div>
+    <div class="particle" style="width:8px;height:8px;left:45%;animation-duration:18s;animation-delay:1s"></div>
+    <div class="particle" style="width:5px;height:5px;left:65%;animation-duration:22s;animation-delay:5s"></div>
+    <div class="particle" style="width:7px;height:7px;left:85%;animation-duration:16s;animation-delay:2s"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-dark-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      Strategic Technology Proposal — March 2026
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+      <span class="text-white">MOBILIFE</span><br>
+      <span class="gradient-text">Loyalty Platform</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-dark-300 max-w-3xl mx-auto mb-4">
+      AI-Powered Loyalty & Customer Engagement Ecosystem<br>
+      <span class="text-dark-400">สำหรับ</span> <span class="font-semibold text-white">MGC-ASIA Group</span>
+    </p>
+
+    <p class="text-sm text-dark-500 mb-12">
+      Transforming 40+ Years of Automotive Excellence into a Data-Driven Customer Lifetime Value Engine
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)" data-target="207">207</div>
+        <div class="text-xs text-dark-400">Requirements</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-mgc-400 counter">15+</div>
+        <div class="text-xs text-dark-400">Brand Integrations</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)">100K+</div>
+        <div class="text-xs text-dark-400">Target Members Y3</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-green-400 counter">99.9%</div>
+        <div class="text-xs text-dark-400">SLA Uptime</div>
+      </div>
+    </div>
+
+    <a href="#understanding" class="inline-flex items-center gap-2 bg-gradient-to-r from-ants-500 to-ants-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm hover:shadow-lg hover:shadow-ants-500/25 transition-all" style="color:#fff !important;">
+      Explore Proposal
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </a>
+
+    <div class="mt-16 flex items-center justify-center gap-8 text-dark-600 text-xs">
+      <span>Prepared by</span>
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg ants-logo-bg flex items-center justify-center font-bold text-white text-xs" style="color:#fff !important;">A</div>
+        <span class="text-dark-400 font-medium">ANTS — Advance Network Technology & Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENT UNDERSTANDING ===== -->
+<section id="understanding" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">01 — Client Understanding</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">MGC-ASIA Group</h2>
+    <p class="text-dark-400 max-w-2xl mx-auto">Thailand's Premier Lifestyle Mobility Ecosystem — From Mass to Ultra-Luxury</p>
+  </div>
+
+  <!-- Company Overview -->
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-mgc-500/10 text-mgc-400 mb-4">🏢</div>
+      <h3 class="font-bold text-lg mb-2">Established Legacy</h3>
+      <p class="text-sm text-dark-400">ก่อตั้งปี 2543 จดทะเบียนใน SET ปี 2566 เป็นผู้นำด้าน Automotive Retail & Services กว่า 24 ปี</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-ants-500/10 text-ants-400 mb-4">🚗</div>
+      <h3 class="font-bold text-lg mb-2">4 Business Groups</h3>
+      <p class="text-sm text-dark-400">Automotive Distribution, After-Sales & Maintenance, Vehicle Rental, Technology & Specialized Services</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-purple-500/10 text-purple-400 mb-4">🌏</div>
+      <h3 class="font-bold text-lg mb-2">Regional Expansion</h3>
+      <p class="text-sm text-dark-400">ขยายธุรกิจสู่ ASEAN — Malaysia, Laos พร้อม Sixt Rent A Car และ Marine Business</p>
+    </div>
+  </div>
+
+  <!-- Brand Portfolio -->
+  <div class="glass rounded-2xl p-8 mb-12">
+    <h3 class="font-bold text-lg mb-6 text-center">Brand Portfolio — 15+ Premium Brands</h3>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🔵</div>
+        <div class="text-xs font-semibold">BMW</div>
+        <div class="text-[10px] text-dark-500">Millennium Auto</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🟢</div>
+        <div class="text-xs font-semibold">MINI</div>
+        <div class="text-[10px] text-dark-500">Millennium Auto</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🟣</div>
+        <div class="text-xs font-semibold">Rolls-Royce</div>
+        <div class="text-[10px] text-dark-500">GW Company</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🔴</div>
+        <div class="text-xs font-semibold">Honda</div>
+        <div class="text-[10px] text-dark-500">Summit Honda</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🟠</div>
+        <div class="text-xs font-semibold">Harley-Davidson</div>
+        <div class="text-[10px] text-dark-500">US Motorbike</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🔷</div>
+        <div class="text-xs font-semibold">Maserati</div>
+        <div class="text-[10px] text-dark-500">Modena Motorwork</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🟩</div>
+        <div class="text-xs font-semibold">Aston Martin</div>
+        <div class="text-[10px] text-dark-500">HPS Supercar</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">🦁</div>
+        <div class="text-xs font-semibold">Peugeot / JEEP</div>
+        <div class="text-[10px] text-dark-500">Lion Automobile</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">⚡</div>
+        <div class="text-xs font-semibold">Xpeng / Zeekr</div>
+        <div class="text-[10px] text-dark-500">EV Division</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-2">⛵</div>
+        <div class="text-xs font-semibold">Azimut / Chris-Craft</div>
+        <div class="text-[10px] text-dark-500">Marine</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pain Points -->
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-bold text-lg mb-6">Current Challenges & Opportunities</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-sm font-semibold text-red-400 mb-4">🔴 Pain Points</h4>
+        <ul class="space-y-3 text-sm text-dark-300">
+          <li class="flex gap-3"><span class="text-red-400 mt-0.5">•</span>ระบบ Loyalty เดิมมีข้อจำกัดด้าน Features และ Flexibility</li>
+          <li class="flex gap-3"><span class="text-red-400 mt-0.5">•</span>ค่าดำเนินการสูง ไม่คุ้มค่า (High Operational Cost)</li>
+          <li class="flex gap-3"><span class="text-red-400 mt-0.5">•</span>ข้อมูลลูกค้ากระจัดกระจายใน 15+ POS Systems</li>
+          <li class="flex gap-3"><span class="text-red-400 mt-0.5">•</span>ไม่สามารถ Personalize ประสบการณ์ตาม Customer Segment</li>
+          <li class="flex gap-3"><span class="text-red-400 mt-0.5">•</span>ขาด Unified Customer View ข้ามทุก BU</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-green-400 mb-4">🟢 Opportunities</h4>
+        <ul class="space-y-3 text-sm text-dark-300">
+          <li class="flex gap-3"><span class="text-green-400 mt-0.5">•</span>สร้าง Unified Customer ID ข้ามทุก Brand</li>
+          <li class="flex gap-3"><span class="text-green-400 mt-0.5">•</span>เพิ่ม Customer Lifetime Value ผ่าน Cross-sell / Up-sell</li>
+          <li class="flex gap-3"><span class="text-green-400 mt-0.5">•</span>Data-Driven Campaign ด้วย AI Personalization</li>
+          <li class="flex gap-3"><span class="text-green-400 mt-0.5">•</span>Omnichannel Engagement (LINE OA, SMS, Email, Push)</li>
+          <li class="flex gap-3"><span class="text-green-400 mt-0.5">•</span>Point Partnership Ecosystem (SCB, BBL, The Mall, AIS)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SOLUTION OVERVIEW ===== -->
+<section id="solution" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">02 — Solution Overview</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">MOBILIFE Loyalty Platform</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Turn Key Solution ครบวงจร — Core Loyalty Engine + Mobile Application + Operation Portal + Analytics + Integration Hub</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Left: Solution pillars -->
+    <div class="space-y-4">
+      <div class="glass rounded-2xl p-6 card-hover border-l-4 border-ants-500">
+        <h3 class="font-bold mb-2 flex items-center gap-3">
+          <span class="feature-icon bg-ants-500/10 text-ants-400 text-lg">🎯</span>
+          Core Loyalty Engine
+        </h3>
+        <p class="text-sm text-dark-400">Point Earn/Burn, Tier Management (4 Tiers), Campaign Engine, Reward Management, Audience Segmentation, Mission & Gamification</p>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover border-l-4 border-mgc-500">
+        <h3 class="font-bold mb-2 flex items-center gap-3">
+          <span class="feature-icon bg-mgc-500/10 text-mgc-400 text-lg">📱</span>
+          Mobile Application
+        </h3>
+        <p class="text-sm text-dark-400">iOS & Android (React Native) — Registration, Point Dashboard, Campaign Discovery, Coupon Wallet, Appointment Booking, Profile Management</p>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover border-l-4 border-purple-500">
+        <h3 class="font-bold mb-2 flex items-center gap-3">
+          <span class="feature-icon bg-purple-500/10 text-purple-400 text-lg">🖥️</span>
+          Operation Portal
+        </h3>
+        <p class="text-sm text-dark-400">Member Management, Campaign Builder, Reward CMS, Point Adjustment, User Access Control (RBAC), Reporting & Analytics Dashboard</p>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover border-l-4 border-green-500">
+        <h3 class="font-bold mb-2 flex items-center gap-3">
+          <span class="feature-icon bg-green-500/10 text-green-400 text-lg">🔗</span>
+          Integration Hub
+        </h3>
+        <p class="text-sm text-dark-400">15+ POS Systems (VSM, IDS, Titan, Pandora, etc.), NDB Database, Azure AD SSO, LINE OA, SMS/Email Gateway, 3rd Party Points (SCB, BBL, AIS)</p>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover border-l-4 border-cyan-500">
+        <h3 class="font-bold mb-2 flex items-center gap-3">
+          <span class="feature-icon bg-cyan-500/10 text-cyan-400 text-lg">🤖</span>
+          AI Intelligence Layer
+        </h3>
+        <p class="text-sm text-dark-400">Predictive Analytics, Smart Segmentation, Churn Prediction, Next-Best-Action, Personalized Recommendations, Automated Campaign Optimization</p>
+      </div>
+    </div>
+
+    <!-- Right: Value Props -->
+    <div class="glass rounded-2xl p-8">
+      <h3 class="font-bold text-lg mb-6 gradient-text">Value Creation</h3>
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shrink-0" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">1</div>
+          <div>
+            <h4 class="font-semibold mb-1">Unified Customer 360° View</h4>
+            <p class="text-sm text-dark-400">รวมข้อมูลลูกค้าจากทุก BU เข้าเป็น Single Customer ID — เข้าใจลูกค้าแบบ 360° เพื่อ Personalize ทุก Touchpoint</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shrink-0" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">2</div>
+          <div>
+            <h4 class="font-semibold mb-1">Increase CLV by 35-50%</h4>
+            <p class="text-sm text-dark-400">Cross-sell ข้ามแบรนด์ — ลูกค้า BMW ได้ privilege Sixt Rent, ลูกค้า Honda อัพเกรดเป็น MINI ผ่าน Data-Driven Insights</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shrink-0" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">3</div>
+          <div>
+            <h4 class="font-semibold mb-1">Reduce Churn by 25%</h4>
+            <p class="text-sm text-dark-400">AI-Powered Churn Prediction ตรวจจับลูกค้าที่มีแนวโน้มหายไป พร้อม Auto-trigger Win-back Campaign</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shrink-0" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">4</div>
+          <div>
+            <h4 class="font-semibold mb-1">Partner Ecosystem Revenue</h4>
+            <p class="text-sm text-dark-400">แลกแต้มข้าม Platform (Point X, Happy Point, M Point, AIS Point) สร้างระบบนิเวศที่มีมูลค่าเพิ่ม</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shrink-0" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">5</div>
+          <div>
+            <h4 class="font-semibold mb-1">Operational Efficiency +60%</h4>
+            <p class="text-sm text-dark-400">Automated Campaign Management, Self-service Portal, Real-time Analytics ลดภาระทีม Marketing และ Operation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== HIGH LEVEL ARCHITECTURE ===== -->
+<section id="architecture" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">03 — High Level Architecture</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">System Architecture</h2>
+    <p class="text-dark-400">Cloud-Native, Event-Driven, Microservices Architecture on AWS</p>
+  </div>
+
+  <div class="glass rounded-3xl p-8 overflow-x-auto">
+    <svg viewBox="0 0 1100 720" class="w-full" style="min-width:800px">
+      <!-- Background grid -->
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(148,163,184,0.05)" stroke-width="1"/>
+        </pattern>
+        <linearGradient id="orange-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f97316"/>
+          <stop offset="100%" style="stop-color:#ea580c"/>
+        </linearGradient>
+        <linearGradient id="navy-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1B2B5B"/>
+          <stop offset="100%" style="stop-color:#2B4A8E"/>
+        </linearGradient>
+        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1a8fd8"/>
+          <stop offset="100%" style="stop-color:#0d6fb3"/>
+        </linearGradient>
+        <linearGradient id="purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#8b5cf6"/>
+          <stop offset="100%" style="stop-color:#7c3aed"/>
+        </linearGradient>
+        <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#22c55e"/>
+          <stop offset="100%" style="stop-color:#16a34a"/>
+        </linearGradient>
+      </defs>
+      <rect width="1100" height="720" fill="url(#grid)"/>
+
+      <!-- Layer Labels -->
+      <text x="20" y="35" fill="var(--text-muted)" font-size="11" font-weight="600" opacity="0.6">TOUCHPOINTS</text>
+      <text x="20" y="175" fill="var(--text-muted)" font-size="11" font-weight="600" opacity="0.6">API GATEWAY</text>
+      <text x="20" y="295" fill="var(--text-muted)" font-size="11" font-weight="600" opacity="0.6">CORE SERVICES</text>
+      <text x="20" y="475" fill="var(--text-muted)" font-size="11" font-weight="600" opacity="0.6">AI & DATA</text>
+      <text x="20" y="615" fill="var(--text-muted)" font-size="11" font-weight="600" opacity="0.6">INTEGRATIONS</text>
+
+      <!-- TOUCHPOINTS ROW -->
+      <g class="arch-node">
+        <rect x="120" y="45" width="140" height="65" rx="12" fill="url(#orange-grad)" opacity="0.9"/>
+        <text x="190" y="72" text-anchor="middle" fill="white" font-size="11" font-weight="700">📱 Mobile App</text>
+        <text x="190" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">iOS / Android</text>
+      </g>
+      <g class="arch-node">
+        <rect x="290" y="45" width="140" height="65" rx="12" fill="url(#orange-grad)" opacity="0.9"/>
+        <text x="360" y="72" text-anchor="middle" fill="white" font-size="11" font-weight="700">🖥️ Operation Portal</text>
+        <text x="360" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">Web Admin</text>
+      </g>
+      <g class="arch-node">
+        <rect x="460" y="45" width="140" height="65" rx="12" fill="url(#orange-grad)" opacity="0.9"/>
+        <text x="530" y="72" text-anchor="middle" fill="white" font-size="11" font-weight="700">💬 LINE OA</text>
+        <text x="530" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">MOBILIFE Bot</text>
+      </g>
+      <g class="arch-node">
+        <rect x="630" y="45" width="140" height="65" rx="12" fill="url(#orange-grad)" opacity="0.9"/>
+        <text x="700" y="72" text-anchor="middle" fill="white" font-size="11" font-weight="700">📞 Call Center</text>
+        <text x="700" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">Support Portal</text>
+      </g>
+      <g class="arch-node">
+        <rect x="800" y="45" width="160" height="65" rx="12" fill="url(#orange-grad)" opacity="0.9"/>
+        <text x="880" y="72" text-anchor="middle" fill="white" font-size="11" font-weight="700">🔔 Communication</text>
+        <text x="880" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">SMS / Email / Push</text>
+      </g>
+
+      <!-- Connection lines from Touchpoints to API Gateway -->
+      <line x1="190" y1="110" x2="550" y2="160" stroke="#f97316" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="360" y1="110" x2="550" y2="160" stroke="#f97316" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="530" y1="110" x2="550" y2="160" stroke="#f97316" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="700" y1="110" x2="550" y2="160" stroke="#f97316" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="880" y1="110" x2="550" y2="160" stroke="#f97316" stroke-width="1" opacity="0.3" class="arch-line"/>
+
+      <!-- API GATEWAY -->
+      <g class="arch-node">
+        <rect x="300" y="145" width="500" height="55" rx="12" fill="rgba(26,143,216,0.15)" stroke="#1a8fd8" stroke-width="1.5"/>
+        <text x="550" y="170" text-anchor="middle" fill="#45a5e5" font-size="12" font-weight="700">🔒 AWS API Gateway + CloudFront CDN + WAF</text>
+        <text x="550" y="187" text-anchor="middle" fill="#45a5e5" font-size="9" opacity="0.7">Rate Limiting • JWT Auth • Azure AD SSO • CORS • Request Validation</text>
+      </g>
+
+      <!-- Lines to Core Services -->
+      <line x1="400" y1="200" x2="180" y2="260" stroke="#1a8fd8" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="450" y1="200" x2="370" y2="260" stroke="#1a8fd8" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="550" y1="200" x2="560" y2="260" stroke="#1a8fd8" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="650" y1="200" x2="750" y2="260" stroke="#1a8fd8" stroke-width="1" opacity="0.3" class="arch-line"/>
+      <line x1="700" y1="200" x2="940" y2="260" stroke="#1a8fd8" stroke-width="1" opacity="0.3" class="arch-line"/>
+
+      <!-- CORE SERVICES ROW -->
+      <g class="arch-node">
+        <rect x="100" y="260" width="155" height="80" rx="12" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="177" y="288" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">👤 Member Service</text>
+        <text x="177" y="304" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Registration • Profile</text>
+        <text x="177" y="318" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">PDPA Consent • B2B/B2C</text>
+      </g>
+      <g class="arch-node">
+        <rect x="275" y="260" width="180" height="80" rx="12" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="365" y="288" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">⭐ Loyalty Engine</text>
+        <text x="365" y="304" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Point Earn/Burn • Tier Mgmt</text>
+        <text x="365" y="318" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Rules Engine • Expiration</text>
+      </g>
+      <g class="arch-node">
+        <rect x="475" y="260" width="170" height="80" rx="12" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="560" y="288" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">🎯 Campaign Service</text>
+        <text x="560" y="304" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Campaign Builder • Audience</text>
+        <text x="560" y="318" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Mission • Gamification</text>
+      </g>
+      <g class="arch-node">
+        <rect x="665" y="260" width="170" height="80" rx="12" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="750" y="288" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">🎁 Reward Service</text>
+        <text x="750" y="304" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">E-Coupon • Physical Goods</text>
+        <text x="750" y="318" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Lucky Draw • Fulfillment</text>
+      </g>
+      <g class="arch-node">
+        <rect x="855" y="260" width="160" height="80" rx="12" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="935" y="288" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">📊 Analytics Service</text>
+        <text x="935" y="304" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Reporting • Dashboard</text>
+        <text x="935" y="318" text-anchor="middle" fill="#a78bfa" font-size="8" opacity="0.7">Google Analytics • BI</text>
+      </g>
+
+      <!-- Horizontal lines between core services -->
+      <line x1="255" y1="300" x2="275" y2="300" stroke="#8b5cf6" stroke-width="1" opacity="0.2"/>
+      <line x1="455" y1="300" x2="475" y2="300" stroke="#8b5cf6" stroke-width="1" opacity="0.2"/>
+      <line x1="645" y1="300" x2="665" y2="300" stroke="#8b5cf6" stroke-width="1" opacity="0.2"/>
+      <line x1="835" y1="300" x2="855" y2="300" stroke="#8b5cf6" stroke-width="1" opacity="0.2"/>
+
+      <!-- Event Bus -->
+      <g>
+        <rect x="100" y="365" width="915" height="40" rx="8" fill="var(--event-bus-bg)" stroke="var(--event-bus-border)" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="550" y="390" text-anchor="middle" fill="var(--event-bus-text)" font-size="11" font-weight="600">⚡ Event Bus (Amazon EventBridge + SQS/SNS) — Real-time Event Streaming & Async Processing</text>
+      </g>
+
+      <!-- AI & DATA ROW -->
+      <g class="arch-node">
+        <rect x="100" y="430" width="220" height="80" rx="12" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1"/>
+        <text x="210" y="458" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700">🤖 AI/ML Engine</text>
+        <text x="210" y="474" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">Churn Prediction • Next Best Action</text>
+        <text x="210" y="488" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">Smart Segmentation • Recommendation</text>
+      </g>
+      <g class="arch-node">
+        <rect x="340" y="430" width="220" height="80" rx="12" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1"/>
+        <text x="450" y="458" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700">🗄️ Data Lake</text>
+        <text x="450" y="474" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">Amazon S3 + Athena + Glue</text>
+        <text x="450" y="488" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">Customer 360° Data Warehouse</text>
+      </g>
+      <g class="arch-node">
+        <rect x="580" y="430" width="210" height="80" rx="12" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1"/>
+        <text x="685" y="458" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700">💾 Databases</text>
+        <text x="685" y="474" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">PostgreSQL (RDS) • Redis Cache</text>
+        <text x="685" y="488" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">ElasticSearch • DynamoDB</text>
+      </g>
+      <g class="arch-node">
+        <rect x="810" y="430" width="205" height="80" rx="12" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1"/>
+        <text x="912" y="458" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700">🔐 Security</text>
+        <text x="912" y="474" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">AWS KMS • Secrets Manager</text>
+        <text x="912" y="488" text-anchor="middle" fill="#4ade80" font-size="8" opacity="0.7">ISO 27001 • PDPA Compliant</text>
+      </g>
+
+      <!-- Connection to Event Bus -->
+      <line x1="210" y1="430" x2="210" y2="405" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+      <line x1="450" y1="430" x2="450" y2="405" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+      <line x1="685" y1="430" x2="685" y2="405" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+      <line x1="912" y1="430" x2="912" y2="405" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+
+      <!-- INTEGRATION ROW -->
+      <rect x="100" y="540" width="915" height="45" rx="8" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.15)" stroke-width="1"/>
+      <text x="550" y="567" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-weight="600">🔗 Integration Layer (REST API + Webhook + File-based + Database Connector)</text>
+
+      <!-- External Systems -->
+      <g class="arch-node">
+        <rect x="100" y="610" width="145" height="55" rx="10" fill="rgba(148,163,184,0.08)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+        <text x="172" y="633" text-anchor="middle" fill="var(--text-muted)" font-size="9" font-weight="600">📋 MGC-NDB</text>
+        <text x="172" y="648" text-anchor="middle" fill="var(--text-faint)" font-size="8">15+ POS Systems</text>
+      </g>
+      <g class="arch-node">
+        <rect x="265" y="610" width="145" height="55" rx="10" fill="rgba(148,163,184,0.08)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+        <text x="337" y="633" text-anchor="middle" fill="var(--text-muted)" font-size="9" font-weight="600">🔑 Azure AD</text>
+        <text x="337" y="648" text-anchor="middle" fill="var(--text-faint)" font-size="8">SSO / MFA</text>
+      </g>
+      <g class="arch-node">
+        <rect x="430" y="610" width="145" height="55" rx="10" fill="rgba(148,163,184,0.08)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+        <text x="502" y="633" text-anchor="middle" fill="var(--text-muted)" font-size="9" font-weight="600">💬 LINE OA</text>
+        <text x="502" y="648" text-anchor="middle" fill="var(--text-faint)" font-size="8">Messaging API</text>
+      </g>
+      <g class="arch-node">
+        <rect x="595" y="610" width="145" height="55" rx="10" fill="rgba(148,163,184,0.08)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+        <text x="667" y="633" text-anchor="middle" fill="var(--text-muted)" font-size="9" font-weight="600">🔄 Point Partners</text>
+        <text x="667" y="648" text-anchor="middle" fill="var(--text-faint)" font-size="8">SCB / BBL / AIS / Mall</text>
+      </g>
+      <g class="arch-node">
+        <rect x="760" y="610" width="145" height="55" rx="10" fill="rgba(148,163,184,0.08)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+        <text x="832" y="633" text-anchor="middle" fill="var(--text-muted)" font-size="9" font-weight="600">📧 Comm Gateway</text>
+        <text x="832" y="648" text-anchor="middle" fill="var(--text-faint)" font-size="8">SMS / Email / Push</text>
+      </g>
+
+      <!-- AWS Badge -->
+      <rect x="930" y="610" width="85" height="55" rx="10" fill="rgba(249,115,22,0.08)" stroke="#f97316" stroke-width="1"/>
+      <text x="972" y="633" text-anchor="middle" fill="#fb923c" font-size="9" font-weight="600">☁️ AWS</text>
+      <text x="972" y="648" text-anchor="middle" fill="#fb923c" font-size="8" opacity="0.7">Cloud Platform</text>
+
+      <!-- Connections from integration layer to external -->
+      <line x1="172" y1="585" x2="172" y2="610" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+      <line x1="337" y1="585" x2="337" y2="610" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+      <line x1="502" y1="585" x2="502" y2="610" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+      <line x1="667" y1="585" x2="667" y2="610" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+      <line x1="832" y1="585" x2="832" y2="610" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- ===== CUSTOMER JOURNEY ===== -->
+<section id="journey" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">04 — Customer Journey</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">End-to-End Customer Journey</h2>
+    <p class="text-dark-400">จาก Awareness สู่ Advocacy — ครอบคลุมทุก Touchpoint ใน MGC Ecosystem</p>
+  </div>
+
+  <div class="overflow-x-auto pb-4">
+    <div class="flex gap-4" style="min-width:1200px">
+      <!-- Stage 1: Awareness -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-blue-400">
+        <div class="text-blue-400 text-2xl mb-3">👁️</div>
+        <h3 class="font-bold text-sm mb-2">1. Awareness</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">ลูกค้าเห็นโปร MGC ผ่าน LINE OA / Social / Email</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Campaign Personalized ตาม Customer Segment</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">UTM Tracking ทุก Channel</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: LINE OA, Email, Push, Social</div>
+      </div>
+
+      <div class="flex items-center journey-arrow text-2xl">→</div>
+
+      <!-- Stage 2: Registration -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-cyan-400">
+        <div class="text-cyan-400 text-2xl mb-3">✍️</div>
+        <h3 class="font-bold text-sm mb-2">2. Registration</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">สมัครผ่าน App — OTP / SSO (Facebook, Google, LINE)</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">PDPA Consent Collection</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Auto-assign BU + Welcome Points/Coupon</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: Mobile App, Web</div>
+      </div>
+
+      <div class="flex items-center journey-arrow text-2xl">→</div>
+
+      <!-- Stage 3: Earn -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-green-400">
+        <div class="text-green-400 text-2xl mb-3">⭐</div>
+        <h3 class="font-bold text-sm mb-2">3. Earn Points</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">ซื้อรถ / เข้าเซอร์วิส / เช่ารถ / ซื้อประกัน</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Real-time Point Calculation จาก POS</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Mission Completion + Event Participation</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: POS, App, Showroom</div>
+      </div>
+
+      <div class="flex items-center journey-arrow text-2xl">→</div>
+
+      <!-- Stage 4: Engage -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-ants-400">
+        <div class="text-ants-400 text-2xl mb-3">🎯</div>
+        <h3 class="font-bold text-sm mb-2">4. Engage</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">Personalized Campaign / Birthday Special</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Tier Upgrade (Diamond → Black → Infinite Blue)</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Mission & Gamification</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: App, Push, LINE</div>
+      </div>
+
+      <div class="flex items-center journey-arrow text-2xl">→</div>
+
+      <!-- Stage 5: Redeem -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-purple-400">
+        <div class="text-purple-400 text-2xl mb-3">🎁</div>
+        <h3 class="font-bold text-sm mb-2">5. Redeem</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">แลก E-Coupon / Physical Goods / Lucky Draw</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Transfer Points to Partners (SCB, BBL, AIS)</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Book Appointment (Test Drive, Service)</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: App, Partner, In-store</div>
+      </div>
+
+      <div class="flex items-center journey-arrow text-2xl">→</div>
+
+      <!-- Stage 6: Advocate -->
+      <div class="flex-1 glass rounded-2xl p-6 border-t-4 border-pink-400">
+        <div class="text-pink-400 text-2xl mb-3">❤️</div>
+        <h3 class="font-bold text-sm mb-2">6. Advocate</h3>
+        <div class="space-y-2 text-xs text-dark-400">
+          <div class="bg-dark-800/50 rounded-lg p-2">Referral Program — ชวนเพื่อน ได้ Points</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">Cross-sell BMW → MINI → Sixt → Insurance</div>
+          <div class="bg-dark-800/50 rounded-lg p-2">VIP Experience for Infinite Blue Diamond</div>
+        </div>
+        <div class="mt-3 text-[10px] text-dark-500">Touchpoint: App, Event, Personal</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== KEY FEATURES ===== -->
+<section id="features" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">05 — Key Features</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">207 Requirements, <span class="gradient-text">100% Covered</span></h2>
+    <p class="text-dark-400">ครอบคลุมทุก Functional & Non-Functional Requirements ตาม TOR</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-blue-500/10 text-blue-400">👤</div>
+        <div>
+          <h3 class="font-bold text-sm">Member Management</h3>
+          <div class="text-xs text-dark-500">19 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• B2C & B2B Member Support</li>
+        <li>• Multi-channel Registration (OTP, SSO)</li>
+        <li>• Unified Customer ID ข้ามทุก BU</li>
+        <li>• PDPA Consent + Auto-Inactive</li>
+        <li>• Profile Edit History Tracking</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-yellow-500/10 text-yellow-400">⭐</div>
+        <div>
+          <h3 class="font-bold text-sm">Point & Tier Engine</h3>
+          <div class="text-xs text-dark-500">28 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• Configurable Earn/Burn Rules</li>
+        <li>• 4-Tier System (Member → Infinite Blue Diamond)</li>
+        <li>• Real-time POS Integration (15+ systems)</li>
+        <li>• Point Expiration (3-Year Rolling)</li>
+        <li>• Cross-brand Point Transfer</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-ants-500/10 text-ants-400">🎯</div>
+        <div>
+          <h3 class="font-bold text-sm">Campaign Engine</h3>
+          <div class="text-xs text-dark-500">32 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• Visual Campaign Builder (Drag & Drop)</li>
+        <li>• Audience Segmentation (Behavioral + Demographic)</li>
+        <li>• Birthday / Tier Upgrade / Registration Specials</li>
+        <li>• Rate Limiting & Budget Control</li>
+        <li>• A/B Testing & Campaign Analytics</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-purple-500/10 text-purple-400">🎁</div>
+        <div>
+          <h3 class="font-bold text-sm">Rewards & Fulfillment</h3>
+          <div class="text-xs text-dark-500">19 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• E-Coupon (QR/Barcode/Text Code)</li>
+        <li>• Physical Goods + Delivery Tracking</li>
+        <li>• Lucky Draw System</li>
+        <li>• Coupon Set Management + Bulk Upload</li>
+        <li>• RBAC (Viewer/Editor/Approver)</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-green-500/10 text-green-400">📊</div>
+        <div>
+          <h3 class="font-bold text-sm">Analytics & Reporting</h3>
+          <div class="text-xs text-dark-500">29 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• Real-time Loyalty Dashboard</li>
+        <li>• Google Analytics + UTM + Data Layer</li>
+        <li>• Power BI Export Integration</li>
+        <li>• Member Behavior Analytics</li>
+        <li>• Point Expiry Forecast Report</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-cyan-500/10 text-cyan-400">📱</div>
+        <div>
+          <h3 class="font-bold text-sm">Mobile App + Touchpoints</h3>
+          <div class="text-xs text-dark-500">40 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• iOS & Android Native-like App</li>
+        <li>• Point Dashboard + Coupon Wallet</li>
+        <li>• Campaign Discovery + Redemption</li>
+        <li>• Appointment Booking (Test Drive, Service)</li>
+        <li>• Bilingual (TH/EN)</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-red-500/10 text-red-400">🔔</div>
+        <div>
+          <h3 class="font-bold text-sm">Communication</h3>
+          <div class="text-xs text-dark-500">8 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• Push / SMS / Email / LINE OA</li>
+        <li>• WYSIWYG Template Editor</li>
+        <li>• Triggered + Scheduled + Mass Messaging</li>
+        <li>• Open Rate & CTA Tracking</li>
+        <li>• Audience-targeted Communication</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-indigo-500/10 text-indigo-400">🔗</div>
+        <div>
+          <h3 class="font-bold text-sm">Integration Hub</h3>
+          <div class="text-xs text-dark-500">16 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• 15+ POS Systems (NDB/API/File)</li>
+        <li>• Azure AD SSO + MFA</li>
+        <li>• 3rd Party Points (SCB, BBL, Mall, AIS)</li>
+        <li>• Data Warehouse Output</li>
+        <li>• DMS/CRM Integration</li>
+      </ul>
+    </div>
+
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="feature-icon bg-emerald-500/10 text-emerald-400">🔐</div>
+        <div>
+          <h3 class="font-bold text-sm">Security & Compliance</h3>
+          <div class="text-xs text-dark-500">16 Requirements</div>
+        </div>
+      </div>
+      <ul class="text-xs text-dark-400 space-y-1.5">
+        <li>• ISO 27001:2022 Certified</li>
+        <li>• PDPA & Computer Crime Act</li>
+        <li>• PII Encryption + Audit Trail</li>
+        <li>• 99.9% SLA + RTO 4hrs / RPO 4hrs</li>
+        <li>• Screen Capture Prevention</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== TECH STACK ===== -->
+<section id="tech" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">06 — Tech Stack</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Technology Stack</h2>
+    <p class="text-dark-400">Modern, Scalable, AWS-Native Architecture</p>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-5">
+      <h3 class="text-xs font-semibold text-blue-500 mb-4">Frontend</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>React Native (Mobile)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Next.js (Admin Portal)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>TypeScript</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Tailwind CSS</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Recharts / D3.js</div>
+      </div>
+    </div>
+    <div class="glass rounded-2xl p-5">
+      <h3 class="text-xs font-semibold text-green-500 mb-4">Backend</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span>Node.js / NestJS</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span>Python (AI/ML Services)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span>GraphQL + REST API</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span>Event-Driven (EventBridge)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span>Microservices (ECS/Fargate)</div>
+      </div>
+    </div>
+    <div class="glass rounded-2xl p-5">
+      <h3 class="text-xs font-semibold text-purple-500 mb-4">Data & AI</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>PostgreSQL (RDS)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>Redis (ElastiCache)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>Amazon S3 + Athena</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>SageMaker (ML)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>OpenSearch</div>
+      </div>
+    </div>
+    <div class="glass rounded-2xl p-5">
+      <h3 class="text-xs font-semibold text-red-500 mb-4">DevOps & Security</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span>AWS CDK (IaC)</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span>GitHub Actions CI/CD</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span>Docker + ECS Fargate</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span>AWS WAF + Shield</div>
+        <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span>CloudWatch + X-Ray</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== AI-FIRST ===== -->
+<section id="ai" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">07 — AI-First Approach</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">AI-Powered <span class="gradient-text">Intelligence</span></h2>
+    <p class="text-dark-400 max-w-2xl mx-auto">สิ่งที่ทำให้เราแตกต่าง — ไม่ใช่แค่ Loyalty System แต่เป็น AI-Driven Customer Intelligence Platform</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="glass rounded-2xl p-8 border" style="border-color: rgba(var(--accent-primary-rgb),0.2);">
+      <h3 class="font-bold text-lg mb-6 flex items-center gap-3">
+        <span class="text-2xl">🧠</span> AI Capabilities
+      </h3>
+      <div class="space-y-5">
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">🔮</div>
+          <div>
+            <h4 class="font-semibold text-sm">Churn Prediction</h4>
+            <p class="text-xs text-dark-400 mt-1">ML Model ทำนายลูกค้าที่มีแนวโน้มหายไป ก่อนที่จะหาย — พร้อม Auto-trigger Win-back Campaign</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">🎯</div>
+          <div>
+            <h4 class="font-semibold text-sm">Next-Best-Action Engine</h4>
+            <p class="text-xs text-dark-400 mt-1">แนะนำ Action ที่ดีที่สุดสำหรับลูกค้าแต่ละคน — ควรส่ง Coupon อะไร? ควร Cross-sell Brand ไหน?</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">🤖</div>
+          <div>
+            <h4 class="font-semibold text-sm">Smart Segmentation</h4>
+            <p class="text-xs text-dark-400 mt-1">AI-driven Customer Clustering ที่ไปไกลกว่า Rule-based — ค้นพบ Segment ใหม่ที่ไม่เคยเห็นมาก่อน</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">📈</div>
+          <div>
+            <h4 class="font-semibold text-sm">Campaign Optimization</h4>
+            <p class="text-xs text-dark-400 mt-1">Auto-optimize Campaign Performance ด้วย Multi-armed Bandit — ปรับ Reward, Timing, Channel อัตโนมัติ</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">💬</div>
+          <div>
+            <h4 class="font-semibold text-sm">Conversational AI</h4>
+            <p class="text-xs text-dark-400 mt-1">AI Chatbot บน LINE OA / In-App สำหรับ FAQ, Point Inquiry, Campaign Info — ลดภาระ Call Center 40%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="glass rounded-2xl p-6 card-hover">
+        <h4 class="font-semibold text-sm mb-3 text-green-400">Business Impact</h4>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-xl p-4 text-center">
+            <div class="text-2xl font-bold text-green-400">+35%</div>
+            <div class="text-xs text-dark-400 mt-1">Customer Lifetime Value</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4 text-center">
+            <div class="text-2xl font-bold text-green-400">-25%</div>
+            <div class="text-xs text-dark-400 mt-1">Customer Churn Rate</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4 text-center">
+            <div class="text-2xl font-bold text-green-400">+60%</div>
+            <div class="text-xs text-dark-400 mt-1">Campaign ROI</div>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4 text-center">
+            <div class="text-2xl font-bold text-green-400">-40%</div>
+            <div class="text-xs text-dark-400 mt-1">Support Ticket Volume</div>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h4 class="font-semibold text-sm mb-3 text-cyan-400">AI Development Approach</h4>
+        <p class="text-xs text-dark-400 mb-4">เราใช้ AI ในกระบวนการพัฒนาเอง เพื่อเร่งความเร็ว และลดต้นทุน:</p>
+        <div class="space-y-2 text-xs text-dark-300">
+          <div class="flex items-center gap-2"><span class="text-ants-400">→</span> Claude AI / Cursor สำหรับ Code Generation & Review</div>
+          <div class="flex items-center gap-2"><span class="text-ants-400">→</span> AI-Powered Testing (Automated Test Case Generation)</div>
+          <div class="flex items-center gap-2"><span class="text-ants-400">→</span> Figma AI + Design System สำหรับ Rapid UI Prototyping</div>
+          <div class="flex items-center gap-2"><span class="text-ants-400">→</span> AI Documentation Generator สำหรับ BRD/FRD/API Docs</div>
+          <div class="flex items-center gap-2"><span class="text-ants-400">→</span> ลดเวลาพัฒนา 30% เทียบกับ Traditional Development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section id="timeline" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">08 — Project Timeline</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Delivery Roadmap</h2>
+    <p class="text-dark-400">6-Month Phased Delivery — Kickoff October 2025, Go-Live May 2026</p>
+  </div>
+
+  <div class="relative">
+    <!-- Timeline line -->
+    <div class="absolute left-8 top-0 bottom-0 w-0.5 hidden md:block" style="background: linear-gradient(to bottom, var(--timeline-line-from), var(--timeline-line-via), var(--timeline-line-to));"></div>
+
+    <div class="space-y-8">
+      <!-- Phase 0 -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-ants-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-bold" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary);">Phase 0</span>
+            <span class="text-xs text-dark-500">Week 1 — Oct 2025</span>
+          </div>
+          <h3 class="font-bold mb-2">Kickoff & Discovery</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• Project Kickoff Meeting</div>
+            <div>• Stakeholder Interviews</div>
+            <div>• Current System Assessment</div>
+            <div>• Requirement Validation Workshop</div>
+            <div>• Technical Architecture Review</div>
+            <div>• Data Migration Planning</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-blue-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold">Phase 1</span>
+            <span class="text-xs text-dark-500">Oct — Nov 2025 (8 weeks)</span>
+          </div>
+          <h3 class="font-bold mb-2">Requirement Analysis & Design</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• BRD & FRD Documentation</div>
+            <div>• UX/UI Design (Figma)</div>
+            <div>• System Architecture Design</div>
+            <div>• API Specification (OpenAPI)</div>
+            <div>• Database Schema Design</div>
+            <div>• Integration Mapping (15+ POS)</div>
+            <div>• Data Migration Template</div>
+            <div>• Security Architecture</div>
+            <div>• Design Review & Sign-off</div>
+          </div>
+          <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary);">Deliverable: BRD, FRD, Design Mockups, API Spec, Architecture Document</div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-purple-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold">Phase 2</span>
+            <span class="text-xs text-dark-500">Nov 2025 — Feb 2026 (14 weeks)</span>
+          </div>
+          <h3 class="font-bold mb-2">Core Development — Sprint 1-7</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• Core Loyalty Engine</div>
+            <div>• Member Management</div>
+            <div>• Point Earn/Burn System</div>
+            <div>• Tier Management</div>
+            <div>• Campaign Engine</div>
+            <div>• Reward Management</div>
+            <div>• Mobile App (iOS/Android)</div>
+            <div>• Operation Portal</div>
+            <div>• POS Integration (Priority BUs)</div>
+          </div>
+          <div class="mt-3 text-xs text-purple-400 font-semibold">Milestone: Core System Demo + Integration Testing</div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-cyan-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold">Phase 3</span>
+            <span class="text-xs text-dark-500">Feb — Apr 2026 (8 weeks)</span>
+          </div>
+          <h3 class="font-bold mb-2">Enhancement & Integration</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• Analytics & Reporting</div>
+            <div>• Communication Engine</div>
+            <div>• Remaining POS Integrations</div>
+            <div>• 3rd Party Point Transfer</div>
+            <div>• AI/ML Features</div>
+            <div>• Appointment System</div>
+            <div>• SIT (System Integration Test)</div>
+            <div>• Performance Testing</div>
+            <div>• Security Audit</div>
+          </div>
+          <div class="mt-3 text-xs text-cyan-400 font-semibold">Milestone: Full Feature Complete + SIT Pass</div>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-mgc-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full bg-mgc-500/10 text-mgc-400 text-xs font-bold">Phase 4</span>
+            <span class="text-xs text-dark-500">Apr — May 2026 (6 weeks)</span>
+          </div>
+          <h3 class="font-bold mb-2">UAT, Training & Go-Live</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• UAT Environment Setup</div>
+            <div>• UAT Test Execution</div>
+            <div>• Bug Fix & Optimization</div>
+            <div>• Data Migration & Validation</div>
+            <div>• User Training (Admin + Staff)</div>
+            <div>• User Manual & Documentation</div>
+            <div>• Pre-production Checklist</div>
+            <div>• Go-Live Cutover</div>
+            <div>• Hypercare Support (2 weeks)</div>
+          </div>
+          <div class="mt-3 text-xs text-mgc-400 font-semibold">🚀 GO-LIVE: May 2026</div>
+        </div>
+      </div>
+
+      <!-- Post Go-Live -->
+      <div class="relative flex gap-8">
+        <div class="hidden md:flex flex-col items-center">
+          <div class="timeline-dot" style="background:#22c55e"></div>
+        </div>
+        <div class="glass rounded-2xl p-6 flex-1 card-hover border-l-4 border-green-500">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-bold">Post Go-Live</span>
+            <span class="text-xs text-dark-500">Jun 2026 onwards (12+ months)</span>
+          </div>
+          <h3 class="font-bold mb-2">Maintenance & Continuous Improvement</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-xs text-dark-400">
+            <div>• 12-Month MA Support</div>
+            <div>• Helpdesk (9AM-6PM)</div>
+            <div>• SLA Monitoring</div>
+            <div>• Monthly Feature Updates</div>
+            <div>• AI Model Optimization</div>
+            <div>• Quarterly Business Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== BUDGET ===== -->
+<section id="budget" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">09 — Investment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Budget Breakdown</h2>
+    <p class="text-dark-400">Transparent, Milestone-based Pricing — Maximum Value, Minimum Risk</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <!-- Implementation -->
+    <div class="glass rounded-2xl p-6 border-t-4 border-ants-500">
+      <h3 class="font-bold text-lg mb-1">Implementation</h3>
+      <p class="text-xs text-dark-500 mb-4">One-time Development Cost</p>
+      <div class="text-3xl font-black gradient-text mb-4">฿18.5M</div>
+      <div class="space-y-2 text-xs text-dark-400">
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Discovery & Design</span><span class="text-dark-300">฿2.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Core Loyalty Engine</span><span class="text-dark-300">฿4.0M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Mobile App (iOS/Android)</span><span class="text-dark-300">฿3.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Operation Portal</span><span class="text-dark-300">฿2.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Integration Hub (15+ POS)</span><span class="text-dark-300">฿3.0M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>AI/ML Engine</span><span class="text-dark-300">฿1.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Data Migration & Training</span><span class="text-dark-300">฿1.5M</span></div>
+      </div>
+    </div>
+
+    <!-- License/Subscription -->
+    <div class="glass rounded-2xl p-6 border-t-4 border-mgc-500">
+      <h3 class="font-bold text-lg mb-1">Platform License</h3>
+      <p class="text-xs text-dark-500 mb-4">Annual Subscription</p>
+      <div class="text-3xl font-black gradient-blue mb-4">฿3.6M<span class="text-lg text-dark-500">/yr</span></div>
+      <div class="space-y-2 text-xs text-dark-400">
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>AWS Infrastructure</span><span class="text-dark-300">฿1.8M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>SMS/Email/Push Gateway</span><span class="text-dark-300">฿0.6M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>3rd Party Licenses</span><span class="text-dark-300">฿0.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>AI/ML Model Hosting</span><span class="text-dark-300">฿0.4M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Security & Monitoring</span><span class="text-dark-300">฿0.3M</span></div>
+      </div>
+    </div>
+
+    <!-- MA -->
+    <div class="glass rounded-2xl p-6 border-t-4 border-green-500">
+      <h3 class="font-bold text-lg mb-1">Maintenance (MA)</h3>
+      <p class="text-xs text-dark-500 mb-4">Annual Support & Maintenance</p>
+      <div class="text-3xl font-black text-green-400 mb-4">฿2.4M<span class="text-lg text-dark-500">/yr</span></div>
+      <div class="space-y-2 text-xs text-dark-400">
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Helpdesk Support (9-18)</span><span class="text-dark-300">฿0.8M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Bug Fix & Patch</span><span class="text-dark-300">฿0.5M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Minor Enhancements</span><span class="text-dark-300">฿0.4M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>Quarterly Health Check</span><span class="text-dark-300">฿0.3M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>SLA Management</span><span class="text-dark-300">฿0.2M</span></div>
+        <div class="flex justify-between budget-row py-1.5 px-2 rounded"><span>AI Model Retrain (Quarterly)</span><span class="text-dark-300">฿0.2M</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TCO Summary -->
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-bold text-lg mb-6 text-center">3-Year Total Cost of Ownership</h3>
+    <div class="grid md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-xs text-dark-500 mb-1">Year 1</div>
+        <div class="text-2xl font-bold text-white">฿24.5M</div>
+        <div class="text-xs text-dark-500">Implementation + License + MA</div>
+      </div>
+      <div>
+        <div class="text-xs text-dark-500 mb-1">Year 2</div>
+        <div class="text-2xl font-bold text-white">฿6.0M</div>
+        <div class="text-xs text-dark-500">License + MA</div>
+      </div>
+      <div>
+        <div class="text-xs text-dark-500 mb-1">Year 3</div>
+        <div class="text-2xl font-bold text-white">฿6.0M</div>
+        <div class="text-xs text-dark-500">License + MA</div>
+      </div>
+      <div class="rounded-xl p-4 border" style="background:rgba(var(--accent-primary-rgb),0.06); border-color:rgba(var(--accent-primary-rgb),0.2);">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary);">3-Year TCO</div>
+        <div class="text-3xl font-black gradient-text">฿36.5M</div>
+        <div class="text-xs text-dark-500">~฿12.2M/year average</div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center">
+      <p class="text-xs text-dark-500">* Payment Terms: 30/30/30/10 milestone-based | * Prices exclude VAT 7% | * Optional: Extended 24/7 Support add ฿0.8M/year</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== COMMERCIAL MODEL ===== -->
+<section id="commercial" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">10 — Commercial Model</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Business & Commercial Model</h2>
+    <p class="text-dark-400">Partnership-driven, Performance-aligned, Future-proof</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="glass rounded-2xl p-6">
+      <h3 class="font-bold mb-4">💰 Payment Structure</h3>
+      <div class="space-y-3">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl flex items-center justify-center font-bold text-lg" style="background:rgba(var(--accent-primary-rgb),0.1); color:var(--accent-secondary);">30%</div>
+          <div>
+            <div class="font-semibold text-sm">Milestone 1 — Contract Signing</div>
+            <div class="text-xs text-dark-400">Kickoff + Discovery + Design Phase</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-mgc-500/10 flex items-center justify-center text-mgc-400 font-bold text-lg">30%</div>
+          <div>
+            <div class="font-semibold text-sm">Milestone 2 — Core Development Complete</div>
+            <div class="text-xs text-dark-400">Core Loyalty + Mobile App + Portal Demo</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold text-lg">30%</div>
+          <div>
+            <div class="font-semibold text-sm">Milestone 3 — UAT Complete</div>
+            <div class="text-xs text-dark-400">Full Feature + Integration + UAT Sign-off</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 font-bold text-lg">10%</div>
+          <div>
+            <div class="font-semibold text-sm">Milestone 4 — Go-Live</div>
+            <div class="text-xs text-dark-400">Production Deployment + Hypercare Complete</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6">
+      <h3 class="font-bold mb-4">📋 SLA Commitment</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-dark-500 border-b border-dark-700">
+              <th class="text-left py-2 font-semibold">Severity</th>
+              <th class="text-center py-2 font-semibold">Response</th>
+              <th class="text-center py-2 font-semibold">Resolution</th>
+            </tr>
+          </thead>
+          <tbody class="text-dark-300">
+            <tr class="border-b border-dark-800">
+              <td class="py-2"><span class="text-red-400 font-semibold">Critical</span> — System Down</td>
+              <td class="text-center">15 min</td>
+              <td class="text-center">4 hours</td>
+            </tr>
+            <tr class="border-b border-dark-800">
+              <td class="py-2"><span class="text-yellow-400 font-semibold">Major</span> — Feature Impaired</td>
+              <td class="text-center">30 min</td>
+              <td class="text-center">8 hours</td>
+            </tr>
+            <tr class="border-b border-dark-800">
+              <td class="py-2"><span class="text-blue-400 font-semibold">Minor</span> — Non-critical</td>
+              <td class="text-center">2 hours</td>
+              <td class="text-center">3 business days</td>
+            </tr>
+            <tr>
+              <td class="py-2"><span class="text-dark-400 font-semibold">Low</span> — Enhancement</td>
+              <td class="text-center">1 business day</td>
+              <td class="text-center">Next release</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 p-4 bg-dark-800/50 rounded-xl">
+        <h4 class="text-xs font-semibold mb-2" style="color:var(--accent-secondary);">Uptime Guarantee</h4>
+        <div class="flex items-center gap-4">
+          <div class="text-2xl font-bold text-green-400">99.9%</div>
+          <div class="text-xs text-dark-400">Monthly SLA with credit refund policy — ถ้า downtime เกิน 0.1% ได้ service credit คืน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section id="why-us" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">11 — Our Competitive Moat</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Why <span class="gradient-text">ANTS</span>?</h2>
+    <p class="text-dark-400 max-w-2xl mx-auto">ทำไม MGC-ASIA ควรเลือกเรา — 5 เหตุผลที่ทำให้เราแตกต่างจาก Vendor อื่น</p>
+  </div>
+
+  <div class="grid md:grid-cols-5 gap-4 mb-12">
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-3xl mb-3">🤖</div>
+      <h3 class="font-bold text-sm mb-2 gradient-text">AI-First DNA</h3>
+      <p class="text-xs text-dark-400">ไม่ใช่แค่ Loyalty System แต่เป็น AI-Driven Platform ที่ฉลาดขึ้นทุกวัน — Churn Prediction, NBA, Smart Segmentation</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-3xl mb-3">🚀</div>
+      <h3 class="font-bold text-sm mb-2 gradient-text">MarTech Expertise</h3>
+      <p class="text-xs text-dark-400">เราเป็น MarTech Agency ไม่ใช่ IT Vendor — เข้าใจ Customer Journey, Campaign Strategy, และ Growth Hacking</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-3xl mb-3">⚡</div>
+      <h3 class="font-bold text-sm mb-2 gradient-text">Speed to Market</h3>
+      <p class="text-xs text-dark-400">AI-Assisted Development ลดเวลา 30% — จาก 9 เดือนเหลือ 6 เดือน พร้อม Working POC ตั้งแต่วันแรก</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-3xl mb-3">🏗️</div>
+      <h3 class="font-bold text-sm mb-2 gradient-text">Future-Proof Arch</h3>
+      <p class="text-xs text-dark-400">Cloud-Native, Microservices, Event-Driven — Scale ได้ไม่จำกัด รองรับ ASEAN Expansion</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-3xl mb-3">🤝</div>
+      <h3 class="font-bold text-sm mb-2 gradient-text">Partnership Model</h3>
+      <p class="text-xs text-dark-400">ไม่ใช่แค่ Vendor แต่เป็น Strategic Partner — ร่วมคิด ร่วมวาง ร่วมเติบโต พร้อม Post-launch Growth Support</p>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-bold text-lg mb-6 text-center">Competitive Comparison</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-dark-700">
+            <th class="text-left py-3 text-dark-500 font-semibold">Capability</th>
+            <th class="text-center py-3 font-bold" style="color:var(--accent-secondary);">ANTS MarTech</th>
+            <th class="text-center py-3 text-dark-500 font-semibold">Traditional Vendor</th>
+            <th class="text-center py-3 text-dark-500 font-semibold">SaaS Platform</th>
+          </tr>
+        </thead>
+        <tbody class="text-xs">
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">AI/ML Built-in</td>
+            <td class="text-center text-green-400 font-semibold">✅ Native</td>
+            <td class="text-center text-dark-500">❌ Add-on</td>
+            <td class="text-center text-yellow-400">⚠️ Basic</td>
+          </tr>
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">Customization Depth</td>
+            <td class="text-center text-green-400 font-semibold">✅ Full Custom</td>
+            <td class="text-center text-green-400">✅ Custom</td>
+            <td class="text-center text-red-400">❌ Limited</td>
+          </tr>
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">15+ POS Integration</td>
+            <td class="text-center text-green-400 font-semibold">✅ Included</td>
+            <td class="text-center text-yellow-400">⚠️ Extra Cost</td>
+            <td class="text-center text-red-400">❌ Not Supported</td>
+          </tr>
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">MarTech Strategy</td>
+            <td class="text-center text-green-400 font-semibold">✅ Core DNA</td>
+            <td class="text-center text-red-400">❌ IT Only</td>
+            <td class="text-center text-yellow-400">⚠️ Generic</td>
+          </tr>
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">Speed to Market</td>
+            <td class="text-center text-green-400 font-semibold">✅ 6 months</td>
+            <td class="text-center text-yellow-400">⚠️ 9-12 months</td>
+            <td class="text-center text-green-400">✅ 3-4 months</td>
+          </tr>
+          <tr class="border-b border-dark-800 budget-row">
+            <td class="py-3 text-dark-300">Data Ownership</td>
+            <td class="text-center text-green-400 font-semibold">✅ 100% Owned</td>
+            <td class="text-center text-green-400">✅ Owned</td>
+            <td class="text-center text-red-400">❌ Platform Lock-in</td>
+          </tr>
+          <tr class="budget-row">
+            <td class="py-3 text-dark-300">Post-launch Growth</td>
+            <td class="text-center text-green-400 font-semibold">✅ Growth Partner</td>
+            <td class="text-center text-red-400">❌ Support Only</td>
+            <td class="text-center text-yellow-400">⚠️ Self-service</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">12 — Our Team</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Dedicated Team</h2>
+    <p class="text-dark-400">ทีมงาน 15+ คน เฉพาะสำหรับโปรเจค MGC-ASIA MOBILIFE</p>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center text-2xl" style="background:rgba(var(--accent-primary-rgb),0.1);">👔</div>
+      <h3 class="font-bold text-sm">Project Director</h3>
+      <p class="text-xs text-dark-500 mt-1">1 person</p>
+      <p class="text-xs text-dark-400 mt-2">Overall delivery ownership, client relationship, risk management</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-mgc-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">📋</div>
+      <h3 class="font-bold text-sm">Project Manager</h3>
+      <p class="text-xs text-dark-500 mt-1">1 person</p>
+      <p class="text-xs text-dark-400 mt-2">Sprint planning, stakeholder coordination, timeline management</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-purple-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">🎨</div>
+      <h3 class="font-bold text-sm">UX/UI Designers</h3>
+      <p class="text-xs text-dark-500 mt-1">2 persons</p>
+      <p class="text-xs text-dark-400 mt-2">User research, wireframe, visual design, design system</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-blue-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">📝</div>
+      <h3 class="font-bold text-sm">Business Analyst</h3>
+      <p class="text-xs text-dark-500 mt-1">1 person</p>
+      <p class="text-xs text-dark-400 mt-2">Requirements analysis, BRD/FRD, process mapping</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-cyan-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">🏗️</div>
+      <h3 class="font-bold text-sm">Solution Architect</h3>
+      <p class="text-xs text-dark-500 mt-1">1 person</p>
+      <p class="text-xs text-dark-400 mt-2">System architecture, tech decisions, integration design</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-green-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">💻</div>
+      <h3 class="font-bold text-sm">Full-Stack Developers</h3>
+      <p class="text-xs text-dark-500 mt-1">5 persons</p>
+      <p class="text-xs text-dark-400 mt-2">Frontend, backend, mobile, integration development</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-yellow-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">🤖</div>
+      <h3 class="font-bold text-sm">AI/ML Engineer</h3>
+      <p class="text-xs text-dark-500 mt-1">1 person</p>
+      <p class="text-xs text-dark-400 mt-2">ML models, data pipeline, AI feature development</p>
+    </div>
+    <div class="glass rounded-2xl p-5 text-center card-hover">
+      <div class="w-16 h-16 rounded-full bg-red-500/20 mx-auto mb-3 flex items-center justify-center text-2xl">🧪</div>
+      <h3 class="font-bold text-sm">QA Engineers</h3>
+      <p class="text-xs text-dark-500 mt-1">2 persons</p>
+      <p class="text-xs text-dark-400 mt-2">Test automation, UAT support, performance testing</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== CTA / NEXT STEPS ===== -->
+<section id="next" class="relative py-32 px-6">
+<div class="max-w-4xl mx-auto section-enter text-center">
+  <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">Next Steps</div>
+  <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to <span class="gradient-text">Transform</span></h2>
+  <p class="text-dark-400 max-w-2xl mx-auto mb-12">Let's turn MGC-ASIA's 40-year legacy into a data-driven, AI-powered customer loyalty ecosystem that drives lifetime value across every brand.</p>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="glass rounded-2xl p-6 text-left">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">1️⃣</div>
+      <h3 class="font-bold text-sm mb-2">POC Demo</h3>
+      <p class="text-xs text-dark-400">Working prototype พร้อมให้ทดลองใช้ — Member Registration, Point Dashboard, Campaign, Coupon Wallet ครบทุกฟังก์ชัน</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">2️⃣</div>
+      <h3 class="font-bold text-sm mb-2">Technical Deep Dive</h3>
+      <p class="text-xs text-dark-400">2.5-hour Presentation + Q&A Session — Architecture Review, Security Assessment, Integration Planning</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">3️⃣</div>
+      <h3 class="font-bold text-sm mb-2">Contract & Kickoff</h3>
+      <p class="text-xs text-dark-400">Finalize scope, sign contract, และเริ่ม Discovery Phase ภายในสัปดาห์แรกของเดือนถัดไป</p>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-8 inline-block">
+    <div class="text-sm text-dark-400 mb-2">Contact</div>
+    <div class="text-lg font-bold mb-1">ANTS — Advance Network Technology & Service</div>
+    <div class="text-sm text-dark-400">MarTech | AI | Digital Transformation</div>
+    <div class="mt-4 flex items-center justify-center gap-6 text-xs text-dark-500">
+      <span>📧 contact@ants.co.th</span>
+      <span>📱 +66-XX-XXX-XXXX</span>
+    </div>
+  </div>
+
+  <div class="mt-12 text-xs text-dark-600">
+    Confidential — Prepared exclusively for MGC-ASIA Group — March 2026
+  </div>
+</div>
+</section>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('proposal-theme', next);
+}
+
+// Load saved preference (default: light)
+(function() {
+  const saved = localStorage.getItem('proposal-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scroll-progress').style.width = progress + '%';
+});
+
+// Section enter animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section-enter').forEach(el => observer.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
