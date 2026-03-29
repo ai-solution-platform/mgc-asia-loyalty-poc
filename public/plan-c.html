@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Starter — Plan C Proposal for MGC-ASIA | ANTS MarTech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mgc: { 50:'#e8f4fc', 100:'#c5e4f8', 200:'#9ed1f3', 300:'#6db9ec', 400:'#45a5e5', 500:'#1a8fd8', 600:'#0d6fb3', 700:'#0a5590', 800:'#073c6a', 900:'#042545' },
+        ants: { 50:'#fff7ed', 100:'#ffedd5', 200:'#fed7aa', 300:'#fdba74', 400:'#fb923c', 500:'#f97316', 600:'#ea580c', 700:'#c2410c', 800:'#9a3412', 900:'#7c2d12' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ===== THEME VARIABLES ===== */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-body-rgb: 255,255,255;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-rgb: 255,255,255;
+  --bg-card-inner: #F1F5F9;
+  --bg-card-inner-rgb: 241,245,249;
+  --bg-nav: rgba(255,255,255,0.92);
+  --bg-glass: rgba(255,255,255,0.8);
+  --bg-glass-rgb: 255,255,255;
+  --border-glass: rgba(226,232,240,0.6);
+  --border-card: #E2E8F0;
+  --border-nav: rgba(226,232,240,0.5);
+  --text-primary: #1B2B5B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #1B2B5B;
+  --accent-primary: #1B2B5B;
+  --accent-secondary: #C9A96E;
+  --accent-primary-rgb: 27,43,91;
+  --accent-secondary-rgb: 201,169,110;
+  --gradient-text-from: #1B2B5B;
+  --gradient-text-via: #2B4A8E;
+  --gradient-text-to: #1a8fd8;
+  --gradient-gold-from: #C9A96E;
+  --gradient-gold-to: #D4A853;
+  --btn-primary-bg: #1B2B5B;
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(27,43,91,0.12);
+  --hover-border: rgba(27,43,91,0.25);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 20px 60px rgba(27,43,91,0.12);
+  --scroll-progress-from: #1B2B5B;
+  --scroll-progress-to: #2B4A8E;
+  --timeline-dot: #1B2B5B;
+  --timeline-dot-ring: rgba(27,43,91,0.25);
+  --timeline-line-from: #1B2B5B;
+  --timeline-line-via: #C9A96E;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(27,43,91,0.08);
+  --hero-bg-1: rgba(27,43,91,0.04);
+  --hero-bg-2: rgba(201,169,110,0.04);
+  --hero-bg-3: rgba(27,43,91,0.02);
+  --section-badge: #C9A96E;
+  --section-badge-text: #1B2B5B;
+  --budget-hover: rgba(27,43,91,0.04);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #1B2B5B;
+  --journey-arrow: #C9A96E;
+  --event-bus-bg: rgba(27,43,91,0.04);
+  --event-bus-border: #1B2B5B;
+  --event-bus-text: #1B2B5B;
+  --svg-bg-grid: rgba(27,43,91,0.04);
+  --counter-accent: #1B2B5B;
+  --stat-accent: #1B2B5B;
+  --table-header-bg: #1B2B5B;
+  --table-header-text: #FFFFFF;
+  --table-stripe: rgba(27,43,91,0.03);
+  --option-a-accent: #1B2B5B;
+  --option-b-accent: #C9A96E;
+}
+
+[data-theme="dark"] {
+  --bg-body: #020617;
+  --bg-body-rgb: 2,6,23;
+  --bg-secondary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-rgb: 30,41,59;
+  --bg-card-inner: #1e293b;
+  --bg-card-inner-rgb: 30,41,59;
+  --bg-nav: rgba(2,6,23,0.85);
+  --bg-glass: rgba(30,41,59,0.5);
+  --bg-glass-rgb: 30,41,59;
+  --border-glass: rgba(148,163,184,0.1);
+  --border-card: rgba(148,163,184,0.1);
+  --border-nav: rgba(30,41,59,0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #f1f5f9;
+  --accent-primary: #f97316;
+  --accent-secondary: #fb923c;
+  --accent-primary-rgb: 249,115,22;
+  --accent-secondary-rgb: 251,146,60;
+  --gradient-text-from: #fb923c;
+  --gradient-text-via: #f97316;
+  --gradient-text-to: #ea580c;
+  --gradient-gold-from: #fb923c;
+  --gradient-gold-to: #f97316;
+  --btn-primary-bg: linear-gradient(to right, #f97316, #ea580c);
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(249,115,22,0.15);
+  --hover-border: rgba(249,115,22,0.3);
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 60px rgba(249,115,22,0.15);
+  --scroll-progress-from: #f97316;
+  --scroll-progress-to: #fb923c;
+  --timeline-dot: #f97316;
+  --timeline-dot-ring: rgba(249,115,22,0.3);
+  --timeline-line-from: #f97316;
+  --timeline-line-via: #1a8fd8;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(249,115,22,0.15);
+  --hero-bg-1: rgba(249,115,22,0.08);
+  --hero-bg-2: rgba(26,143,216,0.08);
+  --hero-bg-3: rgba(249,115,22,0.04);
+  --section-badge: rgba(249,115,22,0.15);
+  --section-badge-text: #fb923c;
+  --budget-hover: rgba(249,115,22,0.05);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #fb923c;
+  --journey-arrow: #f97316;
+  --event-bus-bg: rgba(249,115,22,0.08);
+  --event-bus-border: #f97316;
+  --event-bus-text: #fb923c;
+  --svg-bg-grid: rgba(148,163,184,0.05);
+  --counter-accent: #fb923c;
+  --stat-accent: #fb923c;
+  --table-header-bg: rgba(249,115,22,0.15);
+  --table-header-text: #fb923c;
+  --table-stripe: rgba(249,115,22,0.03);
+  --option-a-accent: #f97316;
+  --option-b-accent: #fb923c;
+}
+
+/* ===== BASE STYLES ===== */
+* { font-family: 'Inter', 'Noto Sans Thai', sans-serif; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== THEME TRANSITION ===== */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Navigation */
+.nav-fixed {
+  backdrop-filter: blur(20px);
+  background: var(--bg-nav);
+  border-color: var(--border-nav);
+}
+.nav-link { transition: all 0.3s; color: var(--text-muted); }
+[data-theme="light"] .nav-link:hover, [data-theme="light"] .nav-link.active { color: #1B2B5B; font-weight: 600; }
+[data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active { color: #fb923c; }
+
+/* Sections */
+section { min-height: auto; }
+.section-enter { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.section-enter.visible { opacity: 1; transform: translateY(0); }
+
+/* Cards */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow);
+}
+.card-hover { transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: var(--card-hover-shadow); border-color: var(--hover-border); }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-blue { background: linear-gradient(135deg, #45a5e5, #1a8fd8, #0d6fb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gradient-gold-from), var(--gradient-gold-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background */
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, var(--hero-bg-1) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, var(--hero-bg-2) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, var(--hero-bg-3) 0%, transparent 50%);
+}
+
+/* Timeline */
+.timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--timeline-dot); position: relative; z-index: 2; }
+.timeline-dot::after { content:''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--timeline-dot-ring); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0; } }
+
+/* Counter animation */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Feature icon */
+.feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+/* Budget table */
+.budget-row { transition: all 0.3s; }
+.budget-row:hover { background: var(--budget-hover); }
+
+/* Print styles */
+@media print { body { background: white; color: #1e293b; } .glass { background: #f8fafc; border: 1px solid #e2e8f0; } }
+
+/* Floating particles */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) rotate(720deg); opacity: 0; } }
+
+/* Journey flow */
+.journey-step { position: relative; }
+.journey-arrow { color: var(--journey-arrow); animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+
+/* Scroll progress */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--scroll-progress-from), var(--scroll-progress-to)); z-index: 100; transition: width 0.1s; }
+
+/* Architecture diagram */
+.arch-node { transition: all 0.3s; cursor: pointer; }
+.arch-node:hover { transform: scale(1.05); filter: brightness(1.2); }
+.arch-line { stroke-dasharray: 8 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+[data-theme="light"] .text-white { color: var(--text-heading) !important; }
+[data-theme="light"] .text-dark-300 { color: var(--text-secondary) !important; }
+[data-theme="light"] .text-dark-400 { color: var(--text-muted) !important; }
+[data-theme="light"] .text-dark-500 { color: var(--text-faint) !important; }
+[data-theme="light"] .text-dark-600 { color: #94a3b8 !important; }
+[data-theme="light"] .text-ants-400 { color: var(--accent-secondary) !important; }
+[data-theme="light"] .text-ants-400.counter, [data-theme="light"] .counter.text-ants-400 { color: var(--accent-primary) !important; }
+[data-theme="light"] .border-dark-800\/50 { border-color: var(--border-nav) !important; }
+[data-theme="light"] .bg-dark-800\/50 { background: var(--bg-card-inner) !important; }
+[data-theme="light"] .border-dark-700 { border-color: #E2E8F0 !important; }
+[data-theme="light"] .border-dark-800 { border-color: #E2E8F0 !important; }
+
+/* Light mode nav brand */
+[data-theme="light"] nav .text-white { color: #1B2B5B !important; }
+[data-theme="light"] nav .text-dark-400 { color: #64748b !important; }
+[data-theme="light"] nav .text-dark-500 { color: #94a3b8 !important; }
+
+/* Light mode section headers */
+[data-theme="light"] h2 { color: #1B2B5B; }
+[data-theme="light"] h3 { color: #1B2B5B; }
+[data-theme="light"] h4 { color: #1B2B5B; }
+
+/* Light mode hero stats */
+[data-theme="light"] .text-mgc-400 { color: #1a8fd8 !important; }
+
+/* Light mode CTA button */
+[data-theme="light"] .bg-gradient-to-r.from-ants-500.to-ants-600 {
+  background: linear-gradient(to right, #1B2B5B, #2B4A8E) !important;
+}
+
+/* Keep ANTS logo orange in both modes */
+.ants-logo-bg {
+  background: linear-gradient(to bottom right, #f97316, #ea580c) !important;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 70px;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #fb923c; }
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+[data-theme="light"] #theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+[data-theme="light"] #theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Light mode SVG architecture */
+[data-theme="light"] .arch-svg-grid { fill: var(--svg-bg-grid) !important; }
+
+/* Plan C Badge */
+.plan-c-badge {
+  position: fixed;
+  top: 16px;
+  right: 124px;
+  z-index: 60;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+[data-theme="light"] .plan-c-badge {
+  background: rgba(201,169,110,0.15);
+  color: #1B2B5B;
+  border-color: rgba(201,169,110,0.3);
+}
+[data-theme="dark"] .plan-c-badge {
+  background: rgba(249,115,22,0.15);
+  color: #fb923c;
+  border-color: rgba(249,115,22,0.3);
+}
+
+/* Option cards */
+.option-card-a { border-top: 4px solid var(--option-a-accent); }
+.option-card-b { border-top: 4px solid var(--option-b-accent); }
+
+/* Comparison table */
+.comparison-table th {
+  background: var(--table-header-bg);
+  color: var(--table-header-text);
+}
+.comparison-table tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+.comparison-table td, .comparison-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+/* Included module check */
+.module-included { border-left: 3px solid #22c55e; }
+.module-expansion { border-left: 3px solid var(--accent-secondary); }
+
+/* Recommended badge */
+.recommended-badge {
+  position: relative;
+}
+.recommended-badge::before {
+  content: 'RECOMMENDED';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Plan C Badge -->
+<div class="plan-c-badge">PLAN C</div>
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+  </svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+  </svg>
+</button>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- Navigation -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
+<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl ants-logo-bg flex items-center justify-center font-bold text-white text-sm" style="color:#fff !important;">A</div>
+    <div>
+      <div class="text-sm font-bold text-white">ANTS MarTech</div>
+      <div class="text-[10px] text-dark-400">AI-First Marketing Technology</div>
+    </div>
+  </div>
+  <div class="hidden md:flex items-center gap-5 text-xs font-medium text-dark-400">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#summary" class="nav-link">Summary</a>
+    <a href="#mobile-app" class="nav-link">Mobile</a>
+    <a href="#admin" class="nav-link">Admin</a>
+    <a href="#backend" class="nav-link">Backend</a>
+    <a href="#architecture" class="nav-link">Infra</a>
+    <a href="#cost" class="nav-link">Cost</a>
+    <a href="#comparison" class="nav-link">Compare</a>
+    <a href="#roadmap" class="nav-link">Roadmap</a>
+    <a href="#timeline" class="nav-link">Timeline</a>
+    <a href="#why-plan-c" class="nav-link">Why C</a>
+    <a href="#next-steps" class="nav-link">CTA</a>
+    <a href="./index.html" class="nav-link" style="color:var(--accent-secondary) !important; font-weight:600;" target="_blank">Plan A &#8599;</a>
+    <a href="./plan-b.html" class="nav-link" style="color:var(--accent-secondary) !important; font-weight:600;" target="_blank">Plan B &#8599;</a>
+  </div>
+  <div class="text-xs text-dark-500">Confidential</div>
+</div>
+</nav>
+
+<!-- ===== 1. HERO ===== -->
+<section id="hero" class="relative flex items-center justify-center hero-bg overflow-hidden" style="min-height:100vh">
+  <!-- Particles -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="particle" style="width:6px;height:6px;left:10%;animation-duration:15s;animation-delay:0s"></div>
+    <div class="particle" style="width:4px;height:4px;left:25%;animation-duration:20s;animation-delay:3s"></div>
+    <div class="particle" style="width:8px;height:8px;left:45%;animation-duration:18s;animation-delay:1s"></div>
+    <div class="particle" style="width:5px;height:5px;left:65%;animation-duration:22s;animation-delay:5s"></div>
+    <div class="particle" style="width:7px;height:7px;left:85%;animation-duration:16s;animation-delay:2s"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-dark-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      Plan C &mdash; Budget-Optimized with Mobile App
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+      <span class="text-white">MOBILIFE</span><br>
+      <span class="gradient-text">Starter</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-dark-300 max-w-3xl mx-auto mb-4">
+      Start Smart &mdash; Scale When Ready<br>
+      <span class="text-dark-400">for</span> <span class="font-semibold text-white">MGC-ASIA Group</span>
+    </p>
+
+    <p class="text-sm text-dark-500 mb-12">
+      5-Month Delivery &bull; Expo React Native App &bull; On-Premise &bull; 5 Core Screens &bull; &#3647;3.8M
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)">5</div>
+        <div class="text-xs text-dark-400">Months Delivery</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-mgc-400 counter">Expo RN</div>
+        <div class="text-xs text-dark-400">iOS + Android App</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)">On-Premise</div>
+        <div class="text-xs text-dark-400">Deployment</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-green-400 counter">5</div>
+        <div class="text-xs text-dark-400">Core Screens</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--accent-secondary)">&#3647;3.8M</div>
+        <div class="text-xs text-dark-400">Total Investment</div>
+      </div>
+    </div>
+
+    <a href="#summary" class="inline-flex items-center gap-2 bg-gradient-to-r from-ants-500 to-ants-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm hover:shadow-lg hover:shadow-ants-500/25 transition-all" style="color:#fff !important;">
+      Explore Plan C
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </a>
+
+    <div class="mt-16 flex items-center justify-center gap-8 text-dark-600 text-xs">
+      <span>Prepared by</span>
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg ants-logo-bg flex items-center justify-center font-bold text-white text-xs" style="color:#fff !important;">A</div>
+        <span class="text-dark-400 font-medium">ANTS &mdash; Advance Network Technology &amp; Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. EXECUTIVE SUMMARY ===== -->
+<section id="summary" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">01 &mdash; Executive Summary</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Start Smart, Scale When Ready</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Plan C delivers core loyalty functionality with a real mobile app on App Store + Play Store &mdash; same architecture as Plan A &amp; B, upgrade anytime without rebuilding</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-mgc-500/10 text-mgc-400 mb-4">&#128241;</div>
+      <h3 class="font-bold text-lg mb-2">Real Mobile App</h3>
+      <p class="text-sm text-dark-400">Expo React Native app on App Store + Play Store &mdash; ไม่ใช่แค่ web link แต่เป็น native app ที่ลูกค้าโหลดได้จริง</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-ants-500/10 text-ants-400 mb-4">&#128640;</div>
+      <h3 class="font-bold text-lg mb-2">Budget-Conscious</h3>
+      <p class="text-sm text-dark-400">&#3647;3.8M สำหรับ loyalty platform ที่ครบครันพร้อม mobile app &mdash; เริ่มต้นได้โดยไม่ต้องลงทุนมาก</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-purple-500/10 text-purple-400 mb-4">&#128736;</div>
+      <h3 class="font-bold text-lg mb-2">Same Architecture</h3>
+      <p class="text-sm text-dark-400">Architecture เดียวกับ Plan A &amp; B &mdash; expand ได้เมื่อพร้อม ไม่ต้อง rebuild ใหม่ทั้งหมด</p>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-bold text-lg mb-4">Plan A vs Plan B vs Plan C &mdash; At a Glance</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-dark-800/50 rounded-xl p-6">
+        <div class="text-xs font-semibold text-dark-500 mb-2">PLAN A &mdash; Full Platform</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--accent-primary)">&#3647;12M</div>
+        <ul class="space-y-2 text-sm text-dark-400">
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> All modules + AI</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Native app (full)</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 9-month timeline</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 15-person team</li>
+        </ul>
+        <a href="./index.html" target="_blank" class="inline-flex items-center gap-1 mt-4 text-xs font-semibold" style="color:var(--accent-secondary)">View Plan A &#8599;</a>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-6 border-2" style="border-color:#22c55e">
+        <div class="text-xs font-semibold mb-2 text-green-400">PLAN B &mdash; Essentials Plus &#9733; RECOMMENDED</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--accent-primary)">&#3647;5.8M</div>
+        <ul class="space-y-2 text-sm text-dark-400">
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 9 core modules</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> React Native (12+ screens)</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 6-month timeline</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 10-person team</li>
+        </ul>
+        <a href="./plan-b.html" target="_blank" class="inline-flex items-center gap-1 mt-4 text-xs font-semibold" style="color:var(--accent-secondary)">View Plan B &#8599;</a>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-6 border-2" style="border-color:var(--accent-secondary)">
+        <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">PLAN C &mdash; Starter &#9733;</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--accent-primary)">&#3647;3.8M</div>
+        <ul class="space-y-2 text-sm text-dark-400">
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Core loyalty + mobile app</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Expo RN (5 screens)</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 5-month timeline</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 5-person team</li>
+        </ul>
+        <div class="mt-4 text-xs font-semibold" style="color:var(--accent-secondary)">&#9733; This Proposal</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 3. MOBILE APP ===== -->
+<section id="mobile-app" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">02 &mdash; Mobile App</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">What's Included &mdash; 5 Core Screens</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Expo React Native app published on App Store + Play Store &mdash; real mobile experience</p>
+  </div>
+
+  <!-- Included Screens -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="text-green-400">&#10003;</span> Included Screens</h3>
+  <div class="grid md:grid-cols-5 gap-4 mb-16">
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#127968;</div>
+      <h4 class="font-bold text-sm mb-1">Home</h4>
+      <p class="text-xs text-dark-400">Points balance, tier badge, tier progress bar, quick actions</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128226;</div>
+      <h4 class="font-bold text-sm mb-1">Campaigns</h4>
+      <p class="text-xs text-dark-400">Browse campaigns, view detail, redeem</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#127873;</div>
+      <h4 class="font-bold text-sm mb-1">Rewards</h4>
+      <p class="text-xs text-dark-400">Reward catalog, redeem, view history</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128179;</div>
+      <h4 class="font-bold text-sm mb-1">Wallet</h4>
+      <p class="text-xs text-dark-400">Coupon list, QR code for use, status tracking</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128100;</div>
+      <h4 class="font-bold text-sm mb-1">Profile</h4>
+      <p class="text-xs text-dark-400">View/edit basic info, PDPA consent toggle</p>
+    </div>
+  </div>
+
+  <!-- Expansion Screens -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="gradient-gold">&#10024;</span> Available as Expansion <span class="text-xs text-dark-400 font-normal">(Add Later)</span></h3>
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128197;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;150K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Appointment Booking</h4>
+      <p class="text-xs text-dark-400">Online service booking</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128276;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;80K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Notification Center</h4>
+      <p class="text-xs text-dark-400">In-app notification hub</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128161;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;60K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Earn Points Guide</h4>
+      <p class="text-xs text-dark-400">How to earn points</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128260;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;100K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Points Transfer</h4>
+      <p class="text-xs text-dark-400">Transfer between members</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128081;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;60K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Tier Benefits Page</h4>
+      <p class="text-xs text-dark-400">Detailed tier perks</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#127760;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;120K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Language Switching</h4>
+      <p class="text-xs text-dark-400">EN/CN support</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128172;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;80K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Help &amp; Contact</h4>
+      <p class="text-xs text-dark-400">Support &amp; FAQ</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 4. ADMIN PORTAL ===== -->
+<section id="admin" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">03 &mdash; Admin Portal</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Admin Portal &mdash; Lite</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">4 Core Modules for day-to-day management &mdash; web-based, responsive</p>
+  </div>
+
+  <!-- Included Modules -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="text-green-400">&#10003;</span> Included (4 Modules)</h3>
+  <div class="grid md:grid-cols-4 gap-4 mb-16">
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128200;</div>
+      <h4 class="font-bold text-sm mb-1">Dashboard</h4>
+      <p class="text-xs text-dark-400">KPI cards, recent activities, overview metrics</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128100;</div>
+      <h4 class="font-bold text-sm mb-1">Members</h4>
+      <p class="text-xs text-dark-400">List, search, filter, view detail, adjust points, export CSV</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128226;</div>
+      <h4 class="font-bold text-sm mb-1">Campaigns</h4>
+      <p class="text-xs text-dark-400">Create, edit, activate/pause, view redemptions</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#127873;</div>
+      <h4 class="font-bold text-sm mb-1">Rewards</h4>
+      <p class="text-xs text-dark-400">Create rewards, manage stock, redemption history</p>
+    </div>
+  </div>
+
+  <!-- Expansion Modules -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="gradient-gold">&#10024;</span> Not Included <span class="text-xs text-dark-400 font-normal">(Available as Expansion)</span></h3>
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128202;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;200K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Analytics Dashboard</h4>
+      <p class="text-xs text-dark-400">Charts, trends, custom reports</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128236;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;250K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Communications Center</h4>
+      <p class="text-xs text-dark-400">Push, SMS, email management</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#127915;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;150K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Coupon Management</h4>
+      <p class="text-xs text-dark-400">Separate coupon admin</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#9881;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;200K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">System Settings UI</h4>
+      <p class="text-xs text-dark-400">Config, roles, permissions</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 5. BACKEND ===== -->
+<section id="backend" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">04 &mdash; Backend</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Backend &mdash; Included vs Expansion</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Core loyalty engine fully included &mdash; advanced integrations available as expansion</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Included -->
+    <div class="glass rounded-2xl p-8">
+      <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="text-green-400">&#10003;</span> Included</h3>
+      <ul class="space-y-3 text-sm text-dark-400">
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">Member Registration + Auth</strong><br>Sign up, login, password reset, JWT</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">Points Engine</strong><br>Earn/burn, multi-brand rules, transaction history</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">Tier System</strong><br>4 levels, auto upgrade/downgrade based on rules</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">Campaign Engine</strong><br>Create campaigns, target rules, redemption tracking</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">Coupon/Reward Management</strong><br>E-coupon, QR redemption, stock management</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">REST API</strong><br>Well-documented API for all core functions</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">On-Premise Deployment</strong><br>Docker-based, deploy on MGC infra</div></li>
+        <li class="flex gap-3 items-start"><span class="text-green-400 mt-0.5">&#10003;</span> <div><strong class="text-dark-300">PDPA Consent Management</strong><br>Consent tracking, data export, deletion</div></li>
+      </ul>
+    </div>
+
+    <!-- Expansion -->
+    <div class="glass rounded-2xl p-8">
+      <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="gradient-gold">&#10024;</span> Expansion</h3>
+      <div class="space-y-4">
+        <div class="bg-dark-800/50 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <h4 class="font-bold text-sm">LINE OA Integration</h4>
+            <p class="text-xs text-dark-400">Notification, Rich Menu, deep link</p>
+          </div>
+          <div class="text-xs font-bold px-3 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;300K</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <h4 class="font-bold text-sm">Marketing Automation</h4>
+            <p class="text-xs text-dark-400">Journey builder, trigger campaigns</p>
+          </div>
+          <div class="text-xs font-bold px-3 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;400K</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <h4 class="font-bold text-sm">AI/ML Engine</h4>
+            <p class="text-xs text-dark-400">Recommendations, churn prediction</p>
+          </div>
+          <div class="text-xs font-bold px-3 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;500K/yr</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <h4 class="font-bold text-sm">SMS Gateway</h4>
+            <p class="text-xs text-dark-400">OTP, notifications via SMS</p>
+          </div>
+          <div class="text-xs font-bold px-3 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;100K</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-xl p-4 flex justify-between items-center">
+          <div>
+            <h4 class="font-bold text-sm">Advanced Reporting API</h4>
+            <p class="text-xs text-dark-400">Custom queries, scheduled reports</p>
+          </div>
+          <div class="text-xs font-bold px-3 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;150K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 6. ARCHITECTURE ===== -->
+<section id="architecture" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">05 &mdash; Architecture</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">On-Premise Architecture</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Same architecture as Plan B &mdash; fewer modules deployed initially, expand anytime</p>
+  </div>
+
+  <!-- Architecture Diagram -->
+  <div class="glass rounded-2xl p-8 mb-12">
+    <svg viewBox="0 0 900 420" class="w-full" style="max-height:420px">
+      <!-- Background grid -->
+      <defs>
+        <pattern id="grid-c" width="30" height="30" patternUnits="userSpaceOnUse">
+          <rect width="30" height="30" fill="none" stroke="var(--svg-bg-grid)" stroke-width="0.5" class="arch-svg-grid"/>
+        </pattern>
+      </defs>
+      <rect width="900" height="420" fill="url(#grid-c)" rx="12"/>
+
+      <!-- Client Zone -->
+      <rect x="30" y="20" width="840" height="380" rx="12" fill="none" stroke="var(--border-glass)" stroke-width="1.5" stroke-dasharray="6 3"/>
+      <text x="50" y="48" fill="var(--text-muted)" font-size="11" font-weight="600">MGC-ASIA ON-PREMISE INFRASTRUCTURE</text>
+
+      <!-- Mobile App -->
+      <rect x="150" y="70" width="200" height="80" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="1.5" class="arch-node"/>
+      <text x="250" y="100" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Mobile App</text>
+      <text x="250" y="118" text-anchor="middle" fill="var(--text-muted)" font-size="10">Expo React Native</text>
+      <text x="250" y="134" text-anchor="middle" fill="var(--text-muted)" font-size="9">5 Screens &mdash; iOS + Android</text>
+
+      <!-- Admin Portal -->
+      <rect x="550" y="70" width="200" height="80" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-secondary)" stroke-width="1.5" class="arch-node"/>
+      <text x="650" y="100" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Admin Portal</text>
+      <text x="650" y="118" text-anchor="middle" fill="var(--text-muted)" font-size="10">Web Dashboard &mdash; Lite</text>
+      <text x="650" y="134" text-anchor="middle" fill="var(--text-muted)" font-size="9">4 Modules</text>
+
+      <!-- API Gateway -->
+      <rect x="200" y="190" width="500" height="55" rx="10" fill="var(--event-bus-bg)" stroke="var(--event-bus-border)" stroke-width="2" class="arch-node"/>
+      <text x="450" y="222" text-anchor="middle" fill="var(--event-bus-text)" font-size="13" font-weight="800">API GATEWAY &mdash; RESTful</text>
+
+      <!-- Lines from top to API -->
+      <line x1="250" y1="150" x2="380" y2="190" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="650" y1="150" x2="520" y2="190" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+
+      <!-- Core Services -->
+      <rect x="80" y="280" width="160" height="70" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="1.5" class="arch-node"/>
+      <text x="160" y="307" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Points Engine</text>
+      <text x="160" y="325" text-anchor="middle" fill="var(--text-muted)" font-size="9">Multi-brand Rules</text>
+      <text x="160" y="339" text-anchor="middle" fill="var(--text-muted)" font-size="9">Earn/Burn</text>
+
+      <rect x="270" y="280" width="160" height="70" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-secondary)" stroke-width="1.5" class="arch-node"/>
+      <text x="350" y="307" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Campaign Engine</text>
+      <text x="350" y="325" text-anchor="middle" fill="var(--text-muted)" font-size="9">Create &amp; Target</text>
+      <text x="350" y="339" text-anchor="middle" fill="var(--text-muted)" font-size="9">Redemptions</text>
+
+      <rect x="460" y="280" width="160" height="70" rx="10" fill="var(--event-bus-bg)" stroke="#22c55e" stroke-width="1.5" class="arch-node"/>
+      <text x="540" y="307" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Member Service</text>
+      <text x="540" y="325" text-anchor="middle" fill="var(--text-muted)" font-size="9">PDPA + Consent</text>
+      <text x="540" y="339" text-anchor="middle" fill="var(--text-muted)" font-size="9">Tier Management</text>
+
+      <rect x="650" y="280" width="160" height="70" rx="10" fill="var(--event-bus-bg)" stroke="#a855f7" stroke-width="1.5" class="arch-node"/>
+      <text x="730" y="307" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Reward Service</text>
+      <text x="730" y="325" text-anchor="middle" fill="var(--text-muted)" font-size="9">Coupon + QR</text>
+      <text x="730" y="339" text-anchor="middle" fill="var(--text-muted)" font-size="9">Stock Mgmt</text>
+
+      <!-- Lines from API to services -->
+      <line x1="310" y1="245" x2="160" y2="280" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="390" y1="245" x2="350" y2="280" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+      <line x1="500" y1="245" x2="540" y2="280" stroke="#22c55e" stroke-width="1" class="arch-line"/>
+      <line x1="580" y1="245" x2="730" y2="280" stroke="#a855f7" stroke-width="1" class="arch-line"/>
+
+      <!-- Database -->
+      <rect x="250" y="370" width="400" height="25" rx="8" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="1.5" class="arch-node"/>
+      <text x="450" y="387" text-anchor="middle" fill="var(--event-bus-text)" font-size="10" font-weight="700">PostgreSQL + Redis &mdash; On-Premise</text>
+
+      <!-- Lines from services to DB -->
+      <line x1="160" y1="350" x2="350" y2="370" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="350" y1="350" x2="400" y2="370" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+      <line x1="540" y1="350" x2="500" y2="370" stroke="#22c55e" stroke-width="1" class="arch-line"/>
+      <line x1="730" y1="350" x2="550" y2="370" stroke="#a855f7" stroke-width="1" class="arch-line"/>
+    </svg>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300">
+      <span class="font-bold" style="color:var(--accent-primary)">Key Point:</span> Same architecture as Plan B. When ready to expand, new modules <strong>plug in</strong> to the existing API Gateway &mdash; no rebuild needed.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 7. COST BREAKDOWN ===== -->
+<section id="cost" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">06 &mdash; Investment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Cost Breakdown &mdash; &#3647;3.8M</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Transparent, milestone-based pricing &mdash; ANTS License model</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 mb-8 overflow-x-auto">
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg">Item</th>
+          <th>Cost (&#3647;)</th>
+          <th class="rounded-tr-lg">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="budget-row"><td class="font-medium">Solution Architecture &amp; Design</td><td>300,000</td><td>7.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Backend (API, Points Engine, Rules)</td><td>1,000,000</td><td>26.3%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Mobile App (Expo React Native, 5 screens)</td><td>900,000</td><td>23.7%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Admin Portal &mdash; Lite (4 modules)</td><td>500,000</td><td>13.2%</td></tr>
+        <tr class="budget-row"><td class="font-medium">QA + UAT</td><td>350,000</td><td>9.2%</td></tr>
+        <tr class="budget-row"><td class="font-medium">On-Premise Deployment + Training</td><td>300,000</td><td>7.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Project Management (5 months)</td><td>450,000</td><td>11.8%</td></tr>
+        <tr style="background:rgba(var(--accent-primary-rgb),0.08)">
+          <td class="font-bold text-lg">Total</td>
+          <td class="font-bold text-lg" style="color:var(--accent-primary)">&#3647;3,800,000</td>
+          <td class="font-bold">100%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300">
+      <strong style="color:var(--accent-secondary)">Annual Maintenance: &#3647;800K/year</strong> &mdash; Includes bug fixes, security patches, minor enhancements, server monitoring, and technical support.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 8. 3-PLAN COMPARISON ===== -->
+<section id="comparison" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">07 &mdash; Plan Comparison</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">3-Plan Comparison</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Choose the plan that matches your budget and growth strategy</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 overflow-x-auto">
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg"></th>
+          <th>Plan C Starter</th>
+          <th class="recommended-badge" style="border: 2px solid #22c55e; border-radius: 8px;">Plan B Essentials Plus</th>
+          <th class="rounded-tr-lg">Plan A Full Platform</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="font-medium">Upfront Investment</td>
+          <td class="font-semibold" style="color:var(--accent-secondary)">&#3647;3.8M</td>
+          <td class="font-semibold text-green-400">&#3647;5.8M</td>
+          <td class="font-semibold">&#3647;12M</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Maintenance/year</td>
+          <td>&#3647;0.8M</td>
+          <td>&#3647;1.2M</td>
+          <td>&#3647;1.8M</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Mobile App</td>
+          <td>Expo (5 screens)</td>
+          <td class="font-semibold text-green-400">React Native (12+)</td>
+          <td class="font-semibold">Native (full)</td>
+        </tr>
+        <tr>
+          <td class="font-medium">App Store / Play Store</td>
+          <td class="text-green-400 font-semibold">&#10003;</td>
+          <td class="text-green-400 font-semibold">&#10003;</td>
+          <td class="text-green-400 font-semibold">&#10003;</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Admin Portal</td>
+          <td>Lite (4 modules)</td>
+          <td class="font-semibold text-green-400">Full (8 modules)</td>
+          <td class="font-semibold">Full + AI</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Analytics</td>
+          <td>KPI cards + CSV</td>
+          <td class="font-semibold text-green-400">Dashboard + Charts</td>
+          <td class="font-semibold">BI + AI Insights</td>
+        </tr>
+        <tr>
+          <td class="font-medium">LINE Integration</td>
+          <td class="text-red-400">&#10008; expansion</td>
+          <td class="text-green-400 font-semibold">&#10003; Basic</td>
+          <td class="text-green-400 font-semibold">&#10003; Deep</td>
+        </tr>
+        <tr>
+          <td class="font-medium">AI/Personalization</td>
+          <td class="text-red-400">&#10008;</td>
+          <td class="text-red-400">&#10008; expansion</td>
+          <td class="text-green-400 font-semibold">&#10003;</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Language</td>
+          <td>TH only</td>
+          <td>TH (EN/CN later)</td>
+          <td class="font-semibold">TH/EN/CN</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Team Size</td>
+          <td>5 persons</td>
+          <td class="font-semibold">10 persons</td>
+          <td class="font-semibold">15 persons</td>
+        </tr>
+        <tr>
+          <td class="font-medium">Timeline</td>
+          <td class="font-semibold" style="color:var(--accent-secondary)">5 months</td>
+          <td>6 months</td>
+          <td>9 months</td>
+        </tr>
+        <tr>
+          <td class="font-medium">IP Model</td>
+          <td>ANTS License</td>
+          <td class="font-semibold text-green-400">License or Co-IP</td>
+          <td class="font-semibold text-green-400">License or Co-IP</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 9. EXPANSION ROADMAP ===== -->
+<section id="roadmap" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">08 &mdash; Growth Path</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Expansion Roadmap</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Plan C grows over time &mdash; same architecture, no rebuild needed</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center gap-4 mb-12">
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover" style="border:2px solid #22c55e">
+      <div class="text-xs font-semibold mb-2 text-green-400">Launch (Month 0)</div>
+      <h3 class="font-bold text-lg mb-1">Core Platform</h3>
+      <p class="text-xs text-dark-400">5-screen app + 4-module admin</p>
+      <div class="text-2xl mt-2">&#128640;</div>
+      <div class="text-xs text-green-400 font-bold mt-2">&#10003; Included</div>
+    </div>
+    <div class="journey-arrow text-2xl hidden md:block">&#8594;</div>
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover">
+      <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">Month 6-8</div>
+      <h3 class="font-bold text-lg mb-1">+ LINE + Screens</h3>
+      <p class="text-xs text-dark-400">LINE integration + 2-3 app screens</p>
+      <div class="text-2xl mt-2">&#128172;</div>
+      <div class="text-xs font-bold mt-2" style="color:var(--accent-secondary)">&#3647;400-500K</div>
+    </div>
+    <div class="journey-arrow text-2xl hidden md:block">&#8594;</div>
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover">
+      <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">Month 12</div>
+      <h3 class="font-bold text-lg mb-1">+ Analytics</h3>
+      <p class="text-xs text-dark-400">Analytics dashboard + more admin modules</p>
+      <div class="text-2xl mt-2">&#128200;</div>
+      <div class="text-xs font-bold mt-2" style="color:var(--accent-secondary)">&#3647;300-400K</div>
+    </div>
+    <div class="journey-arrow text-2xl hidden md:block">&#8594;</div>
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover">
+      <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">Month 18+</div>
+      <h3 class="font-bold text-lg mb-1">AI + Full Parity</h3>
+      <p class="text-xs text-dark-400">AI features, full feature parity with Plan B</p>
+      <div class="text-2xl mt-2">&#129302;</div>
+      <div class="text-xs font-bold mt-2" style="color:var(--accent-secondary)">Flexible</div>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-base text-dark-300 leading-relaxed">
+      <span class="font-bold gradient-gold">&ldquo;&#3648;&#3619;&#3636;&#3656;&#3617;&#3648;&#3621;&#3655;&#3585; &#3648;&#3605;&#3636;&#3610;&#3650;&#3605;&#3605;&#3634;&#3617;&#3588;&#3623;&#3634;&#3617;&#3614;&#3619;&#3657;&#3629;&#3617; &mdash; architecture &#3648;&#3604;&#3637;&#3618;&#3623;&#3585;&#3633;&#3609; &#3652;&#3617;&#3656;&#3605;&#3657;&#3629;&#3591; rebuild&rdquo;</span>
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 10. PAYMENT STRUCTURE ===== -->
+<section id="payment" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">09 &mdash; Payment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Milestone-Based Payment</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">30/30/30/10 payment structure tied to deliverables</p>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">Contract Signing</h3>
+      <p class="text-xs text-dark-400">Kickoff + Design</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">&#3647;1,140,000</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">Core Dev Complete</h3>
+      <p class="text-xs text-dark-400">Backend + App demo</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">&#3647;1,140,000</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">UAT Complete</h3>
+      <p class="text-xs text-dark-400">All features tested</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">&#3647;1,140,000</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2 text-green-400">10%</div>
+      <h3 class="font-bold text-sm mb-2">Go-Live</h3>
+      <p class="text-xs text-dark-400">Production deployment</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">&#3647;380,000</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 11. TIMELINE ===== -->
+<section id="timeline" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">10 &mdash; Timeline</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">5-Month Delivery</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Agile delivery with monthly milestones &mdash; fastest time to market</p>
+  </div>
+
+  <div class="space-y-0">
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-from), var(--timeline-line-via))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 1</div>
+        <h3 class="font-bold mb-1">Discovery + Design + Architecture</h3>
+        <p class="text-sm text-dark-400">Business requirements, UX/UI design, system architecture, API specification, data model</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-via), var(--timeline-line-from))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 2</div>
+        <h3 class="font-bold mb-1">Backend Core</h3>
+        <p class="text-sm text-dark-400">Points Engine, Member Service, Campaign Engine, Tier System &mdash; core API development</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-from), var(--timeline-line-via))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 3</div>
+        <h3 class="font-bold mb-1">Mobile App + Admin Portal</h3>
+        <p class="text-sm text-dark-400">Expo React Native (5 screens) + Admin Portal Lite (4 modules) + API integration</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-via), var(--timeline-line-to))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 4</div>
+        <h3 class="font-bold mb-1">Integration + QA + UAT</h3>
+        <p class="text-sm text-dark-400">End-to-end testing, performance optimization, security testing, bug fixes, user acceptance testing</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot" style="background:#22c55e"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover" style="border-color:#22c55e">
+        <div class="text-xs font-semibold mb-1 text-green-400">Month 5</div>
+        <h3 class="font-bold mb-1 text-green-400">Go-Live</h3>
+        <p class="text-sm text-dark-400">On-premise deployment, data migration, staff training, App Store + Play Store submission, go-live support</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 12. WHY PLAN C ===== -->
+<section id="why-plan-c" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">11 &mdash; Why Plan C</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Why Choose Plan C</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">6 reasons why Plan C Starter is the smartest first step</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#128241;</div>
+      <h4 class="font-bold text-sm mb-2">Real Mobile App</h4>
+      <p class="text-xs text-dark-400">App Store + Play Store &mdash; ไม่ใช่แค่ web link แต่เป็น native app จริง ลูกค้าเปิดได้จาก Home Screen</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#128736;</div>
+      <h4 class="font-bold text-sm mb-2">Same Architecture</h4>
+      <p class="text-xs text-dark-400">Architecture เดียวกับ Plan A/B &mdash; upgrade path guaranteed, ไม่ต้อง rebuild ใหม่</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#11088;</div>
+      <h4 class="font-bold text-sm mb-2">Core Loyalty Complete</h4>
+      <p class="text-xs text-dark-400">Earn, burn, tier, campaign, reward &mdash; ครบทุก core function ที่จำเป็น</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#128274;</div>
+      <h4 class="font-bold text-sm mb-2">Data Sovereignty</h4>
+      <p class="text-xs text-dark-400">On-premise deployment &mdash; ข้อมูลทั้งหมดอยู่ใน infrastructure ของ MGC-ASIA</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#9889;</div>
+      <h4 class="font-bold text-sm mb-2">Fastest to Market</h4>
+      <p class="text-xs text-dark-400">5 เดือน go-live &mdash; เริ่มเก็บ data และ prove value ได้เร็วที่สุด</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="text-2xl mb-3">&#128170;</div>
+      <h4 class="font-bold text-sm mb-2">Lowest Risk</h4>
+      <p class="text-xs text-dark-400">Prove value ก่อน invest เพิ่ม &mdash; ลด risk สำหรับ first-time loyalty platform</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 13. TEAM ===== -->
+<section id="team" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">12 &mdash; Delivery Team</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Dedicated Team &mdash; 5 Persons</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Lean team optimized for Plan C delivery</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128188;</div>
+      <h4 class="font-bold text-xs mb-1">PM / Solution Architect</h4>
+      <div class="text-xs text-dark-500">1 person (dual role)</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128187;</div>
+      <h4 class="font-bold text-xs mb-1">Full-Stack Developer</h4>
+      <div class="text-xs text-dark-500">2 persons</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128241;</div>
+      <h4 class="font-bold text-xs mb-1">Mobile Dev (Expo)</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128269;</div>
+      <h4 class="font-bold text-xs mb-1">QA Engineer</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center" style="opacity:0.4">
+      <div class="text-2xl mb-3">&#128100;</div>
+      <h4 class="font-bold text-xs mb-1">Scale-Up Ready</h4>
+      <div class="text-xs text-dark-500">Add as needed</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 14. NEXT STEPS / CTA ===== -->
+<section id="next-steps" class="relative py-32 px-6 text-center">
+<div class="max-w-4xl mx-auto section-enter">
+  <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">13 &mdash; Next Steps</div>
+  <h2 class="text-4xl md:text-5xl font-bold mb-4">Let's Get Started</h2>
+  <p class="text-dark-400 max-w-2xl mx-auto mb-12">4 simple steps to launch MOBILIFE Starter</p>
+
+  <div class="grid md:grid-cols-4 gap-4 mb-16">
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">1&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">POC Demo</h3>
+      <p class="text-xs text-dark-400">&#3607;&#3604;&#3621;&#3629;&#3591;&#3651;&#3594;&#3657; working prototype &#3607;&#3637;&#3656;&#3614;&#3619;&#3657;&#3629;&#3617;&#3629;&#3618;&#3641;&#3656;&#3649;&#3621;&#3657;&#3623;</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">2&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">Choose Your Plan</h3>
+      <p class="text-xs text-dark-400">Plan A, B, or C &mdash; &#3648;&#3621;&#3639;&#3629;&#3585; plan &#3607;&#3637;&#3656;&#3648;&#3627;&#3617;&#3634;&#3632;&#3585;&#3633;&#3610; budget &#3649;&#3621;&#3632; timeline</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">3&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">Technical Deep Dive</h3>
+      <p class="text-xs text-dark-400">Architecture + infra requirements assessment</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">4&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">Contract &amp; Kickoff</h3>
+      <p class="text-xs text-dark-400">&#3648;&#3619;&#3636;&#3656;&#3617;&#3591;&#3634;&#3609;&#3616;&#3634;&#3618;&#3651;&#3609; 2 &#3626;&#3633;&#3611;&#3604;&#3634;&#3627;&#3660;&#3627;&#3621;&#3633;&#3591; sign contract</p>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-8 inline-block">
+    <div class="text-sm text-dark-400 mb-2">Contact</div>
+    <div class="text-lg font-bold mb-1">ANTS &mdash; Advance Network Technology &amp; Service</div>
+    <div class="text-sm text-dark-400">MarTech | AI | Digital Transformation</div>
+    <div class="mt-4 flex items-center justify-center gap-6 text-xs text-dark-500">
+      <span>&#128231; sales@ants.co.th</span>
+      <span>&#128241; +6691-659-5244</span>
+    </div>
+  </div>
+
+  <div class="mt-8 flex items-center justify-center gap-4 text-xs">
+    <a href="./index.html" target="_blank" class="glass rounded-lg px-4 py-2 font-semibold" style="color:var(--accent-secondary)">View Plan A &#8599;</a>
+    <a href="./plan-b.html" target="_blank" class="glass rounded-lg px-4 py-2 font-semibold" style="color:var(--accent-secondary)">View Plan B &#8599;</a>
+  </div>
+
+  <div class="mt-12 text-xs text-dark-600">
+    Confidential &mdash; Plan C: Starter &mdash; Prepared exclusively for MGC-ASIA Group &mdash; March 2026
+  </div>
+</div>
+</section>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('proposal-theme', next);
+}
+
+// Load saved preference (default: light)
+(function() {
+  const saved = localStorage.getItem('proposal-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scroll-progress').style.width = progress + '%';
+});
+
+// Section enter animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section-enter').forEach(el => observer.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

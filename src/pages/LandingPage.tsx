@@ -52,7 +52,7 @@ export default function LandingPage() {
 
         {/* Proposal Section */}
         <p className="text-xs text-[#C9A96E] uppercase tracking-widest font-semibold mb-4">Proposal Documents</p>
-        <div className="grid md:grid-cols-2 gap-6 max-w-lg mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
           {/* Plan A */}
           <a
             href={`${basePath}proposal.html`}
@@ -89,6 +89,26 @@ export default function LandingPage() {
             <h2 className="text-base font-bold text-white mb-1">Essentials Plus</h2>
             <p className="text-xs text-white/50 mb-3">Smart Investment — On-Premise, React Native, IP Ownership Options</p>
             <div className="flex items-center gap-2 text-white/70 text-xs font-semibold">
+              ดู Proposal <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
+          </a>
+
+          {/* Plan C */}
+          <a
+            href={`${basePath}plan-c.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-left hover:border-white/30 hover:bg-white/10 transition-all block"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/60">
+                <FileText size={20} />
+              </div>
+              <span className="text-[10px] bg-white/10 text-white/50 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Plan C</span>
+            </div>
+            <h2 className="text-base font-bold text-white mb-1">Starter</h2>
+            <p className="text-xs text-white/50 mb-3">Budget-Optimized — Expo App, Core Features, Expansion Path</p>
+            <div className="flex items-center gap-2 text-white/50 text-xs font-semibold">
               ดู Proposal <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
           </a>
