@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Essentials Plus — Plan B Proposal for MGC-ASIA | ANTS MarTech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mgc: { 50:'#e8f4fc', 100:'#c5e4f8', 200:'#9ed1f3', 300:'#6db9ec', 400:'#45a5e5', 500:'#1a8fd8', 600:'#0d6fb3', 700:'#0a5590', 800:'#073c6a', 900:'#042545' },
+        ants: { 50:'#fff7ed', 100:'#ffedd5', 200:'#fed7aa', 300:'#fdba74', 400:'#fb923c', 500:'#f97316', 600:'#ea580c', 700:'#c2410c', 800:'#9a3412', 900:'#7c2d12' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ===== THEME VARIABLES ===== */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-body-rgb: 255,255,255;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-rgb: 255,255,255;
+  --bg-card-inner: #F1F5F9;
+  --bg-card-inner-rgb: 241,245,249;
+  --bg-nav: rgba(255,255,255,0.92);
+  --bg-glass: rgba(255,255,255,0.8);
+  --bg-glass-rgb: 255,255,255;
+  --border-glass: rgba(226,232,240,0.6);
+  --border-card: #E2E8F0;
+  --border-nav: rgba(226,232,240,0.5);
+  --text-primary: #1B2B5B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #1B2B5B;
+  --accent-primary: #1B2B5B;
+  --accent-secondary: #C9A96E;
+  --accent-primary-rgb: 27,43,91;
+  --accent-secondary-rgb: 201,169,110;
+  --gradient-text-from: #1B2B5B;
+  --gradient-text-via: #2B4A8E;
+  --gradient-text-to: #1a8fd8;
+  --gradient-gold-from: #C9A96E;
+  --gradient-gold-to: #D4A853;
+  --btn-primary-bg: #1B2B5B;
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(27,43,91,0.12);
+  --hover-border: rgba(27,43,91,0.25);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 20px 60px rgba(27,43,91,0.12);
+  --scroll-progress-from: #1B2B5B;
+  --scroll-progress-to: #2B4A8E;
+  --timeline-dot: #1B2B5B;
+  --timeline-dot-ring: rgba(27,43,91,0.25);
+  --timeline-line-from: #1B2B5B;
+  --timeline-line-via: #C9A96E;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(27,43,91,0.08);
+  --hero-bg-1: rgba(27,43,91,0.04);
+  --hero-bg-2: rgba(201,169,110,0.04);
+  --hero-bg-3: rgba(27,43,91,0.02);
+  --section-badge: #C9A96E;
+  --section-badge-text: #1B2B5B;
+  --budget-hover: rgba(27,43,91,0.04);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #1B2B5B;
+  --journey-arrow: #C9A96E;
+  --event-bus-bg: rgba(27,43,91,0.04);
+  --event-bus-border: #1B2B5B;
+  --event-bus-text: #1B2B5B;
+  --svg-bg-grid: rgba(27,43,91,0.04);
+  --counter-accent: #1B2B5B;
+  --stat-accent: #1B2B5B;
+  --table-header-bg: #1B2B5B;
+  --table-header-text: #FFFFFF;
+  --table-stripe: rgba(27,43,91,0.03);
+  --option-a-accent: #1B2B5B;
+  --option-b-accent: #C9A96E;
+}
+
+[data-theme="dark"] {
+  --bg-body: #020617;
+  --bg-body-rgb: 2,6,23;
+  --bg-secondary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-rgb: 30,41,59;
+  --bg-card-inner: #1e293b;
+  --bg-card-inner-rgb: 30,41,59;
+  --bg-nav: rgba(2,6,23,0.85);
+  --bg-glass: rgba(30,41,59,0.5);
+  --bg-glass-rgb: 30,41,59;
+  --border-glass: rgba(148,163,184,0.1);
+  --border-card: rgba(148,163,184,0.1);
+  --border-nav: rgba(30,41,59,0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #f1f5f9;
+  --accent-primary: #f97316;
+  --accent-secondary: #fb923c;
+  --accent-primary-rgb: 249,115,22;
+  --accent-secondary-rgb: 251,146,60;
+  --gradient-text-from: #fb923c;
+  --gradient-text-via: #f97316;
+  --gradient-text-to: #ea580c;
+  --gradient-gold-from: #fb923c;
+  --gradient-gold-to: #f97316;
+  --btn-primary-bg: linear-gradient(to right, #f97316, #ea580c);
+  --btn-primary-text: #FFFFFF;
+  --hover-glow: rgba(249,115,22,0.15);
+  --hover-border: rgba(249,115,22,0.3);
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 60px rgba(249,115,22,0.15);
+  --scroll-progress-from: #f97316;
+  --scroll-progress-to: #fb923c;
+  --timeline-dot: #f97316;
+  --timeline-dot-ring: rgba(249,115,22,0.3);
+  --timeline-line-from: #f97316;
+  --timeline-line-via: #1a8fd8;
+  --timeline-line-to: #22c55e;
+  --particle-color: rgba(249,115,22,0.15);
+  --hero-bg-1: rgba(249,115,22,0.08);
+  --hero-bg-2: rgba(26,143,216,0.08);
+  --hero-bg-3: rgba(249,115,22,0.04);
+  --section-badge: rgba(249,115,22,0.15);
+  --section-badge-text: #fb923c;
+  --budget-hover: rgba(249,115,22,0.05);
+  --slide-indicator: rgba(148,163,184,0.3);
+  --slide-indicator-active: #fb923c;
+  --journey-arrow: #f97316;
+  --event-bus-bg: rgba(249,115,22,0.08);
+  --event-bus-border: #f97316;
+  --event-bus-text: #fb923c;
+  --svg-bg-grid: rgba(148,163,184,0.05);
+  --counter-accent: #fb923c;
+  --stat-accent: #fb923c;
+  --table-header-bg: rgba(249,115,22,0.15);
+  --table-header-text: #fb923c;
+  --table-stripe: rgba(249,115,22,0.03);
+  --option-a-accent: #f97316;
+  --option-b-accent: #fb923c;
+}
+
+/* ===== BASE STYLES ===== */
+* { font-family: 'Inter', 'Noto Sans Thai', sans-serif; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== THEME TRANSITION ===== */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Navigation */
+.nav-fixed {
+  backdrop-filter: blur(20px);
+  background: var(--bg-nav);
+  border-color: var(--border-nav);
+}
+.nav-link { transition: all 0.3s; color: var(--text-muted); }
+[data-theme="light"] .nav-link:hover, [data-theme="light"] .nav-link.active { color: #1B2B5B; font-weight: 600; }
+[data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active { color: #fb923c; }
+
+/* Sections */
+section { min-height: auto; }
+.section-enter { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.section-enter.visible { opacity: 1; transform: translateY(0); }
+
+/* Cards */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow);
+}
+.card-hover { transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: var(--card-hover-shadow); border-color: var(--hover-border); }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-blue { background: linear-gradient(135deg, #45a5e5, #1a8fd8, #0d6fb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gradient-gold-from), var(--gradient-gold-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background */
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, var(--hero-bg-1) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, var(--hero-bg-2) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, var(--hero-bg-3) 0%, transparent 50%);
+}
+
+/* Timeline */
+.timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--timeline-dot); position: relative; z-index: 2; }
+.timeline-dot::after { content:''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--timeline-dot-ring); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0; } }
+
+/* Counter animation */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Feature icon */
+.feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+/* Budget table */
+.budget-row { transition: all 0.3s; }
+.budget-row:hover { background: var(--budget-hover); }
+
+/* Print styles */
+@media print { body { background: white; color: #1e293b; } .glass { background: #f8fafc; border: 1px solid #e2e8f0; } }
+
+/* Floating particles */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) rotate(720deg); opacity: 0; } }
+
+/* Journey flow */
+.journey-step { position: relative; }
+.journey-arrow { color: var(--journey-arrow); animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+
+/* Scroll progress */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--scroll-progress-from), var(--scroll-progress-to)); z-index: 100; transition: width 0.1s; }
+
+/* Architecture diagram */
+.arch-node { transition: all 0.3s; cursor: pointer; }
+.arch-node:hover { transform: scale(1.05); filter: brightness(1.2); }
+.arch-line { stroke-dasharray: 8 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+[data-theme="light"] .text-white { color: var(--text-heading) !important; }
+[data-theme="light"] .text-dark-300 { color: var(--text-secondary) !important; }
+[data-theme="light"] .text-dark-400 { color: var(--text-muted) !important; }
+[data-theme="light"] .text-dark-500 { color: var(--text-faint) !important; }
+[data-theme="light"] .text-dark-600 { color: #94a3b8 !important; }
+[data-theme="light"] .text-ants-400 { color: var(--accent-secondary) !important; }
+[data-theme="light"] .text-ants-400.counter, [data-theme="light"] .counter.text-ants-400 { color: var(--accent-primary) !important; }
+[data-theme="light"] .border-dark-800\/50 { border-color: var(--border-nav) !important; }
+[data-theme="light"] .bg-dark-800\/50 { background: var(--bg-card-inner) !important; }
+[data-theme="light"] .border-dark-700 { border-color: #E2E8F0 !important; }
+[data-theme="light"] .border-dark-800 { border-color: #E2E8F0 !important; }
+
+/* Light mode nav brand */
+[data-theme="light"] nav .text-white { color: #1B2B5B !important; }
+[data-theme="light"] nav .text-dark-400 { color: #64748b !important; }
+[data-theme="light"] nav .text-dark-500 { color: #94a3b8 !important; }
+
+/* Light mode section headers */
+[data-theme="light"] h2 { color: #1B2B5B; }
+[data-theme="light"] h3 { color: #1B2B5B; }
+[data-theme="light"] h4 { color: #1B2B5B; }
+
+/* Light mode hero stats */
+[data-theme="light"] .text-mgc-400 { color: #1a8fd8 !important; }
+
+/* Light mode CTA button */
+[data-theme="light"] .bg-gradient-to-r.from-ants-500.to-ants-600 {
+  background: linear-gradient(to right, #1B2B5B, #2B4A8E) !important;
+}
+
+/* Keep ANTS logo orange in both modes */
+.ants-logo-bg {
+  background: linear-gradient(to bottom right, #f97316, #ea580c) !important;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 70px;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #fb923c; }
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+[data-theme="light"] #theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+[data-theme="light"] #theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Light mode SVG architecture */
+[data-theme="light"] .arch-svg-grid { fill: var(--svg-bg-grid) !important; }
+
+/* Plan B Badge */
+.plan-b-badge {
+  position: fixed;
+  top: 16px;
+  right: 124px;
+  z-index: 60;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+[data-theme="light"] .plan-b-badge {
+  background: rgba(201,169,110,0.15);
+  color: #1B2B5B;
+  border-color: rgba(201,169,110,0.3);
+}
+[data-theme="dark"] .plan-b-badge {
+  background: rgba(249,115,22,0.15);
+  color: #fb923c;
+  border-color: rgba(249,115,22,0.3);
+}
+
+/* Option cards */
+.option-card-a { border-top: 4px solid var(--option-a-accent); }
+.option-card-b { border-top: 4px solid var(--option-b-accent); }
+
+/* Comparison table */
+.comparison-table th {
+  background: var(--table-header-bg);
+  color: var(--table-header-text);
+}
+.comparison-table tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+.comparison-table td, .comparison-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+/* Included module check */
+.module-included { border-left: 3px solid #22c55e; }
+.module-expansion { border-left: 3px solid var(--accent-secondary); }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Plan B Badge -->
+<div class="plan-b-badge">PLAN B</div>
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+  </svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+  </svg>
+</button>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- Navigation -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50 border-b border-dark-800/50">
+<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl ants-logo-bg flex items-center justify-center font-bold text-white text-sm" style="color:#fff !important;">A</div>
+    <div>
+      <div class="text-sm font-bold text-white">ANTS MarTech</div>
+      <div class="text-[10px] text-dark-400">AI-First Marketing Technology</div>
+    </div>
+  </div>
+  <div class="hidden md:flex items-center gap-5 text-xs font-medium text-dark-400">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#summary" class="nav-link">Summary</a>
+    <a href="#scope" class="nav-link">Scope</a>
+    <a href="#react-native" class="nav-link">Mobile</a>
+    <a href="#architecture" class="nav-link">Infra</a>
+    <a href="#ip-options" class="nav-link">IP Options</a>
+    <a href="#cost" class="nav-link">Cost</a>
+    <a href="#tco" class="nav-link">TCO</a>
+    <a href="#timeline" class="nav-link">Timeline</a>
+    <a href="#roi" class="nav-link">ROI</a>
+    <a href="#why-us" class="nav-link">Why Us</a>
+    <a href="#next-steps" class="nav-link">CTA</a>
+    <a href="./index.html" class="nav-link" style="color:var(--accent-secondary) !important; font-weight:600;" target="_blank">Plan A &#8599;</a>
+  </div>
+  <div class="text-xs text-dark-500">Confidential</div>
+</div>
+</nav>
+
+<!-- ===== 1. HERO ===== -->
+<section id="hero" class="relative flex items-center justify-center hero-bg overflow-hidden" style="min-height:100vh">
+  <!-- Particles -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="particle" style="width:6px;height:6px;left:10%;animation-duration:15s;animation-delay:0s"></div>
+    <div class="particle" style="width:4px;height:4px;left:25%;animation-duration:20s;animation-delay:3s"></div>
+    <div class="particle" style="width:8px;height:8px;left:45%;animation-duration:18s;animation-delay:1s"></div>
+    <div class="particle" style="width:5px;height:5px;left:65%;animation-duration:22s;animation-delay:5s"></div>
+    <div class="particle" style="width:7px;height:7px;left:85%;animation-duration:16s;animation-delay:2s"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-dark-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      Plan B &mdash; Optimized for Value &amp; Growth
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+      <span class="text-white">MOBILIFE</span><br>
+      <span class="gradient-text">Essentials Plus</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-dark-300 max-w-3xl mx-auto mb-4">
+      Smart Investment &mdash; Strategic Partnership<br>
+      <span class="text-dark-400">for</span> <span class="font-semibold text-white">MGC-ASIA Group</span>
+    </p>
+
+    <p class="text-sm text-dark-500 mb-12">
+      95% Daily Use Case Coverage &bull; Optimized Investment &bull; 2 IP Ownership Options
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)">6</div>
+        <div class="text-xs text-dark-400">Months Delivery</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-mgc-400 counter">React Native</div>
+        <div class="text-xs text-dark-400">iOS + Android App</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold counter" style="color:var(--counter-accent)">On-Premise</div>
+        <div class="text-xs text-dark-400">Deployment</div>
+      </div>
+      <div class="glass rounded-2xl px-6 py-4 text-center">
+        <div class="text-2xl font-bold text-green-400 counter">2</div>
+        <div class="text-xs text-dark-400">IP Ownership Options</div>
+      </div>
+    </div>
+
+    <a href="#summary" class="inline-flex items-center gap-2 bg-gradient-to-r from-ants-500 to-ants-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm hover:shadow-lg hover:shadow-ants-500/25 transition-all" style="color:#fff !important;">
+      Explore Plan B
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </a>
+
+    <div class="mt-16 flex items-center justify-center gap-8 text-dark-600 text-xs">
+      <span>Prepared by</span>
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg ants-logo-bg flex items-center justify-center font-bold text-white text-xs" style="color:#fff !important;">A</div>
+        <span class="text-dark-400 font-medium">ANTS &mdash; Advance Network Technology &amp; Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. EXECUTIVE SUMMARY ===== -->
+<section id="summary" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">01 &mdash; Executive Summary</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Smart-Scoped, Full Impact</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Plan B delivers 95% of daily use case coverage at optimized investment &mdash; designed for on-premise deployment with 2 IP ownership models</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-mgc-500/10 text-mgc-400 mb-4">&#128640;</div>
+      <h3 class="font-bold text-lg mb-2">95% Coverage</h3>
+      <p class="text-sm text-dark-400">ครอบคลุม daily use cases ที่สำคัญ &mdash; Member, Points, Tiers, Campaigns, Coupons, Mobile App, Admin Portal, Analytics</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-ants-500/10 text-ants-400 mb-4">&#127981;</div>
+      <h3 class="font-bold text-lg mb-2">On-Premise Deployment</h3>
+      <p class="text-sm text-dark-400">Deploy บน infrastructure ของ MGC-ASIA โดยตรง &mdash; Data sovereignty, compliance, ไม่มี cloud cost, full control</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover">
+      <div class="feature-icon bg-purple-500/10 text-purple-400 mb-4">&#128241;</div>
+      <h3 class="font-bold text-lg mb-2">React Native App</h3>
+      <p class="text-sm text-dark-400">Mobile app สำหรับ iOS + Android &mdash; พร้อม regional scalability ไม่ผูกกับ LINE ecosystem</p>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-bold text-lg mb-4">Plan A vs Plan B &mdash; At a Glance</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-dark-800/50 rounded-xl p-6">
+        <div class="text-xs font-semibold text-dark-500 mb-2">PLAN A &mdash; Full Platform</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--accent-primary)">&#3647;12-15M</div>
+        <ul class="space-y-2 text-sm text-dark-400">
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> All modules included</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> AI Personalization built-in</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Full Marketing Automation</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Gamification &amp; Booking</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 9-12 month timeline</li>
+        </ul>
+        <a href="./index.html" target="_blank" class="inline-flex items-center gap-1 mt-4 text-xs font-semibold" style="color:var(--accent-secondary)">View Plan A &#8599;</a>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-6 border-2" style="border-color:var(--accent-secondary)">
+        <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">PLAN B &mdash; Essentials Plus &#9733;</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--accent-primary)">&#3647;5.8-7.5M</div>
+        <ul class="space-y-2 text-sm text-dark-400">
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 9 core modules included</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 6 expansion modules available</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 2 IP ownership options</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> On-premise deployment</li>
+          <li class="flex gap-2"><span class="text-green-400">&#10003;</span> 6-month delivery</li>
+        </ul>
+        <div class="mt-4 text-xs font-semibold" style="color:var(--accent-secondary)">&#9733; This Proposal</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 3. SCOPE ===== -->
+<section id="scope" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">02 &mdash; What's Included</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Platform Scope</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">9 Core Modules &mdash; Everything needed for a world-class loyalty program from day one</p>
+  </div>
+
+  <!-- Included Modules -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="text-green-400">&#10003;</span> Included Modules</h3>
+  <div class="grid md:grid-cols-3 gap-4 mb-16">
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128100;</div>
+      <h4 class="font-bold text-sm mb-1">Member Management + PDPA</h4>
+      <p class="text-xs text-dark-400">Registration, profile management, consent management, PDPA compliance</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#11088;</div>
+      <h4 class="font-bold text-sm mb-1">Points Engine &mdash; Multi-brand</h4>
+      <p class="text-xs text-dark-400">Earn/burn/transfer across BMW, Rolls-Royce, MINI, Honda, etc.</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128081;</div>
+      <h4 class="font-bold text-sm mb-1">Tier System &mdash; 4 Levels</h4>
+      <p class="text-xs text-dark-400">Member &#8594; Diamond &#8594; Black Diamond &#8594; Infinite Blue Diamond</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128226;</div>
+      <h4 class="font-bold text-sm mb-1">Campaign Management</h4>
+      <p class="text-xs text-dark-400">Create, manage, target, measure campaigns &mdash; full lifecycle</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#127873;</div>
+      <h4 class="font-bold text-sm mb-1">Coupon / Reward Catalog</h4>
+      <p class="text-xs text-dark-400">E-coupon, redemption, QR code &mdash; digital reward management</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128241;</div>
+      <h4 class="font-bold text-sm mb-1">Mobile App &mdash; React Native</h4>
+      <p class="text-xs text-dark-400">iOS + Android &mdash; Regional-ready, App Store + Play Store distribution</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128421;</div>
+      <h4 class="font-bold text-sm mb-1">Admin Portal &mdash; Full</h4>
+      <p class="text-xs text-dark-400">Dashboard, member mgmt, campaign mgmt, reports &mdash; web-based</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128200;</div>
+      <h4 class="font-bold text-sm mb-1">Analytics Dashboard</h4>
+      <p class="text-xs text-dark-400">Standard + KPI tracking, export reports, charts &mdash; data-driven decisions</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-included">
+      <div class="text-2xl mb-3">&#128172;</div>
+      <h4 class="font-bold text-sm mb-1">LINE OA Basic Notification</h4>
+      <p class="text-xs text-dark-400">Push notifications for Thai market via LINE Official Account</p>
+    </div>
+  </div>
+
+  <!-- Expansion Modules -->
+  <h3 class="font-bold text-lg mb-6 flex items-center gap-2"><span class="gradient-gold">&#10024;</span> Expansion Modules <span class="text-xs text-dark-400 font-normal">(Available Separately)</span></h3>
+  <div class="grid md:grid-cols-3 gap-4">
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#129302;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;500K/yr</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">AI Personalization Engine</h4>
+      <p class="text-xs text-dark-400">Smart recommendations, predictive analytics, churn prediction</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128202;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;300K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Advanced Analytics + BI</h4>
+      <p class="text-xs text-dark-400">Custom dashboards, predictive modeling, data warehouse integration</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128197;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;400K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Appointment / Service Booking</h4>
+      <p class="text-xs text-dark-400">Online booking, service reminders, calendar integration</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#127922;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;350K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Gamification</h4>
+      <p class="text-xs text-dark-400">Lucky draw, missions, badges, leaderboards</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#9881;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;500K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">Marketing Automation</h4>
+      <p class="text-xs text-dark-400">Journey builder, trigger campaigns, multi-channel orchestration</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover module-expansion">
+      <div class="flex justify-between items-start mb-2">
+        <div class="text-2xl">&#128666;</div>
+        <div class="text-xs font-bold px-2 py-1 rounded-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">&#3647;400K</div>
+      </div>
+      <h4 class="font-bold text-sm mb-1">B2B Fleet Program</h4>
+      <p class="text-xs text-dark-400">Corporate fleet management, volume discounts, B2B portal</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 4. WHY REACT NATIVE ===== -->
+<section id="react-native" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">03 &mdash; Mobile Strategy</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Why React Native</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">MGC-ASIA is a regional group &mdash; the mobile app is the universal channel that works everywhere</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 mb-12 overflow-x-auto">
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg">Market / Factor</th>
+          <th>LINE LIFF</th>
+          <th class="rounded-tr-lg">React Native</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="font-medium">Thailand</td><td>&#10004; Available</td><td class="font-semibold text-green-400">&#10004; Universal</td></tr>
+        <tr><td class="font-medium">Singapore, Malaysia, Vietnam</td><td class="text-yellow-500">&#9888; LINE not popular</td><td class="font-semibold text-green-400">&#10004; Universal</td></tr>
+        <tr><td class="font-medium">Japan</td><td>&#10004; Available</td><td class="font-semibold text-green-400">&#10004; Universal</td></tr>
+        <tr><td class="font-medium">Indonesia, Philippines, Cambodia</td><td class="text-red-400">&#10008; Not available</td><td class="font-semibold text-green-400">&#10004; Universal</td></tr>
+        <tr><td class="font-medium">Brand Perception</td><td class="text-yellow-500">&#9888; Secondary experience</td><td class="font-semibold text-green-400">&#10004; Owned app identity</td></tr>
+        <tr><td class="font-medium">Rolls-Royce Customer Experience</td><td class="text-red-400">&#10008; Not premium enough</td><td class="font-semibold text-green-400">&#10004; Premium native feel</td></tr>
+        <tr><td class="font-medium">Offline Capability</td><td class="text-red-400">&#10008; Requires LINE</td><td class="font-semibold text-green-400">&#10004; Works offline</td></tr>
+        <tr><td class="font-medium">Push Notification Control</td><td class="text-yellow-500">&#9888; Limited</td><td class="font-semibold text-green-400">&#10004; Full control</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300">
+      <span class="font-bold" style="color:var(--accent-primary)">Key Insight:</span> MGC-ASIA operates across 6+ countries. A React Native app gives you <strong>one codebase, universal distribution</strong> via App Store + Play Store &mdash; no dependency on any single messaging platform.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 5. ON-PREMISE ARCHITECTURE ===== -->
+<section id="architecture" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">04 &mdash; Infrastructure</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">On-Premise Architecture</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Deployed on MGC-ASIA infrastructure &mdash; Full data sovereignty, zero cloud dependency</p>
+  </div>
+
+  <!-- Architecture Diagram -->
+  <div class="glass rounded-2xl p-8 mb-12">
+    <svg viewBox="0 0 900 520" class="w-full" style="max-height:520px">
+      <!-- Background grid -->
+      <defs>
+        <pattern id="grid-b" width="30" height="30" patternUnits="userSpaceOnUse">
+          <rect width="30" height="30" fill="none" stroke="var(--svg-bg-grid)" stroke-width="0.5" class="arch-svg-grid"/>
+        </pattern>
+      </defs>
+      <rect width="900" height="520" fill="url(#grid-b)" rx="12"/>
+
+      <!-- Client Zone -->
+      <rect x="30" y="20" width="840" height="480" rx="12" fill="none" stroke="var(--border-glass)" stroke-width="1.5" stroke-dasharray="6 3"/>
+      <text x="50" y="48" fill="var(--text-muted)" font-size="11" font-weight="600">MGC-ASIA ON-PREMISE INFRASTRUCTURE</text>
+
+      <!-- Mobile App -->
+      <rect x="60" y="80" width="160" height="90" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="1.5" class="arch-node"/>
+      <text x="140" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Mobile App</text>
+      <text x="140" y="135" text-anchor="middle" fill="var(--text-muted)" font-size="10">React Native</text>
+      <text x="140" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="9">iOS + Android</text>
+
+      <!-- Admin Portal -->
+      <rect x="260" y="80" width="160" height="90" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-secondary)" stroke-width="1.5" class="arch-node"/>
+      <text x="340" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Admin Portal</text>
+      <text x="340" y="135" text-anchor="middle" fill="var(--text-muted)" font-size="10">Web Dashboard</text>
+      <text x="340" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="9">React + Tailwind</text>
+
+      <!-- LINE OA -->
+      <rect x="460" y="80" width="160" height="90" rx="10" fill="var(--event-bus-bg)" stroke="#22c55e" stroke-width="1.5" class="arch-node"/>
+      <text x="540" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">LINE OA</text>
+      <text x="540" y="135" text-anchor="middle" fill="var(--text-muted)" font-size="10">Notification</text>
+      <text x="540" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="9">Thai Market</text>
+
+      <!-- Analytics -->
+      <rect x="660" y="80" width="160" height="90" rx="10" fill="var(--event-bus-bg)" stroke="#a855f7" stroke-width="1.5" class="arch-node"/>
+      <text x="740" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="700">Analytics</text>
+      <text x="740" y="135" text-anchor="middle" fill="var(--text-muted)" font-size="10">Dashboard + KPI</text>
+      <text x="740" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="9">Reports + Export</text>
+
+      <!-- API Gateway -->
+      <rect x="200" y="210" width="500" height="60" rx="10" fill="var(--event-bus-bg)" stroke="var(--event-bus-border)" stroke-width="2" class="arch-node"/>
+      <text x="450" y="245" text-anchor="middle" fill="var(--event-bus-text)" font-size="13" font-weight="800">API GATEWAY &mdash; RESTful + WebSocket</text>
+
+      <!-- Lines from top to API -->
+      <line x1="140" y1="170" x2="350" y2="210" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="340" y1="170" x2="400" y2="210" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+      <line x1="540" y1="170" x2="500" y2="210" stroke="#22c55e" stroke-width="1" class="arch-line"/>
+      <line x1="740" y1="170" x2="550" y2="210" stroke="#a855f7" stroke-width="1" class="arch-line"/>
+
+      <!-- Core Services -->
+      <rect x="60" y="310" width="150" height="80" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="1.5" class="arch-node"/>
+      <text x="135" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Points Engine</text>
+      <text x="135" y="358" text-anchor="middle" fill="var(--text-muted)" font-size="9">Multi-brand Rules</text>
+      <text x="135" y="374" text-anchor="middle" fill="var(--text-muted)" font-size="9">Earn/Burn/Transfer</text>
+
+      <rect x="230" y="310" width="150" height="80" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-secondary)" stroke-width="1.5" class="arch-node"/>
+      <text x="305" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Campaign Engine</text>
+      <text x="305" y="358" text-anchor="middle" fill="var(--text-muted)" font-size="9">Create &amp; Target</text>
+      <text x="305" y="374" text-anchor="middle" fill="var(--text-muted)" font-size="9">Measure ROI</text>
+
+      <rect x="400" y="310" width="150" height="80" rx="10" fill="var(--event-bus-bg)" stroke="#22c55e" stroke-width="1.5" class="arch-node"/>
+      <text x="475" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Member Service</text>
+      <text x="475" y="358" text-anchor="middle" fill="var(--text-muted)" font-size="9">PDPA + Consent</text>
+      <text x="475" y="374" text-anchor="middle" fill="var(--text-muted)" font-size="9">Tier Management</text>
+
+      <rect x="570" y="310" width="150" height="80" rx="10" fill="var(--event-bus-bg)" stroke="#a855f7" stroke-width="1.5" class="arch-node"/>
+      <text x="645" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="700">Reward Service</text>
+      <text x="645" y="358" text-anchor="middle" fill="var(--text-muted)" font-size="9">Coupon + E-voucher</text>
+      <text x="645" y="374" text-anchor="middle" fill="var(--text-muted)" font-size="9">QR Redemption</text>
+
+      <!-- Lines from API to services -->
+      <line x1="300" y1="270" x2="135" y2="310" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="380" y1="270" x2="305" y2="310" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+      <line x1="500" y1="270" x2="475" y2="310" stroke="#22c55e" stroke-width="1" class="arch-line"/>
+      <line x1="580" y1="270" x2="645" y2="310" stroke="#a855f7" stroke-width="1" class="arch-line"/>
+
+      <!-- Database -->
+      <rect x="250" y="430" width="400" height="55" rx="10" fill="var(--event-bus-bg)" stroke="var(--accent-primary)" stroke-width="2" class="arch-node"/>
+      <text x="450" y="460" text-anchor="middle" fill="var(--event-bus-text)" font-size="12" font-weight="700">PostgreSQL + Redis Cache &mdash; On-Premise Server</text>
+      <text x="450" y="476" text-anchor="middle" fill="var(--text-muted)" font-size="9">Data stays 100% within MGC-ASIA network</text>
+
+      <!-- Lines from services to DB -->
+      <line x1="135" y1="390" x2="350" y2="430" stroke="var(--accent-primary)" stroke-width="1" class="arch-line"/>
+      <line x1="305" y1="390" x2="400" y2="430" stroke="var(--accent-secondary)" stroke-width="1" class="arch-line"/>
+      <line x1="475" y1="390" x2="450" y2="430" stroke="#22c55e" stroke-width="1" class="arch-line"/>
+      <line x1="645" y1="390" x2="550" y2="430" stroke="#a855f7" stroke-width="1" class="arch-line"/>
+    </svg>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="glass rounded-2xl p-6">
+      <h3 class="font-bold text-sm mb-4 text-green-400">Benefits of On-Premise</h3>
+      <ul class="space-y-2 text-sm text-dark-400">
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Data sovereignty &mdash; all data stays within MGC-ASIA network</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Full compliance with Thai PDPA requirements</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> No recurring cloud costs (AWS/Azure/GCP)</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Full control over infrastructure and security</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> No vendor lock-in on infrastructure layer</li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <h3 class="font-bold text-sm mb-4" style="color:var(--accent-secondary)">Infrastructure Requirements</h3>
+      <ul class="space-y-2 text-sm text-dark-400">
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#8226;</span> Application Server: 4 vCPU, 16GB RAM, 100GB SSD (x2 for HA)</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#8226;</span> Database Server: 4 vCPU, 32GB RAM, 500GB SSD</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#8226;</span> Redis Cache: 2 vCPU, 8GB RAM</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#8226;</span> Load Balancer + SSL Certificate</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#8226;</span> Network: Internal LAN access + public endpoint for mobile app API</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 6. IP OWNERSHIP OPTIONS ===== -->
+<section id="ip-options" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">05 &mdash; IP Ownership</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Choose Your Model</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">2 IP ownership options designed to match MGC-ASIA's strategic preference</p>
+  </div>
+
+  <!-- Two options side by side -->
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Option A -->
+    <div class="glass rounded-2xl p-8 card-hover option-card-a">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg" style="background:rgba(var(--accent-primary-rgb),0.15); color:var(--accent-primary)">A</div>
+        <div>
+          <h3 class="font-bold text-lg">ANTS Platform License</h3>
+          <div class="text-xs text-dark-400">Strategic Product Investment</div>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <div class="text-3xl font-black mb-1" style="color:var(--accent-primary)">&#3647;5.8M <span class="text-sm font-normal text-dark-400">upfront</span></div>
+        <div class="text-sm text-dark-400">+ &#3647;1.2M/year maintenance</div>
+      </div>
+
+      <div class="bg-dark-800/50 rounded-xl p-4 mb-6 text-sm text-dark-300 leading-relaxed">
+        <strong style="color:var(--accent-secondary)">Why is it cheaper?</strong><br>
+        ANTS สร้าง platform นี้เป็น product สำหรับ automotive industry โดยมี MGC-ASIA เป็น <strong>Founding Partner</strong> ที่ช่วย shape product ตรงกับ market need จริง เราลงทุนใน R&amp;D เอง ทำให้ราคาต่ำกว่า custom build ทั่วไป
+      </div>
+
+      <ul class="space-y-3 text-sm text-dark-400 mb-6">
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> <strong>ANTS owns the IP</strong></li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> MGC-ASIA gets <strong>perpetual license</strong> to use</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Lower upfront investment</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Continuous R&amp;D and updates from ANTS</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> No need to maintain dev team</li>
+        <li class="flex gap-2"><span class="text-green-400">&#10003;</span> Data export + transition period (exit clause)</li>
+      </ul>
+
+      <div class="text-xs text-dark-500 italic">Best for: Focus on business, let ANTS handle the tech</div>
+    </div>
+
+    <!-- Option B -->
+    <div class="glass rounded-2xl p-8 card-hover option-card-b" style="border:2px solid var(--accent-secondary)">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg" style="background:rgba(var(--accent-secondary-rgb),0.15); color:var(--accent-secondary)">B</div>
+        <div>
+          <h3 class="font-bold text-lg">Co-IP Partnership</h3>
+          <div class="text-xs text-dark-400">Strategic Tech Asset</div>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <div class="text-3xl font-black mb-1" style="color:var(--accent-secondary)">&#3647;7.5M <span class="text-sm font-normal text-dark-400">upfront</span></div>
+        <div class="text-sm text-dark-400">+ &#3647;1.0M/year maintenance</div>
+      </div>
+
+      <div class="bg-dark-800/50 rounded-xl p-4 mb-6 text-sm text-dark-300">
+        <strong style="color:var(--accent-secondary)">IP Ownership Split:</strong>
+        <ul class="mt-2 space-y-1">
+          <li>&#8226; Platform Core = <strong>Co-owned</strong> (ANTS + MGC-ASIA)</li>
+          <li>&#8226; MGC-ASIA Customizations = <strong>100% Client</strong></li>
+          <li>&#8226; Data = <strong>100% Client</strong></li>
+        </ul>
+      </div>
+
+      <ul class="space-y-3 text-sm text-dark-400 mb-6">
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> <strong>Co-own the IP</strong> with ANTS</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> ANTS can sell to non-automotive / outside TH freely</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> <strong>30-day notice</strong> before selling to Thai automotive</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> <strong>8-10% royalty</strong> from ANTS selling to other clients</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> <strong>2-year non-compete</strong> for direct TH competitors</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> Source code escrow with third-party</li>
+        <li class="flex gap-2"><span style="color:var(--accent-secondary)">&#9733;</span> No vendor lock-in, royalty upside</li>
+      </ul>
+
+      <div class="text-xs text-dark-500 italic">Best for: Strategic tech asset + blocking competitor access</div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="glass rounded-2xl p-8 overflow-x-auto">
+    <h3 class="font-bold text-lg mb-6 text-center">Option A vs Option B Comparison</h3>
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg">Criteria</th>
+          <th>Option A: License</th>
+          <th class="rounded-tr-lg">Option B: Co-IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="font-medium">Upfront Cost</td><td>&#3647;5.8M</td><td>&#3647;7.5M</td></tr>
+        <tr><td class="font-medium">Annual Maintenance</td><td>&#3647;1.2M/yr</td><td>&#3647;1.0M/yr</td></tr>
+        <tr><td class="font-medium">IP Ownership</td><td>ANTS (license to MGC)</td><td>Co-owned</td></tr>
+        <tr><td class="font-medium">Source Code Access</td><td>No (binary only)</td><td>Yes (escrow + access)</td></tr>
+        <tr><td class="font-medium">Royalty Income</td><td>&#10008;</td><td class="text-green-400 font-semibold">8-10% from ANTS sales</td></tr>
+        <tr><td class="font-medium">Non-compete</td><td>&#10008;</td><td class="text-green-400 font-semibold">2 years (TH automotive)</td></tr>
+        <tr><td class="font-medium">R&amp;D Updates</td><td class="text-green-400">&#10003; Included</td><td class="text-green-400">&#10003; Included</td></tr>
+        <tr><td class="font-medium">Data Ownership</td><td class="text-green-400">100% Client</td><td class="text-green-400">100% Client</td></tr>
+        <tr><td class="font-medium">Exit Clause</td><td class="text-green-400">&#10003; Data export</td><td class="text-green-400">&#10003; Full source code</td></tr>
+        <tr><td class="font-medium">Vendor Lock-in Risk</td><td>Low (exit clause)</td><td class="text-green-400 font-semibold">None (co-own IP)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 7. COST BREAKDOWN ===== -->
+<section id="cost" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">06 &mdash; Investment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Cost Breakdown</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Transparent, milestone-based pricing &mdash; Option A: &#3647;5.8M</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 mb-8 overflow-x-auto">
+    <h3 class="font-bold text-lg mb-6">Option A &mdash; &#3647;5.8M Breakdown</h3>
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg">Item</th>
+          <th>Cost (&#3647;)</th>
+          <th class="rounded-tr-lg">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="budget-row"><td class="font-medium">Solution Architecture &amp; Design</td><td>400,000</td><td>6.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Backend (API, Points Engine, Rules)</td><td>1,200,000</td><td>20.7%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Mobile App (React Native, iOS+Android)</td><td>1,200,000</td><td>20.7%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Admin Portal (Web)</td><td>800,000</td><td>13.8%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Analytics Dashboard</td><td>400,000</td><td>6.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Integration Layer (LINE, Push, SMS)</td><td>400,000</td><td>6.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">QA + UAT + Security Audit</td><td>500,000</td><td>8.6%</td></tr>
+        <tr class="budget-row"><td class="font-medium">On-Premise Deployment + Training</td><td>400,000</td><td>6.9%</td></tr>
+        <tr class="budget-row"><td class="font-medium">Project Management (6 months)</td><td>500,000</td><td>8.6%</td></tr>
+        <tr style="background:rgba(var(--accent-primary-rgb),0.08)">
+          <td class="font-bold text-lg">Total</td>
+          <td class="font-bold text-lg" style="color:var(--accent-primary)">&#3647;5,800,000</td>
+          <td class="font-bold">100%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300">
+      <strong style="color:var(--accent-secondary)">Option B (Co-IP): +&#3647;1.7M</strong> for Co-IP legal structuring, source code escrow setup, additional technical documentation, IP governance framework, and shared ownership agreement.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 8. 3-YEAR TCO COMPARISON ===== -->
+<section id="tco" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">07 &mdash; TCO Comparison</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">3-Year Total Cost of Ownership</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Comparing ANTS Plan B with off-the-shelf SaaS solutions</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 mb-8 overflow-x-auto">
+    <table class="comparison-table w-full">
+      <thead>
+        <tr>
+          <th class="rounded-tl-lg"></th>
+          <th style="color:var(--accent-primary) !important; font-weight:800">ANTS Option A</th>
+          <th style="color:var(--accent-secondary) !important; font-weight:800">ANTS Option B</th>
+          <th>BuzzeBee</th>
+          <th class="rounded-tr-lg">Choco CRM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="font-medium">Year 1</td><td class="font-semibold">&#3647;5.8M</td><td class="font-semibold">&#3647;7.5M</td><td>&#3647;0.6M</td><td>&#3647;0.4M</td></tr>
+        <tr><td class="font-medium">Year 2</td><td>&#3647;1.7M</td><td>&#3647;1.5M</td><td>&#3647;0.6M</td><td>&#3647;0.4M</td></tr>
+        <tr><td class="font-medium">Year 3</td><td>&#3647;2.0M</td><td>&#3647;1.5M</td><td>&#3647;0.6M</td><td>&#3647;0.4M</td></tr>
+        <tr style="background:rgba(var(--accent-primary-rgb),0.08)">
+          <td class="font-bold">3-Year Total</td>
+          <td class="font-bold" style="color:var(--accent-primary)">&#3647;9.5M</td>
+          <td class="font-bold" style="color:var(--accent-secondary)">&#3647;10.5M</td>
+          <td class="font-bold">&#3647;1.8M</td>
+          <td class="font-bold">&#3647;1.2M</td>
+        </tr>
+        <tr><td class="font-medium">Multi-brand Support</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-red-400">&#10008;</td><td class="text-red-400">&#10008;</td></tr>
+        <tr><td class="font-medium">On-Premise Deploy</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-red-400">&#10008;</td><td class="text-red-400">&#10008;</td></tr>
+        <tr><td class="font-medium">Native Mobile App</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-red-400">&#10008;</td><td class="text-red-400">&#10008;</td></tr>
+        <tr><td class="font-medium">Regional Scalability</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-green-400 font-semibold">&#10003;</td><td class="text-red-400">&#10008;</td><td class="text-red-400">&#10008;</td></tr>
+        <tr><td class="font-medium">Data Ownership</td><td class="text-green-400 font-semibold">&#10003; 100%</td><td class="text-green-400 font-semibold">&#10003; 100%</td><td class="text-red-400">&#10008; Vendor</td><td class="text-red-400">&#10008; Vendor</td></tr>
+        <tr><td class="font-medium">Custom Development</td><td class="text-green-400 font-semibold">&#10003; Core + modules</td><td class="text-green-400 font-semibold">&#10003; Unlimited</td><td class="text-red-400">&#10008; Config only</td><td class="text-red-400">&#10008; Config only</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300">
+      <strong style="color:var(--accent-secondary)">Note:</strong> BuzzeBee/Choco CRM ออกแบบสำหรับร้านอาหาร/retail ทั่วไป ไม่รองรับ multi-brand automotive, on-premise, หรือ regional expansion &mdash; ไม่ใช่ solution ที่ตอบโจทย์ MGC-ASIA
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 9. PAYMENT STRUCTURE ===== -->
+<section id="payment" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">08 &mdash; Payment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Milestone-Based Payment</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">30/30/30/10 payment structure tied to deliverables</p>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">Milestone 1</h3>
+      <p class="text-xs text-dark-400">Contract signing + Discovery &amp; Design completion</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">Month 1</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">Milestone 2</h3>
+      <p class="text-xs text-dark-400">Core backend + Mobile app alpha delivery</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">Month 3</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">30%</div>
+      <h3 class="font-bold text-sm mb-2">Milestone 3</h3>
+      <p class="text-xs text-dark-400">UAT completion + Security audit pass</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">Month 5</div>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover text-center">
+      <div class="text-3xl font-black mb-2 text-green-400">10%</div>
+      <h3 class="font-bold text-sm mb-2">Milestone 4</h3>
+      <p class="text-xs text-dark-400">Go-Live + On-premise deployment + Training</p>
+      <div class="mt-3 text-xs font-semibold" style="color:var(--accent-secondary)">Month 6</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 10. TIMELINE ===== -->
+<section id="timeline" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">09 &mdash; Timeline</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">6-Month Delivery</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Agile delivery with monthly milestones and continuous stakeholder alignment</p>
+  </div>
+
+  <div class="space-y-0">
+    <!-- Timeline items -->
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-from), var(--timeline-line-via))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 1</div>
+        <h3 class="font-bold mb-1">Discovery + Design</h3>
+        <p class="text-sm text-dark-400">Business requirements finalization, UX/UI design, system architecture, API specification, data model design</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-via), var(--timeline-line-from))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 2</div>
+        <h3 class="font-bold mb-1">Core Backend + Points Engine</h3>
+        <p class="text-sm text-dark-400">Member service, points engine, tier system, campaign engine, reward service &mdash; core API development</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-from), var(--timeline-line-via))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 3</div>
+        <h3 class="font-bold mb-1">Mobile App + Admin Portal</h3>
+        <p class="text-sm text-dark-400">React Native app development, admin portal web app, user interface implementation, API integration</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-via), var(--timeline-line-to))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 4</div>
+        <h3 class="font-bold mb-1">Integration + Analytics</h3>
+        <p class="text-sm text-dark-400">LINE OA integration, push notification, analytics dashboard, KPI reporting, data export functionality</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot"></div>
+        <div class="w-0.5 h-24" style="background:linear-gradient(to bottom, var(--timeline-line-to), var(--timeline-line-to))"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover">
+        <div class="text-xs font-semibold mb-1" style="color:var(--accent-secondary)">Month 5</div>
+        <h3 class="font-bold mb-1">UAT + Security Audit</h3>
+        <p class="text-sm text-dark-400">User acceptance testing, penetration testing, security audit, performance optimization, bug fixes</p>
+      </div>
+    </div>
+    <div class="flex gap-6 items-start">
+      <div class="flex flex-col items-center">
+        <div class="timeline-dot" style="background:#22c55e"></div>
+      </div>
+      <div class="glass rounded-2xl p-6 flex-1 mb-6 card-hover" style="border-color:#22c55e">
+        <div class="text-xs font-semibold mb-1 text-green-400">Month 6</div>
+        <h3 class="font-bold mb-1 text-green-400">Go-Live</h3>
+        <p class="text-sm text-dark-400">On-premise deployment, data migration, staff training, App Store + Play Store submission, go-live support</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 11. ROI CALCULATOR ===== -->
+<section id="roi" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">10 &mdash; Return on Investment</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">ROI Calculator</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">Even a small increase in repeat purchase rates delivers massive ROI</p>
+  </div>
+
+  <div class="glass rounded-2xl p-8 mb-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div class="text-center">
+        <div class="text-3xl font-black mb-2" style="color:var(--accent-primary)">48,520</div>
+        <div class="text-sm text-dark-400">Current Members</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-black mb-2" style="color:var(--accent-secondary)">&#3647;2.5M</div>
+        <div class="text-sm text-dark-400">Average Car Price</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-black mb-2 text-green-400">3%</div>
+        <div class="text-sm text-dark-400">Repeat Purchase Uplift</div>
+      </div>
+    </div>
+
+    <div class="bg-dark-800/50 rounded-xl p-6 text-center mb-6">
+      <div class="text-sm text-dark-400 mb-2">Incremental Revenue Potential</div>
+      <div class="text-4xl font-black text-green-400">&#3647;3.6 Billion</div>
+      <div class="text-xs text-dark-500 mt-2">48,520 members &times; 3% uplift &times; &#3647;2.5M avg. price</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-dark-800/50 rounded-xl p-6 text-center">
+        <div class="text-sm text-dark-400 mb-2">Investment as % of Potential Revenue</div>
+        <div class="text-3xl font-black" style="color:var(--accent-primary)">0.16%</div>
+        <div class="text-xs text-dark-500 mt-1">&#3647;5.8M / &#3647;3.6B</div>
+      </div>
+      <div class="bg-dark-800/50 rounded-xl p-6 text-center">
+        <div class="text-sm text-dark-400 mb-2">Expected Payback Period</div>
+        <div class="text-3xl font-black text-green-400">&lt; 6 months</div>
+        <div class="text-xs text-dark-500 mt-1">from Go-Live date</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 12. PLATFORM VISION ===== -->
+<section id="vision" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">11 &mdash; Vision</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Platform, Not Project</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">MGC-ASIA is not just buying software &mdash; they're becoming the founding partner of the first automotive loyalty platform in ASEAN</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center gap-4 mb-12">
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover">
+      <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">Year 1</div>
+      <h3 class="font-bold text-lg mb-1">Thailand</h3>
+      <p class="text-xs text-dark-400">MGC-ASIA as Founding Partner</p>
+      <div class="text-2xl mt-2">&#127481;&#127469;</div>
+    </div>
+    <div class="journey-arrow text-2xl hidden md:block">&#8594;</div>
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover">
+      <div class="text-xs font-semibold mb-2" style="color:var(--accent-secondary)">Year 2</div>
+      <h3 class="font-bold text-lg mb-1">Thai Automotive</h3>
+      <p class="text-xs text-dark-400">Additional Thai dealers onboard</p>
+      <div class="text-2xl mt-2">&#128663;</div>
+    </div>
+    <div class="journey-arrow text-2xl hidden md:block">&#8594;</div>
+    <div class="glass rounded-2xl p-6 flex-1 text-center card-hover" style="border:2px solid var(--accent-secondary)">
+      <div class="text-xs font-semibold mb-2 text-green-400">Year 3</div>
+      <h3 class="font-bold text-lg mb-1">ASEAN Expansion</h3>
+      <p class="text-xs text-dark-400">Malaysia, Singapore, Vietnam</p>
+      <div class="text-2xl mt-2">&#127758;</div>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-6 text-center">
+    <p class="text-sm text-dark-300 leading-relaxed">
+      <strong class="gradient-gold">Founding Partner Advantage:</strong> MGC-ASIA shapes the product roadmap, gets priority features, and (with Option B) earns royalties as the platform scales across ASEAN automotive industry.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 13. WHY ANTS ===== -->
+<section id="why-us" class="relative py-32 px-6" style="background:var(--bg-secondary)">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">12 &mdash; Competitive Moat</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Why ANTS</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">5 capabilities that no other vendor can match for this scope</p>
+  </div>
+
+  <div class="grid md:grid-cols-5 gap-4 mb-12">
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128274;</div>
+      <h4 class="font-bold text-sm mb-2">On-Premise + Data Sovereignty</h4>
+      <p class="text-xs text-dark-400">BuzzeBee / Choco CRM cannot deploy on-premise. ANTS can.</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#127961;</div>
+      <h4 class="font-bold text-sm mb-2">Multi-Brand Architecture</h4>
+      <p class="text-xs text-dark-400">SaaS = 1 brand per license. ANTS = 15+ brands in one platform.</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128241;</div>
+      <h4 class="font-bold text-sm mb-2">React Native Regional App</h4>
+      <p class="text-xs text-dark-400">Not locked to LINE. Works in every ASEAN country.</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#129302;</div>
+      <h4 class="font-bold text-sm mb-2">AI-Ready Architecture</h4>
+      <p class="text-xs text-dark-400">Expansion modules for AI, automation, gamification ready to plug in.</p>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#129309;</div>
+      <h4 class="font-bold text-sm mb-2">Partnership Model</h4>
+      <p class="text-xs text-dark-400">Not a vendor relationship. ANTS invests alongside MGC-ASIA.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 14. TEAM ===== -->
+<section id="team" class="relative py-32 px-6">
+<div class="max-w-6xl mx-auto section-enter">
+  <div class="text-center mb-16">
+    <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">13 &mdash; Delivery Team</div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Dedicated Team</h2>
+    <p class="text-dark-400 max-w-3xl mx-auto">10-person team optimized for Plan B delivery</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128188;</div>
+      <h4 class="font-bold text-xs mb-1">Project Director</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128203;</div>
+      <h4 class="font-bold text-xs mb-1">Project Manager</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#127912;</div>
+      <h4 class="font-bold text-xs mb-1">UX/UI Designer</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128736;</div>
+      <h4 class="font-bold text-xs mb-1">Solution Architect</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128187;</div>
+      <h4 class="font-bold text-xs mb-1">Full-Stack Dev</h4>
+      <div class="text-xs text-dark-500">3 persons</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128241;</div>
+      <h4 class="font-bold text-xs mb-1">Mobile Dev (RN)</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#128269;</div>
+      <h4 class="font-bold text-xs mb-1">QA Engineer</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover text-center">
+      <div class="text-2xl mb-3">&#9881;</div>
+      <h4 class="font-bold text-xs mb-1">DevOps / Infra</h4>
+      <div class="text-xs text-dark-500">1 person</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 15. NEXT STEPS / CTA ===== -->
+<section id="next-steps" class="relative py-32 px-6 text-center" style="background:var(--bg-secondary)">
+<div class="max-w-4xl mx-auto section-enter">
+  <div class="text-xs font-semibold text-ants-400 tracking-widest uppercase mb-3">14 &mdash; Next Steps</div>
+  <h2 class="text-4xl md:text-5xl font-bold mb-4">Let's Get Started</h2>
+  <p class="text-dark-400 max-w-2xl mx-auto mb-12">4 simple steps to launch MOBILIFE Essentials Plus</p>
+
+  <div class="grid md:grid-cols-4 gap-4 mb-16">
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">1&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">POC Demo</h3>
+      <p class="text-xs text-dark-400">ทดลองใช้ working prototype &mdash; Registration, Point Dashboard, Campaign, Coupon Wallet</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">2&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">IP Model Selection</h3>
+      <p class="text-xs text-dark-400">เลือก Option A (License) หรือ Option B (Co-IP Partnership)</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">3&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">Technical Deep Dive</h3>
+      <p class="text-xs text-dark-400">Architecture review + infrastructure requirements assessment</p>
+    </div>
+    <div class="glass rounded-2xl p-6 text-left card-hover">
+      <div class="text-2xl mb-3" style="color:var(--accent-secondary);">4&#65039;&#8419;</div>
+      <h3 class="font-bold text-sm mb-2">Contract &amp; Kickoff</h3>
+      <p class="text-xs text-dark-400">เริ่มงานภายใน 2 สัปดาห์หลัง sign contract</p>
+    </div>
+  </div>
+
+  <div class="glass rounded-2xl p-8 inline-block">
+    <div class="text-sm text-dark-400 mb-2">Contact</div>
+    <div class="text-lg font-bold mb-1">ANTS &mdash; Advance Network Technology &amp; Service</div>
+    <div class="text-sm text-dark-400">MarTech | AI | Digital Transformation</div>
+    <div class="mt-4 flex items-center justify-center gap-6 text-xs text-dark-500">
+      <span>&#128231; sales@ants.co.th</span>
+      <span>&#128241; +6691-659-5244</span>
+    </div>
+  </div>
+
+  <div class="mt-12 text-xs text-dark-600">
+    Confidential &mdash; Plan B: Essentials Plus &mdash; Prepared exclusively for MGC-ASIA Group &mdash; March 2026
+  </div>
+</div>
+</section>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('proposal-theme', next);
+}
+
+// Load saved preference (default: light)
+(function() {
+  const saved = localStorage.getItem('proposal-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scroll-progress').style.width = progress + '%';
+});
+
+// Section enter animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section-enter').forEach(el => observer.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
