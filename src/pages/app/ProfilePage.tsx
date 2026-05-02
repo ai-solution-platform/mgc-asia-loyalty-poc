@@ -43,20 +43,24 @@ export default function ProfilePage() {
 
   return (
     <div className="px-4 py-4 space-y-4">
-      {/* Profile Card */}
-      <div className="bg-gradient-to-br from-[#0D1B4A] to-[#1B2B5B] rounded-2xl p-5 text-center shadow-xl">
-        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#C9A96E] to-[#D4A853] mx-auto mb-3 flex items-center justify-center text-2xl font-bold text-white">
-          {displayInfo.firstName[0]}
+      {/* Profile Card — compact horizontal layout */}
+      <div className="bg-gradient-to-br from-[#0D1B4A] to-[#1B2B5B] rounded-2xl p-4 shadow-xl">
+        <div className="flex items-center gap-3">
+          <div className="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-[#C9A96E] to-[#D4A853] flex items-center justify-center text-xl font-bold text-white">
+            {displayInfo.firstName[0]}
+          </div>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-base font-bold text-white truncate">{displayInfo.firstName} {displayInfo.lastName}</h2>
+            <p className="text-[11px] text-white/50 mt-0.5">{currentUser.memberId}</p>
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full mt-1 text-[10px] font-bold" style={{background: tier.bg, color: tier.color, border: `1px solid ${tier.color}33`}}>
+              {tier.icon} {currentUser.tier}
+            </div>
+          </div>
         </div>
-        <h2 className="text-lg font-bold text-white">{displayInfo.firstName} {displayInfo.lastName}</h2>
-        <p className="text-xs text-white/50 mt-0.5">{currentUser.memberId}</p>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mt-2 text-xs font-bold" style={{background: tier.bg, color: tier.color, border: `1px solid ${tier.color}33`}}>
-          {tier.icon} {currentUser.tier}
-        </div>
-        <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-white/10">
-          <div><div className="text-lg font-bold text-[#D4A853]">{currentUser.points.toLocaleString()}</div><div className="text-[10px] text-white/40">คะแนน</div></div>
-          <div><div className="text-lg font-bold text-white">฿{(currentUser.totalSpending/1000000).toFixed(1)}M</div><div className="text-[10px] text-white/40">ยอดใช้จ่าย</div></div>
-          <div><div className="text-lg font-bold text-green-400">{currentUser.registeredBU}</div><div className="text-[10px] text-white/40">แบรนด์</div></div>
+        <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/10">
+          <div><div className="text-sm font-bold text-[#D4A853] leading-tight">{currentUser.points.toLocaleString()}</div><div className="text-[9px] text-white/40 mt-0.5">คะแนน</div></div>
+          <div><div className="text-sm font-bold text-white leading-tight">฿{(currentUser.totalSpending/1000000).toFixed(1)}M</div><div className="text-[9px] text-white/40 mt-0.5">ยอดใช้จ่าย</div></div>
+          <div><div className="text-sm font-bold text-green-400 leading-tight truncate">{currentUser.registeredBU}</div><div className="text-[9px] text-white/40 mt-0.5">แบรนด์</div></div>
         </div>
       </div>
 

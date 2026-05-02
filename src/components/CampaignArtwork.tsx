@@ -56,72 +56,65 @@ function getBrandPhoto(brand: string): string {
   return brandPhotos[brand] || brandPhotos['All Brands'];
 }
 
-// Theme-based photos for campaigns where a brand-car visual doesn't fit
-// (birthday celebrations, lucky draw / mystery box, friend referrals, travel/getaways).
+// Theme-based photos for campaigns where a brand-car visual doesn't fit:
+// birthday celebrations, generic friend referrals (no specific brand), premium travel,
+// and family-and-friends drive events. Lucky Draw / Mystery Box / Wheel of Fortune
+// fall through to the brand-car photo (more on-brand than a generic gift box).
 // Format same as brandPhotos. All verified HTTP 200 (Unsplash, free for commercial use).
 const themePhotos: Record<string, string> = {
   // Birthday — round fondant cake with happy birthday candle (Annie Spratt, 2016)
   'birthday': 'https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=800&q=80&auto=format&fit=crop',
-  // Lucky Draw / Mystery Box — gift box with ribbon, card, and confetti (Jess Bailey, 2025)
-  'lucky-draw': 'https://images.unsplash.com/photo-1764385827352-78c20131fd47?w=800&q=80&auto=format&fit=crop',
-  // Friend Referral / Friends — diverse group of friends smiling together at rooftop party (Vitaly Gariev, 2025)
-  'friend-referral': 'https://images.unsplash.com/photo-1758272133786-ee98adcc6837?w=800&q=80&auto=format&fit=crop',
-  // Travel / Weekend Getaway — winding mountain road at sunset, Yosemite (Venti Views, 2025)
-  'travel': 'https://images.unsplash.com/photo-1750801321923-a93fd5e5bf21?w=800&q=80&auto=format&fit=crop',
-  // Family & Friends Drive — woman riding with head and arm out the window on a road trip
-  'family-drive': 'https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?w=800&q=80&auto=format&fit=crop',
+  // Premium Travel / Weekend Getaway — Genesis GV80 luxury SUV parked at the ocean horizon (Hyundai Motor Group, 2026)
+  'premium-travel': 'https://images.unsplash.com/photo-1768363341895-74756d1fc99d?w=800&q=80&auto=format&fit=crop',
+  // Premium Friends — multiethnic group of friends toasting drinks at rooftop party with city skyline (Vitaly Gariev, 2025)
+  'premium-friends': 'https://images.unsplash.com/photo-1758272133542-b3107b947fc2?w=800&q=80&auto=format&fit=crop',
+  // Premium Family Drive — two friends on Jeep Grand Cherokee SUV at Pismo Beach, road trip lifestyle moment (Jeremy Bishop, 2018)
+  'premium-family-drive': 'https://images.unsplash.com/photo-1517965623714-cbaadea459b4?w=800&q=80&auto=format&fit=crop',
 };
 
 // Decide which photo to show. Theme overrides take priority over brand-car photos
-// when the campaign's category/title clearly signals a theme (birthday, lucky draw,
-// friend referral, travel). Otherwise falls back to the brand car photo.
+// when the campaign's category/title clearly signals a theme (birthday, travel,
+// friend referral without a specific brand, family drive). Lucky Draw / Mystery Box
+// / Wheel of Fortune fall through to the brand-car photo for stronger brand recall.
 function getCampaignPhoto(brand: string, campaignType: string, title: string): string {
   const t = title.toLowerCase();
   const ct = campaignType.toLowerCase();
 
-  // Birthday-themed campaigns
-  if (ct.includes('birthday') || t.includes('birthday') || t.includes('วันเกิด')) {
+  // Birthday-themed campaigns → birthday cake
+  if (ct.includes('birthday') || t.includes('birthday special') || t.includes('birthday') || t.includes('วันเกิด')) {
     return themePhotos['birthday'];
   }
 
-  // Lucky draw / mystery box / wheel-of-fortune campaigns
-  if (
-    ct.includes('lucky') ||
-    ct.includes('mystery') ||
-    t.includes('mystery box') ||
-    t.includes('lucky draw') ||
-    t.includes('wheel of fortune')
-  ) {
-    return themePhotos['lucky-draw'];
+  // Sixt rental / Travel campaigns → premium luxury travel photo
+  if (brand === 'Sixt' || (ct.includes('travel') && t.includes('weekend')) || ct.includes('travel') || t.includes('getaway')) {
+    return themePhotos['premium-travel'];
   }
 
-  // Friend referral / refer-a-friend campaigns (incl. Thai "ชวนเพื่อน")
-  // Family & Friends Drive uses the road-trip photo since it's a drive event with friends/family.
-  if (t.includes('family') && (t.includes('drive') || t.includes('friend'))) {
-    return themePhotos['family-drive'];
+  // Family & Friends Drive → premium family-in-car / lifestyle photo
+  // (must come before the generic friend-referral block to claim "Family ... Drive" titles)
+  if (t.includes('family') && t.includes('drive')) {
+    return themePhotos['premium-family-drive'];
   }
+
+  // Friend Get Friends / Referral
   if (
+    ct.includes('friend') ||
     ct.includes('referral') ||
-    ct.includes('friend get friend') ||
-    ct.includes('friend-get-friend') ||
     t.includes('refer-a-friend') ||
     t.includes('refer a friend') ||
+    t.includes('refer') ||
     t.includes('ชวนเพื่อน')
   ) {
-    return themePhotos['friend-referral'];
+    // If campaign has a specific premium brand, brand car wins (priority)
+    if (brand && brand !== 'All Brands' && brand !== '' && brandPhotos[brand]) {
+      return brandPhotos[brand];
+    }
+    // Generic referral with no specific brand → premium friends photo
+    return themePhotos['premium-friends'];
   }
 
-  // Travel / weekend getaway campaigns
-  if (
-    ct.includes('travel') ||
-    t.includes('weekend getaway') ||
-    t.includes('getaway') ||
-    t.includes('road trip')
-  ) {
-    return themePhotos['travel'];
-  }
-
-  // Fallback — brand car photo
+  // Default: brand car photo
+  // (Lucky Draw / Mystery Box / Wheel of Fortune all fall through here for strong brand recall)
   return getBrandPhoto(brand);
 }
 
