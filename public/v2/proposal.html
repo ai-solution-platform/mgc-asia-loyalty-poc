@@ -606,7 +606,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <div class="glass rounded-2xl p-5">
         <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">Campaign & Marketing (3)</div>
         <ul class="space-y-2 text-sm">
-          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F8.</b> Cohort segmentation + audience builder</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F8.</b> Customer segmentation + audience builder</span></li>
           <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F9.</b> Multi-channel campaign orchestration (LINE/Email/SMS)</span></li>
           <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F10.</b> A/B test framework w/ statistical significance</span></li>
         </ul>
@@ -709,12 +709,16 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       </defs>
       <rect width="1100" height="720" fill="url(#archgrid)"/>
 
-      <!-- Layer Labels -->
-      <text x="20" y="35" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">TOUCHPOINTS</text>
-      <text x="20" y="175" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">API GATEWAY</text>
-      <text x="20" y="295" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">CORE SERVICES</text>
-      <text x="20" y="475" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">AI &amp; DATA</text>
-      <text x="20" y="615" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">INTEGRATIONS</text>
+      <!-- Layer Labels (positioned above each row, not inside) -->
+      <text x="20" y="30" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">TOUCHPOINTS</text>
+      <text x="20" y="135" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">API GATEWAY</text>
+      <text x="20" y="246" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">CRM PLATFORM</text>
+      <text x="20" y="416" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">AI &amp; DATA</text>
+      <text x="20" y="586" fill="var(--text-muted)" font-size="11" font-weight="700" opacity="0.7">INTEGRATIONS</text>
+
+      <!-- CRM Platform Wrapper — wraps all 5 core services -->
+      <rect x="85" y="226" width="945" height="130" rx="18" fill="rgba(126,42,142,0.04)" stroke="#7E2A8E" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+      <text x="557" y="244" text-anchor="middle" fill="#7E2A8E" font-size="11" font-weight="800" opacity="0.85">⚙️  CRM PLATFORM — CENTRALISED CUSTOMER DATA HUB</text>
 
       <!-- TOUCHPOINTS ROW -->
       <g class="arch-node">
@@ -1273,150 +1277,205 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
     </div>
   </div>
 
-  <!-- Sample AI capabilities — 20 illustrative samples -->
-  <div class="mb-5">
-    <h3 class="font-display font-bold text-xl mb-2">Sample AI Use Cases — Illustrative Capability Showcase</h3>
-    <p class="text-sm" style="color:var(--text-muted)">The 20 samples below illustrate what น้องใบเตย can do across executive, marketing, customer intelligence, operations, and member self-service. The specific use cases delivered will be co-defined with MGC-ASIA during discovery, prioritised by business value, and progressively expanded over time.</p>
+  <!-- Sample AI capabilities — Conversational Chat → Visualization -->
+  <div class="mb-6">
+    <h3 class="font-display font-bold text-xl mb-2">Sample Conversations — How น้องใบเตย Works</h3>
+    <p class="text-sm" style="color:var(--text-muted)">น้องใบเตย is a conversational chat interface. Users type a question in natural Thai or English. The AI agent retrieves data from the platform, runs the right analysis, and replies with a visualisation, summary, or recommended action. The samples below illustrate this pattern — covering both <b style="color:var(--text-primary)">Internal use</b> (executives, marketing, operations) and <b style="color:var(--text-primary)">External use</b> (customers inside LINE).</p>
   </div>
 
-  <!-- 5 category sections, 4 use cases each = 20 -->
-  <div class="space-y-4 mb-10">
-
-    <!-- Category 1: Executive Insights -->
-    <div class="glass rounded-2xl p-5">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(226,35,26,0.12); color:#E2231A">📊</div>
-        <h4 class="font-display font-bold text-base">Executive Insights — for C-Level &amp; Leadership</h4>
+  <!-- How it works flow -->
+  <div class="glass rounded-2xl p-5 mb-6">
+    <div class="grid md:grid-cols-4 gap-3 items-center">
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center text-2xl" style="background:rgba(226,35,26,0.12); color:#E2231A">💬</div>
+        <div class="text-xs font-bold mb-1" style="color:var(--text-primary)">1. User asks in chat</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Natural Thai or English</div>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Real-Time Brand Performance</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Cross-brand performance comparison on demand</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Cross-Brand Leaderboard</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Ranked performance across the 8-brand portfolio</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Point Liability Forecasting</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">CFO-grade liability projections with scenarios</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Anomaly Auto-Detection</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Proactive alerts on unusual patterns</div>
-        </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center text-2xl" style="background:rgba(126,42,142,0.15); color:#7E2A8E">🧠</div>
+        <div class="text-xs font-bold mb-1" style="color:var(--text-primary)">2. AI processes request</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Retrieves data + runs analysis</div>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center text-2xl" style="background:rgba(201,169,110,0.18); color:#C9A96E">📊</div>
+        <div class="text-xs font-bold mb-1" style="color:var(--text-primary)">3. Returns visualisation</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Charts, tables, summaries</div>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center text-2xl" style="background:rgba(34,197,94,0.15); color:#16a34a">✅</div>
+        <div class="text-xs font-bold mb-1" style="color:var(--text-primary)">4. Suggests next action</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">One-click follow-up actions</div>
       </div>
     </div>
-
-    <!-- Category 2: Marketing Optimization -->
-    <div class="glass rounded-2xl p-5">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(201,169,110,0.18); color:#C9A96E">🎯</div>
-        <h4 class="font-display font-bold text-base">Marketing Optimization — for Marketing &amp; CRM Teams</h4>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Campaign ROI &amp; Uplift</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Causal uplift attribution per cohort</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Dynamic Segmentation</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">RFM segments updated continuously</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Next-Best-Action</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Per-customer recommendation engine</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">A/B Test Interpretation</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Statistical significance + plain-language summary</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Category 3: Customer Intelligence -->
-    <div class="glass rounded-2xl p-5">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(126,42,142,0.15); color:#7E2A8E">🧠</div>
-        <h4 class="font-display font-bold text-base">Customer Intelligence — Predictive &amp; Behavioural</h4>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Churn Prediction</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">At-risk member identification + retention plays</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Top-Tier Behaviour DNA</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Patterns of best customers — replicable signals</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Lifetime Value Forecast</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Member CLV projections by cohort</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Cross-Brand Propensity</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Likelihood of upgrading or cross-buying</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Category 4: Operations Support -->
-    <div class="glass rounded-2xl p-5">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(27,43,91,0.12); color:#1B2B5B">⚙️</div>
-        <h4 class="font-display font-bold text-base">Operations Support — for Service &amp; Branch Teams</h4>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Service Issue Resolution</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Member context + resolution suggestions</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Tier Override Decision</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Manager-grade override recommendations</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Reward Inventory Forecast</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Demand prediction for stock planning</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Branch Benchmarking</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Branch performance comparison &amp; insights</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Category 5: Member Self-Service -->
-    <div class="glass rounded-2xl p-5">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(34,197,94,0.15); color:#16a34a">💬</div>
-        <h4 class="font-display font-bold text-base">Member Self-Service — Inside LINE for Customers</h4>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personal Points &amp; Tier</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">"Points ฉันเหลือเท่าไหร่" — instant answer</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personalised Rewards</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Tailored reward recommendations on LINE</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Service Concierge</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Service triage + booking via natural language</div>
-        </div>
-        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
-          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">FAQ &amp; Support</div>
-          <div class="text-[11px]" style="color:var(--text-muted)">Conversational support, escalation when needed</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- Note: not a commitment -->
+  <!-- Internal Use Cases (Management & Operations) -->
+  <div class="mb-6">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:linear-gradient(135deg,#1B2B5B,#7E2A8E); color:#fff">🏢</div>
+      <div>
+        <h4 class="font-display font-bold text-lg">Internal — Management &amp; Operations</h4>
+        <p class="text-xs" style="color:var(--text-muted)">Executives, marketing, customer intelligence, and operations teams chat with น้องใบเตย to get insights and run actions instantly</p>
+      </div>
+    </div>
+
+    <!-- Featured conversation example -->
+    <div class="glass rounded-2xl p-5 mb-4" style="border-left: 4px solid #E2231A;">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">Sample Conversation — Marketing Team</div>
+      <div class="space-y-2 max-w-2xl">
+        <div class="flex justify-end">
+          <div class="rounded-2xl rounded-tr-sm p-3 max-w-[85%]" style="background:#1B2B5B; color:#fff;">
+            <div class="text-sm">"ใบเตย ลูกค้าคนไหนเสี่ยง churn บ้าง และเสนอ campaign ดึงกลับให้หน่อย"</div>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg, #1B2B5B, #7E2A8E); color:#fff;">ใ</div>
+          <div class="rounded-2xl rounded-tl-sm p-3 max-w-[85%]" style="background:var(--bg-card-inner); color:var(--text-primary);">
+            <div class="text-sm mb-2">พบสมาชิก Black Diamond <b>23 ท่าน</b> เสี่ยง churn สูงในไตรมาสนี้ค่ะ</div>
+            <div class="rounded-lg p-2 mb-2 text-xs" style="background:rgba(226,35,26,0.08);">
+              <div class="font-bold mb-1" style="color:#E2231A">📊 Churn Risk Distribution</div>
+              <div style="color:var(--text-muted)">High Risk: 23 · Medium: 56 · Low: 891</div>
+              <div class="flex h-2 rounded-full mt-1 overflow-hidden">
+                <div style="width:2.4%; background:#E2231A;"></div>
+                <div style="width:5.9%; background:#C9A96E;"></div>
+                <div style="width:91.7%; background:#16a34a;"></div>
+              </div>
+            </div>
+            <div class="text-sm mb-2">แนะนำ campaign <b>"Welcome Back · Service Free Check + Bonus 5,000 points"</b> — เคยได้ผล <b>67% retention</b> ในกลุ่มนี้</div>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-1 rounded text-[10px] font-bold" style="background:#E2231A; color:#fff;">Create Campaign</span>
+              <span class="px-2 py-1 rounded text-[10px] font-bold" style="background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-glass);">View Member List</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internal use case grid: 12 samples grouped by audience -->
+    <div class="grid md:grid-cols-3 gap-4">
+
+      <!-- Executive -->
+      <div class="rounded-2xl p-4" style="background:var(--bg-card-inner); border:1px solid var(--border-glass);">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style="background:rgba(226,35,26,0.12); color:#E2231A">📊</span>
+          <h5 class="font-bold text-sm" style="color:var(--text-primary)">For Executives</h5>
+        </div>
+        <ul class="space-y-2 text-xs">
+          <li><b style="color:var(--text-primary)">Brand Performance Q&amp;A:</b> <span style="color:var(--text-muted)">"Rolls-Royce vs BMW เดือนนี้ทำคะแนนต่างกันยังไง" → comparison chart</span></li>
+          <li><b style="color:var(--text-primary)">Point Liability Forecast:</b> <span style="color:var(--text-muted)">"Liability ปลายปีจะเป็นเท่าไหร่" → CFO scenarios</span></li>
+          <li><b style="color:var(--text-primary)">Cross-Brand Leaderboard:</b> <span style="color:var(--text-muted)">"Brand ไหน performance ดีสุด" → ranking with insights</span></li>
+          <li><b style="color:var(--text-primary)">Anomaly Alerts:</b> <span style="color:var(--text-muted)">"มีอะไรน่ากังวลในสัปดาห์นี้" → proactive flags</span></li>
+        </ul>
+      </div>
+
+      <!-- Marketing -->
+      <div class="rounded-2xl p-4" style="background:var(--bg-card-inner); border:1px solid var(--border-glass);">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style="background:rgba(201,169,110,0.18); color:#C9A96E">🎯</span>
+          <h5 class="font-bold text-sm" style="color:var(--text-primary)">For Marketing &amp; CRM</h5>
+        </div>
+        <ul class="space-y-2 text-xs">
+          <li><b style="color:var(--text-primary)">Campaign ROI Analysis:</b> <span style="color:var(--text-muted)">"Campaign Summer ROI ดีสุดในกลุ่มไหน" → uplift breakdown</span></li>
+          <li><b style="color:var(--text-primary)">Audience Segmentation:</b> <span style="color:var(--text-muted)">"แบ่งกลุ่มลูกค้าให้หน่อย" → segment list with size</span></li>
+          <li><b style="color:var(--text-primary)">Next-Best-Action:</b> <span style="color:var(--text-muted)">"คุณ A ควรเสนออะไร" → personalised offer</span></li>
+          <li><b style="color:var(--text-primary)">A/B Test Reading:</b> <span style="color:var(--text-muted)">"Test A vs B ผลเป็นยังไง" → plain-language verdict</span></li>
+        </ul>
+      </div>
+
+      <!-- Operations -->
+      <div class="rounded-2xl p-4" style="background:var(--bg-card-inner); border:1px solid var(--border-glass);">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style="background:rgba(126,42,142,0.15); color:#7E2A8E">⚙️</span>
+          <h5 class="font-bold text-sm" style="color:var(--text-primary)">For Operations &amp; Service</h5>
+        </div>
+        <ul class="space-y-2 text-xs">
+          <li><b style="color:var(--text-primary)">Member Lookup:</b> <span style="color:var(--text-muted)">"คุณ X เคยซื้ออะไร" → full member context</span></li>
+          <li><b style="color:var(--text-primary)">Tier Override Help:</b> <span style="color:var(--text-muted)">"ควรอัพ tier ให้คุณ Y มั้ย" → recommendation</span></li>
+          <li><b style="color:var(--text-primary)">Reward Stock Forecast:</b> <span style="color:var(--text-muted)">"ของรางวัลพอใช้อีกกี่เดือน" → demand prediction</span></li>
+          <li><b style="color:var(--text-primary)">Branch Performance:</b> <span style="color:var(--text-muted)">"สาขาไหนทำดี ทำไม่ดี" → comparison &amp; reasons</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- External Use Cases (Customer in LINE) -->
+  <div class="mb-6">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:linear-gradient(135deg,#06C755,#04A547); color:#fff">💬</div>
+      <div>
+        <h4 class="font-display font-bold text-lg">External — Customers Inside LINE</h4>
+        <p class="text-xs" style="color:var(--text-muted)">Members chat with น้องใบเตย directly inside LINE for instant self-service, recommendations, and concierge support</p>
+      </div>
+    </div>
+
+    <!-- Featured customer conversation -->
+    <div class="glass rounded-2xl p-5 mb-4" style="border-left: 4px solid #06C755;">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#06C755">Sample Conversation — Member Self-Service</div>
+      <div class="space-y-2 max-w-2xl">
+        <div class="flex justify-end">
+          <div class="rounded-2xl rounded-tr-sm p-3 max-w-[85%]" style="background:#06C755; color:#fff;">
+            <div class="text-sm">"ใบเตย คะแนนของผมอัพเป็น Black Diamond ได้ยังไง"</div>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg, #1B2B5B, #7E2A8E); color:#fff;">ใ</div>
+          <div class="rounded-2xl rounded-tl-sm p-3 max-w-[85%]" style="background:var(--bg-card-inner); color:var(--text-primary);">
+            <div class="text-sm mb-2">ตอนนี้คุณ <b>Diamond Tier</b> มี <b>12,450 คะแนน</b> ค่ะ ขาดอีก <b>2,550 คะแนน</b> จะอัพเป็น Black Diamond ✨</div>
+            <div class="rounded-lg p-2 mb-2 text-xs" style="background:linear-gradient(90deg, rgba(201,169,110,0.15), transparent);">
+              <div class="font-bold mb-1" style="color:#C9A96E">🎯 ทางลัดที่แนะนำ</div>
+              <div style="color:var(--text-muted)">• BMW Summer Drive Campaign (+5,000 pts) → ถึงทันทีเลยค่ะ</div>
+              <div style="color:var(--text-muted)">• Service ที่ศูนย์ + ใช้ฟีเจอร์เลือก Black Badge concierge</div>
+            </div>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-1 rounded text-[10px] font-bold" style="background:#C9A96E; color:#fff;">ดู Campaign</span>
+              <span class="px-2 py-1 rounded text-[10px] font-bold" style="background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-glass);">จองศูนย์บริการ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External use case grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personal Points &amp; Tier Inquiry</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"คะแนนเหลือเท่าไหร่" — instant balance with upgrade roadmap</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personalised Recommendations</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"แลกอะไรดี" — curated rewards based on profile and history</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Service Concierge</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"จองศูนย์บริการให้หน่อย" — booking flow inside LINE</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Campaign Discovery</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"มี campaign อะไรบ้าง" — relevant campaigns for member's tier</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">FAQ &amp; Conversational Support</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"จะแลกของยังไง" — natural-language help with smart escalation</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Tier Benefits Explainer</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"Black Diamond ได้สิทธิ์อะไรบ้าง" — clear tier benefits</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Coupon Status &amp; Wallet</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"คูปองที่ใช้ได้" — active vouchers with expiry tracking</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:var(--bg-card-inner); border-left: 3px solid #06C755;">
+        <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Event &amp; Privilege Discovery</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">"มี event อะไรน่าสนใจ" — exclusive events for member's tier</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note -->
   <div class="rounded-xl p-4 mb-10 text-xs" style="background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.25); color:var(--text-muted)">
-    <b style="color:var(--text-primary)">Important:</b> The 20 samples above demonstrate what the AI agent architecture is capable of. The actual use cases activated for MGC-ASIA will be agreed during discovery and rolled out in priority order based on business impact. Additional capabilities are added through the Change Request process or in future enhancement releases.
+    <b style="color:var(--text-primary)">Important:</b> The samples above demonstrate the conversational AI pattern — chat input, intelligent processing, visualised response. The specific use cases activated for MGC-ASIA will be agreed during discovery and rolled out in priority order based on business impact. Additional capabilities are added through Change Requests or future enhancement releases.
   </div>
 
   <!-- Competitive comparison -->
@@ -1444,74 +1503,219 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
 </div>
 </section>
 
-<!-- ===== 9. TECH STACK ===== -->
+<!-- ===== 7. TECH STACK ===== -->
 <section id="stack" class="py-24 px-10">
 <div class="max-w-7xl mx-auto section-enter">
   <div class="text-center mb-12">
-    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">09 — Tech Stack</div>
-    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Hybrid (Cloud-Native)</h2>
-    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Production-grade stack chosen for PDPA, performance, and cost. PDPA data never leaves Thailand. AI workloads scale on Cloud without idle GPU cost.</p>
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">07 — Technology Stack</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Cloud-Native Technology Stack</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Production-grade technologies chosen for compliance, performance, and cost optimisation. Each layer uses industry-leading components — final implementation choices confirmed at solution design.</p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-5">
+  <!-- Visual stack icon grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <!-- Frontend -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">FRONTEND</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">LINE LIFF</span><span class="font-semibold">Primary</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">React + Next.js 14</span><span class="font-semibold">Admin</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">TailwindCSS + shadcn</span><span class="font-semibold">UI</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Vega-Lite</span><span class="font-semibold">Charts</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #06C755, #04A547); color:#fff;">📱</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">Frontend</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">Member Experience</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">💚</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">LINE LIFF</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Customer channel</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">⚛️</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">React + Next.js</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Admin portal</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🎨</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Tailwind CSS</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Design system</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">📊</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Charting Library</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Visualisation</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Backend -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">BACKEND (Local Zone)</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Node.js / NestJS</span><span class="font-semibold">API</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">PostgreSQL</span><span class="font-semibold">Member DB</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Redis</span><span class="font-semibold">Cache + Queue</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Keycloak</span><span class="font-semibold">SSO/PDPA</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #1B2B5B, #2B4A8E); color:#fff;">⚙️</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">Backend</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">CRM Core Platform</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🟢</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Node.js / NestJS</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">API services</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🐘</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">PostgreSQL</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Member database</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">⚡</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Redis</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Cache + Queue</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🔐</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Identity / SSO</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">PDPA &amp; access</div>
+        </div>
+      </div>
     </div>
+
+    <!-- AI / Analytics -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">AI / ANALYTICS (Global Zone)</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Managed AI Platform</span><span class="font-semibold">LLM (Claude/GPT)</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">ML Platform</span><span class="font-semibold">Model training</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Vector DB</span><span class="font-semibold">RAG search</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">BI Platform</span><span class="font-semibold">Analytics</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #7E2A8E, #5C1F68); color:#fff;">🤖</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">AI &amp; Analytics</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">Intelligence Layer</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🧠</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Managed LLM</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Conversational AI</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🎯</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">ML Platform</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Model training</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🔍</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Vector Database</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">RAG search</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">📈</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">BI Platform</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Analytics</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Cloud Infrastructure -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">INFRA · Cloud (Thailand)</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Tier-3 Cloud DC</span><span class="font-semibold">PDPA Compliant</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">VMware / OpenStack</span><span class="font-semibold">Compute</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">True SOC</span><span class="font-semibold">SecOps</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">PDPA-certified</span><span class="font-semibold">Compliance</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #C9A96E, #A88845); color:#fff;">☁️</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">Cloud Infrastructure</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">Foundation</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🇹🇭</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Tier-3 Data Centre</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">PDPA compliant</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🖥️</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Compute</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Auto-scaling</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">💾</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Storage</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Encrypted</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🌐</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Edge / CDN</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Fast delivery</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Security -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">INFRA · Cloud</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">ap-southeast-1</span><span class="font-semibold">Singapore</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">EKS / Fargate</span><span class="font-semibold">AI workloads</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">CDN</span><span class="font-semibold">Edge Acceleration</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Savings Plans</span><span class="font-semibold">Cost optimized</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #E2231A, #B91B14); color:#fff;">🛡️</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">Security &amp; Compliance</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">Trust Layer</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🔒</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Web App Firewall</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Threat protection</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">👁️</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Security Monitoring</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Continuous</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">📜</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">PDPA Compliance</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Certified</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🔑</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Encryption</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">At rest &amp; transit</div>
+        </div>
+      </div>
     </div>
+
+    <!-- DevOps / Observability -->
     <div class="glass rounded-2xl p-6">
-      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">DEVOPS / OBSERVABILITY</div>
-      <ul class="space-y-2 text-sm">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">GitLab CI/CD</span><span class="font-semibold">Pipeline</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Terraform</span><span class="font-semibold">IaC</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Datadog + CloudWatch</span><span class="font-semibold">Monitor</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">PagerDuty</span><span class="font-semibold">On-call</span></li>
-      </ul>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg, #16a34a, #047857); color:#fff;">🚀</div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">DevOps &amp; Operations</div>
+          <div class="font-display font-bold text-base" style="color:var(--text-primary)">Reliability Layer</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🔄</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">CI/CD Pipeline</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Automated deploy</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">📐</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Infrastructure as Code</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Reproducible</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">📊</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Monitoring &amp; APM</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">Real-time</div>
+        </div>
+        <div class="rounded-lg p-2 text-center" style="background:var(--bg-card-inner);">
+          <div class="text-xl mb-1">🚨</div>
+          <div class="text-[10px] font-bold" style="color:var(--text-primary)">Alerting / On-Call</div>
+          <div class="text-[9px]" style="color:var(--text-muted)">24×7 coverage</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="mt-8 rounded-2xl p-5 text-center" style="background: linear-gradient(135deg, rgba(27,43,91,0.06), rgba(201,169,110,0.06)); border: 1px solid var(--border-glass);">
-    <p class="text-sm" style="color:var(--text-secondary)"><b style="color:#E2231A">Highlight:</b> PDPA-sensitive data stays in Thailand. AI workloads optimized for performance and cost. One unified platform — operated by True Business Managed Services as your single point of contact.</p>
+    <p class="text-sm" style="color:var(--text-secondary)"><b style="color:#E2231A">Note:</b> Specific component versions and vendors may be adjusted during solution design to reflect best fit at deployment time. The architecture pattern remains consistent — cloud-native, microservices, event-driven, with PDPA-compliant data residency.</p>
   </div>
 </div>
 </section>
@@ -1531,17 +1735,17 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <!-- Header -->
       <div class="grid grid-cols-12 gap-2 text-[10px] font-bold uppercase tracking-widest mb-3" style="color:var(--text-muted)">
         <div class="col-span-2"></div>
-        <div class="text-center">M1 W1</div>
-        <div class="text-center">W2</div>
-        <div class="text-center">M2</div>
-        <div class="text-center">M2 W4</div>
-        <div class="text-center">M3</div>
-        <div class="text-center">M3 W4</div>
-        <div class="text-center">M4</div>
-        <div class="text-center">M4 W4</div>
-        <div class="text-center">M5</div>
-        <div class="text-center">M5 W3</div>
-        <div class="text-center">GO</div>
+        <div class="text-center">Month 1</div>
+        <div class="text-center">Week 2</div>
+        <div class="text-center">Month 2</div>
+        <div class="text-center">Week 8</div>
+        <div class="text-center">Month 3</div>
+        <div class="text-center">Week 12</div>
+        <div class="text-center">Month 4</div>
+        <div class="text-center">Week 16</div>
+        <div class="text-center">Month 5</div>
+        <div class="text-center">Week 19</div>
+        <div class="text-center">Live</div>
       </div>
       <!-- Phase 1 Discovery -->
       <div class="grid grid-cols-12 gap-2 items-center py-2">
@@ -1564,7 +1768,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <div class="grid grid-cols-12 gap-2 items-center py-2">
         <div class="col-span-2 text-sm font-semibold">4. AI · ใบเตย on Cloud</div>
         <div class="col-span-4"></div>
-        <div class="col-span-4"><div class="gantt-bar red">Managed AI · RAG · ML Models · 20 Use Cases</div></div>
+        <div class="col-span-4"><div class="gantt-bar red">Managed AI · RAG · ML Models · Sample Use Cases</div></div>
       </div>
       <!-- Phase 5 UAT -->
       <div class="grid grid-cols-12 gap-2 items-center py-2">
@@ -1580,7 +1784,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       </div>
       <!-- Managed service -->
       <div class="grid grid-cols-12 gap-2 items-center py-2 border-t pt-3" style="border-color: var(--border-glass)">
-        <div class="col-span-2 text-sm font-semibold" style="color:#7E2A8E">Managed Service Tier-2</div>
+        <div class="col-span-2 text-sm font-semibold" style="color:#7E2A8E">Managed Service<br><span class="text-[10px]" style="font-weight:normal">Standard Tier</span></div>
         <div class="col-span-10"><div class="gantt-bar purple" style="opacity:0.6">Business Hrs + On-Call · 36 months recurring</div></div>
       </div>
     </div>
@@ -1588,11 +1792,11 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
 
   <!-- Milestones -->
   <div class="grid md:grid-cols-5 gap-4 mt-8">
-    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M1 End</div><div class="text-[11px]" style="color:var(--text-muted)">Architecture signed-off · Sprint 1 ready</div></div>
-    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M2 End</div><div class="text-[11px]" style="color:var(--text-muted)">Core platform alpha · LIFF login live</div></div>
-    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M3 End</div><div class="text-[11px]" style="color:var(--text-muted)">DMS integrated · 8-brand points working · Beta members</div></div>
-    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M4 End</div><div class="text-[11px]" style="color:var(--text-muted)">ใบเตย live · 20 AI use cases tested · UAT begins</div></div>
-    <div class="glass rounded-2xl p-4 text-center" style="border: 2px solid #E2231A"><div class="t-dot mx-auto mb-3" style="background:#C9A96E"></div><div class="text-xs font-bold mb-1" style="color:#E2231A">M5 W3 — GO LIVE</div><div class="text-[11px]" style="color:var(--text-muted)">Production launch · 30-day hypercare → BAU</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">End of Month 1</div><div class="text-[11px]" style="color:var(--text-muted)">Architecture signed-off · Sprint 1 ready</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">End of Month 2</div><div class="text-[11px]" style="color:var(--text-muted)">Core platform alpha · LINE LIFF login live</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">End of Month 3</div><div class="text-[11px]" style="color:var(--text-muted)">Client systems integrated · 8-brand points working · Beta members</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">End of Month 4</div><div class="text-[11px]" style="color:var(--text-muted)">น้องใบเตย live · sample AI cases tested · UAT begins</div></div>
+    <div class="glass rounded-2xl p-4 text-center" style="border: 2px solid #E2231A"><div class="t-dot mx-auto mb-3" style="background:#C9A96E"></div><div class="text-xs font-bold mb-1" style="color:#E2231A">Month 5 — Go Live</div><div class="text-[11px]" style="color:var(--text-muted)">Production launch · 30-day hypercare</div></div>
   </div>
 </div>
 </section>
@@ -1607,49 +1811,49 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   </div>
 
   <div class="glass rounded-2xl p-6 overflow-x-auto">
-    <table class="true-table">
+    <table class="true-table" style="table-layout: fixed; width: 100%;">
       <thead>
         <tr>
-          <th style="width:15%">Category</th>
-          <th>Item</th>
-          <th>Specification</th>
-          <th class="text-center" style="width:8%">Qty</th>
-          <th class="text-center" style="width:12%">Term</th>
+          <th style="width:18%; text-align:left;">Category</th>
+          <th style="width:32%; text-align:left;">Item</th>
+          <th style="width:35%; text-align:left;">Specification</th>
+          <th class="text-center" style="width:7%">Qty</th>
+          <th class="text-center" style="width:8%">Term</th>
         </tr>
       </thead>
       <tbody>
         <!-- Software / Platform -->
-        <tr><td rowspan="6" class="font-bold" style="color:#E2231A; vertical-align:middle;">Software · Platform</td><td>MOBILIFE Core License</td><td>Member · Points · Tier · Coupons · Campaigns · Admin</td><td class="text-center">1 site</td><td class="text-center">3 yrs</td></tr>
-        <tr><td>LINE LIFF Module</td><td>LINE Login + LIFF SDK + Webhook</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
-        <tr><td>AI น้องใบเตย Engine</td><td>Conversational AI · Thai/English · embedded across platform</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
-        <tr><td>Admin Portal</td><td>Web console for marketing, ops, B2B</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
-        <tr><td>B2B Module</td><td>Fleet / corporate accounts</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
-        <tr><td>Analytics + Dashboards</td><td>Self-service BI + custom reports + exports</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+        <tr><td rowspan="6" class="font-bold" style="color:#E2231A; vertical-align:middle;">Software &amp; Platform</td><td>MOBILIFE Core License</td><td>Member · Points · Tier · Coupons · Campaigns · Admin</td><td class="text-center">1 site</td><td class="text-center">3 years</td></tr>
+        <tr><td>LINE LIFF Module</td><td>LINE Login, LIFF SDK, webhook integration</td><td class="text-center">1</td><td class="text-center">3 years</td></tr>
+        <tr><td>AI Agent น้องใบเตย</td><td>Conversational AI in Thai &amp; English, embedded across platform</td><td class="text-center">1</td><td class="text-center">3 years</td></tr>
+        <tr><td>Operation Portal</td><td>Web console for marketing, operations, member management</td><td class="text-center">1</td><td class="text-center">3 years</td></tr>
+        <tr><td>Corporate Account Module</td><td>Corporate / fleet member registration with company tax ID</td><td class="text-center">1</td><td class="text-center">3 years</td></tr>
+        <tr><td>Analytics &amp; Dashboards</td><td>Self-service business intelligence, custom reports, data exports</td><td class="text-center">1</td><td class="text-center">3 years</td></tr>
 
         <!-- Cloud Infrastructure -->
-        <tr><td rowspan="4" class="font-bold" style="color:#1B2B5B; vertical-align:middle;">Cloud (Thailand) Cloud (Thailand) (TH)</td><td>Cloud (Thailand) Compute · App Tier</td><td>4 vCPU × 16GB × 3 nodes (HA)</td><td class="text-center">3 nodes</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud (Thailand) PostgreSQL Managed</td><td>HA pair · daily backup · PITR</td><td class="text-center">1 cluster</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud (Thailand) Storage</td><td>2 TB SSD + 5 TB archive</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
-        <tr><td>True SOC + WAF</td><td>24/7 SOC monitoring · WAF · DDoS</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <tr><td rowspan="4" class="font-bold" style="color:#1B2B5B; vertical-align:middle;">Cloud Infrastructure</td><td>Application Compute</td><td>High-availability cluster sized for 500K+ member base</td><td class="text-center">3 nodes</td><td class="text-center">36 months</td></tr>
+        <tr><td>Managed Database</td><td>High-availability pair with daily backup and point-in-time recovery</td><td class="text-center">1 cluster</td><td class="text-center">36 months</td></tr>
+        <tr><td>Storage &amp; Backup</td><td>2 TB primary SSD plus 5 TB archive, encrypted at rest</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
+        <tr><td>Security Operations</td><td>Continuous security monitoring, web application firewall, DDoS protection</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
 
-        <!-- Cloud -->
-        <tr><td rowspan="5" class="font-bold" style="color:#C9A96E; vertical-align:middle;">Public Cloud Services Cloud</td><td>Managed AI Platform</td><td>Claude 3.5 / GPT-4 API · ~10M tokens/mo</td><td class="text-center">est.</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud ML Platform</td><td>Churn / CLV / NBA training + inference</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud Vector DB</td><td>Vector store · 50M tokens RAG corpus</td><td class="text-center">1 cluster</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud BI Platform</td><td>Self-service BI + serverless query</td><td class="text-center">10 users</td><td class="text-center">36 mo</td></tr>
-        <tr><td>Cloud ServicesFront / S3</td><td>CDN + asset storage</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <!-- AI & Analytics Cloud -->
+        <tr><td rowspan="4" class="font-bold" style="color:#C9A96E; vertical-align:middle;">AI &amp; Analytics</td><td>Managed Large Language Model</td><td>Enterprise LLM service (model selected based on best fit at deployment), approximately 10M tokens per month</td><td class="text-center">est.</td><td class="text-center">36 months</td></tr>
+        <tr><td>Machine Learning Platform</td><td>Churn, customer lifetime value, and next-best-action models — training and inference</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
+        <tr><td>Vector Search Engine</td><td>Embedding store for retrieval-augmented intelligence, sized for 50M token corpus</td><td class="text-center">1 cluster</td><td class="text-center">36 months</td></tr>
+        <tr><td>Content Delivery &amp; Edge</td><td>Global content delivery network, asset storage, edge acceleration</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
 
-        <!-- Services -->
-        <tr><td rowspan="5" class="font-bold" style="color:#7E2A8E; vertical-align:middle;">Professional Services</td><td>Project Management</td><td>True PMO · weekly steering · 5 months</td><td class="text-center">1 PM</td><td class="text-center">5 mo</td></tr>
-        <tr><td>Solution Design</td><td>Architecture · DB schema · API contracts</td><td class="text-center">1</td><td class="text-center">2 mo</td></tr>
-        <tr><td>Development Squad</td><td>2 BE + 2 FE + 1 ML + 1 QA</td><td class="text-center">6 ppl</td><td class="text-center">5 mo</td></tr>
-        <tr><td>UAT + Pen-test</td><td>Functional UAT + 3rd-party security audit</td><td class="text-center">1</td><td class="text-center">3 wk</td></tr>
-        <tr><td>True Digital Academy</td><td>2-day admin training × 2 cohorts</td><td class="text-center">2</td><td class="text-center">included</td></tr>
+        <!-- Professional Services -->
+        <tr><td rowspan="5" class="font-bold" style="color:#7E2A8E; vertical-align:middle;">Professional Services</td><td>Project Management</td><td>Dedicated project management office with weekly steering committee</td><td class="text-center">1 PM</td><td class="text-center">5 months</td></tr>
+        <tr><td>Solution Design</td><td>Solution architecture, database schema, API contracts, design system</td><td class="text-center">1 team</td><td class="text-center">2 months</td></tr>
+        <tr><td>Development Team</td><td>Backend Engineers (2), Frontend Engineers (2), AI/ML Engineer (1), Quality Assurance Engineer (1)</td><td class="text-center">6 people</td><td class="text-center">5 months</td></tr>
+        <tr><td>Testing &amp; Security Audit</td><td>System integration testing, user acceptance testing support, third-party security assessment</td><td class="text-center">1</td><td class="text-center">3 weeks</td></tr>
+        <tr><td>Workshop &amp; Training</td><td>Two-day administrator training sessions for operations and marketing teams</td><td class="text-center">2 sessions</td><td class="text-center">included</td></tr>
 
         <!-- Managed Service -->
-        <tr><td rowspan="3" class="font-bold" style="color:#E2231A; vertical-align:middle;">Managed Service · Tier 2</td><td>Business Hours Support</td><td>Mon-Fri 08:00-18:00 · 4 named engineers</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
-        <tr><td>On-Call (After-Hours)</td><td>P1/P2 only · 30-min response · 24/7 hotline</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
-        <tr><td>CR Mandays Pool</td><td>Reserve for change requests / new features</td><td class="text-center">40 days</td><td class="text-center">3 yrs</td></tr>
+        <tr><td rowspan="4" class="font-bold" style="color:#E2231A; vertical-align:middle;">Managed Service<br><span class="text-[10px] font-normal" style="color:var(--text-muted)">Standard Tier</span></td><td>Business-Hours Support</td><td>Monday to Friday, 08:00 to 18:00, with named support engineers</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
+        <tr><td>After-Hours On-Call</td><td>Critical and major incidents only, with response targets per service level agreement</td><td class="text-center">1</td><td class="text-center">36 months</td></tr>
+        <tr><td>Change Request Pool</td><td>Reserved capacity for in-flight change requests and new feature additions</td><td class="text-center">40 days</td><td class="text-center">3 years</td></tr>
+        <tr style="background: rgba(201,169,110,0.06)"><td><b>Note — Additional Change Requests</b></td><td colspan="3" style="text-align:left;"><span style="color:var(--text-secondary)">Should the included 40-day Change Request Pool be exhausted, additional Change Request work is charged at <b style="color:#E2231A">฿12,000 per manday</b>. Each Change Request is scoped, estimated, and approved by MGC-ASIA before work begins.</span></td></tr>
       </tbody>
     </table>
   </div>
