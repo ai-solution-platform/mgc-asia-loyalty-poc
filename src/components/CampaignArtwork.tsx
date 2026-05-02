@@ -56,9 +56,78 @@ function getBrandPhoto(brand: string): string {
   return brandPhotos[brand] || brandPhotos['All Brands'];
 }
 
-export function CampaignArtwork({ brand, campaignType: _campaignType, title, className = '' }: CampaignArtworkProps) {
+// Theme-based photos for campaigns where a brand-car visual doesn't fit
+// (birthday celebrations, lucky draw / mystery box, friend referrals, travel/getaways).
+// Format same as brandPhotos. All verified HTTP 200 (Unsplash, free for commercial use).
+const themePhotos: Record<string, string> = {
+  // Birthday — round fondant cake with happy birthday candle (Annie Spratt, 2016)
+  'birthday': 'https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=800&q=80&auto=format&fit=crop',
+  // Lucky Draw / Mystery Box — gift box with ribbon, card, and confetti (Jess Bailey, 2025)
+  'lucky-draw': 'https://images.unsplash.com/photo-1764385827352-78c20131fd47?w=800&q=80&auto=format&fit=crop',
+  // Friend Referral / Friends — diverse group of friends smiling together at rooftop party (Vitaly Gariev, 2025)
+  'friend-referral': 'https://images.unsplash.com/photo-1758272133786-ee98adcc6837?w=800&q=80&auto=format&fit=crop',
+  // Travel / Weekend Getaway — winding mountain road at sunset, Yosemite (Venti Views, 2025)
+  'travel': 'https://images.unsplash.com/photo-1750801321923-a93fd5e5bf21?w=800&q=80&auto=format&fit=crop',
+  // Family & Friends Drive — woman riding with head and arm out the window on a road trip
+  'family-drive': 'https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?w=800&q=80&auto=format&fit=crop',
+};
+
+// Decide which photo to show. Theme overrides take priority over brand-car photos
+// when the campaign's category/title clearly signals a theme (birthday, lucky draw,
+// friend referral, travel). Otherwise falls back to the brand car photo.
+function getCampaignPhoto(brand: string, campaignType: string, title: string): string {
+  const t = title.toLowerCase();
+  const ct = campaignType.toLowerCase();
+
+  // Birthday-themed campaigns
+  if (ct.includes('birthday') || t.includes('birthday') || t.includes('วันเกิด')) {
+    return themePhotos['birthday'];
+  }
+
+  // Lucky draw / mystery box / wheel-of-fortune campaigns
+  if (
+    ct.includes('lucky') ||
+    ct.includes('mystery') ||
+    t.includes('mystery box') ||
+    t.includes('lucky draw') ||
+    t.includes('wheel of fortune')
+  ) {
+    return themePhotos['lucky-draw'];
+  }
+
+  // Friend referral / refer-a-friend campaigns (incl. Thai "ชวนเพื่อน")
+  // Family & Friends Drive uses the road-trip photo since it's a drive event with friends/family.
+  if (t.includes('family') && (t.includes('drive') || t.includes('friend'))) {
+    return themePhotos['family-drive'];
+  }
+  if (
+    ct.includes('referral') ||
+    ct.includes('friend get friend') ||
+    ct.includes('friend-get-friend') ||
+    t.includes('refer-a-friend') ||
+    t.includes('refer a friend') ||
+    t.includes('ชวนเพื่อน')
+  ) {
+    return themePhotos['friend-referral'];
+  }
+
+  // Travel / weekend getaway campaigns
+  if (
+    ct.includes('travel') ||
+    t.includes('weekend getaway') ||
+    t.includes('getaway') ||
+    t.includes('road trip')
+  ) {
+    return themePhotos['travel'];
+  }
+
+  // Fallback — brand car photo
+  return getBrandPhoto(brand);
+}
+
+export function CampaignArtwork({ brand, campaignType, title, className = '' }: CampaignArtworkProps) {
   const [color1, color2] = brandGradients[brand] || brandGradients['All Brands'];
-  const photoUrl = getBrandPhoto(brand);
+  const photoUrl = getCampaignPhoto(brand, campaignType, title);
   const [imgError, setImgError] = useState(false);
 
   const truncatedTitle = title.length > 38 ? title.slice(0, 38) + '...' : title;
