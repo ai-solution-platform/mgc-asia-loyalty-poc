@@ -61,73 +61,43 @@ export default function LandingPage() {
           </button>
         </div>
 
-        {/* Proposal Section v2 */}
-        <p className="text-xs text-[#C9A96E] uppercase tracking-widest font-semibold mb-1">Proposal Documents</p>
-        <p className="text-[11px] text-white/50 mb-4">Version 2 — LINE LIFF · Cloud · True Business</p>
-        <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-          {/* Plan A — Premium */}
+        {/* Proposal Section v2 — Unified */}
+        <p className="text-xs text-[#C9A96E] uppercase tracking-widest font-semibold mb-1">Proposal Document</p>
+        <p className="text-[11px] text-white/50 mb-4">Version 2 — LINE LIFF · Cloud-Native · AI-Powered</p>
+        <div className="max-w-md mx-auto">
+          {/* Unified Proposal */}
           <a
-            href={`${basePath}v2/plan-a.html`}
+            href={`${basePath}v2/proposal.html`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-gradient-to-br from-[#C9A96E]/20 to-[#D4A853]/10 backdrop-blur-sm border border-[#C9A96E]/30 rounded-2xl p-6 text-left hover:border-[#C9A96E]/60 hover:from-[#C9A96E]/25 transition-all block"
+            className="group relative bg-gradient-to-br from-[#E2231A]/20 to-[#7E2A8E]/15 backdrop-blur-sm border-2 border-[#E2231A]/40 rounded-2xl p-8 text-left hover:border-[#E2231A]/70 hover:from-[#E2231A]/25 transition-all block shadow-[0_0_30px_rgba(226,35,26,0.15)]"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-[#C9A96E]/20 flex items-center justify-center text-[#D4A853]">
-                <FileText size={20} />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-[#E2231A]/20 flex items-center justify-center text-[#FF6B6B]">
+                <FileText size={24} />
               </div>
-              <span className="text-[10px] bg-[#C9A96E]/20 text-[#D4A853] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Plan A</span>
-            </div>
-            <h2 className="text-base font-bold text-white mb-1">Premium</h2>
-            <p className="text-[11px] text-[#D4A853] font-semibold mb-2">฿11M · True IDC</p>
-            <p className="text-xs text-white/50 mb-3">Enterprise-grade — Dedicated cloud, 24/7 managed, full AI suite, 99.9% SLA</p>
-            <div className="flex items-center gap-2 text-[#D4A853] text-xs font-semibold">
-              ดู Proposal <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </div>
-          </a>
-
-          {/* Plan B — Standard (RECOMMENDED) */}
-          <a
-            href={`${basePath}v2/plan-b.html`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-gradient-to-br from-[#E2231A]/20 to-[#7E2A8E]/15 backdrop-blur-sm border-2 border-[#E2231A]/40 rounded-2xl p-6 text-left hover:border-[#E2231A]/70 hover:from-[#E2231A]/25 transition-all block shadow-[0_0_30px_rgba(226,35,26,0.15)]"
-          >
-            <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[9px] font-bold text-white px-3 py-1 rounded-full whitespace-nowrap" style={{ background: 'linear-gradient(90deg, #E2231A, #C9A96E)' }}>
-              ★ RECOMMENDED
-            </span>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-[#E2231A]/20 flex items-center justify-center text-[#FF6B6B]">
-                <FileText size={20} />
+              <div>
+                <h2 className="text-xl font-bold text-white">MOBILIFE Loyalty Platform</h2>
+                <p className="text-[10px] text-[#FF8888] font-semibold uppercase tracking-wider">For MGC-ASIA · By True Business</p>
               </div>
-              <span className="text-[10px] bg-[#E2231A]/20 text-[#FF6B6B] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Plan B</span>
             </div>
-            <h2 className="text-base font-bold text-white mb-1">Standard</h2>
-            <p className="text-[11px] text-[#FF8888] font-semibold mb-2">฿8M · Hybrid Cloud</p>
-            <p className="text-xs text-white/50 mb-3">Sweet spot — Hybrid (UIH+AWS), full AI, business hrs+on-call, 99.5% SLA</p>
-            <div className="flex items-center gap-2 text-[#FF8888] text-xs font-semibold">
-              ดู Proposal <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </div>
-          </a>
-
-          {/* Plan C — Lean */}
-          <a
-            href={`${basePath}v2/plan-c.html`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-left hover:border-white/30 hover:bg-white/10 transition-all block"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/60">
-                <FileText size={20} />
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="bg-white/5 rounded-lg p-2 text-center">
+                <p className="text-[10px] text-white/50 uppercase tracking-wider">Total</p>
+                <p className="text-sm font-bold text-[#FFD700]">฿8M</p>
               </div>
-              <span className="text-[10px] bg-white/10 text-white/50 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Plan C</span>
+              <div className="bg-white/5 rounded-lg p-2 text-center">
+                <p className="text-[10px] text-white/50 uppercase tracking-wider">Timeline</p>
+                <p className="text-sm font-bold text-white">5 mo</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-2 text-center">
+                <p className="text-[10px] text-white/50 uppercase tracking-wider">SLA</p>
+                <p className="text-sm font-bold text-white">99.5%</p>
+              </div>
             </div>
-            <h2 className="text-base font-bold text-white mb-1">Lean</h2>
-            <p className="text-[11px] text-white/60 font-semibold mb-2">฿5.5M · AWS Public</p>
-            <p className="text-xs text-white/50 mb-3">Smart entry — Cloud-native AWS, basic AI, self-service+, 99.0% SLA</p>
-            <div className="flex items-center gap-2 text-white/50 text-xs font-semibold">
-              ดู Proposal <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <p className="text-xs text-white/60 mb-4">Cloud-Native · LINE-First · AI-Powered (น้องใบเตย) · CAPEX ฿4.5M + OPEX ฿3M + CR Pool ฿0.5M</p>
+            <div className="flex items-center gap-2 text-[#FFD700] text-sm font-semibold">
+              ดู Proposal <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
           </a>
         </div>
