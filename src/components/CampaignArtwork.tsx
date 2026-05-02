@@ -26,28 +26,30 @@ const brandGradients: Record<string, [string, string]> = {
 
 // Real car/motorcycle photos from Unsplash (free for commercial use, no attribution required).
 // Format: https://images.unsplash.com/photo-{ID}?w=800&q=80&auto=format&fit=crop
+// All photos verified for: (1) correct brand, (2) car as clear focus filling 50%+ of frame,
+// (3) clean background, (4) recent model where applicable.
 const brandPhotos: Record<string, string> = {
-  // BMW — modern silver sedan profile shot
-  'BMW': 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80&auto=format&fit=crop',
-  // Rolls-Royce — luxury black sedan / Phantom-like
-  'Rolls-Royce': 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=800&q=80&auto=format&fit=crop',
-  // MINI — Cooper S 3-door hatchback (verified gray Mini Cooper, Brecht Denil)
-  'MINI': 'https://images.unsplash.com/photo-1564390162138-f6f1ffe41d92?w=800&q=80&auto=format&fit=crop',
-  // Maserati / sport coupe
-  'Maserati': 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80&auto=format&fit=crop',
-  // Honda — Civic Si red sedan (verified Honda showroom, Dieny Portinanni)
+  // BMW — M5 Competition (black), close-up front shot, Atlanta dealership setting (Archivio Automobile, 2024)
+  'BMW': 'https://images.unsplash.com/photo-1714434087918-4b9abedef3c6?w=800&q=80&auto=format&fit=crop',
+  // Rolls-Royce — Cullinan SUV (red), parked in front of building, Jakarta (Rico Reynaldi, 2023)
+  'Rolls-Royce': 'https://images.unsplash.com/photo-1699323472812-9005bdfcb206?w=800&q=80&auto=format&fit=crop',
+  // MINI — Cooper (yellow & black), front-on shot on road (Devon Janse van Rensburg, 2020)
+  'MINI': 'https://images.unsplash.com/photo-1580719026872-43cdd5e47329?w=800&q=80&auto=format&fit=crop',
+  // Maserati — GranTurismo (black), parked on road, building background (Vlad Grebenyev, 2022)
+  'Maserati': 'https://images.unsplash.com/photo-1657714601182-6bace9183b50?w=800&q=80&auto=format&fit=crop',
+  // Honda — Civic sedan (red), urban setting, Brazil (Dieny Portinanni, 2019)
   'Honda': 'https://images.unsplash.com/photo-1561823528-057f4774dd3e?w=800&q=80&auto=format&fit=crop',
-  // Harley-Davidson — cruiser motorcycle
-  'Harley-Davidson': 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80&auto=format&fit=crop',
-  // Triumph — sport motorcycle (using a sport-bike photo as thematic match)
-  'Triumph': 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80&auto=format&fit=crop',
-  // Morgan — vintage roadster (using a classic-car photo as thematic match)
-  'Morgan': 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&auto=format&fit=crop',
-  'MORGAN': 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&auto=format&fit=crop',
-  // Sixt (rental) — generic premium car
-  'Sixt': 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80&auto=format&fit=crop',
-  // All Brands — luxury car lineup feel
-  'All Brands': 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80&auto=format&fit=crop',
+  // Harley-Davidson — black cruiser motorcycle, focused shot (Getúlio Moraes, 2019)
+  'Harley-Davidson': 'https://images.unsplash.com/photo-1567651336571-633e3d0877d5?w=800&q=80&auto=format&fit=crop',
+  // Triumph — Speed Triple R 2015, parked roadside, motorcycle as clear focus (Tigran Hambardzumyan, 2021)
+  'Triumph': 'https://images.unsplash.com/photo-1635477906625-ef1aea584e17?w=800&q=80&auto=format&fit=crop',
+  // Morgan — Aeromax (black), British roadster, on concrete road (Dominik Lückmann, 2020)
+  'Morgan': 'https://images.unsplash.com/photo-1596888038185-ec0ed823cf5b?w=800&q=80&auto=format&fit=crop',
+  'MORGAN': 'https://images.unsplash.com/photo-1596888038185-ec0ed823cf5b?w=800&q=80&auto=format&fit=crop',
+  // Sixt (rental) — using BMW M5 Competition as premium-rental visual
+  'Sixt': 'https://images.unsplash.com/photo-1714434087918-4b9abedef3c6?w=800&q=80&auto=format&fit=crop',
+  // All Brands — Maserati GranTurismo as luxury lineup hero
+  'All Brands': 'https://images.unsplash.com/photo-1657714601182-6bace9183b50?w=800&q=80&auto=format&fit=crop',
 };
 
 function getBrandPhoto(brand: string): string {
