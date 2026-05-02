@@ -4,6 +4,20 @@ import { ArrowUpRight, ArrowDownLeft, ChevronRight, TrendingUp, Sparkles } from 
 import { CampaignArtwork } from '../../components/CampaignArtwork';
 import { openBaiSai } from '../../components/AIChatBai';
 
+// น้องใบเตย AI icon (matches AIChatBai's BaiSaiIcon)
+const BaiSaiIcon = ({ size = 24 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="6" y="8" width="20" height="18" rx="6" fill="#1B2B5B"/>
+    <line x1="16" y1="8" x2="16" y2="4" stroke="#1B2B5B" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="16" cy="3" r="2" fill="#FFD700"/>
+    <circle cx="12" cy="16" r="2" fill="#FFD700"/>
+    <circle cx="20" cy="16" r="2" fill="#FFD700"/>
+    <path d="M12 21 Q16 24 20 21" stroke="#FFD700" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+    <circle cx="6" cy="14" r="1.2" fill="#FFD700" opacity="0.9"/>
+    <circle cx="26" cy="14" r="1.2" fill="#FFD700" opacity="0.9"/>
+  </svg>
+);
+
 export default function HomePage() {
   const navigate = useNavigate();
   const tier = tierConfig[currentUser.tier];
@@ -55,21 +69,21 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="grid grid-cols-4 gap-3">
+      {/* Quick Actions — compact, premium */}
+      <div className="grid grid-cols-4 gap-2">
         {[
-          { emoji: '💰', label: 'Earn Points', action: () => navigate('/app/earn') },
+          { emoji: '💰', label: 'Earn', action: () => navigate('/app/earn') },
           { emoji: '🎁', label: 'Redeem', action: () => navigate('/app/rewards') },
-          { emoji: '🎫', label: 'My Coupons', action: () => navigate('/app/wallet') },
+          { emoji: '🎫', label: 'Coupons', action: () => navigate('/app/wallet') },
           { emoji: '📋', label: 'History', action: () => navigate('/app/point-history') },
         ].map(item => (
           <button
             key={item.label}
             onClick={item.action}
-            className="flex flex-col items-center justify-center bg-white rounded-2xl p-4 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95"
+            className="flex flex-col items-center justify-center bg-white rounded-xl px-2 py-3 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95"
           >
-            <span className="text-4xl mb-2 leading-none">{item.emoji}</span>
-            <span className="text-sm font-semibold text-[#1B2B5B] leading-tight">{item.label}</span>
+            <span className="text-2xl mb-1 leading-none">{item.emoji}</span>
+            <span className="text-xs font-semibold text-[#1B2B5B] leading-tight">{item.label}</span>
           </button>
         ))}
       </div>
@@ -82,10 +96,10 @@ export default function HomePage() {
       >
         <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FFD700, transparent 70%)' }} />
         <div
-          className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg"
-          style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)', color: '#1B2B5B' }}
+          className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
+          style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
         >
-          ใ
+          <BaiSaiIcon size={32} />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 mb-0.5">

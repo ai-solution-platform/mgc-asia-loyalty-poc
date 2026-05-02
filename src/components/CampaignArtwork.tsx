@@ -31,12 +31,12 @@ const brandPhotos: Record<string, string> = {
   'BMW': 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80&auto=format&fit=crop',
   // Rolls-Royce — luxury black sedan / Phantom-like
   'Rolls-Royce': 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=800&q=80&auto=format&fit=crop',
-  // MINI — Cooper hatchback
-  'MINI': 'https://images.unsplash.com/photo-1623603408499-a96abe1ad0f7?w=800&q=80&auto=format&fit=crop',
+  // MINI — Cooper S 3-door hatchback (verified gray Mini Cooper, Brecht Denil)
+  'MINI': 'https://images.unsplash.com/photo-1564390162138-f6f1ffe41d92?w=800&q=80&auto=format&fit=crop',
   // Maserati / sport coupe
   'Maserati': 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80&auto=format&fit=crop',
-  // Honda — modern sedan
-  'Honda': 'https://images.unsplash.com/photo-1568844293986-8d0400bd4745?w=800&q=80&auto=format&fit=crop',
+  // Honda — Civic Si red sedan (verified Honda showroom, Dieny Portinanni)
+  'Honda': 'https://images.unsplash.com/photo-1561823528-057f4774dd3e?w=800&q=80&auto=format&fit=crop',
   // Harley-Davidson — cruiser motorcycle
   'Harley-Davidson': 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80&auto=format&fit=crop',
   // Triumph — sport motorcycle (using a sport-bike photo as thematic match)

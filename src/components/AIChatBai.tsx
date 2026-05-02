@@ -5,6 +5,35 @@ interface AIChatBaiProps {
   context: 'customer' | 'admin';
 }
 
+// Custom AI icon — friendly chatbot face with sparkle (represents น้องใบเตย AI assistant)
+function BaiSaiIcon({ size = 24, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 32 32"
+      fill="none"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Robot head/face body */}
+      <rect x="6" y="8" width="20" height="18" rx="6" fill="#1B2B5B"/>
+      {/* Antenna with sparkle on top */}
+      <line x1="16" y1="8" x2="16" y2="4" stroke="#1B2B5B" strokeWidth="2" strokeLinecap="round"/>
+      <circle cx="16" cy="3" r="2" fill="#FFD700"/>
+      {/* Eyes — friendly happy */}
+      <circle cx="12" cy="16" r="2" fill="#FFD700"/>
+      <circle cx="20" cy="16" r="2" fill="#FFD700"/>
+      {/* Smile */}
+      <path d="M12 21 Q16 24 20 21" stroke="#FFD700" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+      {/* Side ear/sparkle accent */}
+      <circle cx="6" cy="14" r="1.2" fill="#FFD700" opacity="0.9"/>
+      <circle cx="26" cy="14" r="1.2" fill="#FFD700" opacity="0.9"/>
+    </svg>
+  );
+}
+
 interface RewardCard {
   name: string;
   points: number;
@@ -395,10 +424,10 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
         >
           <span className="absolute inset-0 rounded-full ring-2 ring-[#C9A96E]/60 animate-pulse" />
           <span
-            className="relative flex items-center justify-center w-12 h-12 rounded-full text-white font-bold text-2xl drop-shadow"
+            className="relative flex items-center justify-center w-12 h-12 rounded-full drop-shadow"
             style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
           >
-            ใ
+            <BaiSaiIcon size={28} />
           </span>
           <span className="relative flex flex-col items-start text-white">
             <span className="text-[10px] uppercase tracking-widest font-bold opacity-90 flex items-center gap-1">
@@ -424,19 +453,15 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
               md:w-[380px] md:h-[600px] md:rounded-2xl overflow-hidden border border-gray-200"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 px-4 py-3 flex items-center gap-3 text-white shrink-0">
+            <div className="px-4 py-3 flex items-center gap-3 text-white shrink-0" style={{ background: 'linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 60%, #E2231A 100%)' }}>
               <div className="relative">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-md"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 30% 30%, #FFFFFF 0%, #6EE7B7 50%, #10B981 100%)',
-                    color: '#047857',
-                  }}
+                  className="w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+                  style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
                 >
-                  ใ
+                  <BaiSaiIcon size={26} />
                 </div>
-                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-white" />
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-bold text-sm leading-tight">น้องใบเตย</h3>
