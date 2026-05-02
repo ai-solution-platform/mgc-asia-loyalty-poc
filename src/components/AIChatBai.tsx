@@ -382,23 +382,29 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
 
   return (
     <>
-      {/* Floating Action Button */}
+      {/* Floating Action Button — prominent with label */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
           aria-label="Open AI Assistant น้องใบเตย"
-          className="fixed bottom-24 right-4 md:bottom-6 md:right-6 z-[60] w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform group"
+          className="fixed bottom-24 right-4 md:bottom-6 md:right-6 z-[60] flex items-center gap-2 pl-2 pr-4 py-2 rounded-full shadow-2xl hover:scale-105 transition-transform group"
           style={{
-            background:
-              'radial-gradient(circle at 30% 30%, #6EE7B7 0%, #10B981 45%, #047857 100%)',
+            background: 'linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 50%, #E2231A 100%)',
+            boxShadow: '0 10px 30px rgba(126,42,142,0.45), 0 0 0 4px rgba(201,169,110,0.25)',
           }}
         >
-          <span className="absolute inset-0 rounded-full ring-4 ring-emerald-400/30 animate-pulse" />
-          <span className="relative flex items-center justify-center w-full h-full text-white font-bold text-2xl drop-shadow">
+          <span className="absolute inset-0 rounded-full ring-2 ring-[#C9A96E]/60 animate-pulse" />
+          <span
+            className="relative flex items-center justify-center w-12 h-12 rounded-full text-white font-bold text-2xl drop-shadow"
+            style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
+          >
             ใ
           </span>
-          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#C9A96E] flex items-center justify-center shadow-lg">
-            <Sparkles size={10} className="text-white" />
+          <span className="relative flex flex-col items-start text-white">
+            <span className="text-[10px] uppercase tracking-widest font-bold opacity-90 flex items-center gap-1">
+              <Sparkles size={9} className="text-[#FFD700]" /> AI Assistant
+            </span>
+            <span className="text-sm font-bold leading-tight">น้องใบเตย</span>
           </span>
         </button>
       )}

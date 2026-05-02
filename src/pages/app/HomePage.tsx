@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { currentUser, campaigns, pointTransactions, tierConfig } from '../../data/mockData';
-import { ArrowUpRight, ArrowDownLeft, ChevronRight, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, ArrowDownLeft, ChevronRight, TrendingUp, Sparkles } from 'lucide-react';
 import { CampaignArtwork } from '../../components/CampaignArtwork';
+import { openBaiSai } from '../../components/AIChatBai';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -72,6 +73,30 @@ export default function HomePage() {
           </button>
         ))}
       </div>
+
+      {/* AI Assistant Banner — น้องใบเตย */}
+      <button
+        onClick={() => openBaiSai()}
+        className="w-full rounded-2xl p-4 flex items-center gap-3 text-left shadow-lg hover:shadow-xl transition-all active:scale-[0.99] relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 55%, #E2231A 100%)' }}
+      >
+        <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FFD700, transparent 70%)' }} />
+        <div
+          className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-lg"
+          style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)', color: '#1B2B5B' }}
+        >
+          ใ
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-1.5 mb-0.5">
+            <Sparkles size={11} className="text-[#FFD700]" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#FFD700]">AI Assistant</span>
+          </div>
+          <h3 className="font-bold text-base text-white leading-tight">สวัสดีค่ะ ใบเตยช่วยอะไรได้บ้าง?</h3>
+          <p className="text-xs text-white/80 mt-0.5">ถามคะแนน · แลกรางวัล · จองศูนย์ · ชวนเพื่อน</p>
+        </div>
+        <ChevronRight size={20} className="text-white/70 flex-shrink-0" />
+      </button>
 
       {/* Active Campaigns */}
       <div>
