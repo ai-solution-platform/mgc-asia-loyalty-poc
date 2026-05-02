@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import MobileLayout from './components/layout/MobileLayout';
 import AdminLayout from './components/layout/AdminLayout';
 import HomePage from './pages/app/HomePage';
+import LineLoginPage from './pages/app/LineLoginPage';
 import CampaignsPage from './pages/app/CampaignsPage';
 import RewardsPage from './pages/app/RewardsPage';
 import WalletPage from './pages/app/WalletPage';
@@ -32,7 +33,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
 
-          {/* Customer Mobile App */}
+          {/* LINE Login (no MobileLayout chrome) */}
+          <Route path="/app/login" element={<LineLoginPage />} />
+
+          {/* Customer LIFF App (LINE Web View) */}
           <Route path="/app" element={<MobileLayout />}>
             <Route index element={<HomePage />} />
             <Route path="campaigns" element={<CampaignsPage />} />

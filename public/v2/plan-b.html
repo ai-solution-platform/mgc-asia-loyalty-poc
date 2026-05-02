@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Standard — Plan B (RECOMMENDED) | For MGC-ASIA / By True Business</title>
+<meta name="description" content="MOBILIFE Standard — Smart Hybrid Cloud Loyalty Platform. ฿8M, 5 months, recommended plan for MGC-ASIA Group. By True Business.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        truenavy: { 50:'#eef1f7', 100:'#d3dae9', 200:'#a7b6d3', 300:'#7b91bd', 400:'#4f6da7', 500:'#2c4a85', 600:'#1B2B5B', 700:'#152244', 800:'#0e182f', 900:'#080e1c' },
+        truered: { 50:'#fdecea', 100:'#fbc8c4', 200:'#f7918a', 300:'#f25a4f', 400:'#ed3325', 500:'#E2231A', 600:'#b91b14', 700:'#90140f', 800:'#660e0a', 900:'#3d0806' },
+        truegold: { 50:'#fbf7ec', 100:'#f4e9c8', 200:'#e9d391', 300:'#dfbe5b', 400:'#d4a929', 500:'#C9A96E', 600:'#a48a55', 700:'#7c683f', 800:'#54472a', 900:'#2a2315' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ================ THEME VARIABLES ================ */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-inner: #F1F5F9;
+  --bg-nav: rgba(255,255,255,0.92);
+  --bg-glass: rgba(255,255,255,0.8);
+  --border-glass: rgba(226,232,240,0.6);
+  --border-card: #E2E8F0;
+  --text-primary: #1B2B5B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #1B2B5B;
+  --accent-primary: #1B2B5B;
+  --accent-secondary: #C9A96E;
+  --accent-red: #E2231A;
+  --gradient-text-from: #1B2B5B;
+  --gradient-text-via: #2B4A8E;
+  --gradient-text-to: #1a8fd8;
+  --gradient-red-purple: linear-gradient(180deg, #E2231A 0%, #B91B14 35%, #7E2A8E 100%);
+  --gradient-gold: linear-gradient(135deg, #C9A96E 0%, #D4A853 100%);
+  --card-shadow: 0 4px 24px rgba(27,43,91,0.06);
+  --card-hover-shadow: 0 20px 60px rgba(27,43,91,0.12);
+  --hover-glow: rgba(27,43,91,0.12);
+  --hover-border: rgba(27,43,91,0.25);
+  --particle-color: rgba(27,43,91,0.08);
+  --hero-bg-1: rgba(27,43,91,0.05);
+  --hero-bg-2: rgba(226,35,26,0.04);
+  --hero-bg-3: rgba(201,169,110,0.04);
+  --table-header-bg: #1B2B5B;
+  --table-header-text: #FFFFFF;
+  --table-stripe: rgba(27,43,91,0.03);
+  --recommended-glow: 0 0 60px rgba(201,169,110,0.45), 0 0 120px rgba(226,35,26,0.18);
+  --svg-grid: rgba(27,43,91,0.05);
+  --svg-line: #1B2B5B;
+  --svg-text: #1B2B5B;
+}
+[data-theme="dark"] {
+  --bg-body: #050813;
+  --bg-secondary: #0a1024;
+  --bg-card: #0f172a;
+  --bg-card-inner: #1e293b;
+  --bg-nav: rgba(5,8,19,0.85);
+  --bg-glass: rgba(15,23,42,0.55);
+  --border-glass: rgba(148,163,184,0.1);
+  --border-card: rgba(148,163,184,0.12);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #f1f5f9;
+  --accent-primary: #E2231A;
+  --accent-secondary: #C9A96E;
+  --accent-red: #E2231A;
+  --gradient-text-from: #ff5b50;
+  --gradient-text-via: #E2231A;
+  --gradient-text-to: #C9A96E;
+  --gradient-red-purple: linear-gradient(180deg, #E2231A 0%, #B91B14 35%, #7E2A8E 100%);
+  --gradient-gold: linear-gradient(135deg, #C9A96E 0%, #D4A853 100%);
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 60px rgba(226,35,26,0.18);
+  --hover-glow: rgba(226,35,26,0.18);
+  --hover-border: rgba(226,35,26,0.35);
+  --particle-color: rgba(226,35,26,0.18);
+  --hero-bg-1: rgba(226,35,26,0.10);
+  --hero-bg-2: rgba(126,42,142,0.10);
+  --hero-bg-3: rgba(201,169,110,0.06);
+  --table-header-bg: rgba(226,35,26,0.18);
+  --table-header-text: #ff8a82;
+  --table-stripe: rgba(226,35,26,0.04);
+  --recommended-glow: 0 0 60px rgba(226,35,26,0.55), 0 0 120px rgba(201,169,110,0.25);
+  --svg-grid: rgba(148,163,184,0.06);
+  --svg-line: #cbd5e1;
+  --svg-text: #f1f5f9;
+}
+
+/* ================ BASE ================ */
+*,*::before,*::after { transition: background-color .3s, border-color .3s, color .3s, box-shadow .3s, fill .3s, stroke .3s; font-family: 'Inter','Noto Sans Thai',sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-body); color: var(--text-primary); }
+.font-display { font-family: 'Space Grotesk','Inter',sans-serif; letter-spacing: -0.02em; }
+section { scroll-margin-top: 80px; }
+
+/* ================ TRUE BRAND STRIPE (red→purple) ================ */
+.brand-stripe { position: fixed; top: 0; left: 0; width: 6px; height: 100vh; background: var(--gradient-red-purple); z-index: 60; box-shadow: 4px 0 30px rgba(226,35,26,0.25); }
+
+/* ================ NAVIGATION ================ */
+.nav-fixed { backdrop-filter: blur(20px); background: var(--bg-nav); border-bottom: 1px solid var(--border-glass); }
+.nav-link { font-size: 12px; color: var(--text-muted); transition: all .25s; padding: 4px 0; }
+.nav-link:hover, .nav-link.active { color: var(--accent-primary); }
+[data-theme="dark"] .nav-link:hover, [data-theme="dark"] .nav-link.active { color: var(--accent-red); }
+.nav-pill { padding: 4px 10px; border-radius: 10px; border: 1px solid var(--border-glass); font-size: 11px; font-weight: 600; }
+
+/* ================ GLASS / CARDS ================ */
+.glass { background: var(--bg-glass); backdrop-filter: blur(14px); border: 1px solid var(--border-glass); box-shadow: var(--card-shadow); }
+.card-hover { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s, border-color .35s; }
+.card-hover:hover { transform: translateY(-6px); box-shadow: var(--card-hover-shadow); border-color: var(--hover-border); }
+
+/* ================ GRADIENT TEXT ================ */
+.gradient-text { background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-red { background: linear-gradient(135deg, #E2231A, #B91B14, #7E2A8E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-gold-text { background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* ================ HERO BG ================ */
+.hero-bg { background: radial-gradient(ellipse at 18% 40%, var(--hero-bg-1) 0%, transparent 55%), radial-gradient(ellipse at 80% 25%, var(--hero-bg-2) 0%, transparent 55%), radial-gradient(ellipse at 60% 90%, var(--hero-bg-3) 0%, transparent 55%); }
+
+/* ================ PARTICLES ================ */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0); opacity:0; } 10%{opacity:1;} 90%{opacity:1;} 100%{transform: translateY(-100px) rotate(720deg); opacity:0;} }
+
+/* ================ RECOMMENDED BADGE (glowing) ================ */
+.recommended-glow { animation: recommended-pulse 3s ease-in-out infinite; box-shadow: var(--recommended-glow); }
+@keyframes recommended-pulse { 0%,100% { box-shadow: var(--recommended-glow); transform: scale(1);} 50% { box-shadow: 0 0 80px rgba(201,169,110,0.65), 0 0 160px rgba(226,35,26,0.30); transform: scale(1.02);} }
+.recommended-ribbon { background: linear-gradient(95deg, #C9A96E 0%, #E2231A 50%, #7E2A8E 100%); color: #fff; font-weight: 800; letter-spacing: 0.08em; }
+.shine { position: relative; overflow: hidden; }
+.shine::after { content:''; position: absolute; top:0; left:-100%; width:100%; height:100%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%); animation: shine-sweep 3s infinite; }
+@keyframes shine-sweep { 0%{left:-100%;} 60%,100%{left:100%;} }
+
+/* ================ SCROLL PROGRESS ================ */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #E2231A, #7E2A8E); z-index: 100; transition: width .1s; }
+
+/* ================ TIMELINE DOT ================ */
+.t-dot { width: 16px; height: 16px; border-radius: 50%; background: #E2231A; position: relative; }
+.t-dot::after { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid rgba(226,35,26,0.35); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity:1;} 50%{transform: scale(1.6); opacity:0;} }
+
+/* ================ FEATURE ICON ================ */
+.feature-icon { width: 56px; height: 56px; border-radius: 14px; display:flex; align-items:center; justify-content:center; font-size: 24px; }
+
+/* ================ TABLE ================ */
+table.true-table { width: 100%; border-collapse: collapse; }
+table.true-table th { background: var(--table-header-bg); color: var(--table-header-text); padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+table.true-table td { padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--border-glass); vertical-align: top; }
+table.true-table tr:nth-child(even) { background: var(--table-stripe); }
+
+/* ================ SVG ARCHITECTURE ================ */
+.arch-node { cursor: pointer; transition: transform .3s, filter .3s; }
+.arch-node:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.arch-line { stroke-dasharray: 6 4; animation: dash 18s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* ================ THEME TOGGLE ================ */
+#theme-toggle { position: fixed; top: 16px; right: 70px; z-index: 70; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--border-glass); background: var(--bg-glass); backdrop-filter: blur(12px); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+#theme-toggle:hover { transform: scale(1.08); }
+#theme-toggle svg { width: 20px; height: 20px; }
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #E2231A; }
+#theme-toggle .icon-sun, #theme-toggle .icon-moon { position: absolute; transition: all .3s; }
+[data-theme="light"] .icon-sun { opacity:1; transform: rotate(0) scale(1);}
+[data-theme="light"] .icon-moon { opacity:0; transform: rotate(90deg) scale(.5);}
+[data-theme="dark"] .icon-sun { opacity:0; transform: rotate(-90deg) scale(.5);}
+[data-theme="dark"] .icon-moon { opacity:1; transform: rotate(0) scale(1);}
+
+/* ================ FLOATING PLAN B BADGE ================ */
+.plan-badge { position: fixed; top: 16px; right: 124px; z-index: 70; padding: 8px 16px; border-radius: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 4px 20px rgba(226,35,26,0.25); }
+.plan-badge.recommended { background: linear-gradient(95deg, #C9A96E, #E2231A); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+
+/* ================ SECTION ENTER ================ */
+.section-enter { opacity:0; transform: translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+.section-enter.visible { opacity:1; transform: translateY(0); }
+
+/* ================ COUNTER ================ */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* ================ BRAND CO-HEADER ================ */
+.co-brand { display:inline-flex; align-items:center; gap:12px; padding: 6px 14px; border-radius: 999px; background: rgba(226,35,26,0.06); border: 1px solid rgba(226,35,26,0.15); font-size: 11px; font-weight: 600; color: var(--text-muted); }
+[data-theme="dark"] .co-brand { background: rgba(226,35,26,0.10); border-color: rgba(226,35,26,0.25); }
+
+/* ================ TIER BAND ================ */
+.tier-band { padding: 12px 20px; border-radius: 14px; font-weight: 700; }
+.tier-1 { background: linear-gradient(135deg, #C9A96E, #D4A853); color:#1B2B5B; }
+.tier-2 { background: linear-gradient(135deg, #1B2B5B, #2B4A8E); color:#fff; }
+.tier-3 { background: linear-gradient(135deg, #E2231A, #7E2A8E); color:#fff; }
+
+/* ================ JOURNEY ARROW ================ */
+.arrow { color: #C9A96E; animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100%{transform: translateX(0);} 50%{transform: translateX(6px);} }
+
+/* ================ KPI CHIP ================ */
+.kpi-chip { display:inline-flex; flex-direction: column; align-items:center; padding: 14px 22px; border-radius: 16px; background: var(--bg-glass); border: 1px solid var(--border-glass); backdrop-filter: blur(14px); }
+
+/* ================ AI USE CASE ================ */
+.usecase-card { background: var(--bg-glass); border: 1px solid var(--border-glass); border-radius: 18px; padding: 18px; transition: all .35s; }
+.usecase-card:hover { transform: translateY(-4px); border-color: var(--accent-secondary); box-shadow: var(--card-hover-shadow); }
+.usecase-tag { display:inline-block; padding: 3px 10px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ================ PRICE TABLE ROW HOVER ================ */
+.price-row { transition: background .3s; }
+.price-row:hover { background: rgba(226,35,26,0.04); }
+
+/* ================ FOOTER GRADIENT BAR ================ */
+.footer-gradient-bar { height: 4px; background: linear-gradient(90deg, #E2231A 0%, #7E2A8E 50%, #C9A96E 100%); }
+
+/* ================ HERO PLATE ================ */
+.hero-plate { background: linear-gradient(180deg, rgba(27,43,91,0.04) 0%, rgba(226,35,26,0.06) 50%, rgba(201,169,110,0.04) 100%); border: 1px solid var(--border-glass); }
+[data-theme="dark"] .hero-plate { background: linear-gradient(180deg, rgba(27,43,91,0.20) 0%, rgba(226,35,26,0.10) 50%, rgba(201,169,110,0.06) 100%); }
+
+/* ================ COMPLIANCE / TIMELINE BARS ================ */
+.gantt-bar { height: 28px; border-radius: 8px; background: linear-gradient(90deg, #1B2B5B, #2B4A8E); display:flex; align-items:center; padding: 0 12px; color:#fff; font-size: 11px; font-weight: 600; box-shadow: 0 2px 8px rgba(27,43,91,0.25); }
+.gantt-bar.gold { background: linear-gradient(90deg, #C9A96E, #D4A853); color:#1B2B5B; }
+.gantt-bar.red { background: linear-gradient(90deg, #E2231A, #B91B14); color:#fff; }
+.gantt-bar.purple { background: linear-gradient(90deg, #7E2A8E, #5b1f66); color:#fff; }
+
+/* ================ Light/Dark text overrides ================ */
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 { color: #1B2B5B; }
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 { color: #f1f5f9; }
+
+/* ================ Print ================ */
+@media print { body { background: #fff; color:#1e293b; } .glass { background:#f8fafc; border:1px solid #e2e8f0; } .brand-stripe, #theme-toggle, .plan-badge { display:none !important; } }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- TRUE BRAND STRIPE (red→purple) -->
+<div class="brand-stripe"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- RECOMMENDED PLAN BADGE -->
+<div class="plan-badge recommended">★ RECOMMENDED · PLAN B</div>
+
+<!-- THEME TOGGLE -->
+<button id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+</button>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto pl-10 pr-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="flex items-baseline gap-1">
+        <span class="font-display font-black text-xl" style="color:#E2231A">true</span>
+        <span class="font-display font-bold text-sm tracking-tight" style="color:var(--text-primary)">business</span>
+      </div>
+      <div class="hidden md:block w-px h-6 bg-gray-300 opacity-40"></div>
+      <div class="hidden md:flex flex-col leading-tight">
+        <span class="text-[11px] font-bold tracking-wider" style="color:var(--text-primary)">MOBILIFE Standard</span>
+        <span class="text-[9px] uppercase tracking-widest" style="color:var(--text-muted)">For MGC-ASIA · Plan B</span>
+      </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="#hero" class="nav-link">Cover</a>
+      <a href="#agenda" class="nav-link">Agenda</a>
+      <a href="#truebusiness" class="nav-link">True Group</a>
+      <a href="#summary" class="nav-link">Summary</a>
+      <a href="#discovery" class="nav-link">Discovery</a>
+      <a href="#solution" class="nav-link">Solution</a>
+      <a href="#ai" class="nav-link">AI</a>
+      <a href="#stack" class="nav-link">Stack</a>
+      <a href="#bom" class="nav-link">BOM</a>
+      <a href="#commercial" class="nav-link">Commercial</a>
+      <a href="#sla" class="nav-link">SLA</a>
+      <a href="#why" class="nav-link">Why True</a>
+      <a href="#cta" class="nav-link">CTA</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="nav-pill recommended-ribbon">★ RECOMMENDED</span>
+      <a href="./plan-a.html" class="nav-pill" style="color:var(--text-muted)">Plan A ↗</a>
+      <a href="./plan-c.html" class="nav-pill" style="color:var(--text-muted)">Plan C ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 1. HERO / COVER ===== -->
+<section id="hero" class="relative flex items-center hero-bg overflow-hidden pt-20" style="min-height:100vh">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="particle" style="width:6px;height:6px;left:8%;animation-duration:16s;"></div>
+    <div class="particle" style="width:4px;height:4px;left:22%;animation-duration:22s;animation-delay:3s"></div>
+    <div class="particle" style="width:8px;height:8px;left:40%;animation-duration:18s;animation-delay:1s"></div>
+    <div class="particle" style="width:5px;height:5px;left:58%;animation-duration:24s;animation-delay:5s"></div>
+    <div class="particle" style="width:7px;height:7px;left:78%;animation-duration:17s;animation-delay:2s"></div>
+    <div class="particle" style="width:6px;height:6px;left:92%;animation-duration:20s;animation-delay:4s"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-10 grid md:grid-cols-12 gap-10 items-center w-full py-16">
+    <div class="md:col-span-7">
+      <div class="co-brand mb-6">
+        <span style="color:var(--text-muted)">For</span>
+        <span class="font-bold" style="color:var(--text-primary)">MGC-ASIA Group</span>
+        <span style="color:var(--text-muted)">·</span>
+        <span style="color:var(--text-muted)">By</span>
+        <span class="font-bold" style="color:#E2231A">true</span>
+        <span class="font-bold" style="color:var(--text-primary)">business</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-[11px] font-semibold mb-5" style="color:var(--text-secondary)">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        Plan B · Standard · The Smart Path
+      </div>
+
+      <h1 class="font-display text-5xl md:text-7xl font-black mb-3 leading-[1.05]">
+        <span style="color:var(--text-primary)">MOBILIFE</span>
+        <span class="gradient-red">Standard</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl font-medium mb-6" style="color:var(--text-secondary)">
+        Smart Hybrid Cloud Loyalty Platform
+      </p>
+
+      <p class="text-base md:text-lg max-w-2xl mb-8 leading-relaxed" style="color:var(--text-muted)">
+        Best-in-class Loyalty at Optimized Investment. Same AI, same LINE experience, smarter cloud strategy — PDPA data stays in Thailand on UIH, AI workloads run on AWS for performance and cost.
+      </p>
+
+      <!-- KPI Chips -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <div class="kpi-chip">
+          <span class="text-2xl font-black gradient-red counter">฿8M</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">3-yr All-In</span>
+        </div>
+        <div class="kpi-chip">
+          <span class="text-2xl font-black" style="color:var(--accent-primary)">5</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">Months Delivery</span>
+        </div>
+        <div class="kpi-chip">
+          <span class="text-2xl font-black gradient-gold-text">Hybrid</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">UIH + AWS</span>
+        </div>
+        <div class="kpi-chip">
+          <span class="text-2xl font-black" style="color:var(--accent-primary)">99.5%</span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">SLA Uptime</span>
+        </div>
+        <div class="kpi-chip">
+          <span class="text-2xl font-black" style="color:#E2231A">B-Hrs<span class="text-sm">+On-Call</span></span>
+          <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">Managed Service</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#summary" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-sm shine" style="background: linear-gradient(95deg, #E2231A, #7E2A8E); color:#fff; box-shadow: 0 6px 28px rgba(226,35,26,0.35);">
+          Explore the Smart Path
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a href="#commercial" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-semibold text-sm glass" style="color:var(--text-primary)">
+          Jump to Commercial →
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Plate / RECOMMENDED Stamp -->
+    <div class="md:col-span-5">
+      <div class="relative">
+        <div class="hero-plate rounded-3xl p-8 recommended-glow">
+          <div class="flex items-center justify-between mb-5">
+            <div class="recommended-ribbon px-3 py-1.5 rounded-lg text-[10px] tracking-widest">★ RECOMMENDED</div>
+            <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">March 2026</span>
+          </div>
+          <div class="text-5xl font-display font-black gradient-red leading-none mb-2">PLAN B</div>
+          <div class="font-display text-xl font-bold mb-6" style="color:var(--text-primary)">The Sweet Spot</div>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)">
+              <span style="color:var(--text-muted)">Total Investment (3 yrs)</span>
+              <span class="font-bold gradient-red text-lg">฿8.0M</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)">
+              <span style="color:var(--text-muted)">vs Plan A Premium</span>
+              <span class="font-bold" style="color:#22c55e">save ฿3M</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)">
+              <span style="color:var(--text-muted)">Cloud Strategy</span>
+              <span class="font-semibold" style="color:var(--text-primary)">Hybrid (UIH + AWS)</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)">
+              <span style="color:var(--text-muted)">CR Mandays Pool</span>
+              <span class="font-semibold" style="color:var(--text-primary)">40 days</span>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+              <span style="color:var(--text-muted)">AI น้องใบเตย</span>
+              <span class="font-semibold" style="color:#E2231A">✓ Full</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-center px-3 py-2 rounded-lg" style="background: rgba(201,169,110,0.12); color:var(--text-primary); border: 1px solid rgba(201,169,110,0.3);">
+            Fits your ฿8M budget perfectly · Same AI quality as Plan A
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. AGENDA ===== -->
+<section id="agenda" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">Proposal Information</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Agenda</h2>
+    <p class="max-w-2xl mx-auto" style="color:var(--text-muted)">Twenty sections — from True Group introduction to final commercial commitment, structured the True Business way</p>
+  </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Column 1 -->
+    <div class="space-y-3">
+      <div class="text-[10px] uppercase tracking-widest font-bold" style="color:var(--accent-secondary)">Front Matter</div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">01</div><div class="font-semibold text-sm">Cover · For MGC-ASIA</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">02</div><div class="font-semibold text-sm">Agenda</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">03</div><div class="font-semibold text-sm">True Group Introduction</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">04</div><div class="font-semibold text-sm">Executive Summary</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">05</div><div class="font-semibold text-sm">Discovery — Requirements</div></div>
+    </div>
+    <!-- Column 2 -->
+    <div class="space-y-3">
+      <div class="text-[10px] uppercase tracking-widest font-bold" style="color:var(--accent-secondary)">Solution</div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">06</div><div class="font-semibold text-sm">Hybrid Architecture</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">07</div><div class="font-semibold text-sm">Customer Journey</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">08</div><div class="font-semibold text-sm">AI น้องใบเตย</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">09</div><div class="font-semibold text-sm">Tech Stack — Hybrid</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">10</div><div class="font-semibold text-sm">Implementation Plan</div></div>
+    </div>
+    <!-- Column 3 -->
+    <div class="space-y-3">
+      <div class="text-[10px] uppercase tracking-widest font-bold" style="color:var(--accent-secondary)">Commercial</div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">11</div><div class="font-semibold text-sm">Bill of Material</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">12</div><div class="font-semibold text-sm">Commercial Model</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">13</div><div class="font-semibold text-sm">Compliance Statement</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">14</div><div class="font-semibold text-sm">SLA Commitment</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">15</div><div class="font-semibold text-sm">Customer Support Flow</div></div>
+    </div>
+    <!-- Column 4 -->
+    <div class="space-y-3">
+      <div class="text-[10px] uppercase tracking-widest font-bold" style="color:var(--accent-secondary)">Closing</div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">16</div><div class="font-semibold text-sm">Why True Business?</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">17</div><div class="font-semibold text-sm">Competitive Landscape</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">18</div><div class="font-semibold text-sm">ROI / Business Case</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">19</div><div class="font-semibold text-sm">Next Steps / CTA</div></div>
+      <div class="glass rounded-xl p-4 card-hover"><div class="text-[10px] font-bold" style="color:#E2231A">20</div><div class="font-semibold text-sm">Better Together</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 3. TRUE GROUP INTRODUCTION ===== -->
+<section id="truebusiness" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-14">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">03 — True Group Introduction</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Engine Behind the Digital Nation</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">The proven foundation behind MOBILIFE — Thailand's #1 telecom-tech, world-class partnerships, and an Adaptive Infrastructure stack that wraps your loyalty platform end-to-end.</p>
+  </div>
+
+  <!-- 3a. Mission & Vision -->
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <div class="glass rounded-2xl p-8 card-hover" style="border-left: 4px solid #E2231A">
+      <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#E2231A">OUR MISSION</div>
+      <p class="text-base leading-relaxed" style="color:var(--text-secondary)">"To build a strong tech ecosystem of digital talent and capabilities and provide innovative services which improve our customers' lives and support a sustainable society."</p>
+    </div>
+    <div class="glass rounded-2xl p-8 card-hover" style="border-left: 4px solid #C9A96E">
+      <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#C9A96E">OUR VISION</div>
+      <p class="text-base leading-relaxed" style="color:var(--text-secondary)">"To be Thailand's leading telecom-tech company, transforming the lives of Thai people and propelling businesses to the forefront of the digital economy."</p>
+    </div>
+  </div>
+
+  <!-- 3b. #1 Network -->
+  <div class="rounded-2xl p-8 mb-10" style="background: linear-gradient(135deg, #1B2B5B 0%, #0e182f 60%, #3d0806 100%); color:#fff;">
+    <div class="grid md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-5">
+        <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#C9A96E">truebusiness · #1 Digital Infrastructure & 5G Solution Provider</div>
+        <h3 class="font-display text-3xl md:text-4xl font-black leading-tight mb-3" style="color:#fff">The #1 Undisputed Network & Digital Infrastructure Leader</h3>
+        <p class="text-sm" style="color:#cbd5e1">Domestic + international scale that powers MOBILIFE on day one — no infrastructure ramp-up.</p>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-3 gap-4">
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#fff">&gt;51M</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">Subscribers</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#fff">90%</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">5G Coverage</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#fff">99%</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">4G Coverage</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#fff">฿294B</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">Market Cap</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#fff">500K</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">km Fiber</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-black" style="color:#C9A96E">26GHz</div><div class="text-[10px] uppercase tracking-widest" style="color:#94a3b8">Full Spectrum</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3c. Partnerships -->
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#E2231A">Powered By Leading World-Class Investors</div>
+      <h4 class="font-display text-xl font-bold mb-4">Backed by Global Heavyweights</h4>
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="rounded-lg p-3 border" style="border-color:var(--border-glass); background:var(--bg-card-inner)"><div class="text-xs font-bold">CP Group</div></div>
+        <div class="rounded-lg p-3 border" style="border-color:var(--border-glass); background:var(--bg-card-inner)"><div class="text-xs font-bold">Telenor</div></div>
+        <div class="rounded-lg p-3 border" style="border-color:var(--border-glass); background:var(--bg-card-inner)"><div class="text-xs font-bold">China Mobile</div></div>
+      </div>
+    </div>
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#E2231A">Strategic Partnership With Global Tech Leaders</div>
+      <h4 class="font-display text-xl font-bold mb-4">Best-in-Class Tech Ecosystem</h4>
+      <div class="grid grid-cols-4 gap-2 text-center">
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Google</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">AWS</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Alibaba</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Huawei</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">ZTE</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Ericsson</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Samsung</div>
+        <div class="rounded-lg p-2 border text-[11px] font-semibold" style="border-color:var(--border-glass)">Apple</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3d. Customer Base -->
+  <div class="glass rounded-2xl p-8 mb-10">
+    <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#E2231A">truebusiness — Engine Behind the Digital Nation</div>
+    <h4 class="font-display text-2xl font-bold mb-6">Trusted at Enterprise Scale</h4>
+    <div class="grid md:grid-cols-5 gap-4 text-center">
+      <div><div class="text-3xl font-black gradient-red counter">91/100</div><div class="text-[11px] uppercase tracking-widest mt-1" style="color:var(--text-muted)">SET Top 100</div></div>
+      <div><div class="text-3xl font-black gradient-red counter">32</div><div class="text-[11px] uppercase tracking-widest mt-1" style="color:var(--text-muted)">Financial Services</div></div>
+      <div><div class="text-3xl font-black gradient-red counter">160K</div><div class="text-[11px] uppercase tracking-widest mt-1" style="color:var(--text-muted)">SMEs / Enterprises</div></div>
+      <div><div class="text-3xl font-black gradient-red counter">&gt;850K</div><div class="text-[11px] uppercase tracking-widest mt-1" style="color:var(--text-muted)">IoT / M2M</div></div>
+      <div><div class="text-3xl font-black gradient-red counter">32</div><div class="text-[11px] uppercase tracking-widest mt-1" style="color:var(--text-muted)">Industrial Parks</div></div>
+    </div>
+    <div class="mt-6 text-center text-sm" style="color:var(--text-muted)">Market leader in <span class="font-bold" style="color:var(--text-primary)">Connected Cars</span> — directly aligned with MGC-ASIA's automotive portfolio.</div>
+  </div>
+
+  <!-- 3e. Adaptive Infrastructure stack -->
+  <div class="glass rounded-2xl p-8">
+    <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#E2231A">truebusiness Solution Portfolio</div>
+    <h4 class="font-display text-2xl font-bold mb-2">Adaptive Infrastructure</h4>
+    <p class="text-sm mb-6" style="color:var(--text-muted)">MOBILIFE Plan B sits inside True's full stack — wrapped by Cybersecurity SOC + Managed Services + UIH local cloud + AWS partnership.</p>
+
+    <div class="grid grid-cols-12 gap-3">
+      <div class="col-span-10 space-y-3">
+        <div class="rounded-xl p-4" style="background: linear-gradient(135deg, #1B2B5B, #2B4A8E); color:#fff;">
+          <div class="text-[10px] uppercase tracking-widest mb-1" style="color:#C9A96E">Layer 1 · Digital Integrated Solution</div>
+          <div class="text-sm font-semibold">M365 · Google Workspace · Cloud · Unified Comm · CCaaS · CloudPBX · SOC · CRAVE · AI/Camera & Retail · Smart Energy · ML · Data & Analytics ← <span class="text-yellow-300">MOBILIFE lives here</span></div>
+        </div>
+        <div class="rounded-xl p-4" style="background: linear-gradient(135deg, #2B4A8E, #4f6da7); color:#fff;">
+          <div class="text-[10px] uppercase tracking-widest mb-1" style="color:#C9A96E">Layer 2 · Intelligent Network Solution</div>
+          <div class="text-sm font-semibold">SD-WAN · SASE · Private WiFi/Super WiFi · 5G Private Network</div>
+        </div>
+        <div class="rounded-xl p-4" style="background: linear-gradient(135deg, #4f6da7, #7b91bd); color:#fff;">
+          <div class="text-[10px] uppercase tracking-widest mb-1" style="color:#C9A96E">Layer 3 · Core Connectivity Solution</div>
+          <div class="text-sm font-semibold">Mobile · Messaging · IP-DID/SIP-Trunk · Business FixedIP · Corporate Internet · MPLS</div>
+        </div>
+        <div class="rounded-xl p-4" style="background: linear-gradient(135deg, #C9A96E, #D4A853); color:#1B2B5B;">
+          <div class="text-[10px] uppercase tracking-widest mb-1 font-bold">Layer 4 · Digital Talent Development</div>
+          <div class="text-sm font-bold">True Digital Academy — staff training included for MGC-ASIA team</div>
+        </div>
+      </div>
+      <div class="col-span-2 space-y-3">
+        <div class="rounded-xl p-3 h-full flex flex-col items-center justify-center text-center" style="background: linear-gradient(180deg, #E2231A, #7E2A8E); color:#fff; min-height: 152px;">
+          <div class="text-[10px] uppercase tracking-widest font-bold">Cybersecurity Services</div>
+        </div>
+        <div class="rounded-xl p-3 h-full flex flex-col items-center justify-center text-center" style="background: linear-gradient(180deg, #7E2A8E, #5b1f66); color:#fff; min-height: 152px;">
+          <div class="text-[10px] uppercase tracking-widest font-bold">Managed Services</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 4. EXECUTIVE SUMMARY ===== -->
+<section id="summary" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">04 — Executive Summary</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">The Sweet Spot</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Plan B fits your ฿8M budget perfectly while delivering the same AI capabilities and LINE experience as Plan A. A smarter cloud strategy preserves PDPA sovereignty and reduces TCO without sacrificing capability.</p>
+  </div>
+
+  <!-- 4 pillar grid -->
+  <div class="grid md:grid-cols-4 gap-5 mb-10">
+    <div class="glass rounded-2xl p-6 card-hover" style="border-top: 4px solid #C9A96E">
+      <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.12); color:#C9A96E">★</div>
+      <h3 class="font-display font-bold text-lg mb-2">Budget-Perfect ฿8M</h3>
+      <p class="text-sm" style="color:var(--text-muted)">Matches your stated budget — 3-year all-in: build + cloud + managed service + 40 CR mandays. No surprises.</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover" style="border-top: 4px solid #E2231A">
+      <div class="feature-icon mb-3" style="background:rgba(226,35,26,0.12); color:#E2231A">⚡</div>
+      <h3 class="font-display font-bold text-lg mb-2">Same AI as Plan A</h3>
+      <p class="text-sm" style="color:var(--text-muted)">Full conversational AI น้องใบเตย — Thai/English chat, Text-to-SQL, churn prediction, NBA, sentiment analysis.</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover" style="border-top: 4px solid #1B2B5B">
+      <div class="feature-icon mb-3" style="background:rgba(27,43,91,0.12); color:#1B2B5B">☁</div>
+      <h3 class="font-display font-bold text-lg mb-2">Smart Hybrid Cloud</h3>
+      <p class="text-sm" style="color:var(--text-muted)">PDPA-sensitive data on UIH (in-Thailand). AI/analytics on AWS — pay only for what you use.</p>
+    </div>
+    <div class="glass rounded-2xl p-6 card-hover" style="border-top: 4px solid #7E2A8E">
+      <div class="feature-icon mb-3" style="background:rgba(126,42,142,0.12); color:#7E2A8E">⏱</div>
+      <h3 class="font-display font-bold text-lg mb-2">5-Month Delivery</h3>
+      <p class="text-sm" style="color:var(--text-muted)">Live in 5 months — fast, structured, with True PMO accountability and a clear weekly cadence.</p>
+    </div>
+  </div>
+
+  <!-- Plan compare strip -->
+  <div class="glass rounded-2xl p-8">
+    <h3 class="font-display font-bold text-xl mb-6">Plan A vs Plan B vs Plan C — At a Glance</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-xl p-6" style="background: var(--bg-card-inner); border: 2px solid var(--border-glass);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:var(--text-muted)">Plan A — Premium</div>
+        <div class="text-3xl font-black mb-2 gradient-text">฿11M</div>
+        <ul class="space-y-1.5 text-sm" style="color:var(--text-muted)">
+          <li>· UIH dedicated (full-stack)</li>
+          <li>· 24/7 dedicated managed service</li>
+          <li>· 60 CR mandays</li>
+          <li>· 99.9% SLA</li>
+        </ul>
+        <a href="./plan-a.html" class="inline-flex items-center gap-1 mt-4 text-xs font-semibold" style="color:#C9A96E">View Plan A ↗</a>
+      </div>
+      <div class="rounded-xl p-6 recommended-glow" style="background: linear-gradient(135deg, rgba(226,35,26,0.05), rgba(201,169,110,0.06)); border: 2px solid #E2231A;">
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#E2231A">Plan B — Standard ★</div>
+          <span class="recommended-ribbon px-2 py-0.5 rounded-md text-[9px]">RECOMMENDED</span>
+        </div>
+        <div class="text-3xl font-black mb-2 gradient-red">฿8M</div>
+        <ul class="space-y-1.5 text-sm" style="color:var(--text-secondary)">
+          <li>✓ Hybrid (UIH + AWS)</li>
+          <li>✓ Business hours + on-call</li>
+          <li>✓ 40 CR mandays</li>
+          <li>✓ 99.5% SLA · 5 months</li>
+          <li class="font-bold pt-1" style="color:#E2231A">★ Same AI as Plan A</li>
+        </ul>
+        <div class="mt-4 text-xs font-semibold" style="color:#E2231A">★ This Proposal</div>
+      </div>
+      <div class="rounded-xl p-6" style="background: var(--bg-card-inner); border: 2px solid var(--border-glass);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:var(--text-muted)">Plan C — Lite</div>
+        <div class="text-3xl font-black mb-2" style="color:var(--text-secondary)">฿5M</div>
+        <ul class="space-y-1.5 text-sm" style="color:var(--text-muted)">
+          <li>· AWS only (lean)</li>
+          <li>· On-call only</li>
+          <li>· 20 CR mandays</li>
+          <li>· 99.0% SLA</li>
+        </ul>
+        <a href="./plan-c.html" class="inline-flex items-center gap-1 mt-4 text-xs font-semibold" style="color:#C9A96E">View Plan C ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 5. DISCOVERY — REQUIREMENTS ===== -->
+<section id="discovery" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">05 — Discovery</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Project / Business Requirements</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">From the Mar 2026 discovery sessions with MGC-ASIA — basics, the 16 new feature requests, and the assumptions that frame this proposal.</p>
+  </div>
+
+  <!-- 5a. Basic Requirements -->
+  <div class="mb-10">
+    <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#E2231A; color:#fff;">5a</span> Basic Requirements</h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">👥</div><h4 class="font-bold text-sm mb-1">48,520 Existing Members</h4><p class="text-xs" style="color:var(--text-muted)">Across 8 brands. Need migration + dedup + tier mapping (Member → Diamond → Black Diamond → Infinite Blue Diamond).</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">🚗</div><h4 class="font-bold text-sm mb-1">8-Brand Portfolio</h4><p class="text-xs" style="color:var(--text-muted)">BMW, Rolls-Royce, MINI, Maserati, Honda, Harley-Davidson, Triumph, Morgan — each with its own tier rules, points multipliers, and merch.</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">📱</div><h4 class="font-bold text-sm mb-1">LINE LIFF Channel</h4><p class="text-xs" style="color:var(--text-muted)">Primary touchpoint — Thailand-first. Optional native app extension supported via roadmap.</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">🇹🇭</div><h4 class="font-bold text-sm mb-1">PDPA Compliance</h4><p class="text-xs" style="color:var(--text-muted)">Thai PDPA 2019 — consent capture, data retention, right-to-erasure. Member PII stays on UIH (Thailand-jurisdiction).</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">🔌</div><h4 class="font-bold text-sm mb-1">POS / DMS Integration</h4><p class="text-xs" style="color:var(--text-muted)">Real-time integration with brand DMS systems for points accrual at point of service.</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">📊</div><h4 class="font-bold text-sm mb-1">Admin Portal + B2B</h4><p class="text-xs" style="color:var(--text-muted)">Marketing console, member ops, B2B partner portal, reporting & exports.</p></div>
+    </div>
+  </div>
+
+  <!-- 5b. New Features (16) -->
+  <div class="mb-10">
+    <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#E2231A; color:#fff;">5b</span> New Feature Requirements (16)</h3>
+    <div class="grid md:grid-cols-2 gap-4">
+      <!-- Member -->
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">Member Experience (4)</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F1.</b> LINE Login + LIFF onboarding (auto-fill)</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F2.</b> Birthday & anniversary auto-gift</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F3.</b> Concierge service request via LINE chat</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F4.</b> e-Voucher wallet + QR redemption</span></li>
+        </ul>
+      </div>
+      <!-- Points & Tier -->
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">Points & Tier (3)</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F5.</b> Multi-brand earn/burn rules engine</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F6.</b> Tier auto-progression + manual override</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F7.</b> Points expiry + IFRS 15 deferred-revenue ledger</span></li>
+        </ul>
+      </div>
+      <!-- Campaign -->
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">Campaign & Marketing (3)</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F8.</b> Cohort segmentation + audience builder</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F9.</b> Multi-channel campaign orchestration (LINE/Email/SMS)</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F10.</b> A/B test framework w/ statistical significance</span></li>
+        </ul>
+      </div>
+      <!-- AI -->
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">AI / Analytics (3)</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span style="color:#E2231A">★</span><span><b>F11.</b> น้องใบเตย AI assistant (Thai/EN, 20 use cases)</span></li>
+          <li class="flex gap-2"><span style="color:#E2231A">★</span><span><b>F12.</b> Churn prediction + Next-Best-Action engine</span></li>
+          <li class="flex gap-2"><span style="color:#E2231A">★</span><span><b>F13.</b> Voice-of-Customer sentiment analytics</span></li>
+        </ul>
+      </div>
+      <!-- B2B -->
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">B2B & Operations (3)</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F14.</b> B2B fleet program + corporate accounts</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F15.</b> Reward inventory & PO automation</span></li>
+          <li class="flex gap-2"><span style="color:#22c55e">✓</span><span><b>F16.</b> Service appointment booking via concierge</span></li>
+        </ul>
+      </div>
+      <!-- Coverage badge -->
+      <div class="rounded-2xl p-5" style="background: linear-gradient(135deg, rgba(226,35,26,0.08), rgba(201,169,110,0.08)); border: 1px solid rgba(226,35,26,0.3);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">Plan B Coverage</div>
+        <div class="flex items-baseline gap-2 mb-2">
+          <span class="text-4xl font-black gradient-red">16/16</span>
+          <span class="text-sm font-semibold" style="color:var(--text-secondary)">Features Included</span>
+        </div>
+        <p class="text-xs" style="color:var(--text-muted)">100% feature parity with Plan A — the only differences are cloud infrastructure (hybrid vs full-UIH) and managed service tier (Tier 2 vs 24/7 dedicated).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5c. General Assumptions -->
+  <div>
+    <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#E2231A; color:#fff;">5c</span> General Assumptions</h3>
+    <div class="glass rounded-2xl p-6">
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <ul class="space-y-2">
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> MGC-ASIA provides API access to existing DMS (BMW SAP DMS, Honda DMS, etc.) within first 4 weeks of project kickoff.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Member data migration scope: 48,520 records + 24-month transaction history.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> LINE OA verified business account exists; True Business handles LIFF setup and webhook config.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> AI use cases scoped to the 20 documented in Section 8; additional cases via CR mandays.</li>
+        </ul>
+        <ul class="space-y-2">
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> UIH local cloud zone selected: Bang Na DC (Tier-3, Thai jurisdiction). AWS region: ap-southeast-1 (Singapore).</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> PDPA Data Processing Agreement signed before go-live; True acts as Data Processor.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> 5-month timeline assumes UAT acceptance within 10 business days per phase.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Pricing valid 90 days from proposal date. VAT 7% excluded throughout.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 6. PROPOSED SOLUTION — HYBRID ARCHITECTURE ===== -->
+<section id="solution" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">06 — Proposed Solution</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Smart Hybrid Architecture</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">PDPA data sovereignty on UIH (in-Thailand). AI &amp; analytics on AWS for performance and cost. Powered by True ecosystem partners — orchestrated as one platform.</p>
+  </div>
+
+  <!-- Hybrid SVG diagram -->
+  <div class="glass rounded-3xl p-6 md:p-10 mb-8">
+    <svg viewBox="0 0 1200 620" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradLine" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#E2231A"/><stop offset="1" stop-color="#7E2A8E"/>
+        </linearGradient>
+        <linearGradient id="gradUIH" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#1B2B5B"/><stop offset="1" stop-color="#2B4A8E"/>
+        </linearGradient>
+        <linearGradient id="gradAWS" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#C9A96E"/><stop offset="1" stop-color="#a48a55"/>
+        </linearGradient>
+        <linearGradient id="gradAPI" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#E2231A"/><stop offset="1" stop-color="#B91B14"/>
+        </linearGradient>
+        <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0L0 0L0 30" fill="none" stroke="var(--svg-grid)" stroke-width="1"/></pattern>
+      </defs>
+      <rect width="1200" height="620" fill="url(#grid)"/>
+
+      <!-- LINE LIFF / Members -->
+      <g class="arch-node">
+        <rect x="40" y="40" width="220" height="90" rx="14" fill="#06C755" opacity="0.92"/>
+        <text x="150" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">LINE LIFF / OA</text>
+        <text x="150" y="100" text-anchor="middle" fill="#fff" font-size="11">48,520 Members · 8 Brands</text>
+      </g>
+      <text x="150" y="155" text-anchor="middle" fill="var(--svg-text)" font-size="10" opacity="0.7">Touchpoint</text>
+
+      <!-- Arrow to gateway -->
+      <line x1="265" y1="85" x2="345" y2="85" stroke="url(#gradLine)" stroke-width="3" class="arch-line"/>
+
+      <!-- API Gateway -->
+      <g class="arch-node">
+        <rect x="350" y="40" width="240" height="90" rx="14" fill="url(#gradAPI)"/>
+        <text x="470" y="75" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">API Gateway · WAF</text>
+        <text x="470" y="100" text-anchor="middle" fill="#fff" font-size="11">True SOC · OAuth 2.0 · Rate Limit</text>
+      </g>
+
+      <!-- Split lines: UIH (top) and AWS (bottom) -->
+      <line x1="595" y1="75" x2="700" y2="75" stroke="url(#gradLine)" stroke-width="3" class="arch-line"/>
+      <line x1="595" y1="105" x2="700" y2="105" stroke="url(#gradLine)" stroke-width="3" class="arch-line"/>
+
+      <!-- UIH zone -->
+      <g>
+        <rect x="700" y="20" width="460" height="270" rx="18" fill="#1B2B5B" opacity="0.06" stroke="#1B2B5B" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="720" y="48" fill="#1B2B5B" font-size="13" font-weight="800">UIH LOCAL CLOUD · TH JURISDICTION</text>
+        <text x="720" y="64" fill="#1B2B5B" font-size="10" opacity="0.7">PDPA-Sensitive Data · Bang Na DC (Tier-3)</text>
+
+        <g class="arch-node">
+          <rect x="720" y="80" width="200" height="60" rx="10" fill="url(#gradUIH)"/>
+          <text x="820" y="105" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Identity / SSO</text>
+          <text x="820" y="124" text-anchor="middle" fill="#fff" font-size="10">PDPA Consent Mgmt</text>
+        </g>
+        <g class="arch-node">
+          <rect x="940" y="80" width="200" height="60" rx="10" fill="url(#gradUIH)"/>
+          <text x="1040" y="105" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Points Engine</text>
+          <text x="1040" y="124" text-anchor="middle" fill="#fff" font-size="10">8-Brand Multi-Tier</text>
+        </g>
+        <g class="arch-node">
+          <rect x="720" y="160" width="200" height="60" rx="10" fill="url(#gradUIH)"/>
+          <text x="820" y="185" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Member Database</text>
+          <text x="820" y="204" text-anchor="middle" fill="#fff" font-size="10">PII · Encrypted at Rest</text>
+        </g>
+        <g class="arch-node">
+          <rect x="940" y="160" width="200" height="60" rx="10" fill="url(#gradUIH)"/>
+          <text x="1040" y="185" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Audit Log / IFRS 15</text>
+          <text x="1040" y="204" text-anchor="middle" fill="#fff" font-size="10">Deferred Rev Ledger</text>
+        </g>
+        <g class="arch-node">
+          <rect x="720" y="240" width="420" height="40" rx="10" fill="#E2231A" opacity="0.85"/>
+          <text x="930" y="266" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">True SOC + Cybersecurity Wrap</text>
+        </g>
+      </g>
+
+      <!-- AWS zone -->
+      <g>
+        <rect x="700" y="320" width="460" height="270" rx="18" fill="#C9A96E" opacity="0.08" stroke="#C9A96E" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="720" y="348" fill="#7c683f" font-size="13" font-weight="800">AWS PUBLIC CLOUD · ap-southeast-1</text>
+        <text x="720" y="364" fill="#7c683f" font-size="10" opacity="0.8">AI / Analytics · Pay-as-you-use · Anonymized data</text>
+
+        <g class="arch-node">
+          <rect x="720" y="380" width="200" height="60" rx="10" fill="url(#gradAWS)"/>
+          <text x="820" y="405" text-anchor="middle" fill="#1B2B5B" font-size="12" font-weight="700">Bedrock / LLM</text>
+          <text x="820" y="424" text-anchor="middle" fill="#1B2B5B" font-size="10">น้องใบเตย Brain</text>
+        </g>
+        <g class="arch-node">
+          <rect x="940" y="380" width="200" height="60" rx="10" fill="url(#gradAWS)"/>
+          <text x="1040" y="405" text-anchor="middle" fill="#1B2B5B" font-size="12" font-weight="700">SageMaker</text>
+          <text x="1040" y="424" text-anchor="middle" fill="#1B2B5B" font-size="10">Churn · CLV · NBA</text>
+        </g>
+        <g class="arch-node">
+          <rect x="720" y="460" width="200" height="60" rx="10" fill="url(#gradAWS)"/>
+          <text x="820" y="485" text-anchor="middle" fill="#1B2B5B" font-size="12" font-weight="700">OpenSearch / Vector</text>
+          <text x="820" y="504" text-anchor="middle" fill="#1B2B5B" font-size="10">RAG Knowledge Base</text>
+        </g>
+        <g class="arch-node">
+          <rect x="940" y="460" width="200" height="60" rx="10" fill="url(#gradAWS)"/>
+          <text x="1040" y="485" text-anchor="middle" fill="#1B2B5B" font-size="12" font-weight="700">QuickSight + Athena</text>
+          <text x="1040" y="504" text-anchor="middle" fill="#1B2B5B" font-size="10">Analytics + Read Replica</text>
+        </g>
+        <g class="arch-node">
+          <rect x="720" y="540" width="420" height="40" rx="10" fill="#7E2A8E" opacity="0.85"/>
+          <text x="930" y="566" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">CloudFront / CDN · Edge Acceleration</text>
+        </g>
+      </g>
+
+      <!-- Cross flow: anonymized stream -->
+      <line x1="820" y1="280" x2="820" y2="380" stroke="#E2231A" stroke-width="2.5" stroke-dasharray="4 3" class="arch-line"/>
+      <line x1="1040" y1="280" x2="1040" y2="380" stroke="#E2231A" stroke-width="2.5" stroke-dasharray="4 3" class="arch-line"/>
+      <text x="930" y="320" text-anchor="middle" fill="#E2231A" font-size="10" font-weight="700">↕ Anonymized Stream (PDPA-safe pipeline)</text>
+
+      <!-- Branding -->
+      <g>
+        <rect x="40" y="200" width="220" height="240" rx="14" fill="var(--bg-card-inner)" stroke="var(--border-glass)"/>
+        <text x="150" y="232" text-anchor="middle" fill="var(--svg-text)" font-size="12" font-weight="800">DATA CLASSIFICATION</text>
+        <text x="60" y="262" fill="#1B2B5B" font-size="11" font-weight="700">● PII / PDPA</text>
+        <text x="60" y="278" fill="var(--svg-text)" font-size="10">→ UIH only</text>
+        <text x="60" y="306" fill="#C9A96E" font-size="11" font-weight="700">● Behavioral / Aggregate</text>
+        <text x="60" y="322" fill="var(--svg-text)" font-size="10">→ AWS (anonymized)</text>
+        <text x="60" y="350" fill="#7E2A8E" font-size="11" font-weight="700">● Inference / Output</text>
+        <text x="60" y="366" fill="var(--svg-text)" font-size="10">→ Re-joined on UIH</text>
+        <text x="60" y="394" fill="#E2231A" font-size="11" font-weight="700">● Audit / Logs</text>
+        <text x="60" y="410" fill="var(--svg-text)" font-size="10">→ UIH (immutable)</text>
+      </g>
+
+      <!-- Bottom caption -->
+      <text x="600" y="610" text-anchor="middle" fill="var(--svg-text)" font-size="11" font-weight="600" opacity="0.85">Smart Hybrid · Powered by True ecosystem partners — UIH + AWS, orchestrated as one platform.</text>
+    </svg>
+  </div>
+
+  <!-- Why hybrid -->
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="glass rounded-2xl p-6">
+      <div class="feature-icon mb-3" style="background:rgba(27,43,91,0.12); color:#1B2B5B">🇹🇭</div>
+      <h4 class="font-display font-bold text-lg mb-2">PDPA Sovereignty</h4>
+      <p class="text-sm" style="color:var(--text-muted)">Member PII never leaves Thailand. UIH Bang Na is Tier-3, fully PDPA-compliant. True is your Data Processor.</p>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.12); color:#C9A96E">⚡</div>
+      <h4 class="font-display font-bold text-lg mb-2">AI on Best-of-Breed</h4>
+      <p class="text-sm" style="color:var(--text-muted)">Bedrock + SageMaker = world-class managed ML. Pay only for inference + training — no idle GPU cost.</p>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="feature-icon mb-3" style="background:rgba(226,35,26,0.12); color:#E2231A">💰</div>
+      <h4 class="font-display font-bold text-lg mb-2">Cost-Optimized OPEX</h4>
+      <p class="text-sm" style="color:var(--text-muted)">~30% lower 3-yr infra cost vs Plan A's full-UIH dedicated. AWS savings plans + UIH right-sized.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 7. CUSTOMER JOURNEY ===== -->
+<section id="journey" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">07 — Customer Journey</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Member Lifecycle on MOBILIFE</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">From discovery to advocacy — every touchpoint instrumented, every action measured, every member known.</p>
+  </div>
+
+  <div class="grid md:grid-cols-5 gap-4 mb-10">
+    <div class="glass rounded-2xl p-5 card-hover relative">
+      <div class="text-3xl mb-2">👀</div>
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Stage 1</div>
+      <h4 class="font-bold text-sm mb-2">Discover</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Member sees QR at dealer or LINE invite from sales advisor.</p>
+      <div class="hidden md:block absolute -right-3 top-1/2 arrow text-2xl">→</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover relative">
+      <div class="text-3xl mb-2">📲</div>
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Stage 2</div>
+      <h4 class="font-bold text-sm mb-2">Onboard</h4>
+      <p class="text-xs" style="color:var(--text-muted)">LINE Login + LIFF — 60-second signup with auto-fill from LINE profile + PDPA consent.</p>
+      <div class="hidden md:block absolute -right-3 top-1/2 arrow text-2xl">→</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover relative">
+      <div class="text-3xl mb-2">⭐</div>
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Stage 3</div>
+      <h4 class="font-bold text-sm mb-2">Engage</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Earn points, claim e-vouchers, chat with น้องใบเตย, get personalized offers.</p>
+      <div class="hidden md:block absolute -right-3 top-1/2 arrow text-2xl">→</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover relative">
+      <div class="text-3xl mb-2">💎</div>
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Stage 4</div>
+      <h4 class="font-bold text-sm mb-2">Upgrade</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Tier auto-progresses based on spend YTD. Personalized roadmap to Black Diamond.</p>
+      <div class="hidden md:block absolute -right-3 top-1/2 arrow text-2xl">→</div>
+    </div>
+    <div class="glass rounded-2xl p-5 card-hover">
+      <div class="text-3xl mb-2">🌟</div>
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Stage 5</div>
+      <h4 class="font-bold text-sm mb-2">Advocate</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Refer friends, attend brand events, cross-brand purchase, social share with rewards.</p>
+    </div>
+  </div>
+
+  <!-- 4 Tier band -->
+  <div class="glass rounded-2xl p-6">
+    <h4 class="font-display font-bold text-lg mb-5">4-Tier Recognition</h4>
+    <div class="grid md:grid-cols-4 gap-3">
+      <div class="tier-band tier-1 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Entry</div><div class="text-base">Member</div></div>
+      <div class="tier-band tier-2 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Spend ≥ ฿500K/yr</div><div class="text-base">Diamond</div></div>
+      <div class="tier-band tier-2 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Spend ≥ ฿2.5M/yr</div><div class="text-base">Black Diamond</div></div>
+      <div class="tier-band tier-3 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Invitation Only</div><div class="text-base">Infinite Blue Diamond</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 8. AI น้องใบเตย ===== -->
+<section id="ai" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">08 — Conversational AI</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">น้องใบเตย <span class="gradient-red">— Your AI Concierge</span></h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Thai/English conversational AI on AWS Bedrock. Same brain as Plan A — built on Claude/GPT-4 APIs, RAG over your loyalty database, Text-to-SQL, and action orchestration.</p>
+  </div>
+
+  <!-- Hero card -->
+  <div class="rounded-3xl p-8 mb-10 relative overflow-hidden" style="background: linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 60%, #E2231A 100%); color:#fff;">
+    <div class="grid md:grid-cols-12 gap-6 items-center relative z-10">
+      <div class="md:col-span-7">
+        <div class="text-[10px] tracking-widest font-bold mb-3" style="color:#C9A96E">FULL AI · SAME AS PLAN A</div>
+        <h3 class="font-display text-3xl md:text-4xl font-black mb-3">"ใบเตย — เดือนนี้ Rolls-Royce ทำคะแนนได้เท่าไหร่ เทียบกับ BMW"</h3>
+        <p class="text-sm leading-relaxed" style="color:#cbd5e1">Natural language → SQL → analytics → narrative. Insight delivered in 5 seconds, not 2 hours. Every C-level question answered live in the meeting. Every campaign decision data-driven.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">Thai/English</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">Text-to-SQL</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">RAG</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">ML Predictions</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">Action Orchestration</span>
+        </div>
+      </div>
+      <div class="md:col-span-5">
+        <div class="rounded-2xl p-5" style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.15);">
+          <div class="text-[10px] uppercase tracking-widest mb-2" style="color:#C9A96E">RUNNING ON</div>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between"><span style="color:#cbd5e1">LLM</span><span class="font-bold">AWS Bedrock (Claude / GPT-4)</span></div>
+            <div class="flex justify-between"><span style="color:#cbd5e1">Vector DB</span><span class="font-bold">OpenSearch (AWS)</span></div>
+            <div class="flex justify-between"><span style="color:#cbd5e1">ML Models</span><span class="font-bold">SageMaker (AWS)</span></div>
+            <div class="flex justify-between"><span style="color:#cbd5e1">Member Data</span><span class="font-bold">UIH (Thailand-only)</span></div>
+            <div class="flex justify-between"><span style="color:#cbd5e1">PII Pipeline</span><span class="font-bold">Anonymized stream</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 use cases (sample from 20) -->
+  <h3 class="font-display font-bold text-xl mb-5">8 Showcase Use Cases · 20 in Total</h3>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(226,35,26,0.12); color:#E2231A">EXEC INSIGHTS</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC1 · Real-Time Brand Performance</h4>
+      <p class="text-xs" style="color:var(--text-muted)">"Rolls-Royce vs BMW เดือนนี้" → SQL + chart + insight in 5 sec.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(226,35,26,0.12); color:#E2231A">EXEC INSIGHTS</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC3 · Forecasting & Trends</h4>
+      <p class="text-xs" style="color:var(--text-muted)">CFO point liability + IFRS 15 scenarios with sensitivity analysis.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(201,169,110,0.18); color:#C9A96E">MARKETING</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC5 · Campaign ROI</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Uplift modeling per cohort — find best-performing segment automatically.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(201,169,110,0.18); color:#C9A96E">MARKETING</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC7 · Next-Best-Action</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Per-customer NBA — Maserati Track Day vs trade-in vs redemption.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(126,42,142,0.15); color:#7E2A8E">CUSTOMER INTEL</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC9 · Churn Prediction</h4>
+      <p class="text-xs" style="color:var(--text-muted)">Top 5% churn risk + auto-generated win-back campaign — protect ฿1.5B+.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(126,42,142,0.15); color:#7E2A8E">CUSTOMER INTEL</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC12 · Cross-Brand Propensity</h4>
+      <p class="text-xs" style="color:var(--text-muted)">BMW → RR/Maserati propensity map — ฿385M activation opportunity.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(34,197,94,0.15); color:#16a34a">MEMBER LINE</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC18 · Personal Tier Status</h4>
+      <p class="text-xs" style="color:var(--text-muted)">"Points ฉันเหลือเท่าไหร่" → personalized upgrade roadmap on LINE.</p>
+    </div>
+    <div class="usecase-card">
+      <span class="usecase-tag" style="background:rgba(34,197,94,0.15); color:#16a34a">MEMBER LINE</span>
+      <h4 class="font-bold text-sm mt-2 mb-2">UC20 · Service Concierge</h4>
+      <p class="text-xs" style="color:var(--text-muted)">"Check engine ขึ้น" → triage + booking + Black Diamond benefits surfaced.</p>
+    </div>
+  </div>
+
+  <!-- Competitive comparison -->
+  <div class="glass rounded-2xl p-6 overflow-x-auto">
+    <h3 class="font-display font-bold text-xl mb-5">Why ใบเตย Wins vs Competitors</h3>
+    <table class="true-table">
+      <thead>
+        <tr><th>Capability</th><th class="text-center">BuzzeBee</th><th class="text-center">Choco CRM</th><th class="text-center" style="background:#E2231A; color:#fff;">MOBILIFE + ใบเตย</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Static dashboards</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td></tr>
+        <tr><td>Natural-language SQL</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#f59e0b">Limited</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Predictive ML (Churn/CLV/NBA)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Conversational UI (Thai/EN)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Member-facing AI on LINE</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Action orchestration</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Anomaly auto-detection 24/7</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+        <tr><td>Cross-brand analytics (8 brands)</td><td class="text-center" style="color:#f59e0b">Limited</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td></tr>
+      </tbody>
+    </table>
+    <div class="mt-4 p-4 rounded-xl text-sm" style="background:rgba(226,35,26,0.05); border-left: 3px solid #E2231A;">
+      <b>Total annual AI impact (estimated):</b> ฿2.1B+ across churn prevention, cross-brand activation, tier acceleration, campaign efficiency, and operational savings.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 9. TECH STACK ===== -->
+<section id="stack" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">09 — Tech Stack</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Hybrid (UIH + AWS)</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Production-grade stack chosen for PDPA, performance, and cost. PDPA data never leaves Thailand. AI workloads scale on AWS without idle GPU cost.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">FRONTEND</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">LINE LIFF</span><span class="font-semibold">Primary</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">React + Next.js 14</span><span class="font-semibold">Admin</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">TailwindCSS + shadcn</span><span class="font-semibold">UI</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Vega-Lite</span><span class="font-semibold">Charts</span></li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">BACKEND (UIH)</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Node.js / NestJS</span><span class="font-semibold">API</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">PostgreSQL</span><span class="font-semibold">Member DB</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Redis</span><span class="font-semibold">Cache + Queue</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Keycloak</span><span class="font-semibold">SSO/PDPA</span></li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">AI / ANALYTICS (AWS)</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">AWS Bedrock</span><span class="font-semibold">LLM (Claude/GPT)</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">SageMaker</span><span class="font-semibold">ML training</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">OpenSearch</span><span class="font-semibold">Vector RAG</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">QuickSight + Athena</span><span class="font-semibold">Analytics</span></li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">INFRA · UIH (TH)</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">UIH Bang Na DC</span><span class="font-semibold">Tier-3</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">VMware / OpenStack</span><span class="font-semibold">Compute</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">True SOC</span><span class="font-semibold">SecOps</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">PDPA-certified</span><span class="font-semibold">Compliance</span></li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">INFRA · AWS</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">ap-southeast-1</span><span class="font-semibold">Singapore</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">EKS / Fargate</span><span class="font-semibold">AI workloads</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">CloudFront</span><span class="font-semibold">Edge CDN</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Savings Plans</span><span class="font-semibold">Cost optimized</span></li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">DEVOPS / OBSERVABILITY</div>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">GitLab CI/CD</span><span class="font-semibold">Pipeline</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Terraform</span><span class="font-semibold">IaC</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Datadog + CloudWatch</span><span class="font-semibold">Monitor</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">PagerDuty</span><span class="font-semibold">On-call</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-8 rounded-2xl p-5 text-center" style="background: linear-gradient(135deg, rgba(27,43,91,0.06), rgba(201,169,110,0.06)); border: 1px solid var(--border-glass);">
+    <p class="text-sm" style="color:var(--text-secondary)"><b style="color:#E2231A">Highlight:</b> PDPA-sensitive data stays in Thailand on UIH. AI workloads run on AWS for performance and cost. One unified platform — operated by True Business Managed Services as your single point of contact.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 10. IMPLEMENTATION PLAN ===== -->
+<section id="timeline" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">10 — Implementation Plan (Draft)</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">5-Month Delivery Roadmap</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Phased delivery with clear milestones, weekly steering, UAT gates, and a parallel managed-service runway from week 1.</p>
+  </div>
+
+  <!-- Gantt -->
+  <div class="glass rounded-2xl p-6 overflow-x-auto">
+    <div class="min-w-[900px]">
+      <!-- Header -->
+      <div class="grid grid-cols-12 gap-2 text-[10px] font-bold uppercase tracking-widest mb-3" style="color:var(--text-muted)">
+        <div class="col-span-2"></div>
+        <div class="text-center">M1 W1</div>
+        <div class="text-center">W2</div>
+        <div class="text-center">M2</div>
+        <div class="text-center">M2 W4</div>
+        <div class="text-center">M3</div>
+        <div class="text-center">M3 W4</div>
+        <div class="text-center">M4</div>
+        <div class="text-center">M4 W4</div>
+        <div class="text-center">M5</div>
+        <div class="text-center">M5 W3</div>
+        <div class="text-center">GO</div>
+      </div>
+      <!-- Phase 1 Discovery -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">1. Discovery & Design</div>
+        <div class="col-span-2"><div class="gantt-bar gold">Sprint 0</div></div>
+      </div>
+      <!-- Phase 2 Build core -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">2. Build · Core Platform (UIH)</div>
+        <div class="col-span-1"></div><div class="col-span-1"></div>
+        <div class="col-span-4"><div class="gantt-bar">Identity · Points · Tier · Member DB</div></div>
+      </div>
+      <!-- Phase 3 Integration -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">3. Integrate · LINE + DMS</div>
+        <div class="col-span-3"></div>
+        <div class="col-span-4"><div class="gantt-bar purple">LINE LIFF · DMS · Coupons · Admin</div></div>
+      </div>
+      <!-- Phase 4 AI -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">4. AI · ใบเตย on AWS</div>
+        <div class="col-span-4"></div>
+        <div class="col-span-4"><div class="gantt-bar red">Bedrock · RAG · ML Models · 20 Use Cases</div></div>
+      </div>
+      <!-- Phase 5 UAT -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">5. UAT + Hardening</div>
+        <div class="col-span-7"></div>
+        <div class="col-span-2"><div class="gantt-bar gold">UAT · Pen-test</div></div>
+      </div>
+      <!-- Phase 6 Launch -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2">
+        <div class="col-span-2 text-sm font-semibold">6. Go-Live + Hypercare</div>
+        <div class="col-span-9"></div>
+        <div class="col-span-1"><div class="gantt-bar red">★ Live</div></div>
+      </div>
+      <!-- Managed service -->
+      <div class="grid grid-cols-12 gap-2 items-center py-2 border-t pt-3" style="border-color: var(--border-glass)">
+        <div class="col-span-2 text-sm font-semibold" style="color:#7E2A8E">Managed Service Tier-2</div>
+        <div class="col-span-10"><div class="gantt-bar purple" style="opacity:0.6">Business Hrs + On-Call · 36 months recurring</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Milestones -->
+  <div class="grid md:grid-cols-5 gap-4 mt-8">
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M1 End</div><div class="text-[11px]" style="color:var(--text-muted)">Architecture signed-off · Sprint 1 ready</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M2 End</div><div class="text-[11px]" style="color:var(--text-muted)">Core platform alpha on UIH · LIFF login live</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M3 End</div><div class="text-[11px]" style="color:var(--text-muted)">DMS integrated · 8-brand points working · Beta members</div></div>
+    <div class="glass rounded-2xl p-4 text-center"><div class="t-dot mx-auto mb-3"></div><div class="text-xs font-bold mb-1">M4 End</div><div class="text-[11px]" style="color:var(--text-muted)">ใบเตย live · 20 AI use cases tested · UAT begins</div></div>
+    <div class="glass rounded-2xl p-4 text-center" style="border: 2px solid #E2231A"><div class="t-dot mx-auto mb-3" style="background:#C9A96E"></div><div class="text-xs font-bold mb-1" style="color:#E2231A">M5 W3 — GO LIVE</div><div class="text-[11px]" style="color:var(--text-muted)">Production launch · 30-day hypercare → BAU</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 11. BILL OF MATERIAL ===== -->
+<section id="bom" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">11 — Proposed Solutions</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Bill of Material</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Everything True Business delivers — software, cloud, services, training. Separate from price (see §12). Designed for hybrid UIH + AWS.</p>
+  </div>
+
+  <div class="glass rounded-2xl p-6 overflow-x-auto">
+    <table class="true-table">
+      <thead>
+        <tr>
+          <th style="width:15%">Category</th>
+          <th>Item</th>
+          <th>Specification</th>
+          <th class="text-center" style="width:8%">Qty</th>
+          <th class="text-center" style="width:12%">Term</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Software / Platform -->
+        <tr><td rowspan="6" class="font-bold" style="color:#E2231A; vertical-align:middle;">Software · Platform</td><td>MOBILIFE Core License</td><td>Member · Points · Tier · Coupons · Campaigns · Admin</td><td class="text-center">1 site</td><td class="text-center">3 yrs</td></tr>
+        <tr><td>LINE LIFF Module</td><td>LINE Login + LIFF SDK + Webhook</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+        <tr><td>AI น้องใบเตย Engine</td><td>Conversational AI · 20 use cases · Thai/EN NLU</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+        <tr><td>Admin Portal</td><td>Web console for marketing, ops, B2B</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+        <tr><td>B2B Module</td><td>Fleet / corporate accounts</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+        <tr><td>Analytics + Dashboards</td><td>QuickSight + custom reports + exports</td><td class="text-center">1</td><td class="text-center">3 yrs</td></tr>
+
+        <!-- UIH -->
+        <tr><td rowspan="4" class="font-bold" style="color:#1B2B5B; vertical-align:middle;">UIH Local Cloud (TH)</td><td>UIH Compute · App Tier</td><td>4 vCPU × 16GB × 3 nodes (HA)</td><td class="text-center">3 nodes</td><td class="text-center">36 mo</td></tr>
+        <tr><td>UIH PostgreSQL Managed</td><td>HA pair · daily backup · PITR</td><td class="text-center">1 cluster</td><td class="text-center">36 mo</td></tr>
+        <tr><td>UIH Storage</td><td>2 TB SSD + 5 TB archive</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <tr><td>True SOC + WAF</td><td>24/7 SOC monitoring · WAF · DDoS</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+
+        <!-- AWS -->
+        <tr><td rowspan="5" class="font-bold" style="color:#C9A96E; vertical-align:middle;">AWS Public Cloud</td><td>AWS Bedrock</td><td>Claude 3.5 / GPT-4 API · ~10M tokens/mo</td><td class="text-center">est.</td><td class="text-center">36 mo</td></tr>
+        <tr><td>AWS SageMaker</td><td>Churn / CLV / NBA training + inference</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <tr><td>AWS OpenSearch</td><td>Vector store · 50M tokens RAG corpus</td><td class="text-center">1 cluster</td><td class="text-center">36 mo</td></tr>
+        <tr><td>AWS QuickSight + Athena</td><td>Self-service BI + serverless query</td><td class="text-center">10 users</td><td class="text-center">36 mo</td></tr>
+        <tr><td>AWS CloudFront / S3</td><td>CDN + asset storage</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+
+        <!-- Services -->
+        <tr><td rowspan="5" class="font-bold" style="color:#7E2A8E; vertical-align:middle;">Professional Services</td><td>Project Management</td><td>True PMO · weekly steering · 5 months</td><td class="text-center">1 PM</td><td class="text-center">5 mo</td></tr>
+        <tr><td>Solution Design</td><td>Architecture · DB schema · API contracts</td><td class="text-center">1</td><td class="text-center">2 mo</td></tr>
+        <tr><td>Development Squad</td><td>2 BE + 2 FE + 1 ML + 1 QA</td><td class="text-center">6 ppl</td><td class="text-center">5 mo</td></tr>
+        <tr><td>UAT + Pen-test</td><td>Functional UAT + 3rd-party security audit</td><td class="text-center">1</td><td class="text-center">3 wk</td></tr>
+        <tr><td>True Digital Academy</td><td>2-day admin training × 2 cohorts</td><td class="text-center">2</td><td class="text-center">included</td></tr>
+
+        <!-- Managed Service -->
+        <tr><td rowspan="3" class="font-bold" style="color:#E2231A; vertical-align:middle;">Managed Service · Tier 2</td><td>Business Hours Support</td><td>Mon-Fri 08:00-18:00 · 4 named engineers</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <tr><td>On-Call (After-Hours)</td><td>P1/P2 only · 30-min response · 24/7 hotline</td><td class="text-center">1</td><td class="text-center">36 mo</td></tr>
+        <tr><td>CR Mandays Pool</td><td>Reserve for change requests / new features</td><td class="text-center">40 days</td><td class="text-center">3 yrs</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 12. COMMERCIAL ===== -->
+<section id="commercial" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">12 — Commercial Proposal</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">฿8M · Commercial Model</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Built around your stated ฿8M budget. CAPEX + OPEX + Mandays — fully transparent. <b>One-time Purchase OR As-a-Service</b> — your choice.</p>
+  </div>
+
+  <!-- Pricing Headline -->
+  <div class="grid md:grid-cols-3 gap-5 mb-8">
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">CAPEX · Year 1</div>
+      <div class="text-4xl font-display font-black gradient-text mb-1">฿4.5M</div>
+      <div class="text-xs" style="color:var(--text-muted)">One-time platform development</div>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#7E2A8E">OPEX · 3-Year Total</div>
+      <div class="text-4xl font-display font-black mb-1" style="color:#7E2A8E">฿3.0M</div>
+      <div class="text-xs" style="color:var(--text-muted)">≈ ฿1.0M/year · cloud + managed</div>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center recommended-glow" style="border: 2px solid #E2231A">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">CR MANDAYS POOL</div>
+      <div class="text-4xl font-display font-black gradient-red mb-1">฿0.5M</div>
+      <div class="text-xs" style="color:var(--text-muted)">40 mandays @ ฿12K · reserved CR</div>
+    </div>
+  </div>
+
+  <!-- Total Banner -->
+  <div class="rounded-2xl p-8 mb-10 text-center" style="background: linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 50%, #E2231A 100%); color:#fff;">
+    <div class="text-[11px] uppercase tracking-widest mb-2" style="color:#C9A96E">PLAN B STANDARD · TOTAL 3-YEAR INVESTMENT</div>
+    <div class="font-display text-6xl md:text-7xl font-black mb-2">฿8.0M</div>
+    <div class="text-sm" style="color:#cbd5e1">All-inclusive · Excludes VAT 7% · Valid 90 days</div>
+    <div class="mt-4 inline-block px-4 py-2 rounded-full text-xs font-bold" style="background: rgba(201,169,110,0.25); color:#C9A96E;">★ Matches MGC-ASIA's stated ฿8M budget</div>
+  </div>
+
+  <!-- Detailed breakdown -->
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <!-- CAPEX breakdown -->
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-4" style="color:#1B2B5B">CAPEX · ฿4.5M (Year 1 Development)</div>
+      <table class="true-table">
+        <tbody>
+          <tr class="price-row"><td>Platform development (core modules)</td><td class="text-right font-bold">฿1.8M</td></tr>
+          <tr class="price-row"><td>LINE LIFF + Login integration</td><td class="text-right font-bold">฿0.6M</td></tr>
+          <tr class="price-row"><td>AI Agent น้องใบเตย (20 UCs)</td><td class="text-right font-bold">฿0.9M</td></tr>
+          <tr class="price-row"><td>Admin Portal + B2B module</td><td class="text-right font-bold">฿0.6M</td></tr>
+          <tr class="price-row"><td>Integration testing + deployment</td><td class="text-right font-bold">฿0.4M</td></tr>
+          <tr class="price-row"><td>Project Management (5 months)</td><td class="text-right font-bold">฿0.4M</td></tr>
+          <tr style="background: rgba(27,43,91,0.08)"><td class="font-black">CAPEX Subtotal</td><td class="text-right font-black gradient-text">฿4.5M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- OPEX breakdown -->
+    <div class="glass rounded-2xl p-6">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-4" style="color:#7E2A8E">OPEX · ฿3.0M (3-Year Recurring)</div>
+      <table class="true-table">
+        <tbody>
+          <tr class="price-row"><td>UIH local cloud (3 yrs)</td><td class="text-right font-bold">฿0.9M</td></tr>
+          <tr class="price-row"><td>AWS services AI/analytics (3 yrs)</td><td class="text-right font-bold">฿0.9M</td></tr>
+          <tr class="price-row"><td>Managed Services Tier-2 (3 yrs)</td><td class="text-right font-bold">฿0.9M</td></tr>
+          <tr class="price-row"><td>Maintenance & security (3 yrs)</td><td class="text-right font-bold">฿0.3M</td></tr>
+          <tr style="background: rgba(126,42,142,0.08)"><td class="font-black">OPEX Subtotal · ≈ ฿1.0M/yr avg</td><td class="text-right font-black" style="color:#7E2A8E">฿3.0M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Two purchase options -->
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="glass rounded-2xl p-6" style="border-top: 4px solid #1B2B5B">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-[10px] uppercase tracking-widest font-bold" style="color:#1B2B5B">OPTION A</span>
+        <span class="text-[10px] px-2 py-0.5 rounded font-bold" style="background:rgba(27,43,91,0.10); color:#1B2B5B">CAPEX-led</span>
+      </div>
+      <h4 class="font-display font-bold text-lg mb-3">One-Time Purchase + Annual OPEX</h4>
+      <ul class="space-y-2 text-sm mb-4">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 1 (Build + first OPEX)</span><span class="font-bold">฿5.5M</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 2</span><span class="font-bold">฿1.25M</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 3</span><span class="font-bold">฿1.25M</span></li>
+        <li class="flex justify-between border-t pt-2 mt-2" style="border-color:var(--border-glass)"><span class="font-bold" style="color:var(--text-primary)">Total 3 yrs</span><span class="font-black gradient-text">฿8.0M</span></li>
+      </ul>
+      <p class="text-xs" style="color:var(--text-muted)">Asset on MGC books · Lower TCO if held >3 years · Best for capital allocation flexibility.</p>
+    </div>
+    <div class="glass rounded-2xl p-6" style="border-top: 4px solid #C9A96E">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-[10px] uppercase tracking-widest font-bold" style="color:#C9A96E">OPTION B</span>
+        <span class="text-[10px] px-2 py-0.5 rounded font-bold" style="background:rgba(201,169,110,0.15); color:#C9A96E">As-a-Service</span>
+      </div>
+      <h4 class="font-display font-bold text-lg mb-3">As-a-Service · 36 Equal Monthly</h4>
+      <ul class="space-y-2 text-sm mb-4">
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Monthly fee (36 mo)</span><span class="font-bold">฿222K</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">No upfront capex</span><span class="font-bold">฿0</span></li>
+        <li class="flex justify-between"><span style="color:var(--text-muted)">Includes everything</span><span class="font-bold">All-in</span></li>
+        <li class="flex justify-between border-t pt-2 mt-2" style="border-color:var(--border-glass)"><span class="font-bold" style="color:var(--text-primary)">Total 3 yrs</span><span class="font-black gradient-gold-text">฿8.0M</span></li>
+      </ul>
+      <p class="text-xs" style="color:var(--text-muted)">Pure OPEX · Predictable monthly · Best for cash-flow management and tax efficiency.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 13. COMPLIANCE STATEMENT ===== -->
+<section id="compliance" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-10">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">13 — Compliance Statement</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Requirement-by-Requirement Response</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Plan B explicit response per MGC-ASIA discovery requirement, with reference page in this proposal.</p>
+  </div>
+
+  <div class="glass rounded-2xl p-6 overflow-x-auto">
+    <table class="true-table">
+      <thead>
+        <tr>
+          <th style="width:6%">#</th>
+          <th style="width:30%">Customer's Requirement</th>
+          <th style="width:50%">True's Plan B Response</th>
+          <th style="width:14%">Reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>48,520 member migration with PDPA consent re-capture</td><td>True can support — UIH Bang Na DC · PDPA-certified · automated re-consent flow on first LINE login.</td><td>§5a, §6 UIH zone</td></tr>
+        <tr><td>2</td><td>8-brand multi-tier points engine</td><td>True can support — fully configurable rules engine on UIH; per-brand multipliers; tier auto-progression with override.</td><td>§5b F5-F7</td></tr>
+        <tr><td>3</td><td>LINE LIFF as primary channel</td><td>True can support — LINE Login + LIFF SDK · 60-sec onboarding · Thai-first.</td><td>§5b F1, §7 Stage 2</td></tr>
+        <tr><td>4</td><td>Real-time DMS integration (BMW SAP, Honda, etc.)</td><td>True can support — REST + webhook adapters · queue-buffered for resilience · per-brand SLA handling.</td><td>§9 Backend, §10 M3</td></tr>
+        <tr><td>5</td><td>Conversational AI in Thai/English (น้องใบเตย)</td><td>True can support — full 20 use cases on AWS Bedrock + RAG + Text-to-SQL. Same capability as Plan A.</td><td>§5b F11, §8 AI</td></tr>
+        <tr><td>6</td><td>Churn prediction + Next-Best-Action</td><td>True can support — SageMaker XGBoost + collaborative filtering · weekly retraining.</td><td>§8 UC9, UC7</td></tr>
+        <tr><td>7</td><td>IFRS 15 deferred-revenue ledger for points liability</td><td>True can support — immutable audit log on UIH · monthly reconciliation export · CFO dashboard.</td><td>§5b F7, §6 audit</td></tr>
+        <tr><td>8</td><td>PDPA Thailand compliance + data residency</td><td>True can support — PII never leaves UIH (TH). Anonymized stream to AWS for AI. True acts as Data Processor.</td><td>§5c, §6 sovereignty</td></tr>
+        <tr><td>9</td><td>Service appointment booking via concierge</td><td>True can support — calendar integration · slot reservation · LINE confirmation · Black Diamond perks surfaced.</td><td>§5b F16, §8 UC20</td></tr>
+        <tr><td>10</td><td>B2B fleet program + corporate accounts</td><td>True can support — separate B2B portal · volume tier rules · approval workflows.</td><td>§5b F14</td></tr>
+        <tr><td>11</td><td>Reward inventory with auto-PO</td><td>True can support — demand forecasting · reorder point · vendor lead-time tracking.</td><td>§5b F15, §8 UC16</td></tr>
+        <tr><td>12</td><td>SLA 99.5% with 30-min P1 response</td><td>True can support — Tier 2 managed service · business hours + on-call · escalation flow per §15.</td><td>§14 SLA, §15 Escalation</td></tr>
+        <tr><td>13</td><td>5-month go-live timeline</td><td>True can support — phased delivery with weekly cadence · UAT gates · 30-day hypercare.</td><td>§10 Roadmap</td></tr>
+        <tr><td>14</td><td>Budget alignment ฿8M (3-year)</td><td>True can support — Plan B Standard exactly matches budget · CAPEX + OPEX + Mandays transparent.</td><td>§12 Commercial</td></tr>
+        <tr><td>15</td><td>Voice-of-Customer sentiment analytics</td><td>True can support — Thai-tuned LLM sentiment · topic modeling · weekly trend report.</td><td>§5b F13, §8 UC13</td></tr>
+        <tr><td>16</td><td>Single point of accountability</td><td>True can support — True Business is sole vendor and Data Processor · single contact point and fully managed.</td><td>§16 Why True</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 14. SLA ===== -->
+<section id="sla" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">14 — Service Level Agreement</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">SLA Commitment</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Plan B guarantees 99.5% uptime, fast response on every severity, and a service credit if we miss it.</p>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-5 mb-8">
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">UPTIME</div><div class="text-4xl font-display font-black gradient-red counter">99.5%</div><div class="text-xs mt-1" style="color:var(--text-muted)">≤ 3.6 hr/mo downtime</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P1 Critical</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">30<span class="text-2xl">min</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P2 Major</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">1<span class="text-2xl">hr</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P3 Minor</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">4<span class="text-2xl">hr</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
+  </div>
+
+  <div class="glass rounded-2xl p-6">
+    <h4 class="font-display font-bold text-lg mb-4">SLA Definitions & Service Credits</h4>
+    <table class="true-table">
+      <thead><tr><th>Severity</th><th>Definition</th><th>Response</th><th>Resolution Target</th><th>Credit if Missed</th></tr></thead>
+      <tbody>
+        <tr><td><b style="color:#E2231A">P1 — Critical</b></td><td>Production down · members can't login or earn points</td><td>30 min</td><td>4 hours</td><td>10% monthly fee</td></tr>
+        <tr><td><b style="color:#C9A96E">P2 — Major</b></td><td>Major feature impaired · workaround available</td><td>1 hour</td><td>1 business day</td><td>5% monthly fee</td></tr>
+        <tr><td><b style="color:#1B2B5B">P3 — Minor</b></td><td>Minor defect · cosmetic · no business impact</td><td>4 hours</td><td>5 business days</td><td>—</td></tr>
+        <tr><td><b style="color:#7E2A8E">P4 — Request</b></td><td>How-to · enhancement · CR scoping</td><td>1 business day</td><td>per CR pool plan</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 15. CUSTOMER SUPPORT ESCALATION FLOW ===== -->
+<section id="escalation" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">15 — Appendix-1</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Customer Support Escalation Flow</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Single contact point and fully managed by True's Technical and Managed Services Team.</p>
+  </div>
+
+  <div class="glass rounded-2xl p-6 overflow-x-auto">
+    <table class="true-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Trigger</th>
+          <th>Owner</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><b style="color:#E2231A">Level 1</b><br><span class="text-xs" style="color:var(--text-muted)">Immediate</span></td><td>Initial incident report · ticketing</td><td>Business Customer Helpdesk 7×24</td><td>Phone <b>1239 *2</b><br>Intl <b>+662-700-9191</b><br>Email <b>smc@truecorp.co.th</b></td></tr>
+        <tr><td><b style="color:#C9A96E">Level 2</b><br><span class="text-xs" style="color:var(--text-muted)">After 1 hr</span></td><td>P1/P2 not resolved within 1 hr</td><td>Account Manager · MGC-ASIA · True Business</td><td>Named Manager (assigned at kickoff)</td></tr>
+        <tr><td><b style="color:#1B2B5B">Level 3</b><br><span class="text-xs" style="color:var(--text-muted)">After 2 hrs</span></td><td>P1 not resolved within 2 hrs · cross-team escalation</td><td>Managed Network Service Center<br>Corporate Service Technical Mgmt<br>Account Pre-sale / Solution Consultant<br>Account Executive / Key Account Manager</td><td>Conference bridge (auto-dial)</td></tr>
+        <tr><td><b style="color:#7E2A8E">Level 4</b><br><span class="text-xs" style="color:var(--text-muted)">After 3 hrs</span></td><td>P1 not resolved within 3 hrs · executive intervention</td><td>Head of Corporate Service Mgmt Center<br>Head of Technical Sales<br>Head of Sector (Automotive/Retail)</td><td>Direct mobile (issued at contract)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ===== 16. WHY TRUE BUSINESS ===== -->
+<section id="why" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">16 — Appendix-2</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Why True Business?</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">The Total Digital Solution Provider for Business Customers — four pillars, applied to MGC-ASIA's MOBILIFE.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5 mb-8">
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="feature-icon mb-3" style="background:rgba(226,35,26,0.10); color:#E2231A">📡</div>
+      <h3 class="font-display font-bold text-xl mb-2">Strong & Proven Network</h3>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Domestic + international reach. >51M subscribers, 90% 5G, 99% 4G — connecting MOBILIFE to MGC-ASIA's 48,520 members and every dealer nationwide. <b>Best-positioned in connected cars.</b></p>
+    </div>
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.15); color:#C9A96E">🧠</div>
+      <h3 class="font-display font-bold text-xl mb-2">Digital Business Solutions Consultancy</h3>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Not just a vendor — partnership. Co-design MOBILIFE roadmap with True's loyalty + AI specialists. 91/100 SET-listed enterprises chose True for the same reason.</p>
+    </div>
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="feature-icon mb-3" style="background:rgba(27,43,91,0.10); color:#1B2B5B">🛡</div>
+      <h3 class="font-display font-bold text-xl mb-2">Fully Managed Service by True</h3>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)"><b>Single contact point and fully managed</b> — True is your sole vendor for build + cloud + AI + security + support. No vendor finger-pointing. PDPA Data Processor accountability.</p>
+    </div>
+    <div class="glass rounded-2xl p-7 card-hover">
+      <div class="feature-icon mb-3" style="background:rgba(126,42,142,0.10); color:#7E2A8E">⚖</div>
+      <h3 class="font-display font-bold text-xl mb-2">Flexible Business Model</h3>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)"><b>One-time Purchase OR As-a-Service</b> — your choice. Plan B at ฿8M gives you both options, structured around your capital allocation strategy and tax position.</p>
+    </div>
+  </div>
+
+  <div class="rounded-2xl p-6 text-center" style="background: linear-gradient(135deg, rgba(226,35,26,0.06), rgba(201,169,110,0.06)); border: 1px solid var(--border-glass);">
+    <div class="text-[11px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Plan B-Specific Differentiator</div>
+    <p class="text-base font-display font-bold" style="color:var(--text-primary)">"True ecosystem flexibility — local + global cloud orchestration."</p>
+    <p class="text-sm mt-2" style="color:var(--text-muted)">UIH for sovereignty. AWS for AI scale. One True PMO. One contract. One throat to choke.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 17. COMPETITIVE LANDSCAPE ===== -->
+<section id="competitive" class="py-24 px-10">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">17 — Competitive Landscape</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">3-Year TCO Comparison</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Plan B is the value sweet spot — same AI + LINE experience as Plan A, far more capability than market platforms, all at the budget you set.</p>
+  </div>
+
+  <div class="glass rounded-2xl p-6 overflow-x-auto mb-8">
+    <table class="true-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th class="text-center">BuzzeBee</th>
+          <th class="text-center">Choco CRM</th>
+          <th class="text-center">Plan A — Premium</th>
+          <th class="text-center" style="background:#E2231A; color:#fff;">★ Plan B — Standard</th>
+          <th class="text-center">Plan C — Lite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>3-yr TCO (THB)</td><td class="text-center">฿6-9M*</td><td class="text-center">฿7-10M*</td><td class="text-center">฿11M</td><td class="text-center font-bold gradient-red">฿8M</td><td class="text-center">฿5M</td></tr>
+        <tr><td>Conversational AI (น้องใบเตย)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓ Full</td><td class="text-center font-bold" style="color:#16a34a">✓ Full</td><td class="text-center" style="color:#f59e0b">Lite</td></tr>
+        <tr><td>Predictive ML (Churn/CLV/NBA)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center" style="color:#f59e0b">Basic</td></tr>
+        <tr><td>Member-facing AI on LINE</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center" style="color:#f59e0b">Limited</td></tr>
+        <tr><td>PDPA in-Thailand sovereignty</td><td class="text-center" style="color:#f59e0b">Partial</td><td class="text-center" style="color:#94a3b8">SaaS-shared</td><td class="text-center font-bold" style="color:#16a34a">✓ UIH</td><td class="text-center font-bold" style="color:#16a34a">✓ UIH (Hybrid)</td><td class="text-center" style="color:#f59e0b">AWS-only</td></tr>
+        <tr><td>Customization vs platform constraint</td><td class="text-center">Constrained</td><td class="text-center">Constrained</td><td class="text-center font-bold" style="color:#16a34a">Full custom</td><td class="text-center font-bold" style="color:#16a34a">Full custom</td><td class="text-center">Custom</td></tr>
+        <tr><td>True Managed Service + SOC</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">24/7 dedicated</td><td class="text-center font-bold" style="color:#16a34a">B-Hrs + On-Call</td><td class="text-center">On-Call only</td></tr>
+        <tr><td>SLA Uptime</td><td class="text-center">99.0%</td><td class="text-center">99.0%</td><td class="text-center font-bold">99.9%</td><td class="text-center font-bold">99.5%</td><td class="text-center">99.0%</td></tr>
+        <tr><td>True ecosystem (5G/SOC/Academy)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center font-bold" style="color:#16a34a">✓</td><td class="text-center" style="color:#f59e0b">Limited</td></tr>
+      </tbody>
+    </table>
+    <div class="text-[11px] mt-3" style="color:var(--text-muted)">*BuzzeBee/Choco TCO estimates based on public pricing + integration cost assumptions for 48K members.</div>
+  </div>
+
+  <div class="rounded-2xl p-6 text-center" style="background: linear-gradient(135deg, rgba(27,43,91,0.05), rgba(226,35,26,0.06)); border: 1px solid var(--border-glass);">
+    <p class="text-base font-display font-bold mb-2" style="color:var(--text-primary)">Plan B = Best Value Sweet Spot</p>
+    <p class="text-sm" style="color:var(--text-muted)">Same AI capability and LINE experience as Plan A · Same 16/16 features · Same True ecosystem · ฿3M saved vs Plan A · Far more capability than BuzzeBee/Choco at similar TCO.</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 18. ROI / BUSINESS CASE ===== -->
+<section id="roi" class="py-24 px-10" style="background:var(--bg-secondary)">
+<div class="max-w-7xl mx-auto section-enter">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">18 — Business Case</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">ROI · Payback &lt; 5 Months</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Conservative 3% revenue uplift on 48,520 members yields ฿3.6B incremental — Plan B's ฿8M is just 0.22% of the unlocked revenue.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-5 mb-8">
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">MEMBERS</div><div class="text-4xl font-display font-black counter" style="color:#1B2B5B">48,520</div><div class="text-xs mt-1" style="color:var(--text-muted)">Existing across 8 brands</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">UPLIFT</div><div class="text-4xl font-display font-black gradient-gold-text">3%</div><div class="text-xs mt-1" style="color:var(--text-muted)">Conservative · industry avg 5-8%</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">AVG SPEND</div><div class="text-4xl font-display font-black gradient-red">฿2.5M</div><div class="text-xs mt-1" style="color:var(--text-muted)">Per member · annualized</div></div>
+  </div>
+
+  <!-- ROI math -->
+  <div class="glass rounded-2xl p-8 mb-8">
+    <h4 class="font-display font-bold text-lg mb-5">The Math</h4>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Members</span><span class="font-bold">48,520</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Uplift % (conservative)</span><span class="font-bold">× 3%</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Avg incremental spend</span><span class="font-bold">× ฿2.5M</span></div>
+        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">3-Year Incremental</span><span class="gradient-red text-2xl">฿3.6B</span></div>
+      </div>
+      <div class="space-y-3 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(226,35,26,0.05), rgba(201,169,110,0.05));">
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Plan B Investment</span><span class="font-bold">฿8M</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">% of Incremental Revenue</span><span class="font-bold">0.22%</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Monthly run-rate uplift</span><span class="font-bold">฿100M</span></div>
+        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">Payback Period</span><span class="gradient-red text-2xl">&lt; 5 mo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Impact -->
+  <div class="glass rounded-2xl p-6">
+    <h4 class="font-display font-bold text-lg mb-4">Where the AI Compounds Returns</h4>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#E2231A; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Churn Prevention</div><div class="text-2xl font-black gradient-red">฿1.5B+</div><div class="text-[11px]" style="color:var(--text-muted)">UC9 · top 5% risk × win-back</div></div>
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#C9A96E; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Cross-Brand Activation</div><div class="text-2xl font-black gradient-gold-text">฿385M</div><div class="text-[11px]" style="color:var(--text-muted)">UC12 · BMW → RR/Maserati</div></div>
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#1B2B5B; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#1B2B5B">Tier Acceleration</div><div class="text-2xl font-black" style="color:#1B2B5B">฿200M+</div><div class="text-[11px]" style="color:var(--text-muted)">UC11/18 · borderline upgraders</div></div>
+    </div>
+    <div class="mt-4 text-center text-sm" style="color:var(--text-muted)"><b style="color:var(--text-primary)">Total estimated AI-driven impact:</b> ฿2.1B+ annual</div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 19. CTA / NEXT STEPS ===== -->
+<section id="cta" class="py-32 px-10 relative overflow-hidden">
+<div class="max-w-7xl mx-auto section-enter relative z-10">
+  <div class="text-center mb-12">
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">19 — Next Steps</div>
+    <h2 class="font-display text-4xl md:text-6xl font-black mb-4">Let's Build <span class="gradient-red">MOBILIFE</span> Together</h2>
+    <p class="max-w-2xl mx-auto text-lg" style="color:var(--text-muted)">From handshake to launch in 5 months. Plan B is the recommended path — designed to your budget, built for your vision.</p>
+  </div>
+
+  <!-- Steps -->
+  <div class="grid md:grid-cols-4 gap-4 mb-10">
+    <div class="glass rounded-2xl p-5"><div class="text-3xl font-black gradient-red mb-2">01</div><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Week 1</div><h4 class="font-bold text-sm mb-1">Decision · LOI</h4><p class="text-[11px]" style="color:var(--text-muted)">MGC-ASIA confirms Plan B selection · sign LOI · True allocates squad.</p></div>
+    <div class="glass rounded-2xl p-5"><div class="text-3xl font-black gradient-red mb-2">02</div><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Week 2</div><h4 class="font-bold text-sm mb-1">Contract + DPA</h4><p class="text-[11px]" style="color:var(--text-muted)">MSA + SOW + Data Processing Agreement · payment milestones.</p></div>
+    <div class="glass rounded-2xl p-5"><div class="text-3xl font-black gradient-red mb-2">03</div><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Week 3</div><h4 class="font-bold text-sm mb-1">Kickoff · Sprint 0</h4><p class="text-[11px]" style="color:var(--text-muted)">Discovery deep-dive · architecture sign-off · DMS API access.</p></div>
+    <div class="glass rounded-2xl p-5" style="border: 2px solid #E2231A"><div class="text-3xl font-black gradient-red mb-2">04</div><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Month 5</div><h4 class="font-bold text-sm mb-1">★ GO LIVE</h4><p class="text-[11px]" style="color:var(--text-muted)">MOBILIFE production launch · 30-day hypercare · into BAU.</p></div>
+  </div>
+
+  <!-- CTA Card -->
+  <div class="rounded-3xl p-10 text-center recommended-glow" style="background: linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 50%, #E2231A 100%); color:#fff;">
+    <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">★ READY WHEN YOU ARE</div>
+    <h3 class="font-display text-3xl md:text-5xl font-black mb-4">Ready to make Plan B yours?</h3>
+    <p class="text-lg max-w-2xl mx-auto mb-8" style="color:#cbd5e1">A 60-minute working session with the True PMO + AI team is all it takes to lock in scope, schedule, and start.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="mailto:smc@truecorp.co.th?subject=MGC-ASIA%20MOBILIFE%20Plan%20B%20-%20Schedule%20Working%20Session" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm shine" style="background:#fff; color:#1B2B5B;">
+        Schedule Working Session
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:1239" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm border-2" style="border-color:#C9A96E; color:#C9A96E;">
+        Call True Helpdesk · 1239 *2
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 20. FOOTER ===== -->
+<footer class="relative">
+  <div class="footer-gradient-bar"></div>
+  <div class="py-14 px-10" style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-body) 100%);">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <div class="flex items-baseline gap-1 mb-3">
+            <span class="font-display font-black text-2xl" style="color:#E2231A">true</span>
+            <span class="font-display font-bold text-base" style="color:var(--text-primary)">business</span>
+          </div>
+          <p class="text-sm" style="color:var(--text-muted)">By True Internet Corporation Co., Ltd. — Engine Behind the Digital Nation. Adaptive Infrastructure for MGC-ASIA's MOBILIFE.</p>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">PROPOSAL</div>
+          <ul class="space-y-1.5 text-sm" style="color:var(--text-muted)">
+            <li>For: <b style="color:var(--text-primary)">MGC-ASIA Group</b></li>
+            <li>By: <b style="color:#E2231A">True Business</b></li>
+            <li>Plan: <b style="color:var(--text-primary)">B Standard ★ Recommended</b></li>
+            <li>Date: <b style="color:var(--text-primary)">March 2026</b></li>
+            <li>Validity: <b style="color:var(--text-primary)">90 days</b></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">EXPLORE</div>
+          <ul class="space-y-1.5 text-sm">
+            <li><a href="./plan-a.html" class="hover:underline" style="color:var(--text-muted)">→ Plan A · Premium ↗</a></li>
+            <li><a href="./plan-c.html" class="hover:underline" style="color:var(--text-muted)">→ Plan C · Lite ↗</a></li>
+            <li><a href="../v1/plan-b-v1.html" class="hover:underline" style="color:var(--text-muted)">→ v1 Archive ↗</a></li>
+            <li><a href="mailto:smc@truecorp.co.th" class="hover:underline" style="color:var(--text-muted)">→ smc@truecorp.co.th</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Better Together signature -->
+      <div class="text-center pt-8 border-t" style="border-color:var(--border-glass)">
+        <p class="font-display text-3xl md:text-4xl mb-2" style="color:#E2231A; font-style: italic; font-weight: 600;">Better Together</p>
+        <p class="text-xs uppercase tracking-widest" style="color:var(--text-muted)">For MGC-ASIA Group · By True Business · Plan B Standard (Recommended) · March 2026</p>
+        <p class="text-[10px] mt-3" style="color:var(--text-faint)">© 2026 True Internet Corporation Co., Ltd. All rights reserved. Confidential — for MGC-ASIA evaluation only.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Theme toggle
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('mobilife-theme', next); } catch(e){}
+}
+(function(){
+  try { const saved = localStorage.getItem('mobilife-theme'); if(saved){ document.documentElement.setAttribute('data-theme', saved); } } catch(e){}
+})();
+
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  const el = document.getElementById('scroll-progress');
+  if(el) el.style.width = pct + '%';
+});
+
+// Section reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section-enter').forEach(el => io.observe(el));
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    const top = s.offsetTop - 100;
+    if (window.scrollY >= top) current = s.getAttribute('id');
+  });
+  navLinks.forEach(l => {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+  });
+});
+
+// Counter animation
+function animateCounter(el){
+  const txt = el.textContent.trim();
+  const m = txt.match(/^([^\d]*)([\d.,]+)([^\d]*)$/);
+  if(!m) return;
+  const prefix = m[1], suffix = m[3];
+  const target = parseFloat(m[2].replace(/,/g,''));
+  if(isNaN(target)) return;
+  const dur = 1400; const start = performance.now();
+  function step(t){
+    const p = Math.min((t - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = target * eased;
+    const display = (target % 1 === 0) ? Math.round(val).toLocaleString() : val.toFixed(1);
+    el.textContent = prefix + display + suffix;
+    if(p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const counters = document.querySelectorAll('.counter');
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.animated){
+      e.target.dataset.animated = '1';
+      animateCounter(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => counterIO.observe(c));
+</script>
+</body>
+</html>

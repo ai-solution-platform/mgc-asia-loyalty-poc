@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { dashboardStats, pointTransactions, members } from '../../data/mockData';
-import { Users, TrendingUp, Award, Target, ArrowUpRight, ArrowDownRight, Calendar, Plus, UserPlus, Download, Check } from 'lucide-react';
+import { Users, TrendingUp, Award, Target, ArrowUpRight, ArrowDownRight, Calendar, Plus, UserPlus, Download, Check, Sparkles, ChevronRight } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
+import { openBaiSai } from '../../components/AIChatBai';
 
 const COLORS = ['#1B2B5B', '#C9A96E', '#3B5998', '#6B8EC9'];
 
@@ -73,6 +74,54 @@ export default function DashboardPage() {
         <button onClick={() => showToast('Report exported successfully!')} className="flex items-center gap-2 px-4 py-2 border border-gray-200 bg-white rounded-lg text-xs text-[#334155] font-medium hover:bg-gray-50 transition-colors shadow-sm">
           <Download size={14} /> Export Report
         </button>
+      </div>
+
+      {/* Ask น้องใบเตย — AI Insights */}
+      <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50/40 border border-emerald-200/60 rounded-xl p-5 shadow-sm">
+        <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
+          <div className="flex items-center gap-3">
+            <div
+              className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-md shrink-0"
+              style={{ background: 'radial-gradient(circle at 30% 30%, #6EE7B7 0%, #10B981 45%, #047857 100%)' }}
+            >
+              ใ
+            </div>
+            <div>
+              <h3 className="font-bold text-sm text-[#1B2B5B] flex items-center gap-2">
+                Ask น้องใบเตย
+                <span className="text-[10px] font-medium text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <Sparkles size={10} /> AI Assistant
+                </span>
+              </h3>
+              <p className="text-xs text-[#334155]/60 mt-0.5">ถามอะไรเกี่ยวกับสมาชิก, แคมเปญ, หรือ insights ก็ได้ค่ะ</p>
+            </div>
+          </div>
+          <button
+            onClick={() => openBaiSai()}
+            className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg text-xs text-white font-semibold transition-colors shadow-sm"
+          >
+            <Sparkles size={14} /> Open AI Assistant
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {[
+            'Top 10 members เดือนนี้',
+            'Churn risk analysis',
+            'Campaign ROI',
+            'Top performers',
+            'ออก report monthly performance',
+            'Rewards ที่แนะนำให้ออก',
+          ].map(prompt => (
+            <button
+              key={prompt}
+              onClick={() => openBaiSai(prompt)}
+              className="group flex items-center gap-1.5 text-[11px] px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-300 transition-colors shadow-sm"
+            >
+              <span>{prompt}</span>
+              <ChevronRight size={11} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* KPI Cards — Clickable */}

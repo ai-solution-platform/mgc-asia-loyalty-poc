@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, Users, Award, BarChart3, Settings, Target, Bell, LogOut, Megaphone, Ticket, User, ChevronDown, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import AIChatBai from '../AIChatBai';
 
 const sidebarItems = [
   { path: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
@@ -169,6 +170,9 @@ export default function AdminLayout() {
           <Outlet />
         </main>
       </div>
+
+      {/* AI Chat — น้องใบเตย */}
+      <AIChatBai context="admin" />
     </div>
   );
 }

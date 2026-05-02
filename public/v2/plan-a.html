@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Premium — Plan A | True Business × MGC-ASIA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        truenavy: { 50:'#eef1f8', 100:'#d4dbeb', 200:'#a8b6d6', 300:'#7c92c1', 400:'#536eaa', 500:'#34528e', 600:'#283f72', 700:'#1B2B5B', 800:'#121e44', 900:'#08122c' },
+        truered: { 50:'#fdecea', 100:'#fac9c5', 200:'#f59289', 300:'#ef5a4d', 400:'#e93527', 500:'#E2231A', 600:'#b81b14', 700:'#8e150f', 800:'#640f0a', 900:'#3a0905' },
+        truegold: { 50:'#faf6ee', 100:'#f0e5cb', 200:'#e1cb98', 300:'#d3b265', 400:'#C9A96E', 500:'#b8923f', 600:'#967733', 700:'#735b27', 800:'#503f1b', 900:'#2c220f' },
+        truepurple: { 500:'#7E2A8E', 600:'#5e1f6a' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ===== THEME VARIABLES ===== */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-inner: #F4F6FB;
+  --bg-nav: rgba(255,255,255,0.93);
+  --bg-glass: rgba(255,255,255,0.82);
+  --border-glass: rgba(27,43,91,0.10);
+  --border-card: #E2E8F0;
+  --border-nav: rgba(27,43,91,0.08);
+  --text-primary: #1B2B5B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #1B2B5B;
+  --accent-primary: #1B2B5B;
+  --accent-red: #E2231A;
+  --accent-gold: #C9A96E;
+  --accent-purple: #7E2A8E;
+  --gradient-text-from: #1B2B5B;
+  --gradient-text-via: #34528e;
+  --gradient-text-to: #E2231A;
+  --gradient-red-purple: linear-gradient(180deg, #E2231A 0%, #b81b14 35%, #7E2A8E 100%);
+  --gradient-red-purple-h: linear-gradient(90deg, #E2231A 0%, #b81b14 50%, #7E2A8E 100%);
+  --hover-glow: rgba(226,35,26,0.10);
+  --hover-border: rgba(226,35,26,0.30);
+  --card-shadow: 0 4px 24px rgba(27,43,91,0.06);
+  --card-hover-shadow: 0 24px 60px rgba(27,43,91,0.14);
+  --particle-color: rgba(226,35,26,0.10);
+  --hero-bg-1: rgba(226,35,26,0.05);
+  --hero-bg-2: rgba(126,42,142,0.05);
+  --hero-bg-3: rgba(27,43,91,0.04);
+  --section-badge-bg: rgba(226,35,26,0.08);
+  --section-badge-text: #E2231A;
+  --table-header-bg: #1B2B5B;
+  --table-header-text: #FFFFFF;
+  --table-stripe: rgba(27,43,91,0.03);
+  --timeline-line: linear-gradient(180deg, #E2231A 0%, #7E2A8E 50%, #1B2B5B 100%);
+  --timeline-dot: #E2231A;
+  --timeline-dot-ring: rgba(226,35,26,0.30);
+  --kpi-accent: #E2231A;
+  --footer-bg: #08122c;
+  --footer-text: #cbd5e1;
+}
+
+[data-theme="dark"] {
+  --bg-body: #050816;
+  --bg-secondary: #0c1228;
+  --bg-card: #131b3a;
+  --bg-card-inner: #19224a;
+  --bg-nav: rgba(5,8,22,0.88);
+  --bg-glass: rgba(19,27,58,0.55);
+  --border-glass: rgba(226,35,26,0.18);
+  --border-card: rgba(148,163,184,0.10);
+  --border-nav: rgba(226,35,26,0.14);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #ffffff;
+  --accent-primary: #ff3b30;
+  --accent-red: #ff3b30;
+  --accent-gold: #d3b265;
+  --accent-purple: #b465c5;
+  --gradient-text-from: #ff5b50;
+  --gradient-text-via: #ff3b30;
+  --gradient-text-to: #b465c5;
+  --gradient-red-purple: linear-gradient(180deg, #ff3b30 0%, #d72b22 35%, #b465c5 100%);
+  --gradient-red-purple-h: linear-gradient(90deg, #ff3b30 0%, #d72b22 50%, #b465c5 100%);
+  --hover-glow: rgba(255,59,48,0.20);
+  --hover-border: rgba(255,59,48,0.45);
+  --card-shadow: none;
+  --card-hover-shadow: 0 24px 60px rgba(255,59,48,0.18);
+  --particle-color: rgba(255,59,48,0.18);
+  --hero-bg-1: rgba(255,59,48,0.10);
+  --hero-bg-2: rgba(180,101,197,0.10);
+  --hero-bg-3: rgba(27,43,91,0.20);
+  --section-badge-bg: rgba(255,59,48,0.15);
+  --section-badge-text: #ff7167;
+  --table-header-bg: rgba(255,59,48,0.18);
+  --table-header-text: #ff9b94;
+  --table-stripe: rgba(255,59,48,0.04);
+  --timeline-line: linear-gradient(180deg, #ff3b30 0%, #b465c5 50%, #34528e 100%);
+  --timeline-dot: #ff3b30;
+  --timeline-dot-ring: rgba(255,59,48,0.40);
+  --kpi-accent: #ff5b50;
+  --footer-bg: #020617;
+  --footer-text: #94a3b8;
+}
+
+/* ===== BASE ===== */
+* { font-family: 'Inter', 'Noto Sans Thai', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-body); color: var(--text-primary); transition: background .3s, color .3s; }
+*, *::before, *::after { transition: background-color .3s, border-color .3s, color .3s, box-shadow .3s, fill .3s, stroke .3s; }
+
+/* ===== THE SIGNATURE BRAND STRIPE ===== */
+.brand-stripe-v {
+  background: var(--gradient-red-purple);
+  width: 8px;
+  border-radius: 4px;
+}
+.brand-stripe-h {
+  background: var(--gradient-red-purple-h);
+  height: 4px;
+  border-radius: 2px;
+}
+.brand-stripe-cover {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 12px;
+  background: var(--gradient-red-purple);
+}
+
+/* ===== NAV ===== */
+.nav-fixed { backdrop-filter: blur(20px); background: var(--bg-nav); border-color: var(--border-nav); }
+.nav-link { transition: all .3s; color: var(--text-muted); font-size: 13px; }
+.nav-link:hover, .nav-link.active { color: var(--accent-red); font-weight: 600; }
+
+/* ===== CARDS ===== */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow);
+}
+.card-hover { transition: all .4s cubic-bezier(.16,1,.3,1); }
+.card-hover:hover { transform: translateY(-6px); box-shadow: var(--card-hover-shadow); border-color: var(--hover-border); }
+
+/* ===== TYPE ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.gradient-red {
+  background: var(--gradient-red-purple-h);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.gradient-gold {
+  background: linear-gradient(135deg, #C9A96E, #b8923f);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.text-true-red { color: var(--accent-red); }
+.text-true-navy { color: var(--text-primary); }
+.text-true-gold { color: var(--accent-gold); }
+
+.font-better-together { font-family: 'Caveat', cursive; font-weight: 700; }
+
+/* ===== HERO BG ===== */
+.hero-bg {
+  background:
+    radial-gradient(ellipse at 15% 50%, var(--hero-bg-1) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 25%, var(--hero-bg-2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, var(--hero-bg-3) 0%, transparent 50%);
+}
+
+/* ===== PARTICLES ===== */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) rotate(720deg); opacity: 0; } }
+
+/* ===== SCROLL PROGRESS ===== */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--gradient-red-purple-h); z-index: 100; transition: width .1s; }
+
+/* ===== BADGES ===== */
+.section-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--section-badge-bg); color: var(--section-badge-text);
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.plan-badge {
+  position: fixed; top: 16px; right: 124px; z-index: 60;
+  padding: 6px 14px; border-radius: 8px;
+  font-size: 11px; font-weight: 800; letter-spacing: 1px;
+  background: var(--gradient-red-purple-h); color: #fff;
+  box-shadow: 0 4px 16px rgba(226,35,26,0.30);
+}
+
+/* ===== THEME TOGGLE ===== */
+#theme-toggle {
+  position: fixed; top: 16px; right: 70px; z-index: 60;
+  width: 44px; height: 44px; border-radius: 12px;
+  border: 1px solid var(--border-glass); background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all .3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+#theme-toggle:hover { transform: scale(1.08); }
+#theme-toggle svg { width: 20px; height: 20px; transition: all .3s; }
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #ff7167; }
+#theme-toggle .icon-sun, #theme-toggle .icon-moon { position: absolute; transition: all .3s; }
+[data-theme="light"] #theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+[data-theme="light"] #theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(.5); }
+[data-theme="dark"] #theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(.5); }
+[data-theme="dark"] #theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* ===== TIMELINE ===== */
+.timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--timeline-dot); position: relative; z-index: 2; }
+.timeline-dot::after { content:''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--timeline-dot-ring); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0; } }
+
+/* ===== TABLES ===== */
+.t-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.t-table th { background: var(--table-header-bg); color: var(--table-header-text); padding: 12px 14px; text-align: left; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; }
+.t-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-glass); color: var(--text-secondary); vertical-align: top; }
+.t-table tr:nth-child(even) td { background: var(--table-stripe); }
+
+/* ===== KPI ===== */
+.kpi-num { font-variant-numeric: tabular-nums; color: var(--kpi-accent); font-weight: 800; letter-spacing: -.02em; }
+
+/* ===== ARCH NODE ===== */
+.arch-node { transition: all .3s; cursor: default; }
+.arch-line { stroke-dasharray: 8 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* ===== JOURNEY ===== */
+.journey-arrow { color: var(--accent-red); animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+
+/* ===== ADAPTIVE INFRA STACK ===== */
+.stack-band {
+  position: relative; padding: 18px 20px; border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  display: flex; align-items: center; gap: 16px;
+}
+.stack-band-1 { background: linear-gradient(90deg, rgba(226,35,26,.08), rgba(226,35,26,.02)); }
+.stack-band-2 { background: linear-gradient(90deg, rgba(126,42,142,.08), rgba(126,42,142,.02)); }
+.stack-band-3 { background: linear-gradient(90deg, rgba(27,43,91,.08), rgba(27,43,91,.02)); }
+.stack-band-4 { background: linear-gradient(90deg, rgba(201,169,110,.10), rgba(201,169,110,.02)); }
+
+/* ===== PARTNER LOGO TILE ===== */
+.logo-tile {
+  display: flex; align-items: center; justify-content: center;
+  height: 64px; border-radius: 10px;
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-glass);
+  font-weight: 700; font-size: 13px; letter-spacing: .5px;
+  color: var(--text-secondary);
+  transition: all .3s;
+}
+.logo-tile:hover { transform: translateY(-2px); border-color: var(--hover-border); color: var(--accent-red); }
+
+/* ===== BAR CHART ===== */
+.bar-track { height: 14px; border-radius: 7px; background: var(--bg-card-inner); overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 7px; background: var(--gradient-red-purple-h); }
+
+/* ===== SECTION REVEAL ===== */
+.section-enter { opacity: 0; transform: translateY(30px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+.section-enter.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: white; color: #1e293b; }
+  .glass { background: #fff; border: 1px solid #e2e8f0; box-shadow: none; }
+  nav, #theme-toggle, .plan-badge, #scroll-progress, .particle { display: none !important; }
+}
+
+/* ===== TRUE WORDMARK ===== */
+.true-wordmark { font-weight: 900; letter-spacing: -.02em; font-size: 22px; }
+.true-wordmark .true-red { color: var(--accent-red); }
+.true-wordmark .business { color: var(--text-primary); font-weight: 600; }
+[data-theme="dark"] .true-wordmark .business { color: var(--text-heading); }
+
+/* ===== SACROSANCT QUOTE ===== */
+.sacro-quote {
+  font-style: italic; font-size: 18px; line-height: 1.6;
+  color: var(--text-secondary);
+  border-left: 4px solid var(--accent-red); padding-left: 18px;
+}
+
+/* ===== COVER HERO ===== */
+.cover-hero {
+  position: relative; min-height: 100vh; padding: 60px 0;
+  display: flex; align-items: center;
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(226,35,26,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(126,42,142,.06) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .cover-hero {
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(255,59,48,.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(180,101,197,.16) 0%, transparent 55%),
+    linear-gradient(180deg, #050816, #0c1228);
+}
+
+/* ===== AVAILABILITY DIAGRAM PILL ===== */
+.pill-feature {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--bg-card-inner); color: var(--text-secondary);
+  font-size: 11px; font-weight: 600;
+  border: 1px solid var(--border-glass);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--footer-bg); color: var(--footer-text);
+}
+.footer h4 { color: #fff; }
+.footer a { color: #fff; opacity: .85; }
+.footer a:hover { color: var(--accent-red); opacity: 1; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ===== UI CHROME ===== -->
+<div class="plan-badge">PLAN A · PREMIUM</div>
+
+<button id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+  <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+  <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+</button>
+
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50 border-b">
+<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+  <a href="#cover" class="flex items-center gap-3">
+    <div class="w-1.5 h-10 rounded" style="background: var(--gradient-red-purple);"></div>
+    <div>
+      <div class="true-wordmark"><span class="true-red">true</span><span class="business">business</span></div>
+      <div class="text-[10px]" style="color: var(--text-muted);">Engine Behind the Digital Nation</div>
+    </div>
+  </a>
+  <div class="hidden lg:flex items-center gap-5">
+    <a href="#agenda" class="nav-link">Agenda</a>
+    <a href="#true-intro" class="nav-link">True Group</a>
+    <a href="#exec" class="nav-link">Exec Summary</a>
+    <a href="#discovery" class="nav-link">Discovery</a>
+    <a href="#solution" class="nav-link">Solution</a>
+    <a href="#ai" class="nav-link">น้องใบเตย AI</a>
+    <a href="#commercial" class="nav-link">Commercial</a>
+    <a href="#why-true" class="nav-link">Why True</a>
+    <a href="./plan-b.html" class="nav-link" style="color: var(--accent-gold);">Plan B ↗</a>
+    <a href="./plan-c.html" class="nav-link" style="color: var(--accent-gold);">Plan C ↗</a>
+  </div>
+</div>
+</nav>
+
+<!-- ===== 1. COVER ===== -->
+<section id="cover" class="cover-hero relative overflow-hidden">
+  <div class="brand-stripe-cover"></div>
+  <!-- particles -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" id="particles-cover"></div>
+
+  <div class="max-w-7xl mx-auto px-8 lg:px-16 w-full relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <div class="section-badge mb-6">PLAN A · PREMIUM TIER</div>
+        <h1 class="text-5xl lg:text-7xl font-black leading-[1.05] mb-5">
+          MOBILIFE <span class="gradient-red">Premium</span>
+        </h1>
+        <p class="text-2xl lg:text-3xl font-light mb-3" style="color: var(--text-secondary);">
+          Enterprise Loyalty Platform on True IDC
+        </p>
+        <p class="text-lg mb-8" style="color: var(--text-muted);">
+          The Premium Path — Enterprise-grade Loyalty on True's Adaptive Infrastructure
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg glass">
+            <span class="text-xs font-semibold" style="color: var(--text-muted);">For</span>
+            <span class="font-bold">MGC-ASIA Group</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg glass">
+            <span class="text-xs font-semibold" style="color: var(--text-muted);">By</span>
+            <span class="true-wordmark text-base"><span class="true-red">true</span><span class="business">business</span></span>
+          </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-3">
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="kpi-num text-2xl">฿11M</div>
+            <div class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Investment</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="kpi-num text-2xl">5 mo</div>
+            <div class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Timeline</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="kpi-num text-2xl">True IDC</div>
+            <div class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Cloud</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="kpi-num text-2xl">99.9%</div>
+            <div class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">SLA</div>
+          </div>
+          <div class="glass rounded-xl p-4 text-center">
+            <div class="kpi-num text-2xl">24/7</div>
+            <div class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Managed</div>
+          </div>
+        </div>
+
+        <div class="mt-10 flex items-center gap-4 text-sm" style="color: var(--text-muted);">
+          <span>Confidential · Q2 2026</span>
+          <span class="opacity-50">|</span>
+          <span class="font-semibold" style="color: var(--accent-red);">The #1 Undisputed Network &amp; Digital Infrastructure Leader</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="relative">
+          <!-- Mock device -->
+          <div class="glass rounded-3xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+            <div class="text-center mb-5">
+              <div class="text-[10px] uppercase tracking-widest mb-1" style="color: var(--text-muted);">Powered by</div>
+              <div class="true-wordmark"><span class="true-red">true</span><span class="business">business</span></div>
+              <div class="text-[10px] mt-1" style="color: var(--accent-gold);">Adaptive Infrastructure</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mb-5">
+              <div class="rounded-xl p-3 text-center" style="background: var(--bg-card-inner);">
+                <div class="text-2xl">🚗</div>
+                <div class="text-[10px] mt-1 font-semibold">8 Brands</div>
+              </div>
+              <div class="rounded-xl p-3 text-center" style="background: var(--bg-card-inner);">
+                <div class="text-2xl">👥</div>
+                <div class="text-[10px] mt-1 font-semibold">48,520 Members</div>
+              </div>
+              <div class="rounded-xl p-3 text-center" style="background: var(--bg-card-inner);">
+                <div class="text-2xl">🤖</div>
+                <div class="text-[10px] mt-1 font-semibold">น้องใบเตย AI</div>
+              </div>
+              <div class="rounded-xl p-3 text-center" style="background: var(--bg-card-inner);">
+                <div class="text-2xl">💎</div>
+                <div class="text-[10px] mt-1 font-semibold">4 Tiers</div>
+              </div>
+            </div>
+
+            <div class="rounded-xl p-4" style="background: var(--gradient-red-purple); color: #fff;">
+              <div class="text-[10px] uppercase tracking-widest opacity-90">Annual Value Potential</div>
+              <div class="text-3xl font-black">฿2.1B+</div>
+              <div class="text-xs opacity-90 mt-1">via น้องใบเตย AI Differentiator</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Better Together tagline floats bottom -->
+    <div class="absolute bottom-6 right-12 hidden lg:block">
+      <div class="font-better-together text-5xl" style="color: var(--accent-gold);">Better Together</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. AGENDA ===== -->
+<section id="agenda" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">02 · Agenda</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Proposal <span class="gradient-red">Information</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">A clear, structured walkthrough — from True Group's foundation to the commercial commitment.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="#true-intro" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">03</div>
+        <div class="font-semibold text-sm">True Group Introduction</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Mission · Network · Partners · Adaptive Infrastructure</div>
+      </a>
+      <a href="#exec" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">04</div>
+        <div class="font-semibold text-sm">Executive Summary</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">The opportunity · Why True · Investment</div>
+      </a>
+      <a href="#discovery" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">05</div>
+        <div class="font-semibold text-sm">Discovery &amp; Requirements</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Basic · 16 Features · Assumptions</div>
+      </a>
+      <a href="#solution" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">06</div>
+        <div class="font-semibold text-sm">Proposed Solution</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Adaptive Loyalty Architecture</div>
+      </a>
+      <a href="#journey" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">07</div>
+        <div class="font-semibold text-sm">Customer Journey</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">LINE-first end-to-end</div>
+      </a>
+      <a href="#ai" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">08</div>
+        <div class="font-semibold text-sm">น้องใบเตย AI</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">The differentiator · ฿2.1B+ value</div>
+      </a>
+      <a href="#tech" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">09</div>
+        <div class="font-semibold text-sm">Tech Stack</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">LINE LIFF · True IDC · AI</div>
+      </a>
+      <a href="#impl" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">10</div>
+        <div class="font-semibold text-sm">Implementation Plan</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">5-month roadmap</div>
+      </a>
+      <a href="#bom" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">11</div>
+        <div class="font-semibold text-sm">Bill of Materials</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Licenses · Cloud · Services</div>
+      </a>
+      <a href="#commercial" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">12</div>
+        <div class="font-semibold text-sm">Commercial Model</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">CAPEX · OPEX · Mandays</div>
+      </a>
+      <a href="#compliance" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">13</div>
+        <div class="font-semibold text-sm">Compliance Statement</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">PDPA · ISO 27001 · Data residency</div>
+      </a>
+      <a href="#sla" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">14</div>
+        <div class="font-semibold text-sm">SLA Commitment</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">99.9% uptime · 4-tier severity</div>
+      </a>
+      <a href="#support" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">15</div>
+        <div class="font-semibold text-sm">Support Escalation</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">L1 · L2 · L3 · L4</div>
+      </a>
+      <a href="#why-true" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">16</div>
+        <div class="font-semibold text-sm">Why True Business?</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">4 pillars closing argument</div>
+      </a>
+      <a href="#tco" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">17</div>
+        <div class="font-semibold text-sm">Competitive Landscape</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">3-year TCO comparison</div>
+      </a>
+      <a href="#roi" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">18</div>
+        <div class="font-semibold text-sm">ROI / Business Case</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Payback &lt; 6 months</div>
+      </a>
+      <a href="#cta" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">19</div>
+        <div class="font-semibold text-sm">Next Steps</div>
+        <div class="text-xs mt-1" style="color: var(--text-muted);">Walkthrough · IDC tour · Kickoff</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. TRUE GROUP INTRODUCTION ===== -->
+<section id="true-intro" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <div class="section-badge mb-4">03 · True Group Introduction</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">
+        <span class="true-wordmark text-5xl"><span class="true-red">true</span><span class="business">business</span></span>
+      </h2>
+      <p class="sacro-quote inline-block text-left max-w-2xl">"The Engine Behind the Digital Nation — building a strong tech ecosystem of digital talent and capabilities that improve lives and propel businesses forward."</p>
+    </div>
+
+    <!-- 3a. Mission & Vision -->
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+      <div class="glass rounded-2xl p-8 relative overflow-hidden card-hover">
+        <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-3" style="color: var(--accent-red);">OUR MISSION</div>
+        <p class="text-base leading-relaxed" style="color: var(--text-secondary);">
+          To build a strong tech ecosystem of digital talent and capabilities and provide innovative services which improve our customers' lives and support a sustainable society.
+        </p>
+      </div>
+      <div class="glass rounded-2xl p-8 relative overflow-hidden card-hover">
+        <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-3" style="color: var(--accent-red);">OUR VISION</div>
+        <p class="text-base leading-relaxed" style="color: var(--text-secondary);">
+          To be Thailand's leading telecom-tech company, transforming the lives of Thai people and propelling businesses to the forefront of the digital economy.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3b. #1 Network Leader -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <div class="text-[11px] font-bold tracking-[3px] mb-2" style="color: var(--accent-gold);">PROOF AT SCALE</div>
+        <h3 class="text-3xl lg:text-4xl font-black">The <span class="text-true-red">#1 Undisputed</span> Network &amp; Digital Infrastructure Leader</h3>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="kpi-num text-4xl">&gt;51M</div>
+          <div class="text-sm font-semibold mt-1">Subscribers</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">Largest mobile customer base in Thailand</div>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="kpi-num text-4xl">90% <span class="text-xl">/ 99%</span></div>
+          <div class="text-sm font-semibold mt-1">5G / 4G Coverage</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">Nationwide population coverage</div>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="kpi-num text-4xl">฿294B</div>
+          <div class="text-sm font-semibold mt-1">Combined Market Cap</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">Among the largest listed groups in Thailand</div>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="kpi-num text-4xl">500K km</div>
+          <div class="text-sm font-semibold mt-1">Fiber Network</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">Backbone for enterprise &amp; consumer</div>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="kpi-num text-4xl">Full</div>
+          <div class="text-sm font-semibold mt-1">Spectrum Holdings</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">Low / Mid / High including 26 GHz mmWave</div>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+          <div class="kpi-num text-4xl">#1</div>
+          <div class="text-sm font-semibold mt-1">Digital Infrastructure &amp; 5G Solution Provider</div>
+          <div class="text-xs mt-1" style="color: var(--text-muted);">truebusiness market position</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3c. World-class Partnerships -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <div class="text-[11px] font-bold tracking-[3px] mb-2" style="color: var(--accent-gold);">SHOULDER TO SHOULDER</div>
+        <h3 class="text-2xl lg:text-3xl font-black mb-2">Powered by Leading World-Class Investors</h3>
+        <p class="text-sm" style="color: var(--text-muted);">Strategic capital partners that anchor True's long-term vision</p>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
+        <div class="logo-tile">CP Group</div>
+        <div class="logo-tile">Telenor</div>
+        <div class="logo-tile">China Mobile</div>
+      </div>
+
+      <div class="text-center mb-8">
+        <h3 class="text-2xl lg:text-3xl font-black mb-2">Strategic Partnership with Global Tech Leaders</h3>
+        <p class="text-sm" style="color: var(--text-muted);">The world's most trusted technology brands trust truebusiness</p>
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
+        <div class="logo-tile">Google</div>
+        <div class="logo-tile">AWS</div>
+        <div class="logo-tile">Alibaba</div>
+        <div class="logo-tile">Huawei</div>
+        <div class="logo-tile">ZTE</div>
+        <div class="logo-tile">Ericsson</div>
+        <div class="logo-tile">Samsung</div>
+        <div class="logo-tile">Apple</div>
+      </div>
+    </div>
+
+    <!-- 3d. Engine Behind the Digital Nation -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <div class="text-[11px] font-bold tracking-[3px] mb-2" style="color: var(--accent-gold);">CUSTOMER BASE</div>
+        <h3 class="text-3xl lg:text-4xl font-black"><span class="true-wordmark text-3xl"><span class="true-red">true</span><span class="business">business</span></span> — <span class="gradient-red">Engine Behind the Digital Nation</span></h3>
+      </div>
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">91 / 100</div>
+          <div class="text-xs mt-1 font-semibold">Top SET Companies</div>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">32</div>
+          <div class="text-xs mt-1 font-semibold">Financial Services Cos.</div>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">160K</div>
+          <div class="text-xs mt-1 font-semibold">SMEs &amp; Enterprises</div>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">&gt;850K</div>
+          <div class="text-xs mt-1 font-semibold">IoT / M2M Devices</div>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">#1</div>
+          <div class="text-xs mt-1 font-semibold">Connected Cars Leader</div>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="kpi-num text-3xl">32</div>
+          <div class="text-xs mt-1 font-semibold">Industrial Parks Served</div>
+        </div>
+      </div>
+      <div class="mt-6 p-5 glass rounded-xl text-center">
+        <p class="text-sm" style="color: var(--text-secondary);">
+          MGC-ASIA — with its <strong>8 premium automotive brands</strong> and <strong>48,520 elite members</strong> — joins a customer roster that already includes Thailand's most demanding enterprises. <span style="color: var(--accent-red); font-weight: 700;">Better Together.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 3e. Adaptive Infrastructure Stack -->
+    <div>
+      <div class="text-center mb-8">
+        <div class="text-[11px] font-bold tracking-[3px] mb-2" style="color: var(--accent-gold);">SOLUTION PORTFOLIO</div>
+        <h3 class="text-3xl lg:text-4xl font-black">Truebusiness <span class="gradient-red">Adaptive Infrastructure</span></h3>
+        <p class="text-sm mt-2 max-w-2xl mx-auto" style="color: var(--text-muted);">Where the MOBILIFE Premium loyalty platform sits inside True's full-stack ecosystem</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-4">
+        <div class="lg:col-span-10 space-y-3">
+          <!-- Layer 1: Digital Integrated Solution -->
+          <div class="stack-band stack-band-1">
+            <div class="brand-stripe-v" style="height: 60px;"></div>
+            <div class="flex-1">
+              <div class="text-xs font-bold tracking-widest mb-1" style="color: var(--accent-red);">LAYER 1 · DIGITAL INTEGRATED SOLUTION</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill-feature" style="background: rgba(226,35,26,.12); color: var(--accent-red); border-color: var(--accent-red);">★ Loyalty Platform (MOBILIFE)</span>
+                <span class="pill-feature">Cloud</span>
+                <span class="pill-feature">M365 / Workspace</span>
+                <span class="pill-feature">CCaaS</span>
+                <span class="pill-feature">SOC</span>
+                <span class="pill-feature">AI / ML</span>
+                <span class="pill-feature">Data &amp; Analytics</span>
+                <span class="pill-feature">Smart Connectivity</span>
+              </div>
+            </div>
+          </div>
+          <!-- Layer 2 -->
+          <div class="stack-band stack-band-2">
+            <div class="brand-stripe-v" style="height: 60px;"></div>
+            <div class="flex-1">
+              <div class="text-xs font-bold tracking-widest mb-1" style="color: var(--accent-purple);">LAYER 2 · INTELLIGENT NETWORK</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill-feature">SD-WAN</span>
+                <span class="pill-feature">SASE</span>
+                <span class="pill-feature">Private 5G</span>
+                <span class="pill-feature">Super WiFi</span>
+              </div>
+            </div>
+          </div>
+          <!-- Layer 3 -->
+          <div class="stack-band stack-band-3">
+            <div class="brand-stripe-v" style="height: 60px;"></div>
+            <div class="flex-1">
+              <div class="text-xs font-bold tracking-widest mb-1" style="color: var(--text-primary);">LAYER 3 · CORE CONNECTIVITY</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill-feature">Mobile</span>
+                <span class="pill-feature">Messaging</span>
+                <span class="pill-feature">SIP-Trunk / Voice</span>
+                <span class="pill-feature">Business Fixed-IP</span>
+                <span class="pill-feature">Corporate Internet</span>
+                <span class="pill-feature">MPLS</span>
+              </div>
+            </div>
+          </div>
+          <!-- Layer 4 -->
+          <div class="stack-band stack-band-4">
+            <div class="brand-stripe-v" style="height: 60px;"></div>
+            <div class="flex-1">
+              <div class="text-xs font-bold tracking-widest mb-1" style="color: var(--accent-gold);">LAYER 4 · DIGITAL TALENT DEVELOPMENT</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill-feature">True Digital Academy</span>
+                <span class="pill-feature">Upskilling for MGC team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side bands: Cybersecurity + Managed -->
+        <div class="lg:col-span-2 space-y-3">
+          <div class="rounded-xl p-4 h-full text-center flex flex-col items-center justify-center" style="background: linear-gradient(180deg, rgba(226,35,26,.10), rgba(126,42,142,.10)); border: 1px solid var(--border-glass);">
+            <div class="text-3xl mb-2">🛡️</div>
+            <div class="text-xs font-bold" style="color: var(--accent-red);">Cybersecurity Services</div>
+            <div class="text-[10px] mt-1" style="color: var(--text-muted);">Wraps every layer · ISO 27001</div>
+          </div>
+          <div class="rounded-xl p-4 h-full text-center flex flex-col items-center justify-center" style="background: linear-gradient(180deg, rgba(27,43,91,.10), rgba(126,42,142,.10)); border: 1px solid var(--border-glass);">
+            <div class="text-3xl mb-2">⚙️</div>
+            <div class="text-xs font-bold" style="color: var(--text-primary);">Managed Services</div>
+            <div class="text-[10px] mt-1" style="color: var(--text-muted);">24/7 single point of accountability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. EXECUTIVE SUMMARY ===== -->
+<section id="exec" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">04 · Executive Summary</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">A <span class="gradient-red">Premium Loyalty Platform</span> for a Premium Group</h2>
+      <p class="text-lg max-w-3xl mx-auto" style="color: var(--text-muted);">MGC-ASIA's 48,520 elite members across 8 luxury automotive brands deserve a loyalty experience that matches the cars they drive. truebusiness delivers it.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-10">
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🎯</div>
+        <h3 class="text-xl font-black mb-2">The Opportunity</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          <strong>48,520 members</strong> across BMW, Rolls-Royce, MINI, Maserati, Honda, Harley-Davidson, Triumph, and Morgan. A 4-tier hierarchy from Member to Infinite Blue Diamond. A combined CLV of <strong>฿120B+</strong> waiting for a unified, intelligent loyalty engine.
+        </p>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">⚡</div>
+        <h3 class="text-xl font-black mb-2">Why True Business</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          The only partner in Thailand that brings <strong>Adaptive Infrastructure</strong> end-to-end: dedicated True IDC cloud, full cybersecurity wrap, 24/7 managed service, and a single contractual point of accountability — all under one roof. <em>Better Together.</em>
+        </p>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🚀</div>
+        <h3 class="text-xl font-black mb-2">What We Propose</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          A <strong>LINE-first, cloud-native, AI-powered</strong> loyalty platform — featuring <strong>น้องใบเตย</strong>, the conversational AI that answers C-suite questions in 5 seconds and runs predictive churn / CLV / NBA models invisible to BuzzeBee or Choco CRM.
+        </p>
+      </div>
+    </div>
+
+    <!-- Investment Summary Strip -->
+    <div class="rounded-2xl p-8 relative overflow-hidden" style="background: var(--gradient-red-purple); color: #fff;">
+      <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 items-center">
+        <div>
+          <div class="text-[10px] uppercase tracking-widest opacity-80">Investment</div>
+          <div class="text-4xl font-black">฿11M</div>
+          <div class="text-xs opacity-80">3-year all-inclusive</div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest opacity-80">Plan</div>
+          <div class="text-4xl font-black">A</div>
+          <div class="text-xs opacity-80">Premium Tier</div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest opacity-80">Cloud</div>
+          <div class="text-2xl font-black">True IDC</div>
+          <div class="text-xs opacity-80">Dedicated · PDPA Tier 3+</div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest opacity-80">SLA</div>
+          <div class="text-4xl font-black">99.9%</div>
+          <div class="text-xs opacity-80">Uptime + credit refund</div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest opacity-80">Managed</div>
+          <div class="text-2xl font-black">24/7</div>
+          <div class="text-xs opacity-80">Dedicated team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. DISCOVERY & REQUIREMENTS ===== -->
+<section id="discovery" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">05 · Discovery</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Requirements <span class="gradient-red">Understanding</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Every requirement mapped, every assumption surfaced — before pricing is committed.</p>
+    </div>
+
+    <!-- 5a. Basic Requirements -->
+    <div class="mb-14">
+      <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+        <span class="text-xs font-bold px-3 py-1 rounded" style="background: var(--accent-red); color: #fff;">5A</span>
+        Basic Requirements <span class="text-sm font-normal" style="color: var(--text-muted);">— Loyalty platform capability (Standard)</span>
+      </h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">💎</div>
+          <div class="font-bold text-sm mb-1">Loyalty Platform Core</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• Earn / Burn engine</li>
+            <li>• Reward catalog</li>
+            <li>• User Management &amp; 4-Tier system</li>
+            <li>• Reports &amp; Data Analytics</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">🔌</div>
+          <div class="font-bold text-sm mb-1">Integration Capability</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• POS systems (per brand)</li>
+            <li>• Existing CRM/DMS</li>
+            <li>• Payment gateways</li>
+            <li>• LINE OA accounts (8)</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">🛟</div>
+          <div class="font-bold text-sm mb-1">Service Support</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• 24/7 Premium Managed</li>
+            <li>• 4-tier escalation</li>
+            <li>• Dedicated SA + AM</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">⏱️</div>
+          <div class="font-bold text-sm mb-1">Implementation Timeline</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• 5 months end-to-end</li>
+            <li>• Hypercare included</li>
+            <li>• Phased go-live by brand</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">💰</div>
+          <div class="font-bold text-sm mb-1">Budget Envelope</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• ฿11M total (3-year)</li>
+            <li>• CAPEX + OPEX + Mandays</li>
+            <li>• Lump-sum OR As-a-Service</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-2xl mb-2">🔐</div>
+          <div class="font-bold text-sm mb-1">Compliance &amp; Security</div>
+          <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+            <li>• PDPA-compliant</li>
+            <li>• ISO 27001-aligned</li>
+            <li>• Data residency: TH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5b. New Features (16) -->
+    <div class="mb-14">
+      <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+        <span class="text-xs font-bold px-3 py-1 rounded" style="background: var(--accent-red); color: #fff;">5B</span>
+        New Features <span class="text-sm font-normal" style="color: var(--text-muted);">— 16 capabilities across 6 categories</span>
+      </h3>
+
+      <div class="grid lg:grid-cols-2 gap-5">
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">⚡ IDENTITY &amp; ONBOARDING</div>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">01</span><div><div class="font-semibold text-sm">LINE Registration &amp; Login</div><div class="text-xs" style="color: var(--text-muted);">Frictionless one-tap onboarding via LINE LIFF</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">02</span><div><div class="font-semibold text-sm">Phone + OTP Verification</div><div class="text-xs" style="color: var(--text-muted);">SMS via True Messaging API — instant delivery</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">03</span><div><div class="font-semibold text-sm">ID Card Validation</div><div class="text-xs" style="color: var(--text-muted);">OCR + KYC for high-value tier verification</div></div></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">💬 ENGAGEMENT CHANNELS</div>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">04</span><div><div class="font-semibold text-sm">LINE Web View (LIFF)</div><div class="text-xs" style="color: var(--text-muted);">Native-feeling app inside LINE — zero install</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">05</span><div><div class="font-semibold text-sm">Seamless Communication</div><div class="text-xs" style="color: var(--text-muted);">Push, broadcast, 1-to-1 chat across 8 brand OAs</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">06</span><div><div class="font-semibold text-sm">Surveys &amp; VoC</div><div class="text-xs" style="color: var(--text-muted);">In-LINE NPS, CSAT, post-service feedback</div></div></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">🎁 LOYALTY MECHANICS</div>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">07</span><div><div class="font-semibold text-sm">Mark-Used E-Coupon</div><div class="text-xs" style="color: var(--text-muted);">QR-based redemption with anti-fraud lock</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">08</span><div><div class="font-semibold text-sm">Mission Campaign / Lucky Draw</div><div class="text-xs" style="color: var(--text-muted);">Gamified campaigns with provably-fair draws</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">09</span><div><div class="font-semibold text-sm">Friend-get-Friend Referral</div><div class="text-xs" style="color: var(--text-muted);">Trackable referral links + dual-side rewards</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">10</span><div><div class="font-semibold text-sm">E-Cash Voucher</div><div class="text-xs" style="color: var(--text-muted);">Stored-value vouchers redeemable in-store</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">11</span><div><div class="font-semibold text-sm">Point Transfer</div><div class="text-xs" style="color: var(--text-muted);">Member-to-member point sharing within tier rules</div></div></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">⚙️ OPERATIONS</div>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">12</span><div><div class="font-semibold text-sm">Rewards Segment Management</div><div class="text-xs" style="color: var(--text-muted);">Brand × tier × tenure-targeted reward catalogs</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">13</span><div><div class="font-semibold text-sm">B2B Registration</div><div class="text-xs" style="color: var(--text-muted);">Corporate / fleet customer onboarding portal</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">14</span><div><div class="font-semibold text-sm">Operational Reports</div><div class="text-xs" style="color: var(--text-muted);">Scheduled exports + ad-hoc dashboards</div></div></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-5 lg:col-span-2 relative overflow-hidden" style="border: 2px solid var(--accent-red);">
+          <div class="absolute top-0 right-0 px-3 py-1 text-[10px] font-bold tracking-widest" style="background: var(--gradient-red-purple-h); color: #fff;">★ DIFFERENTIATOR</div>
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">🤖 INTELLIGENCE</div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">15</span><div><div class="font-semibold text-sm">AI Data Analytics — น้องใบเตย</div><div class="text-xs" style="color: var(--text-muted);">Conversational AI: ask questions in Thai/English, get insights, charts, and approved actions in 5 seconds. Runs churn / CLV / NBA models.</div></div></div>
+            <div class="flex items-start gap-2"><span class="text-true-red font-bold">16</span><div><div class="font-semibold text-sm">UX/UI Design</div><div class="text-xs" style="color: var(--text-muted);">Bespoke premium design system — Rolls-Royce-tier polish for the most discerning members.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5c. General Assumptions -->
+    <div>
+      <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+        <span class="text-xs font-bold px-3 py-1 rounded" style="background: var(--accent-red); color: #fff;">5C</span>
+        General Assumptions <span class="text-sm font-normal" style="color: var(--text-muted);">— Dependencies &amp; exclusions</span>
+      </h3>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: #22c55e;">✓ CLIENT-PROVIDED INPUTS</div>
+          <ul class="text-sm space-y-2" style="color: var(--text-secondary);">
+            <li>• Existing customer database export (48,520 members, all 8 brands)</li>
+            <li>• LINE OA accounts for each brand (8 accounts) with admin access</li>
+            <li>• POS integration specifications &amp; sandbox per brand</li>
+            <li>• Brand assets (logos, brand guidelines, photography)</li>
+            <li>• PDPA consent records and data-handling policies</li>
+            <li>• Designated business owner per brand for UAT sign-off</li>
+          </ul>
+        </div>
+        <div class="glass rounded-xl p-5">
+          <div class="text-xs font-bold mb-3" style="color: var(--accent-red);">✗ OUT OF SCOPE</div>
+          <ul class="text-sm space-y-2" style="color: var(--text-secondary);">
+            <li>• Hardware procurement (POS terminals, in-store devices)</li>
+            <li>• On-site staffing at MGC dealerships</li>
+            <li>• Cloud usage scaling beyond baseline (charged at IaaS rates)</li>
+            <li>• Custom development beyond the 80-manday CR pool</li>
+            <li>• Third-party license fees passed through at cost</li>
+            <li>• Marketing campaign creative production</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. PROPOSED SOLUTION — ARCHITECTURE ===== -->
+<section id="solution" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">06 · Proposed Solution</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Adaptive <span class="gradient-red">Loyalty Architecture</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Powered by truebusiness — a cloud-native, microservices-based platform with an AI brain at the centre.</p>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div class="glass rounded-2xl p-6 lg:p-10 mb-8 overflow-x-auto">
+      <svg viewBox="0 0 1200 700" class="w-full" style="min-width: 900px;">
+        <defs>
+          <linearGradient id="gradRedPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E2231A"/><stop offset="100%" stop-color="#7E2A8E"/>
+          </linearGradient>
+          <linearGradient id="gradNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1B2B5B"/><stop offset="100%" stop-color="#34528e"/>
+          </linearGradient>
+          <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#C9A96E"/><stop offset="100%" stop-color="#b8923f"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Background grid -->
+        <rect width="1200" height="700" fill="var(--svg-bg-grid)" rx="12"/>
+
+        <!-- Layer 1: Channels -->
+        <g>
+          <text x="20" y="50" font-size="11" font-weight="700" fill="var(--accent-red)" letter-spacing="2">CHANNELS</text>
+          <rect x="60" y="70" width="200" height="80" rx="14" fill="url(#gradRedPurple)"/>
+          <text x="160" y="105" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">LINE LIFF</text>
+          <text x="160" y="125" font-size="11" fill="#fff" text-anchor="middle" opacity="0.85">Web View · 8 Brand OAs</text>
+
+          <rect x="280" y="70" width="180" height="80" rx="14" fill="var(--bg-card-inner)" stroke="var(--border-glass)"/>
+          <text x="370" y="105" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Web Admin</text>
+          <text x="370" y="125" font-size="10" fill="var(--text-muted)" text-anchor="middle">Operations Console</text>
+
+          <rect x="480" y="70" width="180" height="80" rx="14" fill="var(--bg-card-inner)" stroke="var(--border-glass)"/>
+          <text x="570" y="105" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">B2B Portal</text>
+          <text x="570" y="125" font-size="10" fill="var(--text-muted)" text-anchor="middle">Corporate / Fleet</text>
+
+          <rect x="680" y="70" width="180" height="80" rx="14" fill="var(--bg-card-inner)" stroke="var(--border-glass)"/>
+          <text x="770" y="105" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">POS / DMS</text>
+          <text x="770" y="125" font-size="10" fill="var(--text-muted)" text-anchor="middle">Per-brand Integration</text>
+
+          <rect x="880" y="70" width="200" height="80" rx="14" fill="url(#gradGold)"/>
+          <text x="980" y="105" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">น้องใบเตย</text>
+          <text x="980" y="125" font-size="11" fill="#fff" text-anchor="middle" opacity="0.9">AI Voice + Chat</text>
+        </g>
+
+        <!-- Connect down to API gateway -->
+        <line x1="600" y1="160" x2="600" y2="200" stroke="var(--accent-red)" stroke-width="2" class="arch-line"/>
+
+        <!-- API Gateway -->
+        <rect x="200" y="200" width="800" height="60" rx="12" fill="url(#gradNavy)"/>
+        <text x="600" y="235" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">API Gateway · OAuth 2.0 · Rate Limit · WAF</text>
+
+        <!-- Microservices Layer -->
+        <g>
+          <text x="20" y="300" font-size="11" font-weight="700" fill="var(--accent-red)" letter-spacing="2">MICROSERVICES</text>
+
+          <rect x="40" y="320" width="170" height="70" rx="12" fill="var(--bg-card)" stroke="var(--accent-red)" stroke-width="2"/>
+          <text x="125" y="345" font-size="12" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Identity</text>
+          <text x="125" y="365" font-size="10" fill="var(--text-muted)" text-anchor="middle">LINE · OTP · KYC</text>
+          <text x="125" y="378" font-size="9" fill="var(--text-muted)" text-anchor="middle">PDPA consent</text>
+
+          <rect x="225" y="320" width="170" height="70" rx="12" fill="var(--bg-card)" stroke="var(--accent-red)" stroke-width="2"/>
+          <text x="310" y="345" font-size="12" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Points Engine</text>
+          <text x="310" y="365" font-size="10" fill="var(--text-muted)" text-anchor="middle">Earn · Burn · Tier</text>
+          <text x="310" y="378" font-size="9" fill="var(--text-muted)" text-anchor="middle">Transfer · Expiry</text>
+
+          <rect x="410" y="320" width="170" height="70" rx="12" fill="var(--bg-card)" stroke="var(--accent-red)" stroke-width="2"/>
+          <text x="495" y="345" font-size="12" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Campaigns</text>
+          <text x="495" y="365" font-size="10" fill="var(--text-muted)" text-anchor="middle">Mission · Lucky Draw</text>
+          <text x="495" y="378" font-size="9" fill="var(--text-muted)" text-anchor="middle">Referral · Voucher</text>
+
+          <rect x="595" y="320" width="170" height="70" rx="12" fill="var(--bg-card)" stroke="var(--accent-red)" stroke-width="2"/>
+          <text x="680" y="345" font-size="12" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Rewards Catalog</text>
+          <text x="680" y="365" font-size="10" fill="var(--text-muted)" text-anchor="middle">Segment Mgmt</text>
+          <text x="680" y="378" font-size="9" fill="var(--text-muted)" text-anchor="middle">Inventory</text>
+
+          <rect x="780" y="320" width="170" height="70" rx="12" fill="url(#gradGold)"/>
+          <text x="865" y="345" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">AI Brain</text>
+          <text x="865" y="365" font-size="10" fill="#fff" text-anchor="middle" opacity="0.9">Text-to-SQL · RAG</text>
+          <text x="865" y="378" font-size="9" fill="#fff" text-anchor="middle" opacity="0.9">Churn · CLV · NBA</text>
+
+          <rect x="965" y="320" width="170" height="70" rx="12" fill="var(--bg-card)" stroke="var(--accent-red)" stroke-width="2"/>
+          <text x="1050" y="345" font-size="12" font-weight="700" fill="var(--text-primary)" text-anchor="middle">B2B + Analytics</text>
+          <text x="1050" y="365" font-size="10" fill="var(--text-muted)" text-anchor="middle">Reports · Dashboards</text>
+          <text x="1050" y="378" font-size="9" fill="var(--text-muted)" text-anchor="middle">Corp registration</text>
+        </g>
+
+        <!-- Event Bus -->
+        <rect x="200" y="420" width="800" height="40" rx="10" fill="var(--accent-red)" opacity="0.10" stroke="var(--accent-red)" stroke-width="1"/>
+        <text x="600" y="445" font-size="12" font-weight="700" fill="var(--accent-red)" text-anchor="middle">EVENT BUS · Kafka · Real-time data fabric</text>
+
+        <!-- Data Layer -->
+        <g>
+          <text x="20" y="500" font-size="11" font-weight="700" fill="var(--accent-purple)" letter-spacing="2">DATA</text>
+          <rect x="100" y="520" width="220" height="80" rx="12" fill="var(--bg-card)" stroke="var(--accent-purple)" stroke-width="2"/>
+          <text x="210" y="545" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">PostgreSQL</text>
+          <text x="210" y="565" font-size="10" fill="var(--text-muted)" text-anchor="middle">Primary OLTP · members</text>
+          <text x="210" y="582" font-size="10" fill="var(--text-muted)" text-anchor="middle">transactions · points</text>
+
+          <rect x="350" y="520" width="220" height="80" rx="12" fill="var(--bg-card)" stroke="var(--accent-purple)" stroke-width="2"/>
+          <text x="460" y="545" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Redis</text>
+          <text x="460" y="565" font-size="10" fill="var(--text-muted)" text-anchor="middle">Cache · sessions</text>
+          <text x="460" y="582" font-size="10" fill="var(--text-muted)" text-anchor="middle">Real-time leaderboards</text>
+
+          <rect x="600" y="520" width="220" height="80" rx="12" fill="var(--bg-card)" stroke="var(--accent-purple)" stroke-width="2"/>
+          <text x="710" y="545" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Vector DB</text>
+          <text x="710" y="565" font-size="10" fill="var(--text-muted)" text-anchor="middle">RAG knowledge base</text>
+          <text x="710" y="582" font-size="10" fill="var(--text-muted)" text-anchor="middle">น้องใบเตย memory</text>
+
+          <rect x="850" y="520" width="220" height="80" rx="12" fill="var(--bg-card)" stroke="var(--accent-purple)" stroke-width="2"/>
+          <text x="960" y="545" font-size="13" font-weight="700" fill="var(--text-primary)" text-anchor="middle">Data Lake (S3)</text>
+          <text x="960" y="565" font-size="10" fill="var(--text-muted)" text-anchor="middle">Analytics · ML training</text>
+          <text x="960" y="582" font-size="10" fill="var(--text-muted)" text-anchor="middle">Audit logs · backups</text>
+        </g>
+
+        <!-- True IDC Foundation -->
+        <rect x="60" y="630" width="1080" height="50" rx="12" fill="url(#gradRedPurple)"/>
+        <text x="600" y="655" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">TRUE IDC · Adaptive Infrastructure · Dedicated tenancy · PDPA Tier 3+ · ISO 27001 · 24/7 SOC</text>
+        <text x="600" y="672" font-size="10" fill="#fff" text-anchor="middle" opacity="0.85">Cybersecurity · Managed Services · 99.9% SLA</text>
+      </svg>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">★ HIGHLIGHT</div>
+        <div class="font-bold mb-1">Cloud-Native, Stateless</div>
+        <div class="text-sm" style="color: var(--text-muted);">Each microservice scales horizontally. Zero downtime deploys via blue/green on True IDC Kubernetes.</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">★ HIGHLIGHT</div>
+        <div class="font-bold mb-1">AI at the Centre</div>
+        <div class="text-sm" style="color: var(--text-muted);">น้องใบเตย is not a bolt-on chatbot — it's a first-class service with read access to every domain entity via RAG + Text-to-SQL.</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">★ HIGHLIGHT</div>
+        <div class="font-bold mb-1">Defence in Depth</div>
+        <div class="text-sm" style="color: var(--text-muted);">WAF → API Gateway → Service Mesh → encrypted data — all monitored 24/7 by True's SOC team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. CUSTOMER JOURNEY ===== -->
+<section id="journey" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">07 · Customer Journey</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">A LINE-First Journey, <span class="gradient-red">Tier-Aware End-to-End</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Every touchpoint inside LINE — frictionless for Members, white-glove for Black Diamond.</p>
+    </div>
+
+    <div class="relative">
+      <!-- Journey row -->
+      <div class="grid grid-cols-1 md:grid-cols-7 gap-3">
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">1</div>
+          <div class="font-bold text-sm mb-1">Awareness</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">QR at dealership · LINE Ad · referral link</div>
+        </div>
+        <div class="hidden md:flex items-center justify-center journey-arrow text-2xl">→</div>
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">2</div>
+          <div class="font-bold text-sm mb-1">Onboarding</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">LINE Login · OTP · ID validation · tier auto-assign</div>
+        </div>
+        <div class="hidden md:flex items-center justify-center journey-arrow text-2xl">→</div>
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">3</div>
+          <div class="font-bold text-sm mb-1">First Earn</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">First service · welcome bonus · push to LINE</div>
+        </div>
+        <div class="hidden md:flex items-center justify-center journey-arrow text-2xl">→</div>
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">4</div>
+          <div class="font-bold text-sm mb-1">Engagement</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">Mission · Lucky Draw · birthday surprise · ใบเตย concierge</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-7 gap-3 mt-3">
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">5</div>
+          <div class="font-bold text-sm mb-1">Redemption</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">QR coupon · service voucher · Track Day · Tea Set</div>
+        </div>
+        <div class="hidden md:flex items-center justify-center journey-arrow text-2xl">→</div>
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">6</div>
+          <div class="font-bold text-sm mb-1">Tier Up</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">Member → Diamond → Black Diamond → Infinite Blue</div>
+        </div>
+        <div class="hidden md:flex items-center justify-center journey-arrow text-2xl">→</div>
+        <div class="glass rounded-xl p-4 text-center card-hover">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full flex items-center justify-center font-black text-white text-sm" style="background: var(--gradient-red-purple);">7</div>
+          <div class="font-bold text-sm mb-1">Advocacy</div>
+          <div class="text-[11px]" style="color: var(--text-muted);">Friend-get-Friend · social share · cross-brand referral</div>
+        </div>
+        <div class="hidden md:block"></div>
+        <div class="hidden md:block"></div>
+        <div class="hidden md:block"></div>
+      </div>
+    </div>
+
+    <!-- Tier Privilege Strip -->
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass rounded-xl p-5 text-center">
+        <div class="text-xs font-bold mb-1" style="color: var(--text-muted);">TIER 1</div>
+        <div class="text-lg font-black">Member</div>
+        <div class="text-[11px] mt-2" style="color: var(--text-muted);">Earn / burn · birthday gift · standard service</div>
+      </div>
+      <div class="glass rounded-xl p-5 text-center" style="border-color: var(--accent-gold);">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-gold);">TIER 2</div>
+        <div class="text-lg font-black gradient-gold">Diamond</div>
+        <div class="text-[11px] mt-2" style="color: var(--text-muted);">+ Priority service slot · 1.5× points · early access</div>
+      </div>
+      <div class="glass rounded-xl p-5 text-center" style="border-color: var(--accent-red);">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-red);">TIER 3</div>
+        <div class="text-lg font-black gradient-red">Black Diamond</div>
+        <div class="text-[11px] mt-2" style="color: var(--text-muted);">+ Free pickup · loaner car · GM personal call · concierge</div>
+      </div>
+      <div class="glass rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(126,42,142,.08), rgba(27,43,91,.08)); border-color: var(--accent-purple);">
+        <div class="text-xs font-bold mb-1" style="color: var(--accent-purple);">TIER 4 · APEX</div>
+        <div class="text-lg font-black" style="background: linear-gradient(135deg, #1B2B5B, #7E2A8E); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Infinite Blue Diamond</div>
+        <div class="text-[11px] mt-2" style="color: var(--text-muted);">+ Bespoke events · global benefits · invitation-only</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. AI DIFFERENTIATOR — น้องใบเตย ===== -->
+<section id="ai" class="py-24 relative overflow-hidden" style="background: var(--bg-secondary);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">08 · AI Differentiator</div>
+      <h2 class="text-4xl lg:text-6xl font-black mb-4">Meet <span class="gradient-red">น้องใบเตย</span></h2>
+      <p class="text-xl max-w-3xl mx-auto" style="color: var(--text-secondary);">The conversational AI assistant that turns 48,520 members and 8 brands into actionable intelligence — in <strong>5 seconds</strong>, not 5 days.</p>
+    </div>
+
+    <!-- Hero card -->
+    <div class="glass rounded-3xl p-8 lg:p-12 mb-12 relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="text-7xl mb-4">🤖</div>
+          <h3 class="text-3xl font-black mb-3">"ใบเตย เดือนนี้ Rolls-Royce ทำคะแนนได้เท่าไหร่?"</h3>
+          <p class="text-base leading-relaxed mb-5" style="color: var(--text-secondary);">
+            น้องใบเตย parses Thai/English intent, generates SQL, runs predictive models, renders charts, and executes approved actions — all in one prompt. The CEO gets the answer in the meeting, not in next week's BI report.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill-feature">Thai + English NLU</span>
+            <span class="pill-feature">Text-to-SQL</span>
+            <span class="pill-feature">RAG Knowledge Base</span>
+            <span class="pill-feature">Predictive ML</span>
+            <span class="pill-feature">Action Orchestration</span>
+            <span class="pill-feature">Voice Input</span>
+          </div>
+        </div>
+
+        <!-- Mock chat -->
+        <div class="rounded-2xl p-5" style="background: var(--bg-card-inner);">
+          <div class="text-[10px] uppercase tracking-widest mb-3 font-bold" style="color: var(--accent-red);">LIVE EXAMPLE · Use Case 1</div>
+          <div class="flex justify-end mb-3">
+            <div class="rounded-2xl rounded-tr-sm px-4 py-3 max-w-xs text-sm" style="background: var(--gradient-red-purple); color: #fff;">
+              ใบเตย เดือนนี้ Rolls-Royce ทำคะแนนได้เท่าไหร่ เทียบกับ BMW
+            </div>
+          </div>
+          <div class="flex gap-2 mb-3">
+            <div class="text-2xl">🤖</div>
+            <div class="rounded-2xl rounded-tl-sm px-4 py-3 max-w-md text-sm" style="background: var(--bg-card); border: 1px solid var(--border-glass);">
+              <div class="font-bold mb-2">Rolls-Royce พ.ค. 2026: <span style="color: var(--accent-red);">+18.5% MoM</span></div>
+              <div class="text-xs" style="color: var(--text-muted);">142,850 pts · 24 txns · avg ฿2.97M/txn</div>
+              <div class="font-bold mt-2 mb-1">BMW: 1,284,300 pts (+4.2%)</div>
+              <div class="mt-3 p-2 rounded text-[11px]" style="background: var(--bg-card-inner);">
+                💡 <strong>Insight:</strong> RR avg-spend is <strong>8.2× BMW</strong> — concentrate concierge on top-3 RR customers.
+              </div>
+              <div class="text-[10px] mt-2 opacity-60">Generated in 4.2s · Confidence 96%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Highlighted Use Cases -->
+    <div>
+      <div class="text-center mb-8">
+        <div class="text-[11px] font-bold tracking-[3px] mb-2" style="color: var(--accent-gold);">SELECTED USE CASES</div>
+        <h3 class="text-3xl font-black">8 of 20 — <span class="gradient-red">Showcase Capabilities</span></h3>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC1 · EXEC INSIGHT</div>
+          <div class="text-2xl mb-2">📊</div>
+          <div class="font-bold text-sm mb-1">Real-Time Brand Performance</div>
+          <div class="text-xs" style="color: var(--text-muted);">CEO asks, ใบเตย answers — MoM, YoY, drill-down. <strong>2 hours → 5 seconds.</strong></div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC3 · CFO FORECAST</div>
+          <div class="text-2xl mb-2">📈</div>
+          <div class="font-bold text-sm mb-1">Point Liability Forecasting</div>
+          <div class="text-xs" style="color: var(--text-muted);">Prophet/ARIMA scenario modelling for IFRS 15 deferred revenue.</div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC5 · ROI</div>
+          <div class="text-2xl mb-2">💰</div>
+          <div class="font-bold text-sm mb-1">Campaign ROAS Analysis</div>
+          <div class="text-xs" style="color: var(--text-muted);">Uplift modelling per cohort — kills "spray &amp; pray", lifts ROAS 40-60%.</div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC9 · CHURN</div>
+          <div class="text-2xl mb-2">🎯</div>
+          <div class="font-bold text-sm mb-1">Churn Prediction + Win-Back</div>
+          <div class="text-xs" style="color: var(--text-muted);">XGBoost on 12 features. <strong>Protects ฿1.5B+ revenue.</strong></div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC11 · CLV</div>
+          <div class="text-2xl mb-2">💎</div>
+          <div class="font-bold text-sm mb-1">Customer Lifetime Value</div>
+          <div class="text-xs" style="color: var(--text-muted);">Pareto/NBD + Gamma-Gamma · 5-year CLV with tier upgrade probability.</div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC12 · CROSS-SELL</div>
+          <div class="text-2xl mb-2">🚗</div>
+          <div class="font-bold text-sm mb-1">Cross-Brand Propensity</div>
+          <div class="text-xs" style="color: var(--text-muted);">BMW → RR / Maserati matchmaking. <strong>฿385M opportunity.</strong></div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC13 · VoC</div>
+          <div class="text-2xl mb-2">💬</div>
+          <div class="font-bold text-sm mb-1">Sentiment + Topic Modelling</div>
+          <div class="text-xs" style="color: var(--text-muted);">Thai-tuned LLM mines LINE chat, reviews, feedback — catches issues early.</div>
+        </div>
+        <div class="glass rounded-xl p-5 card-hover">
+          <div class="text-[10px] font-bold mb-1" style="color: var(--accent-red);">UC20 · MEMBER</div>
+          <div class="text-2xl mb-2">🏎️</div>
+          <div class="font-bold text-sm mb-1">Service Concierge in LINE</div>
+          <div class="text-xs" style="color: var(--text-muted);">Multi-turn dialogue · intent classification · book in one tap.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitive Comparison -->
+    <div class="mt-14">
+      <h3 class="text-2xl font-black mb-6 text-center">น้องใบเตย vs <span style="color: var(--text-muted);">BuzzeBee · Choco CRM</span></h3>
+      <div class="glass rounded-2xl overflow-hidden">
+        <table class="t-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th class="text-center">BuzzeBee</th>
+              <th class="text-center">Choco CRM</th>
+              <th class="text-center" style="background: var(--gradient-red-purple); color: #fff;">★ MOBILIFE + ใบเตย</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Static dashboards</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td></tr>
+            <tr><td>SQL self-service</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center">Limited</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓ Natural language</td></tr>
+            <tr><td>Predictive models (Churn / CLV / NBA)</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓ Full suite</td></tr>
+            <tr><td>Conversational UI (Thai + English)</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓</td></tr>
+            <tr><td>Member-facing AI in LINE</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓ Concierge</td></tr>
+            <tr><td>Action orchestration (Approve → Execute)</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓</td></tr>
+            <tr><td>Anomaly auto-detection</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓ 24/7</td></tr>
+            <tr><td>Cross-brand portfolio analytics</td><td class="text-center">Limited</td><td class="text-center" style="color:#94a3b8;">✗</td><td class="text-center" style="color: var(--accent-red); font-weight: 700;">✓ 8 brands</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Aggregate Value Banner -->
+    <div class="mt-10 rounded-2xl p-8 text-center relative overflow-hidden" style="background: var(--gradient-red-purple); color: #fff;">
+      <div class="text-[11px] font-bold tracking-[3px] opacity-80 mb-2">AGGREGATE VALUE POTENTIAL</div>
+      <div class="text-6xl lg:text-7xl font-black mb-2">฿2.1B+</div>
+      <div class="text-lg opacity-90">Annual business impact across 20 use cases</div>
+      <div class="text-sm opacity-70 mt-3 max-w-2xl mx-auto">฿1.5B churn protected · ฿385M cross-sell · ฿200M tier acceleration · 40-60% campaign ROAS lift · ฿15-25M ops savings</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. TECH STACK ===== -->
+<section id="tech" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">09 · Tech Stack</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Best-in-Class, <span class="gradient-red">Enterprise-Grade</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Every layer chosen to maximise reliability, scalability, and PDPA-compliance.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">📱</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">FRONTEND</div>
+        <div class="font-bold mb-2">LINE LIFF + React</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• LINE LIFF SDK (Web View)</li>
+          <li>• React 18 + TypeScript</li>
+          <li>• Tailwind CSS + Framer Motion</li>
+          <li>• PWA-ready, offline-first</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">⚙️</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">BACKEND</div>
+        <div class="font-bold mb-2">Node.js / NestJS</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Microservices on K8s</li>
+          <li>• gRPC inter-service</li>
+          <li>• Kafka event bus</li>
+          <li>• OpenAPI 3.0 contracts</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">💾</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">DATABASE</div>
+        <div class="font-bold mb-2">PostgreSQL + Redis</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• PostgreSQL 16 (HA replication)</li>
+          <li>• Redis 7 (cache + sessions)</li>
+          <li>• Pinecone / pgvector (RAG)</li>
+          <li>• S3-compatible Data Lake</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover" style="border: 2px solid var(--accent-red);">
+        <div class="text-3xl mb-3">🤖</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">AI</div>
+        <div class="font-bold mb-2">GPT-4 + Claude API</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Claude / GPT-4 LLM orchestration</li>
+          <li>• RAG with vector embeddings</li>
+          <li>• Text-to-SQL (LangChain)</li>
+          <li>• XGBoost · Prophet · sklearn</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover" style="border: 2px solid var(--accent-red);">
+        <div class="text-3xl mb-3">☁️</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">CLOUD</div>
+        <div class="font-bold mb-2">True IDC</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Dedicated tenancy (single-customer)</li>
+          <li>• PDPA Tier 3+ certified</li>
+          <li>• Local data residency (TH)</li>
+          <li>• Private network (no public exposure)</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">🔄</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">DEVOPS</div>
+        <div class="font-bold mb-2">GitOps + K8s</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• ArgoCD GitOps</li>
+          <li>• Kubernetes (True IDC)</li>
+          <li>• Full CI/CD (GitHub Actions)</li>
+          <li>• Blue/green deployments</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">🛡️</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">SECURITY</div>
+        <div class="font-bold mb-2">ISO 27001 + OWASP</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• ISO 27001 controls</li>
+          <li>• OWASP Top 10 hardening</li>
+          <li>• End-to-end TLS 1.3</li>
+          <li>• AES-256 at rest</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl mb-3">📊</div>
+        <div class="text-[11px] font-bold mb-2" style="color: var(--accent-red);">OBSERVABILITY</div>
+        <div class="font-bold mb-2">Full-Stack Monitoring</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Datadog / Prometheus + Grafana</li>
+          <li>• Distributed tracing (OpenTelemetry)</li>
+          <li>• PagerDuty incident routing</li>
+          <li>• 24/7 SOC integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. IMPLEMENTATION PLAN ===== -->
+<section id="impl" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">10 · Draft Implementation Plan</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">5 Months, <span class="gradient-red">Five Milestones</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">From kickoff to hypercare — every week mapped, every dependency surfaced.</p>
+    </div>
+
+    <!-- Visual Gantt -->
+    <div class="glass rounded-2xl p-6 lg:p-10 mb-10 overflow-x-auto">
+      <div class="min-w-[800px]">
+        <!-- Months header -->
+        <div class="grid grid-cols-5 gap-2 mb-4">
+          <div class="text-center text-xs font-bold py-2 rounded" style="background: var(--bg-card-inner);">M1 · DISCOVERY</div>
+          <div class="text-center text-xs font-bold py-2 rounded" style="background: var(--bg-card-inner);">M2 · BUILD I</div>
+          <div class="text-center text-xs font-bold py-2 rounded" style="background: var(--bg-card-inner);">M3 · BUILD II</div>
+          <div class="text-center text-xs font-bold py-2 rounded" style="background: var(--bg-card-inner);">M4 · UAT</div>
+          <div class="text-center text-xs font-bold py-2 rounded" style="background: var(--bg-card-inner);">M5 · GO-LIVE</div>
+        </div>
+
+        <!-- Workstream rows -->
+        <div class="space-y-3">
+          <div class="grid grid-cols-5 gap-2 items-center text-xs">
+            <div class="rounded-lg py-3 px-3" style="background: var(--gradient-red-purple); color: #fff;">Discovery + Architecture + Design</div>
+            <div></div><div></div><div></div><div></div>
+          </div>
+          <div class="grid grid-cols-5 gap-2 items-center text-xs">
+            <div></div>
+            <div class="rounded-lg py-3 px-3 col-span-2" style="background: linear-gradient(90deg, #34528e, #1B2B5B); color: #fff;">Core Backend + LINE LIFF Foundation</div>
+            <div></div><div></div>
+          </div>
+          <div class="grid grid-cols-5 gap-2 items-center text-xs">
+            <div></div><div></div>
+            <div class="rounded-lg py-3 px-3 col-span-2" style="background: linear-gradient(90deg, #C9A96E, #b8923f); color: #fff;">Feature Build-out + AI Integration (น้องใบเตย)</div>
+            <div></div>
+          </div>
+          <div class="grid grid-cols-5 gap-2 items-center text-xs">
+            <div></div><div></div><div></div>
+            <div class="rounded-lg py-3 px-3 col-span-2" style="background: linear-gradient(90deg, #7E2A8E, #5e1f6a); color: #fff;">Integration + UAT</div>
+            <div></div>
+          </div>
+          <div class="grid grid-cols-5 gap-2 items-center text-xs">
+            <div></div><div></div><div></div><div></div>
+            <div class="rounded-lg py-3 px-3" style="background: linear-gradient(90deg, #E2231A, #b81b14); color: #fff;">Production Deployment + Hypercare</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestone Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="timeline-dot"></div>
+          <div class="text-xs font-bold" style="color: var(--accent-red);">MONTH 1</div>
+        </div>
+        <div class="font-bold mb-2">Discovery</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Stakeholder workshops × 8 brands</li>
+          <li>• Architecture finalisation</li>
+          <li>• UX/UI design system</li>
+          <li>• Sprint 0 setup</li>
+        </ul>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="timeline-dot"></div>
+          <div class="text-xs font-bold" style="color: var(--accent-red);">MONTH 2</div>
+        </div>
+        <div class="font-bold mb-2">Build I</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Identity + Points engine</li>
+          <li>• LINE LIFF foundation</li>
+          <li>• Database schema + migrations</li>
+          <li>• CI/CD pipeline</li>
+        </ul>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="timeline-dot"></div>
+          <div class="text-xs font-bold" style="color: var(--accent-red);">MONTH 3</div>
+        </div>
+        <div class="font-bold mb-2">Build II</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Campaigns + Rewards</li>
+          <li>• น้องใบเตย AI integration</li>
+          <li>• Admin Portal + B2B module</li>
+          <li>• POS integration adapters</li>
+        </ul>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="timeline-dot"></div>
+          <div class="text-xs font-bold" style="color: var(--accent-red);">MONTH 4</div>
+        </div>
+        <div class="font-bold mb-2">UAT</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• End-to-end integration test</li>
+          <li>• Brand-by-brand UAT</li>
+          <li>• Load + security testing</li>
+          <li>• Training + documentation</li>
+        </ul>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover" style="border: 2px solid var(--accent-red);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="timeline-dot"></div>
+          <div class="text-xs font-bold" style="color: var(--accent-red);">MONTH 5</div>
+        </div>
+        <div class="font-bold mb-2">Go-Live</div>
+        <ul class="text-xs space-y-1" style="color: var(--text-muted);">
+          <li>• Phased production rollout</li>
+          <li>• 30-day hypercare</li>
+          <li>• Handover to 24/7 managed</li>
+          <li>• Optimisation cadence start</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. BILL OF MATERIALS ===== -->
+<section id="bom" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">11 · Bill of Materials</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">What You're <span class="gradient-red">Receiving</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Itemised — every component, license, and service in the package.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Software Licenses -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-3xl">📦</div>
+          <h3 class="text-xl font-black">Software Licenses</h3>
+        </div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>LINE Messaging API (8 brand OAs)</td><td class="text-right text-xs" style="color: var(--text-muted);">Annual</td></tr>
+            <tr><td>LINE LIFF SDK</td><td class="text-right text-xs" style="color: var(--text-muted);">Included</td></tr>
+            <tr><td>OpenAI / Anthropic API (token allowance)</td><td class="text-right text-xs" style="color: var(--text-muted);">Metered + cap</td></tr>
+            <tr><td>Pinecone / pgvector (RAG infra)</td><td class="text-right text-xs" style="color: var(--text-muted);">Annual</td></tr>
+            <tr><td>Datadog Pro (full-stack monitoring)</td><td class="text-right text-xs" style="color: var(--text-muted);">Per host</td></tr>
+            <tr><td>PagerDuty (incident routing)</td><td class="text-right text-xs" style="color: var(--text-muted);">Per user</td></tr>
+            <tr><td>SendGrid / Twilio (email + SMS fallback)</td><td class="text-right text-xs" style="color: var(--text-muted);">Metered</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Cloud Resources -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-3xl">☁️</div>
+          <h3 class="text-xl font-black">Cloud Resources <span class="text-xs font-normal" style="color: var(--accent-red);">(True IDC · Dedicated)</span></h3>
+        </div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>Compute (8 vCPU × 16 nodes baseline)</td><td class="text-right text-xs" style="color: var(--text-muted);">Reserved</td></tr>
+            <tr><td>Storage (block + object, 5 TB baseline)</td><td class="text-right text-xs" style="color: var(--text-muted);">Reserved</td></tr>
+            <tr><td>Network (private VLAN, dedicated IPs)</td><td class="text-right text-xs" style="color: var(--text-muted);">Dedicated</td></tr>
+            <tr><td>Backup (3-2-1 policy, off-site)</td><td class="text-right text-xs" style="color: var(--text-muted);">Daily + 30d retention</td></tr>
+            <tr><td>DR site (warm standby)</td><td class="text-right text-xs" style="color: var(--text-muted);">Included</td></tr>
+            <tr><td>WAF + DDoS protection</td><td class="text-right text-xs" style="color: var(--text-muted);">Included</td></tr>
+            <tr><td>SOC monitoring (24/7)</td><td class="text-right text-xs" style="color: var(--text-muted);">Included</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Professional Services -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-3xl">👨‍💻</div>
+          <h3 class="text-xl font-black">Professional Services</h3>
+        </div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>Discovery + Architecture (M1)</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>Frontend + Backend Development</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>AI / ML Engineering (น้องใบเตย)</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>POS / DMS Integration (8 brands)</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>UX/UI Design + Brand System</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>QA + Security Testing</td><td class="text-right text-xs" style="color: var(--text-muted);">Fixed scope</td></tr>
+            <tr><td>Training (admin + business users)</td><td class="text-right text-xs" style="color: var(--text-muted);">8 sessions</td></tr>
+            <tr><td>Change Request Pool</td><td class="text-right text-xs" style="color: var(--accent-red); font-weight: 700;">80 mandays</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Managed Services -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-3xl">🔧</div>
+          <h3 class="text-xl font-black">Managed Services <span class="text-xs font-normal" style="color: var(--accent-red);">(24/7 Premium)</span></h3>
+        </div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>Service Desk (L1) — 24/7</td><td class="text-right text-xs" style="color: var(--text-muted);">Phone + Email + Chat</td></tr>
+            <tr><td>Technical Specialist (L2)</td><td class="text-right text-xs" style="color: var(--text-muted);">On-call</td></tr>
+            <tr><td>Solution Architect (L3)</td><td class="text-right text-xs" style="color: var(--text-muted);">Named</td></tr>
+            <tr><td>Service Director (L4)</td><td class="text-right text-xs" style="color: var(--text-muted);">Named exec</td></tr>
+            <tr><td>Quarterly Business Review (QBR)</td><td class="text-right text-xs" style="color: var(--text-muted);">4× / year</td></tr>
+            <tr><td>Patch + version management</td><td class="text-right text-xs" style="color: var(--text-muted);">Continuous</td></tr>
+            <tr><td>Incident response + RCA</td><td class="text-right text-xs" style="color: var(--text-muted);">Per SLA</td></tr>
+            <tr><td>Capacity planning</td><td class="text-right text-xs" style="color: var(--text-muted);">Quarterly</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12. COMMERCIAL MODEL ===== -->
+<section id="commercial" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">12 · Commercial Proposal</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Investment <span class="gradient-red">Breakdown</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">CAPEX + OPEX + CR Pool — fully transparent, all-inclusive at ฿11M (excl. VAT 7%).</p>
+    </div>
+
+    <!-- Total + Bar visual -->
+    <div class="glass rounded-2xl p-8 lg:p-10 mb-10">
+      <div class="grid lg:grid-cols-3 gap-8 items-center">
+        <div class="lg:col-span-1">
+          <div class="text-[11px] font-bold tracking-widest mb-2" style="color: var(--accent-red);">TOTAL INVESTMENT · 3-YEAR</div>
+          <div class="text-7xl font-black gradient-red leading-none">฿11M</div>
+          <div class="text-sm mt-3" style="color: var(--text-muted);">All-inclusive · CAPEX + OPEX + CR Pool · excludes VAT 7%</div>
+        </div>
+        <div class="lg:col-span-2 space-y-4">
+          <div>
+            <div class="flex justify-between text-sm mb-1.5"><span class="font-semibold">CAPEX (Year 1 Development)</span><span class="font-bold">฿6.5M · 59%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 59%;"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1.5"><span class="font-semibold">OPEX (3-Year Recurring)</span><span class="font-bold">฿3.5M · 32%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 32%; background: linear-gradient(90deg, #1B2B5B, #34528e);"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1.5"><span class="font-semibold">CR Mandays Pool (80 days × ฿12K)</span><span class="font-bold">฿1.0M · 9%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 9%; background: linear-gradient(90deg, #C9A96E, #b8923f);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed tables -->
+    <div class="grid lg:grid-cols-3 gap-6 mb-10">
+      <!-- CAPEX -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-3 py-1 rounded text-xs font-bold" style="background: var(--gradient-red-purple); color: #fff;">CAPEX</div>
+          <div class="text-2xl font-black">฿6.5M</div>
+        </div>
+        <div class="text-xs mb-3" style="color: var(--text-muted);">Year 1 development — paid on milestones</div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>Platform development (core)</td><td class="text-right font-semibold">฿2.5M</td></tr>
+            <tr><td>LINE LIFF + Login integration</td><td class="text-right font-semibold">฿0.8M</td></tr>
+            <tr><td>AI Agent (น้องใบเตย) full suite</td><td class="text-right font-semibold">฿1.2M</td></tr>
+            <tr><td>Admin Portal + B2B module</td><td class="text-right font-semibold">฿0.8M</td></tr>
+            <tr><td>Integration testing + deployment</td><td class="text-right font-semibold">฿0.7M</td></tr>
+            <tr><td>Project Management (premium 5mo)</td><td class="text-right font-semibold">฿0.5M</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- OPEX -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-3 py-1 rounded text-xs font-bold" style="background: linear-gradient(90deg, #1B2B5B, #34528e); color: #fff;">OPEX</div>
+          <div class="text-2xl font-black">฿3.5M</div>
+        </div>
+        <div class="text-xs mb-3" style="color: var(--text-muted);">3-year recurring · ≈ ฿1.17M / year average</div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>True IDC dedicated cloud (3 yr)</td><td class="text-right font-semibold">฿1.5M</td></tr>
+            <tr><td>24/7 Managed Services Premium (3 yr)</td><td class="text-right font-semibold">฿1.5M</td></tr>
+            <tr><td>Maintenance &amp; security (3 yr)</td><td class="text-right font-semibold">฿0.5M</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CR Pool -->
+      <div class="glass rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="px-3 py-1 rounded text-xs font-bold" style="background: linear-gradient(90deg, #C9A96E, #b8923f); color: #fff;">CR POOL</div>
+          <div class="text-2xl font-black">฿1.0M</div>
+        </div>
+        <div class="text-xs mb-3" style="color: var(--text-muted);">80 mandays @ ฿12,000 — flexibility reserve</div>
+        <table class="t-table">
+          <tbody>
+            <tr><td>Change Request mandays</td><td class="text-right font-semibold">80 days</td></tr>
+            <tr><td>Daily rate (premium tier)</td><td class="text-right font-semibold">฿12,000</td></tr>
+            <tr><td>Subtotal</td><td class="text-right font-semibold">฿960K</td></tr>
+            <tr><td>Rounding buffer</td><td class="text-right font-semibold">฿40K</td></tr>
+          </tbody>
+        </table>
+        <div class="mt-3 p-3 rounded text-xs" style="background: var(--bg-card-inner); color: var(--text-muted);">
+          Unused mandays roll over annually. Drawdown approved by joint MGC + truebusiness governance.
+        </div>
+      </div>
+    </div>
+
+    <!-- One-time vs As-a-Service -->
+    <div>
+      <h3 class="text-2xl font-black text-center mb-2">One-Time Purchase <span style="color: var(--text-muted); font-weight: 400;">OR</span> As-a-Service</h3>
+      <p class="text-sm text-center mb-6" style="color: var(--text-muted);">Two payment paths — same scope, same SLA, your choice.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+          <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">OPTION A · ONE-TIME PURCHASE</div>
+          <div class="text-4xl font-black mb-1">฿11M</div>
+          <div class="text-xs mb-4" style="color: var(--text-muted);">Lump-sum on milestones · CAPEX accounting</div>
+          <ul class="text-sm space-y-2" style="color: var(--text-secondary);">
+            <li>✓ ฿2.2M (20%) on contract signing</li>
+            <li>✓ ฿4.4M (40%) on M3 mid-point delivery</li>
+            <li>✓ ฿3.3M (30%) on M5 production go-live</li>
+            <li>✓ ฿1.1M (10%) on hypercare exit</li>
+            <li>✓ Asset on MGC's books — depreciable over 5 years</li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1.5" style="background: linear-gradient(90deg, #C9A96E, #b8923f);"></div>
+          <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-gold);">OPTION B · AS-A-SERVICE</div>
+          <div class="text-4xl font-black mb-1">฿330K <span class="text-xl font-normal" style="color: var(--text-muted);">/ month</span></div>
+          <div class="text-xs mb-4" style="color: var(--text-muted);">36-month subscription · OPEX accounting · zero upfront</div>
+          <ul class="text-sm space-y-2" style="color: var(--text-secondary);">
+            <li>✓ Single monthly invoice — predictable cashflow</li>
+            <li>✓ All licenses, cloud, managed service bundled</li>
+            <li>✓ Zero upfront capital outlay</li>
+            <li>✓ Includes refresh + version upgrades</li>
+            <li>✓ Renewal option at discounted rate after 36 mo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13. COMPLIANCE STATEMENT ===== -->
+<section id="compliance" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">13 · Compliance Statement</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Every Requirement, <span class="gradient-red">Mapped to a Response</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">A line-item commitment table — Plan A response to every customer requirement, with proposal cross-references.</p>
+    </div>
+
+    <div class="glass rounded-2xl overflow-hidden">
+      <table class="t-table">
+        <thead>
+          <tr>
+            <th style="width: 30%;">Requirement</th>
+            <th style="width: 50%;">Plan A Response</th>
+            <th style="width: 20%;">Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PDPA Compliance</strong></td><td>Full PDPA-compliant — consent management, data subject rights, breach notification within 72h. Hosted on True IDC PDPA Tier 3+ certified facility.</td><td>§6 · §9 · §15</td></tr>
+          <tr><td><strong>ISO 27001 / Information Security</strong></td><td>truebusiness corporate ISO 27001 certified. Platform aligned with ISO 27001 controls — annual audit, ISMS, continuous monitoring by 24/7 SOC.</td><td>§9</td></tr>
+          <tr><td><strong>Data Residency</strong></td><td>100% Thailand-resident data — primary + DR sites both in True IDC Bangkok. No cross-border data transfers without explicit MGC consent.</td><td>§9</td></tr>
+          <tr><td><strong>Uptime SLA</strong></td><td>99.9% uptime guarantee on production system, 24/7/365. Service credit refund for SLA breach (1% credit per 0.1% uptime miss).</td><td>§14</td></tr>
+          <tr><td><strong>Support SLA</strong></td><td>4-tier severity-based response — Critical: 15 min response / 4 hr resolution. Full table in §15.</td><td>§14 · §15</td></tr>
+          <tr><td><strong>Scalability</strong></td><td>Cloud-native, horizontally scalable microservices. Baseline supports 100K members; auto-scales to 1M+ on demand. Burst capacity on True IDC pool.</td><td>§6 · §9</td></tr>
+          <tr><td><strong>Security — Encryption</strong></td><td>TLS 1.3 in transit, AES-256 at rest. Key management via dedicated HSM. Quarterly penetration testing.</td><td>§9</td></tr>
+          <tr><td><strong>Security — Access Control</strong></td><td>RBAC with least-privilege, MFA enforced, all admin actions audit-logged with tamper-proof retention 1 year.</td><td>§9</td></tr>
+          <tr><td><strong>Integration Capability</strong></td><td>OpenAPI 3.0 contracts, REST + webhooks, gRPC for high-throughput. POS / DMS adapters per brand. Sandbox available.</td><td>§5 · §6</td></tr>
+          <tr><td><strong>Disaster Recovery</strong></td><td>RPO ≤ 1 hour · RTO ≤ 4 hours. Warm standby DR site. Quarterly DR drill with documented runbook.</td><td>§9 · §14</td></tr>
+          <tr><td><strong>Localisation (Thai)</strong></td><td>Full Thai + English support across UI, น้องใบเตย AI, support documentation, escalation contacts.</td><td>§5 · §8 · §15</td></tr>
+          <tr><td><strong>Audit &amp; Reporting</strong></td><td>Tamper-proof audit logs, monthly compliance reports, on-demand evidence package for MGC's auditors.</td><td>§14 · §15</td></tr>
+          <tr><td><strong>Vendor Lock-in Mitigation</strong></td><td>Open standards (PostgreSQL, K8s, OpenAPI). Code escrow available. Data export in standard formats on request.</td><td>§9</td></tr>
+          <tr><td><strong>Change Management</strong></td><td>80-manday CR pool · joint MGC + truebusiness governance · quarterly roadmap reviews.</td><td>§11 · §12</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14. SLA COMMITMENT ===== -->
+<section id="sla" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">14 · SLA Commitment</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">99.9% Uptime, <span class="gradient-red">Backed by Credits</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Plan A SLA — premium tier · 4 severity levels · service credit refund on miss.</p>
+    </div>
+
+    <!-- Headline Uptime -->
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">UPTIME GUARANTEE</div>
+        <div class="text-5xl font-black gradient-red mb-1">99.9%</div>
+        <div class="text-xs" style="color: var(--text-muted);">≤ 8h 45m downtime / year · production environment</div>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">CREDIT REFUND</div>
+        <div class="text-5xl font-black gradient-red mb-1">1% / 0.1%</div>
+        <div class="text-xs" style="color: var(--text-muted);">Monthly invoice credit per 0.1% uptime miss · capped 25%</div>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">DR / RECOVERY</div>
+        <div class="text-3xl font-black gradient-red mb-1">RPO ≤ 1h · RTO ≤ 4h</div>
+        <div class="text-xs" style="color: var(--text-muted);">Warm standby DR · quarterly drill</div>
+      </div>
+    </div>
+
+    <!-- Severity Table -->
+    <div class="glass rounded-2xl overflow-hidden">
+      <table class="t-table">
+        <thead>
+          <tr>
+            <th style="width: 12%;">Severity</th>
+            <th style="width: 30%;">Definition</th>
+            <th style="width: 18%;">Response Time</th>
+            <th style="width: 18%;">Resolution Target</th>
+            <th style="width: 22%;">Communication Cadence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color: #dc2626;">CRITICAL · S1</strong></td>
+            <td>System down or major degradation. Production members unable to use loyalty platform. Revenue / data loss risk.</td>
+            <td><strong>15 minutes</strong></td>
+            <td><strong>4 hours</strong></td>
+            <td>Every 30 min until resolved</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #ea580c;">MAJOR · S2</strong></td>
+            <td>Significant feature impaired but workaround exists. Subset of users affected.</td>
+            <td>1 hour</td>
+            <td>8 business hours</td>
+            <td>Every 2 hours</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #ca8a04;">MINOR · S3</strong></td>
+            <td>Minor feature issue, cosmetic bug, or performance below baseline. No user blocker.</td>
+            <td>4 business hours</td>
+            <td>3 business days</td>
+            <td>Daily</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #64748b;">LOW · S4</strong></td>
+            <td>Enhancement request, documentation, or non-urgent question.</td>
+            <td>1 business day</td>
+            <td>10 business days</td>
+            <td>Weekly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 p-5 glass rounded-xl text-sm" style="color: var(--text-secondary);">
+      <strong style="color: var(--accent-red);">Note:</strong> SLA times are 24/7/365 for S1 and S2 incidents. S3 and S4 follow Thai business hours (Mon–Fri 09:00–18:00 ICT). Scheduled maintenance windows are excluded from uptime calculation, capped at 4 hours/month with 7-day advance notice.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 15. CUSTOMER SUPPORT ESCALATION ===== -->
+<section id="support" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">15 · Customer Support</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Single Contact Point, <span class="gradient-red">Fully Managed</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">truebusiness's standard 4-level escalation flow — every level, named, with documented contact channels.</p>
+    </div>
+
+    <div class="glass rounded-2xl overflow-hidden mb-8">
+      <table class="t-table">
+        <thead>
+          <tr>
+            <th style="width: 10%;">Level</th>
+            <th style="width: 25%;">Role</th>
+            <th style="width: 20%;">Trigger</th>
+            <th style="width: 20%;">Phone</th>
+            <th style="width: 25%;">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color: var(--accent-red);">L1</strong><br><span class="text-xs" style="color: var(--text-muted);">Immediate</span></td>
+            <td><strong>Service Desk Manager</strong><br><span class="text-xs" style="color: var(--text-muted);">Business Customer Helpdesk · 24/7</span></td>
+            <td>All initial tickets</td>
+            <td>1239 *2 (TH)<br>+662-700-9191 (Intl)</td>
+            <td>service.desk@truecorp.co.th</td>
+          </tr>
+          <tr>
+            <td><strong style="color: var(--accent-red);">L2</strong><br><span class="text-xs" style="color: var(--text-muted);">&gt; 1 hour</span></td>
+            <td><strong>Technical Specialist</strong><br><span class="text-xs" style="color: var(--text-muted);">Managed Network Service Center</span></td>
+            <td>Technical escalation from L1</td>
+            <td>+662-700-9191 ext. 2</td>
+            <td>tech.specialist@truecorp.co.th</td>
+          </tr>
+          <tr>
+            <td><strong style="color: var(--accent-red);">L3</strong><br><span class="text-xs" style="color: var(--text-muted);">&gt; 2 hours</span></td>
+            <td><strong>Solution Architect</strong><br><span class="text-xs" style="color: var(--text-muted);">+ Account Pre-sale Consultant<br>+ Key Account Manager</span></td>
+            <td>Architecture or scope-impacting issues</td>
+            <td>Direct line on assignment</td>
+            <td>solution.arch@truecorp.co.th</td>
+          </tr>
+          <tr>
+            <td><strong style="color: var(--accent-red);">L4</strong><br><span class="text-xs" style="color: var(--text-muted);">&gt; 3 hours</span></td>
+            <td><strong>Service Director</strong><br><span class="text-xs" style="color: var(--text-muted);">Head of Corporate Service Mgmt<br>+ Head of Sector</span></td>
+            <td>Critical / executive escalation</td>
+            <td>Executive line on assignment</td>
+            <td>service.director@truecorp.co.th</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-2xl mb-2">📞</div>
+        <div class="font-bold text-sm mb-1">24/7 Hotline</div>
+        <div class="text-xs" style="color: var(--text-muted);">Phone-first for S1 / S2 — direct to L1, escalation in 60 minutes if not resolved.</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-2xl mb-2">🎯</div>
+        <div class="font-bold text-sm mb-1">Named Account Team</div>
+        <div class="text-xs" style="color: var(--text-muted);">Dedicated KAM + Solution Architect + Service Manager assigned to MGC at contract signing.</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="text-2xl mb-2">📊</div>
+        <div class="font-bold text-sm mb-1">Quarterly Business Review</div>
+        <div class="text-xs" style="color: var(--text-muted);">QBR with L4 + MGC executives — review SLA, roadmap, optimisation opportunities.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 16. WHY TRUE BUSINESS? ===== -->
+<section id="why-true" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">16 · Why True Business?</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">The Total <span class="gradient-red">Digital Solution Provider</span> for Business Customers</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Four pillars — the closing argument that makes truebusiness the right partner for MGC-ASIA.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-4xl mb-4">📡</div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">PILLAR 1</div>
+        <h3 class="text-xl font-black mb-3">Strong &amp; Proven Network</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          &gt;51M subscribers, 90% 5G coverage, 500K km fiber. Reach to MGC's customers <strong>nationwide</strong> — every dealership, every Member, every notification delivered.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-4xl mb-4">🧭</div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">PILLAR 2</div>
+        <h3 class="text-xl font-black mb-3">Digital Business Solutions Consultancy</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          Strategic advisory — not just implementation. We design the MOBILIFE program <strong>with</strong> MGC, mapping infrastructure to MGC's brand DNA and customer expectations.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-4xl mb-4">⚙️</div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">PILLAR 3</div>
+        <h3 class="text-xl font-black mb-3">Fully Managed Service by True</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          Single contact point and fully managed by True's Technical and Managed Services Team. <strong>One contract, one accountable owner, end-to-end.</strong> No finger-pointing across vendors.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-7 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-4xl mb-4">💼</div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">PILLAR 4</div>
+        <h3 class="text-xl font-black mb-3">Flexible Business Model</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+          <strong>One-time Purchase OR As-a-Service.</strong> Lump-sum CAPEX or 36-month OPEX subscription — same scope, same SLA, your accounting preference.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="font-better-together text-6xl lg:text-7xl" style="color: var(--accent-gold);">Better Together</p>
+      <p class="text-sm mt-3" style="color: var(--text-muted);">truebusiness × MGC-ASIA — building the loyalty engine that defines premium automotive in Thailand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17. COMPETITIVE LANDSCAPE / TCO ===== -->
+<section id="tco" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">17 · Competitive Landscape</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">3-Year TCO <span class="gradient-red">Comparison</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Plan A vs the leading off-the-shelf alternatives — looking past the headline price.</p>
+    </div>
+
+    <div class="glass rounded-2xl overflow-hidden mb-8">
+      <table class="t-table">
+        <thead>
+          <tr>
+            <th style="width: 28%;">Dimension</th>
+            <th style="width: 24%;" style="color: var(--text-muted);">BuzzeBee SaaS</th>
+            <th style="width: 24%;" style="color: var(--text-muted);">Choco CRM</th>
+            <th style="width: 24%;" style="background: var(--gradient-red-purple); color: #fff;">★ MOBILIFE Premium (Plan A)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3-year TCO</td><td>~฿8M (license + ops)</td><td>~฿9M (license + ops)</td><td><strong>฿11M all-in (incl. AI + 24/7 + dedicated cloud)</strong></td></tr>
+          <tr><td>Infrastructure</td><td>Shared SaaS (overseas)</td><td>Shared SaaS (overseas)</td><td><strong style="color: var(--accent-red);">True IDC dedicated tenancy (TH)</strong></td></tr>
+          <tr><td>Data residency</td><td>Multi-region</td><td>Multi-region</td><td><strong style="color: var(--accent-red);">100% Thailand</strong></td></tr>
+          <tr><td>AI capability</td><td>None</td><td>Limited reports</td><td><strong style="color: var(--accent-red);">น้องใบเตย full conversational AI + predictive ML</strong></td></tr>
+          <tr><td>Customisation</td><td>Limited (template-bound)</td><td>Medium</td><td><strong style="color: var(--accent-red);">Full bespoke + 80 manday CR pool</strong></td></tr>
+          <tr><td>SLA</td><td>99.5% best-effort</td><td>99.5%</td><td><strong style="color: var(--accent-red);">99.9% with credit refund</strong></td></tr>
+          <tr><td>Support</td><td>Email / business hours</td><td>Email / business hours</td><td><strong style="color: var(--accent-red);">24/7 Premium · 4-tier · named team</strong></td></tr>
+          <tr><td>PDPA / ISO 27001</td><td>Best-effort</td><td>Best-effort</td><td><strong style="color: var(--accent-red);">Full compliance · audited</strong></td></tr>
+          <tr><td>Vendor accountability</td><td>Multi-vendor stitch</td><td>Multi-vendor stitch</td><td><strong style="color: var(--accent-red);">Single contract · truebusiness</strong></td></tr>
+          <tr><td>Brand-fit for luxury automotive</td><td>Generic retail</td><td>Generic retail</td><td><strong style="color: var(--accent-red);">Bespoke for MGC's premium portfolio</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="glass rounded-2xl p-7">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div>
+          <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">PRICE DELTA</div>
+          <div class="text-3xl font-black">+฿2-3M</div>
+          <div class="text-xs" style="color: var(--text-muted);">vs BuzzeBee / Choco</div>
+        </div>
+        <div>
+          <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">VALUE DELTA</div>
+          <div class="text-3xl font-black gradient-red">฿2.1B+</div>
+          <div class="text-xs" style="color: var(--text-muted);">via น้องใบเตย AI alone</div>
+        </div>
+        <div>
+          <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">EFFECTIVE ROI</div>
+          <div class="text-3xl font-black gradient-red">700×+</div>
+          <div class="text-xs" style="color: var(--text-muted);">incremental investment yields incremental value</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 18. ROI / BUSINESS CASE ===== -->
+<section id="roi" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">18 · ROI / Business Case</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Payback in <span class="gradient-red">Under 6 Months</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">The math is simple — even a 3% repeat-purchase uplift across MGC's member base eclipses the entire 3-year investment.</p>
+    </div>
+
+    <!-- Calculation strip -->
+    <div class="glass rounded-2xl p-8 lg:p-10 mb-8">
+      <div class="grid lg:grid-cols-5 gap-4 items-center">
+        <div class="text-center">
+          <div class="text-xs font-bold mb-1" style="color: var(--text-muted);">MEMBER BASE</div>
+          <div class="text-3xl font-black">48,520</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">across 8 brands</div>
+        </div>
+        <div class="text-center text-2xl" style="color: var(--accent-red);">×</div>
+        <div class="text-center">
+          <div class="text-xs font-bold mb-1" style="color: var(--text-muted);">REPEAT-PURCHASE UPLIFT</div>
+          <div class="text-3xl font-black">3%</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">conservative · industry baseline 5-8%</div>
+        </div>
+        <div class="text-center text-2xl" style="color: var(--accent-red);">×</div>
+        <div class="text-center">
+          <div class="text-xs font-bold mb-1" style="color: var(--text-muted);">AVG VEHICLE VALUE</div>
+          <div class="text-3xl font-black">฿2.5M</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">blended across portfolio</div>
+        </div>
+        <div class="text-center hidden lg:block"></div>
+        <div class="text-center hidden lg:block"></div>
+        <div class="text-center hidden lg:block col-span-2 text-3xl" style="color: var(--accent-red);">=</div>
+        <div class="text-center col-span-1 lg:col-span-3 rounded-2xl p-6" style="background: var(--gradient-red-purple); color: #fff;">
+          <div class="text-xs font-bold mb-1 opacity-80">INCREMENTAL REVENUE</div>
+          <div class="text-5xl font-black">฿3.6B</div>
+          <div class="text-xs opacity-80">3-year cumulative · just from repeat uplift</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Investment vs Return -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="glass rounded-2xl p-7 text-center card-hover">
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--text-muted);">PLAN A INVESTMENT</div>
+        <div class="text-4xl font-black">฿11M</div>
+        <div class="text-xs mt-2" style="color: var(--text-muted);">3-year all-in</div>
+      </div>
+      <div class="glass rounded-2xl p-7 text-center card-hover relative overflow-hidden" style="border: 2px solid var(--accent-red);">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--accent-red);">% OF OPPORTUNITY</div>
+        <div class="text-4xl font-black gradient-red">0.3%</div>
+        <div class="text-xs mt-2" style="color: var(--text-muted);">of incremental ฿3.6B revenue</div>
+      </div>
+      <div class="glass rounded-2xl p-7 text-center card-hover">
+        <div class="text-xs font-bold tracking-widest mb-2" style="color: var(--text-muted);">PAYBACK PERIOD</div>
+        <div class="text-4xl font-black">&lt; 6 mo</div>
+        <div class="text-xs mt-2" style="color: var(--text-muted);">on conservative scenario</div>
+      </div>
+    </div>
+
+    <!-- Side-effects bonus -->
+    <div class="glass rounded-2xl p-6">
+      <h3 class="font-bold mb-4 text-center"><span class="gradient-red">Plus</span> additional value streams not yet counted</h3>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="rounded-xl p-4 text-center" style="background: var(--bg-card-inner);">
+          <div class="text-2xl font-black gradient-red">฿1.5B</div>
+          <div class="text-xs font-semibold mt-1">Churn Protected</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">via UC9 churn prediction</div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background: var(--bg-card-inner);">
+          <div class="text-2xl font-black gradient-red">฿385M</div>
+          <div class="text-xs font-semibold mt-1">Cross-Brand Revenue</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">via UC12 propensity</div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background: var(--bg-card-inner);">
+          <div class="text-2xl font-black gradient-red">฿200M+</div>
+          <div class="text-xs font-semibold mt-1">Tier Acceleration</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">via UC11 + UC18</div>
+        </div>
+        <div class="rounded-xl p-4 text-center" style="background: var(--bg-card-inner);">
+          <div class="text-2xl font-black gradient-red">฿15-25M</div>
+          <div class="text-xs font-semibold mt-1">Ops Cost Savings</div>
+          <div class="text-[10px]" style="color: var(--text-muted);">via UC4 + UC14 + UC17</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 19. NEXT STEPS / CTA ===== -->
+<section id="cta" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="section-badge mb-4">19 · Next Steps</div>
+      <h2 class="text-4xl lg:text-5xl font-black mb-4">Let's Build It — <span class="gradient-red">Better Together</span></h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">A clear 4-step path from this proposal to MOBILIFE Premium go-live.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div class="glass rounded-2xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🎬</div>
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">STEP 1</div>
+        <h3 class="font-bold mb-2">Solution Walkthrough</h3>
+        <p class="text-sm" style="color: var(--text-muted);">Live POC demo with น้องใบเตย — see the AI in action across the 8 use cases.</p>
+        <div class="text-xs mt-3" style="color: var(--accent-gold);">Suggested · Week 1</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🏢</div>
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">STEP 2</div>
+        <h3 class="font-bold mb-2">Architecture Deep-Dive</h3>
+        <p class="text-sm" style="color: var(--text-muted);">True IDC tour for MGC IT + Security teams — see the dedicated infrastructure first-hand.</p>
+        <div class="text-xs mt-3" style="color: var(--accent-gold);">Suggested · Week 2</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🤝</div>
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">STEP 3</div>
+        <h3 class="font-bold mb-2">Commercial Negotiation</h3>
+        <p class="text-sm" style="color: var(--text-muted);">Choose CAPEX or As-a-Service · finalise CR pool sizing · payment terms.</p>
+        <div class="text-xs mt-3" style="color: var(--accent-gold);">Suggested · Week 3</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover relative overflow-hidden" style="border: 2px solid var(--accent-red);">
+        <div class="absolute top-0 left-0 right-0 h-1.5" style="background: var(--gradient-red-purple-h);"></div>
+        <div class="text-3xl mb-3">🚀</div>
+        <div class="text-xs font-bold mb-2" style="color: var(--accent-red);">STEP 4</div>
+        <h3 class="font-bold mb-2">Contract &amp; Kickoff</h3>
+        <p class="text-sm" style="color: var(--text-muted);">MSA + SOW signing · project kickoff · first sprint begins immediately.</p>
+        <div class="text-xs mt-3" style="color: var(--accent-gold);">Suggested · Week 4</div>
+      </div>
+    </div>
+
+    <!-- Contact card -->
+    <div class="rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="background: var(--gradient-red-purple); color: #fff;">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="text-[11px] font-bold tracking-[3px] mb-3 opacity-80">CONTACT</div>
+          <h3 class="text-4xl font-black mb-3">Ready when you are.</h3>
+          <p class="text-base opacity-90 mb-5">truebusiness — your single point of accountability for MOBILIFE Premium.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:sales@truecorp.co.th" class="px-5 py-3 rounded-lg font-bold text-sm" style="background: #fff; color: var(--accent-red);">📧 sales@truecorp.co.th</a>
+            <a href="tel:+6627009191" class="px-5 py-3 rounded-lg font-bold text-sm border-2" style="border-color: rgba(255,255,255,0.4); color: #fff;">📞 +66 2 700 9191</a>
+          </div>
+        </div>
+        <div class="text-center lg:text-right">
+          <div class="font-better-together text-7xl lg:text-8xl">Better Together</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 20. FOOTER ===== -->
+<footer class="footer py-14 relative overflow-hidden">
+  <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--gradient-red-purple-h);"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-1.5 h-10 rounded" style="background: var(--gradient-red-purple);"></div>
+          <div>
+            <div class="true-wordmark" style="color: #fff;"><span style="color: #ff5b50;">true</span><span style="color: #fff; font-weight: 600;">business</span></div>
+            <div class="text-[10px] opacity-70">Engine Behind the Digital Nation</div>
+          </div>
+        </div>
+        <p class="text-sm opacity-80">The #1 Undisputed Network &amp; Digital Infrastructure Leader. Powered by leading world-class investors. Strategic partnership with global tech leaders.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3">Proposal</h4>
+        <ul class="text-sm space-y-2 opacity-90">
+          <li><a href="#cover">Cover</a></li>
+          <li><a href="#exec">Executive Summary</a></li>
+          <li><a href="#solution">Solution Architecture</a></li>
+          <li><a href="#commercial">Commercial Model</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3">Other Plans</h4>
+        <ul class="text-sm space-y-2 opacity-90">
+          <li><a href="./plan-b.html">Plan B · Essentials Plus ↗</a></li>
+          <li><a href="./plan-c.html">Plan C · Lean Pilot ↗</a></li>
+          <li><a href="../v1/plan-a-v1.html">v1 Archive · Plan A ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-3">Contact</h4>
+        <ul class="text-sm space-y-2 opacity-90">
+          <li>📧 sales@truecorp.co.th</li>
+          <li>📞 1239 *2 (TH)</li>
+          <li>📞 +66 2 700 9191 (Intl)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs opacity-80" style="border-color: rgba(255,255,255,0.10);">
+      <div>For MGC-ASIA Group / By True Business — Confidential — Q2 2026</div>
+      <div class="font-better-together text-2xl" style="color: var(--accent-gold);">Better Together</div>
+      <div>&copy; 2026 True Internet Corporation Co., Ltd. · All rights reserved</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  try { localStorage.setItem('mgc-theme', next); } catch(e) {}
+}
+(function() {
+  try {
+    const saved = localStorage.getItem('mgc-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  } catch(e) {}
+})();
+
+// Scroll progress
+window.addEventListener('scroll', function() {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  const bar = document.getElementById('scroll-progress');
+  if (bar) bar.style.width = scrolled + '%';
+});
+
+// Intersection observer for section reveals
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section-enter').forEach(function(el) { observer.observe(el); });
+
+// Floating particles in cover
+(function() {
+  const container = document.getElementById('particles-cover');
+  if (!container) return;
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = 3 + Math.random() * 8;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (15 + Math.random() * 25) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    container.appendChild(p);
+  }
+})();
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', function() {
+  let current = '';
+  sections.forEach(function(section) {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) current = section.id;
+  });
+  navLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>

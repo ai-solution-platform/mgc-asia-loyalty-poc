@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBILIFE Lean — Plan C | By True Business for MGC-ASIA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        truered: { 50:'#fff1f1', 100:'#ffe0e0', 200:'#ffc7c7', 300:'#ff9999', 400:'#ff5c5c', 500:'#ff1f1f', 600:'#FF0000', 700:'#C00000', 800:'#9b0000', 900:'#7a0000' },
+        navy: { 50:'#eef2f9', 100:'#d6deee', 200:'#aebee0', 300:'#7d96cc', 400:'#5476b6', 500:'#3a5da0', 600:'#2c4a85', 700:'#1f3866', 800:'#15294b', 900:'#0d1a30' },
+        gold: { 50:'#fdf8ed', 100:'#f9eccb', 200:'#f1d586', 300:'#e6bb53', 400:'#D4A853', 500:'#C9A96E', 600:'#a78344', 700:'#7e6132', 800:'#564122', 900:'#322614' },
+        dark: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a', 950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ========== THEME VARIABLES ========== */
+[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-inner: #F1F5F9;
+  --bg-nav: rgba(255,255,255,0.92);
+  --bg-glass: rgba(255,255,255,0.78);
+  --border-glass: rgba(226,232,240,0.6);
+  --border-card: #E2E8F0;
+  --border-nav: rgba(226,232,240,0.5);
+  --text-primary: #15294B;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-heading: #15294B;
+  --accent-primary: #FF0000;
+  --accent-deep: #C00000;
+  --accent-navy: #15294B;
+  --accent-gold: #C9A96E;
+  --gradient-text-from: #15294B;
+  --gradient-text-via: #C00000;
+  --gradient-text-to: #FF0000;
+  --gradient-gold-from: #C9A96E;
+  --gradient-gold-to: #D4A853;
+  --gradient-true: linear-gradient(180deg, #FF0000 0%, #7E2A8E 100%);
+  --hover-glow: rgba(255,0,0,0.1);
+  --hover-border: rgba(255,0,0,0.25);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 20px 60px rgba(255,0,0,0.12);
+  --hero-bg-1: rgba(255,0,0,0.04);
+  --hero-bg-2: rgba(201,169,110,0.05);
+  --hero-bg-3: rgba(21,41,75,0.03);
+  --particle-color: rgba(255,0,0,0.08);
+  --section-badge: rgba(201,169,110,0.18);
+  --section-badge-text: #15294B;
+  --table-header-bg: #15294B;
+  --table-header-text: #FFFFFF;
+  --table-stripe: rgba(21,41,75,0.03);
+  --svg-grid: rgba(21,41,75,0.06);
+  --timeline-dot: #FF0000;
+  --timeline-dot-ring: rgba(255,0,0,0.25);
+  --timeline-line: linear-gradient(180deg, #FF0000, #C9A96E, #15294B);
+  --journey-arrow: #C9A96E;
+  --counter-accent: #C00000;
+  --option-a-accent: #15294B;
+  --option-b-accent: #C9A96E;
+  --plan-badge-bg: rgba(201,169,110,0.18);
+  --plan-badge-text: #15294B;
+  --plan-badge-border: rgba(201,169,110,0.35);
+}
+
+[data-theme="dark"] {
+  --bg-body: #020617;
+  --bg-secondary: #0d1a30;
+  --bg-card: #15294B;
+  --bg-card-inner: rgba(21,41,75,0.55);
+  --bg-nav: rgba(2,6,23,0.85);
+  --bg-glass: rgba(21,41,75,0.45);
+  --border-glass: rgba(255,0,0,0.15);
+  --border-card: rgba(255,0,0,0.2);
+  --border-nav: rgba(21,41,75,0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --text-heading: #f1f5f9;
+  --accent-primary: #FF0000;
+  --accent-deep: #ff5c5c;
+  --accent-navy: #aebee0;
+  --accent-gold: #D4A853;
+  --gradient-text-from: #ff5c5c;
+  --gradient-text-via: #FF0000;
+  --gradient-text-to: #C00000;
+  --gradient-gold-from: #D4A853;
+  --gradient-gold-to: #C9A96E;
+  --gradient-true: linear-gradient(180deg, #FF0000 0%, #7E2A8E 100%);
+  --hover-glow: rgba(255,0,0,0.18);
+  --hover-border: rgba(255,0,0,0.4);
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 60px rgba(255,0,0,0.18);
+  --hero-bg-1: rgba(255,0,0,0.1);
+  --hero-bg-2: rgba(201,169,110,0.08);
+  --hero-bg-3: rgba(126,42,142,0.08);
+  --particle-color: rgba(255,0,0,0.18);
+  --section-badge: rgba(255,0,0,0.15);
+  --section-badge-text: #ff5c5c;
+  --table-header-bg: rgba(255,0,0,0.18);
+  --table-header-text: #ff9999;
+  --table-stripe: rgba(255,0,0,0.04);
+  --svg-grid: rgba(174,190,224,0.06);
+  --timeline-dot: #FF0000;
+  --timeline-dot-ring: rgba(255,0,0,0.35);
+  --timeline-line: linear-gradient(180deg, #FF0000, #D4A853, #aebee0);
+  --journey-arrow: #FF0000;
+  --counter-accent: #ff5c5c;
+  --option-a-accent: #ff5c5c;
+  --option-b-accent: #D4A853;
+  --plan-badge-bg: rgba(255,0,0,0.15);
+  --plan-badge-text: #ff9999;
+  --plan-badge-border: rgba(255,0,0,0.35);
+}
+
+/* ========== BASE ========== */
+* { font-family: 'Inter', 'Noto Sans Thai', sans-serif; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+*, *::before, *::after { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease; }
+
+h1, h2, h3, h4 { color: var(--text-heading); letter-spacing: -0.01em; }
+
+/* ========== NAV ========== */
+.nav-fixed {
+  backdrop-filter: blur(20px);
+  background: var(--bg-nav);
+  border-color: var(--border-nav);
+}
+.nav-link { transition: all 0.3s; color: var(--text-muted); }
+.nav-link:hover, .nav-link.active { color: var(--accent-primary); font-weight: 600; }
+
+/* ========== GLASS / CARDS ========== */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow);
+}
+.card-hover { transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--hover-border);
+}
+
+/* ========== GRADIENTS ========== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-text-from), var(--gradient-text-via), var(--gradient-text-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-red {
+  background: linear-gradient(135deg, #FF0000, #C00000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gradient-gold-from), var(--gradient-gold-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== HERO BG ========== */
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, var(--hero-bg-1) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, var(--hero-bg-2) 0%, transparent 55%),
+              radial-gradient(ellipse at 50% 80%, var(--hero-bg-3) 0%, transparent 55%);
+}
+
+/* ========== TRUE GRADIENT BAR ========== */
+.true-bar {
+  background: var(--gradient-true);
+  border-radius: 4px;
+}
+
+/* ========== SECTION ENTER ========== */
+.section-enter { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.section-enter.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== TIMELINE ========== */
+.timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--timeline-dot); position: relative; z-index: 2; }
+.timeline-dot::after { content:''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--timeline-dot-ring); animation: pulse-ring 2s infinite; }
+@keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0; } }
+
+/* ========== COUNTER ========== */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* ========== FEATURE ICON ========== */
+.feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+/* ========== PARTICLES ========== */
+.particle { position: absolute; border-radius: 50%; background: var(--particle-color); animation: float-particle linear infinite; pointer-events: none; }
+@keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) rotate(720deg); opacity: 0; } }
+
+/* ========== SCROLL PROGRESS ========== */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #FF0000, #C9A96E); z-index: 100; transition: width 0.1s; }
+
+/* ========== ARCH DIAGRAM ========== */
+.arch-node { transition: all 0.3s; cursor: pointer; }
+.arch-node:hover { transform: scale(1.04); filter: brightness(1.15); }
+.arch-line { stroke-dasharray: 8 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -200; } }
+
+/* ========== TABLES ========== */
+.true-table th {
+  background: var(--table-header-bg);
+  color: var(--table-header-text);
+  text-align: left;
+  font-weight: 700;
+  padding: 12px 14px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.true-table td { padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--border-glass); vertical-align: top; }
+.true-table tr:nth-child(even) td { background: var(--table-stripe); }
+
+/* ========== BUDGET ========== */
+.budget-row { transition: all 0.3s; }
+.budget-row:hover { background: var(--table-stripe); }
+
+/* ========== JOURNEY ========== */
+.journey-step { position: relative; }
+.journey-arrow { color: var(--journey-arrow); animation: bounce-right 1.5s infinite; }
+@keyframes bounce-right { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+
+/* ========== PLAN BADGE (top-right) ========== */
+.plan-badge {
+  position: fixed;
+  top: 16px;
+  right: 124px;
+  z-index: 60;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--plan-badge-border);
+  background: var(--plan-badge-bg);
+  color: var(--plan-badge-text);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ========== THEME TOGGLE ========== */
+#theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 70px;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#theme-toggle:hover { transform: scale(1.08); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+#theme-toggle svg { width: 20px; height: 20px; transition: all 0.3s ease; }
+[data-theme="light"] #theme-toggle svg { color: #C9A96E; }
+[data-theme="dark"] #theme-toggle svg { color: #FF0000; }
+#theme-toggle .icon-sun, #theme-toggle .icon-moon { position: absolute; transition: all 0.3s ease; }
+[data-theme="light"] #theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+[data-theme="light"] #theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+[data-theme="dark"] #theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* ========== TRUE LOGO MARK ========== */
+.true-mark {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  font-size: 18px;
+}
+.true-mark-red { color: #FF0000; }
+.true-mark-business { font-weight: 600; letter-spacing: 0; font-size: 11px; vertical-align: middle; margin-left: 3px; opacity: 0.85; }
+
+/* ========== FEATURE TAGS ========== */
+.tag-core { background: rgba(34,197,94,0.12); color: #16a34a; }
+.tag-optional { background: rgba(201,169,110,0.18); color: #a78344; }
+[data-theme="dark"] .tag-core { background: rgba(34,197,94,0.18); color: #4ade80; }
+[data-theme="dark"] .tag-optional { background: rgba(212,168,83,0.18); color: #D4A853; }
+
+/* ========== SLA TIER PILL ========== */
+.tier-pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+.tier-1 { background: rgba(255,0,0,0.12); color: #C00000; }
+[data-theme="dark"] .tier-1 { background: rgba(255,0,0,0.2); color: #ff9999; }
+
+/* ========== UPGRADE PATH STRIPE ========== */
+.upgrade-stripe {
+  background: linear-gradient(90deg, rgba(34,197,94,0.1), rgba(201,169,110,0.1), rgba(255,0,0,0.1));
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* ========== PRINT ========== */
+@media print { body { background: white; color: #1e293b; } .glass { background: #f8fafc; border: 1px solid #e2e8f0; } }
+
+/* ========== DARK OVERRIDES ========== */
+[data-theme="light"] .text-white { color: var(--text-heading) !important; }
+[data-theme="light"] .text-dark-300 { color: var(--text-secondary) !important; }
+[data-theme="light"] .text-dark-400 { color: var(--text-muted) !important; }
+[data-theme="light"] .text-dark-500 { color: var(--text-faint) !important; }
+[data-theme="light"] .border-dark-700, [data-theme="light"] .border-dark-800 { border-color: #E2E8F0 !important; }
+[data-theme="light"] .bg-dark-800\/50 { background: var(--bg-card-inner) !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Plan Badge -->
+<div class="plan-badge">PLAN C — LEAN</div>
+
+<!-- Theme Toggle -->
+<button id="theme-toggle" aria-label="Toggle theme">
+  <svg class="icon-sun" fill="currentColor" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1zm0 19a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zM4.22 4.22a1 1 0 011.42 0L7.76 6.34a1 1 0 11-1.42 1.42L4.22 5.64a1 1 0 010-1.42zm12.02 12.02a1 1 0 011.42 0l2.12 2.12a1 1 0 11-1.42 1.42l-2.12-2.12a1 1 0 010-1.42zM0 12a1 1 0 011-1h3a1 1 0 110 2H1a1 1 0 01-1-1zm19 0a1 1 0 011-1h3a1 1 0 110 2h-3a1 1 0 01-1-1zM4.22 19.78a1 1 0 010-1.42l2.12-2.12a1 1 0 011.42 1.42l-2.12 2.12a1 1 0 01-1.42 0zm12.02-12.02a1 1 0 010-1.42l2.12-2.12a1 1 0 011.42 1.42l-2.12 2.12a1 1 0 01-1.42 0z"/></svg>
+  <svg class="icon-moon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+</button>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" style="width:0"></div>
+
+<!-- =============== NAV =============== -->
+<nav class="nav-fixed fixed top-0 left-0 right-0 z-50 border-b">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-1 h-8 true-bar"></div>
+      <div>
+        <div class="true-mark"><span class="true-mark-red">true</span><span class="true-mark-business">business</span></div>
+        <div class="text-[10px] uppercase tracking-widest" style="color:var(--text-faint)">MOBILIFE Lean — Plan C</div>
+      </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-5 text-sm">
+      <a href="#agenda" class="nav-link">Agenda</a>
+      <a href="#about-true" class="nav-link">About True</a>
+      <a href="#exec" class="nav-link">Summary</a>
+      <a href="#discovery" class="nav-link">Discovery</a>
+      <a href="#solution" class="nav-link">Solution</a>
+      <a href="#ai" class="nav-link">น้องใบเตย</a>
+      <a href="#bom" class="nav-link">BOM</a>
+      <a href="#commercial" class="nav-link">Pricing</a>
+      <a href="#whytrue" class="nav-link">Why True</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="./plan-a.html" class="hidden md:inline-flex text-xs px-3 py-1.5 rounded-md border" style="border-color:var(--border-glass); color:var(--text-muted)">Plan A &nearr;</a>
+      <a href="./plan-b.html" class="hidden md:inline-flex text-xs px-3 py-1.5 rounded-md border" style="border-color:var(--border-glass); color:var(--text-muted)">Plan B &nearr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- =============== 1. COVER / HERO =============== -->
+<section class="relative pt-32 pb-24 overflow-hidden hero-bg">
+  <div class="absolute inset-0 pointer-events-none" id="particles"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="flex items-start gap-6">
+      <div class="w-2 h-72 true-bar shrink-0 mt-2"></div>
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-3 py-1 rounded-md text-[11px] font-bold tracking-widest uppercase" style="background:var(--section-badge); color:var(--section-badge-text)">Plan C — Lean</span>
+          <span class="text-xs uppercase tracking-widest" style="color:var(--text-muted)">Cloud-Native Loyalty on AWS</span>
+        </div>
+        <h1 class="text-6xl md:text-7xl font-black mb-4 leading-none">
+          MOBILIFE <span class="gradient-red">Lean</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-3" style="color:var(--text-secondary)">
+          Cloud-Native Loyalty Platform on AWS — by <span class="font-semibold">truebusiness</span>
+        </p>
+        <p class="text-base mb-10 italic" style="color:var(--text-muted)">
+          "Start Smart — Cloud-Native Foundation, Scale When Ready."
+        </p>
+
+        <!-- Hero stat strip -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
+          <div class="glass rounded-xl p-5">
+            <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">Total (3-yr)</div>
+            <div class="text-3xl font-black gradient-red">฿5.5M</div>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">Timeline</div>
+            <div class="text-3xl font-black" style="color:var(--text-heading)">5 mo</div>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">Cloud</div>
+            <div class="text-2xl font-black" style="color:var(--text-heading)">AWS Public</div>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">SLA</div>
+            <div class="text-3xl font-black" style="color:var(--text-heading)">99.0%</div>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">Support</div>
+            <div class="text-2xl font-black" style="color:var(--text-heading)">Self-svc+</div>
+          </div>
+        </div>
+
+        <!-- Cover credit line -->
+        <div class="border-t pt-6" style="border-color:var(--border-glass)">
+          <div class="grid md:grid-cols-3 gap-6 text-sm">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">For</div>
+              <div class="font-semibold" style="color:var(--text-heading)">MGC-ASIA Group</div>
+              <div class="text-xs" style="color:var(--text-muted)">Master GC, BMW Thailand, Rolls-Royce, MINI, Maserati, Honda, Harley-Davidson, Triumph, Morgan</div>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">By</div>
+              <div class="font-semibold" style="color:var(--text-heading)">True Business</div>
+              <div class="text-xs" style="color:var(--text-muted)">True Internet Corporation Co., Ltd.</div>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--text-faint)">Project</div>
+              <div class="font-semibold" style="color:var(--text-heading)">MOBILIFE Loyalty Platform</div>
+              <div class="text-xs" style="color:var(--text-muted)">Plan C — Lean / 3-Year Engagement / March 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 2. AGENDA =============== -->
+<section id="agenda" class="py-20" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-10">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Proposal Information</div>
+        <h2 class="text-3xl md:text-4xl font-black">Agenda</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="#about-true" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 1</div>
+        <div class="font-bold mb-1">True Group Introduction</div>
+        <div class="text-xs" style="color:var(--text-muted)">Mission, infrastructure, partners, ecosystem</div>
+      </a>
+      <a href="#exec" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 2</div>
+        <div class="font-bold mb-1">Executive Summary</div>
+        <div class="text-xs" style="color:var(--text-muted)">Why Plan C — the smart entry point</div>
+      </a>
+      <a href="#discovery" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 3</div>
+        <div class="font-bold mb-1">Discovery — Requirements</div>
+        <div class="text-xs" style="color:var(--text-muted)">16 features mapped to Core / Optional</div>
+      </a>
+      <a href="#solution" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 4</div>
+        <div class="font-bold mb-1">Proposed Solution</div>
+        <div class="text-xs" style="color:var(--text-muted)">AWS-native architecture, customer journey</div>
+      </a>
+      <a href="#ai" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 5</div>
+        <div class="font-bold mb-1">น้องใบเตย — Basic AI</div>
+        <div class="text-xs" style="color:var(--text-muted)">Self-service chatbot + standard reports</div>
+      </a>
+      <a href="#stack" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 6</div>
+        <div class="font-bold mb-1">Tech Stack</div>
+        <div class="text-xs" style="color:var(--text-muted)">LINE LIFF · AWS Lambda · RDS · Bedrock</div>
+      </a>
+      <a href="#timeline" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 7</div>
+        <div class="font-bold mb-1">Implementation Plan</div>
+        <div class="text-xs" style="color:var(--text-muted)">5-month delivery — lean and focused</div>
+      </a>
+      <a href="#bom" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 8</div>
+        <div class="font-bold mb-1">Bill of Material</div>
+        <div class="text-xs" style="color:var(--text-muted)">AWS services, licenses, professional services</div>
+      </a>
+      <a href="#commercial" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 9</div>
+        <div class="font-bold mb-1">Commercial Proposal</div>
+        <div class="text-xs" style="color:var(--text-muted)">CAPEX + OPEX + Mandays — One-time or As-a-Service</div>
+      </a>
+      <a href="#compliance" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 10</div>
+        <div class="font-bold mb-1">Compliance & SLA</div>
+        <div class="text-xs" style="color:var(--text-muted)">Statement table + 99.0% commitment</div>
+      </a>
+      <a href="#support" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 11</div>
+        <div class="font-bold mb-1">Customer Support Flow</div>
+        <div class="text-xs" style="color:var(--text-muted)">4-level escalation — Tier 1 emphasis</div>
+      </a>
+      <a href="#whytrue" class="glass rounded-xl p-5 card-hover block">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PART 12</div>
+        <div class="font-bold mb-1">Why True Business?</div>
+        <div class="text-xs" style="color:var(--text-muted)">4 pillars + competitive landscape + ROI</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 3. TRUE GROUP INTRODUCTION =============== -->
+<section id="about-true" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Executive Summary — True Introduction</div>
+        <h2 class="text-3xl md:text-4xl font-black">The Engine Behind the Digital Nation</h2>
+      </div>
+    </div>
+
+    <!-- 3a. Mission & Vision -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="glass rounded-2xl p-8 card-hover">
+        <div class="text-[11px] font-bold tracking-widest mb-3" style="color:var(--accent-primary)">OUR MISSION</div>
+        <p class="text-base leading-relaxed" style="color:var(--text-secondary)">
+          To build a strong tech ecosystem of digital talent and capabilities and provide innovative services which improve our customers' lives and support a sustainable society.
+        </p>
+      </div>
+      <div class="glass rounded-2xl p-8 card-hover">
+        <div class="text-[11px] font-bold tracking-widest mb-3" style="color:var(--accent-primary)">OUR VISION</div>
+        <p class="text-base leading-relaxed" style="color:var(--text-secondary)">
+          To be Thailand's leading telecom-tech company, transforming the lives of Thai people and propelling businesses to the forefront of the digital economy.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3b. #1 Network & Digital Infrastructure Leader -->
+    <div class="glass rounded-2xl p-8 mb-12">
+      <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">truebusiness</div>
+      <h3 class="text-2xl md:text-3xl font-black mb-1">The #1 Undisputed Network &amp; Digital Infrastructure Leader</h3>
+      <p class="text-sm mb-8" style="color:var(--text-muted)">truebusiness — #1 Digital infrastructure and 5G solution provider</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div>
+          <div class="text-4xl font-black gradient-red counter" data-target="51">0</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">Million+ subscribers</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black gradient-red"><span class="counter" data-target="90">0</span>%</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">5G coverage</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black gradient-red"><span class="counter" data-target="99">0</span>%</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">4G coverage</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black gradient-red">฿<span class="counter" data-target="294">0</span>B</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">Combined market cap</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black gradient-red"><span class="counter" data-target="500">0</span>K</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">km fiber</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black gradient-red">Full</div>
+          <div class="text-xs uppercase tracking-widest mt-1" style="color:var(--text-muted)">Spectrum (Low / Mid / High incl. 26 GHz)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3c. Investors & Partners -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="glass rounded-2xl p-8">
+        <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">Powered by Leading World Class Investors</div>
+        <h4 class="text-lg font-bold mb-4">Our shareholders</h4>
+        <div class="grid grid-cols-3 gap-3 text-center text-xs font-semibold">
+          <div class="rounded-lg p-3" style="background:var(--bg-card-inner); color:var(--text-secondary)">CP Group</div>
+          <div class="rounded-lg p-3" style="background:var(--bg-card-inner); color:var(--text-secondary)">Telenor</div>
+          <div class="rounded-lg p-3" style="background:var(--bg-card-inner); color:var(--text-secondary)">China Mobile</div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-8">
+        <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">Strategic Partnership with Global Tech Leaders</div>
+        <h4 class="text-lg font-bold mb-4">Our partners</h4>
+        <div class="grid grid-cols-4 gap-2 text-center text-[11px] font-semibold">
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Google</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Alibaba</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">AWS</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Huawei</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Ericsson</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Samsung</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">ZTE</div>
+          <div class="rounded-lg p-2" style="background:var(--bg-card-inner); color:var(--text-secondary)">Apple</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3d. Engine Behind the Digital Nation -->
+    <div class="glass rounded-2xl p-8 mb-12">
+      <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">truebusiness</div>
+      <h3 class="text-2xl md:text-3xl font-black mb-1">Engine Behind the Digital Nation</h3>
+      <p class="text-sm mb-8" style="color:var(--text-muted)">A trusted partner for Thailand's largest enterprises</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="rounded-xl p-4" style="background:var(--bg-card-inner)">
+          <div class="text-3xl font-black gradient-red">91/100</div>
+          <div class="text-[11px] mt-1" style="color:var(--text-muted)">SET-listed top 100</div>
+        </div>
+        <div class="rounded-xl p-4" style="background:var(--bg-card-inner)">
+          <div class="text-3xl font-black gradient-red">32</div>
+          <div class="text-[11px] mt-1" style="color:var(--text-muted)">Financial services co.</div>
+        </div>
+        <div class="rounded-xl p-4" style="background:var(--bg-card-inner)">
+          <div class="text-3xl font-black gradient-red">160K</div>
+          <div class="text-[11px] mt-1" style="color:var(--text-muted)">SMEs / Enterprises</div>
+        </div>
+        <div class="rounded-xl p-4" style="background:var(--bg-card-inner)">
+          <div class="text-3xl font-black gradient-red">850K+</div>
+          <div class="text-[11px] mt-1" style="color:var(--text-muted)">Connected IoT/M2M</div>
+        </div>
+        <div class="rounded-xl p-4" style="background:var(--bg-card-inner)">
+          <div class="text-3xl font-black gradient-red">32</div>
+          <div class="text-[11px] mt-1" style="color:var(--text-muted)">Industrial parks served</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3e. Adaptive Infrastructure stack -->
+    <div class="glass rounded-2xl p-8">
+      <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">truebusiness Solution Portfolio</div>
+      <h3 class="text-2xl md:text-3xl font-black mb-6">Adaptive Infrastructure</h3>
+      <p class="text-sm mb-6" style="color:var(--text-muted)">MOBILIFE Lean sits inside True's full-stack ecosystem — start with the loyalty platform, expand into Cloud, SOC, Data &amp; Analytics, and 5G when you're ready.</p>
+
+      <div class="space-y-2">
+        <div class="rounded-xl p-4 flex items-center gap-4" style="background:linear-gradient(90deg, rgba(255,0,0,0.1), rgba(255,0,0,0.04))">
+          <div class="w-1.5 h-12 rounded-full" style="background:#FF0000"></div>
+          <div class="flex-1">
+            <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">DIGITAL INTEGRATED SOLUTION</div>
+            <div class="text-xs" style="color:var(--text-secondary)">M365 · Google Workspace · <strong>Cloud (AWS/Azure/GCP)</strong> · Unified Comm · CCaaS · CloudPBX · MobilePBX · SOC · CRAVE Hospitality · AI/Camera &amp; Retail · Smart Energy · ML · <strong>Data &amp; Analytics</strong></div>
+          </div>
+          <div class="text-[10px] font-bold px-2 py-1 rounded-md" style="background:rgba(34,197,94,0.15); color:#16a34a">MOBILIFE LEAN HERE</div>
+        </div>
+        <div class="rounded-xl p-4 flex items-center gap-4" style="background:linear-gradient(90deg, rgba(192,0,0,0.08), rgba(192,0,0,0.03))">
+          <div class="w-1.5 h-12 rounded-full" style="background:#C00000"></div>
+          <div class="flex-1">
+            <div class="text-[10px] font-bold tracking-widest mb-1" style="color:#C00000">INTELLIGENT NETWORK SOLUTION</div>
+            <div class="text-xs" style="color:var(--text-secondary)">SD-WAN · SASE · Private WiFi / Super WiFi · 5G Private Network</div>
+          </div>
+        </div>
+        <div class="rounded-xl p-4 flex items-center gap-4" style="background:linear-gradient(90deg, rgba(126,42,142,0.08), rgba(126,42,142,0.03))">
+          <div class="w-1.5 h-12 rounded-full" style="background:#7E2A8E"></div>
+          <div class="flex-1">
+            <div class="text-[10px] font-bold tracking-widest mb-1" style="color:#7E2A8E">CORE CONNECTIVITY SOLUTION</div>
+            <div class="text-xs" style="color:var(--text-secondary)">Mobile · Messaging · IP-DID / SIP-Trunk / Fixed-Line-Voice · Business Fixed IP · Corporate Internet · MPLS</div>
+          </div>
+        </div>
+        <div class="rounded-xl p-4 flex items-center gap-4" style="background:linear-gradient(90deg, rgba(201,169,110,0.15), rgba(201,169,110,0.04))">
+          <div class="w-1.5 h-12 rounded-full" style="background:#C9A96E"></div>
+          <div class="flex-1">
+            <div class="text-[10px] font-bold tracking-widest mb-1" style="color:#a78344">DIGITAL TALENT DEVELOPMENT</div>
+            <div class="text-xs" style="color:var(--text-secondary)">True Digital Academy — upskilling for MGC's CRM &amp; loyalty operators</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 text-[11px] flex justify-between" style="color:var(--text-muted)">
+        <span>Cross-cutting: <strong>Cybersecurity Services</strong></span>
+        <span><strong>Managed Services</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 4. EXECUTIVE SUMMARY =============== -->
+<section id="exec" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Executive Summary</div>
+        <h2 class="text-3xl md:text-4xl font-black">Plan C — The Smart Entry Point</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="glass rounded-2xl p-8">
+        <h3 class="text-xl font-bold mb-4">Why Plan C makes sense</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">
+          MOBILIFE Lean is the budget-optimized entry point into True Business's loyalty platform. It delivers the <strong>same core architecture as Plan B</strong> — meaning every investment you make today is preserved when you upgrade tomorrow. Lower upfront commitment, faster time-to-market, full upgrade path.
+        </p>
+        <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">
+          Best fit for: <strong>budget-constrained start, prove-value pilots, single-brand launch, lean MVP into LINE</strong>.
+        </p>
+      </div>
+      <div class="glass rounded-2xl p-8">
+        <h3 class="text-xl font-bold mb-4">What Plan C keeps vs. trims</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-3">
+            <span class="text-lg">✓</span>
+            <div>
+              <div class="font-bold text-[#16a34a]">Keeps</div>
+              <div style="color:var(--text-secondary)">All 16 core features · LINE LIFF · AWS-native cloud · Basic AI chatbot · 99.0% SLA · Same DB schema as Plan B</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-lg">−</span>
+            <div>
+              <div class="font-bold" style="color:var(--accent-deep)">Trims</div>
+              <div style="color:var(--text-secondary)">Dedicated managed service team · Advanced predictive AI (churn/CLV/NBA) · Multi-AZ &amp; premium SLA · 24×7 phone support</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-lg">↗</span>
+            <div>
+              <div class="font-bold" style="color:var(--accent-gold)">Upgrades to Plan B</div>
+              <div style="color:var(--text-secondary)">Activate dedicated TAM, advanced AI suite, multi-AZ, 99.5% SLA — no re-platform required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upgrade path stripe -->
+    <div class="upgrade-stripe rounded-2xl p-8">
+      <div class="text-[11px] font-bold tracking-widest mb-2" style="color:var(--accent-gold)">GUARANTEED UPGRADE PATH</div>
+      <h3 class="text-2xl font-black mb-4">Plan C → Plan B → Plan A</h3>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div>
+          <div class="font-bold mb-1" style="color:#16a34a">Today — Plan C Lean (฿5.5M / 5 mo)</div>
+          <div style="color:var(--text-secondary)">AWS Public · Self-service · Basic AI</div>
+        </div>
+        <div>
+          <div class="font-bold mb-1" style="color:var(--accent-gold)">Year 2 — Plan B Standard</div>
+          <div style="color:var(--text-secondary)">Multi-AZ · Dedicated TAM · Advanced AI · 99.5% SLA</div>
+        </div>
+        <div>
+          <div class="font-bold mb-1" style="color:var(--accent-primary)">Year 3+ — Plan A Premium</div>
+          <div style="color:var(--text-secondary)">Hybrid cloud · 24×7 NOC · Custom AI · 99.9% SLA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 5. DISCOVERY — REQUIREMENTS =============== -->
+<section id="discovery" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Project / Business Requirement</div>
+        <h2 class="text-3xl md:text-4xl font-black">Discovery — What MGC-ASIA Needs</h2>
+      </div>
+    </div>
+
+    <!-- 5a. Basic Requirements -->
+    <div class="glass rounded-2xl p-8 mb-8">
+      <h3 class="text-xl font-bold mb-5">5a. Basic Requirements</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>
+          <div class="font-bold mb-2" style="color:var(--accent-primary)">Business goals</div>
+          <ul class="space-y-1.5" style="color:var(--text-secondary)">
+            <li>• Replace legacy MGC PrivilegeCard with modern loyalty platform</li>
+            <li>• Unify 48,520 members across 8 brands (BMW, RR, MINI, Maserati, Honda, Harley, Triumph, Morgan)</li>
+            <li>• Move from card-based to LINE LIFF mobile-first experience</li>
+            <li>• Reduce IT ops cost vs. on-prem legacy system</li>
+            <li>• Prove value before committing to full enterprise tier</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold mb-2" style="color:var(--accent-primary)">Functional needs</div>
+          <ul class="space-y-1.5" style="color:var(--text-secondary)">
+            <li>• Member registration, KYC, tier management (4 tiers)</li>
+            <li>• Points earn / burn / expire engine</li>
+            <li>• Reward catalog with redemption flow</li>
+            <li>• Campaign / promotion engine</li>
+            <li>• Admin portal for marketing &amp; operations</li>
+            <li>• PDPA-compliant data handling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5b. New Features (16) — Core / Optional -->
+    <div class="glass rounded-2xl p-8 mb-8">
+      <h3 class="text-xl font-bold mb-2">5b. 16 New Features — Core vs. Optional Add-on</h3>
+      <p class="text-sm mb-6" style="color:var(--text-muted)">Plan C ships <strong>all 16 features</strong>, with 12 in the core base price and 4 optional add-ons that can be activated as your program scales.</p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <!-- CORE 12 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">CORE — 12 included</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>1. Member Registration &amp; Profile</strong><div class="text-xs" style="color:var(--text-muted)">LINE login, KYC light, profile management</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>2. Tier Management</strong><div class="text-xs" style="color:var(--text-muted)">Member → Diamond → Black Diamond → Infinite Blue</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>3. Points Engine</strong><div class="text-xs" style="color:var(--text-muted)">Earn, burn, expire, audit trail</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>4. Reward Catalog</strong><div class="text-xs" style="color:var(--text-muted)">Browse, filter by tier, redeem</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>5. Campaign Engine</strong><div class="text-xs" style="color:var(--text-muted)">Bonus points, multipliers, time-bound offers</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>6. LINE LIFF App</strong><div class="text-xs" style="color:var(--text-muted)">Member portal inside LINE</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>7. Admin Portal</strong><div class="text-xs" style="color:var(--text-muted)">Marketing &amp; ops console</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>8. Standard Reports</strong><div class="text-xs" style="color:var(--text-muted)">Member, transaction, redemption dashboards</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>9. Notification (LINE Push)</strong><div class="text-xs" style="color:var(--text-muted)">Birthday, expiry, campaign alerts</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>10. Basic AI Chatbot</strong><div class="text-xs" style="color:var(--text-muted)">FAQ + balance/tier inquiry</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>11. PDPA Consent &amp; Audit</strong><div class="text-xs" style="color:var(--text-muted)">Consent capture, data subject rights</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>12. POS Integration (1 brand)</strong><div class="text-xs" style="color:var(--text-muted)">Real-time points issuance webhook</div></div>
+          </div>
+        </div>
+        <!-- OPTIONAL 4 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-optional">OPTIONAL ADD-ON — 4 expansion</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>13. Multi-brand POS Integration (8)</strong><div class="text-xs" style="color:var(--text-muted)">Activate per-brand as roll-out progresses (+CR mandays)</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>14. Advanced AI Suite (น้องใบเตย full)</strong><div class="text-xs" style="color:var(--text-muted)">Churn / CLV / NBA / cross-brand / sentiment — upgrade to Plan B</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>15. Branch Geo-fencing &amp; Push</strong><div class="text-xs" style="color:var(--text-muted)">Location-based offers — phase 2</div></div>
+            <div class="rounded-lg p-3" style="background:var(--bg-card-inner)"><strong>16. Premium Concierge Workflow</strong><div class="text-xs" style="color:var(--text-muted)">High-value member white-glove service flow — Plan B</div></div>
+          </div>
+          <div class="upgrade-stripe rounded-lg p-4 mt-4 text-xs" style="color:var(--text-secondary)">
+            <strong>Upgrade later:</strong> all 4 optional features can be activated by upgrading to Plan B without re-platforming — same data model, same APIs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5c. General Assumptions -->
+    <div class="glass rounded-2xl p-8">
+      <h3 class="text-xl font-bold mb-2">5c. General Assumptions</h3>
+      <p class="text-sm mb-5" style="color:var(--text-muted)">Plan C is delivered in lean mode. The following assumptions reflect reduced scope vs. Plan A/B and should be confirmed during kick-off.</p>
+      <div class="grid md:grid-cols-2 gap-x-6 gap-y-3 text-sm">
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>POS integration scope:</strong> 1 brand at launch (BMW). Other 7 brands roll out via mandays pool.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Cloud region:</strong> AWS Singapore (ap-southeast-1) — PDPA-compliant, single-AZ for cost optimization.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Support model:</strong> Self-service portal + email support (business hours). No dedicated TAM.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>AI scope:</strong> Basic chatbot via AWS Bedrock. Advanced predictive (churn/CLV) is Plan B add-on.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>SLA:</strong> 99.0% uptime. Multi-AZ HA is Plan B upgrade.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>CR mandays:</strong> 20 mandays included over 3 years. Additional CR billed at ฿12,000/manday.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Data migration:</strong> 48,520 members from legacy MGC PrivilegeCard — one-time migration scoped.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Customer data feed:</strong> MGC provides cleansed member, transaction, vehicle data per agreed schema.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Excluded:</strong> Mobile app (LIFF only), 24×7 phone support, on-prem deployment, custom AI models.</div></div>
+        <div class="flex gap-3"><span style="color:var(--accent-primary)">▸</span><div><strong>Excluded:</strong> Premium NOC monitoring, ISO 27001 dedicated audit (covered by AWS shared responsibility).</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 6. PROPOSED SOLUTION — ARCHITECTURE =============== -->
+<section id="solution" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Proposed Solutions — Architecture</div>
+        <h2 class="text-3xl md:text-4xl font-black">AWS-Native Cloud Architecture</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Cloud-native foundation — delivered through True's AWS partnership</p>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6 md:p-10 mb-8">
+      <svg viewBox="0 0 1100 560" class="w-full h-auto">
+        <defs>
+          <linearGradient id="redgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FF0000"/>
+            <stop offset="100%" stop-color="#7E2A8E"/>
+          </linearGradient>
+          <linearGradient id="navygrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#15294B"/>
+            <stop offset="100%" stop-color="#2c4a85"/>
+          </linearGradient>
+          <linearGradient id="goldgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#D4A853"/>
+            <stop offset="100%" stop-color="#C9A96E"/>
+          </linearGradient>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--svg-grid)" stroke-width="1"/>
+          </pattern>
+        </defs>
+
+        <rect width="1100" height="560" fill="url(#grid)"/>
+
+        <!-- Layer 1: User / LINE -->
+        <g class="arch-node">
+          <rect x="40" y="30" width="220" height="80" rx="14" fill="url(#redgrad)" opacity="0.15" stroke="#FF0000" stroke-width="2"/>
+          <text x="150" y="60" text-anchor="middle" fill="var(--text-heading)" font-size="14" font-weight="700">Members (48,520)</text>
+          <text x="150" y="82" text-anchor="middle" fill="var(--text-muted)" font-size="11">8 brands · 4 tiers</text>
+          <text x="150" y="98" text-anchor="middle" fill="var(--accent-primary)" font-size="11" font-weight="700">via LINE OA / LIFF</text>
+        </g>
+
+        <!-- Arrow down -->
+        <path d="M 150 110 L 150 145" stroke="#FF0000" stroke-width="2" class="arch-line"/>
+        <polygon points="150,150 145,142 155,142" fill="#FF0000"/>
+
+        <!-- LINE LIFF Layer -->
+        <g class="arch-node">
+          <rect x="40" y="155" width="220" height="60" rx="12" fill="#06C755" opacity="0.15" stroke="#06C755" stroke-width="2"/>
+          <text x="150" y="180" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">LINE LIFF</text>
+          <text x="150" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="11">React + LIFF SDK · Login · Push</text>
+        </g>
+
+        <!-- Admin Portal -->
+        <g class="arch-node">
+          <rect x="290" y="155" width="180" height="60" rx="12" fill="url(#navygrad)" opacity="0.15" stroke="#15294B" stroke-width="2"/>
+          <text x="380" y="180" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">Admin Portal</text>
+          <text x="380" y="200" text-anchor="middle" fill="var(--text-muted)" font-size="11">React · Marketing &amp; Ops</text>
+        </g>
+
+        <!-- AWS Public Cloud Container -->
+        <rect x="20" y="240" width="1060" height="290" rx="20" fill="none" stroke="url(#redgrad)" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="40" y="262" fill="var(--accent-primary)" font-size="12" font-weight="700" letter-spacing="2">AWS PUBLIC CLOUD · ap-southeast-1 (Singapore) · Single-AZ · PDPA-compliant</text>
+
+        <!-- API Gateway -->
+        <g class="arch-node">
+          <rect x="40" y="285" width="200" height="70" rx="12" fill="url(#redgrad)" opacity="0.18" stroke="#FF0000" stroke-width="2"/>
+          <text x="140" y="312" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">AWS API Gateway</text>
+          <text x="140" y="332" text-anchor="middle" fill="var(--text-muted)" font-size="11">REST · Cognito · Throttling</text>
+          <text x="140" y="348" text-anchor="middle" fill="var(--accent-primary)" font-size="10" font-weight="600">Edge entry</text>
+        </g>
+
+        <!-- Cognito -->
+        <g class="arch-node">
+          <rect x="270" y="285" width="180" height="70" rx="12" fill="url(#goldgrad)" opacity="0.18" stroke="#C9A96E" stroke-width="2"/>
+          <text x="360" y="312" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">AWS Cognito</text>
+          <text x="360" y="332" text-anchor="middle" fill="var(--text-muted)" font-size="11">Identity · LINE federation</text>
+          <text x="360" y="348" text-anchor="middle" fill="#a78344" font-size="10" font-weight="600">Auth + JWT</text>
+        </g>
+
+        <!-- Lambda -->
+        <g class="arch-node">
+          <rect x="480" y="285" width="180" height="70" rx="12" fill="#FF9900" opacity="0.18" stroke="#FF9900" stroke-width="2"/>
+          <text x="570" y="312" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">AWS Lambda</text>
+          <text x="570" y="332" text-anchor="middle" fill="var(--text-muted)" font-size="11">Node.js · Serverless</text>
+          <text x="570" y="348" text-anchor="middle" fill="#ea580c" font-size="10" font-weight="600">Points · Tier · Campaign</text>
+        </g>
+
+        <!-- ECS Fargate -->
+        <g class="arch-node">
+          <rect x="690" y="285" width="180" height="70" rx="12" fill="#FF9900" opacity="0.12" stroke="#FF9900" stroke-width="2"/>
+          <text x="780" y="312" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">AWS ECS Fargate</text>
+          <text x="780" y="332" text-anchor="middle" fill="var(--text-muted)" font-size="11">Long-running services</text>
+          <text x="780" y="348" text-anchor="middle" fill="#ea580c" font-size="10" font-weight="600">Admin API · Workers</text>
+        </g>
+
+        <!-- Bedrock -->
+        <g class="arch-node">
+          <rect x="900" y="285" width="160" height="70" rx="12" fill="url(#redgrad)" opacity="0.15" stroke="#FF0000" stroke-width="2"/>
+          <text x="980" y="312" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">AWS Bedrock</text>
+          <text x="980" y="332" text-anchor="middle" fill="var(--text-muted)" font-size="11">Claude / Llama</text>
+          <text x="980" y="348" text-anchor="middle" fill="var(--accent-primary)" font-size="10" font-weight="600">น้องใบเตย Basic</text>
+        </g>
+
+        <!-- DB Layer -->
+        <g class="arch-node">
+          <rect x="40" y="395" width="220" height="80" rx="12" fill="url(#navygrad)" opacity="0.18" stroke="#15294B" stroke-width="2"/>
+          <text x="150" y="425" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">Amazon RDS</text>
+          <text x="150" y="446" text-anchor="middle" fill="var(--text-muted)" font-size="11">PostgreSQL · Single-AZ</text>
+          <text x="150" y="462" text-anchor="middle" fill="#15294B" font-size="10" font-weight="600">Members · Txns · Rewards</text>
+        </g>
+
+        <g class="arch-node">
+          <rect x="290" y="395" width="200" height="80" rx="12" fill="url(#navygrad)" opacity="0.12" stroke="#15294B" stroke-width="2"/>
+          <text x="390" y="425" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">DynamoDB</text>
+          <text x="390" y="446" text-anchor="middle" fill="var(--text-muted)" font-size="11">Sessions · Audit · Cache</text>
+          <text x="390" y="462" text-anchor="middle" fill="#15294B" font-size="10" font-weight="600">Low-latency reads</text>
+        </g>
+
+        <g class="arch-node">
+          <rect x="520" y="395" width="180" height="80" rx="12" fill="url(#goldgrad)" opacity="0.18" stroke="#C9A96E" stroke-width="2"/>
+          <text x="610" y="425" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">Amazon S3</text>
+          <text x="610" y="446" text-anchor="middle" fill="var(--text-muted)" font-size="11">Assets · Reports · Backup</text>
+          <text x="610" y="462" text-anchor="middle" fill="#a78344" font-size="10" font-weight="600">Object storage</text>
+        </g>
+
+        <g class="arch-node">
+          <rect x="730" y="395" width="170" height="80" rx="12" fill="#FF9900" opacity="0.15" stroke="#FF9900" stroke-width="2"/>
+          <text x="815" y="425" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">CloudWatch</text>
+          <text x="815" y="446" text-anchor="middle" fill="var(--text-muted)" font-size="11">Logs · Alarms · Metrics</text>
+          <text x="815" y="462" text-anchor="middle" fill="#ea580c" font-size="10" font-weight="600">Self-service mon.</text>
+        </g>
+
+        <g class="arch-node">
+          <rect x="930" y="395" width="130" height="80" rx="12" fill="url(#redgrad)" opacity="0.12" stroke="#FF0000" stroke-width="2"/>
+          <text x="995" y="425" text-anchor="middle" fill="var(--text-heading)" font-size="13" font-weight="700">SES + SNS</text>
+          <text x="995" y="446" text-anchor="middle" fill="var(--text-muted)" font-size="11">Email · Push</text>
+          <text x="995" y="462" text-anchor="middle" fill="var(--accent-primary)" font-size="10" font-weight="600">Notifications</text>
+        </g>
+
+        <!-- Lines -->
+        <path d="M 150 215 L 150 285" stroke="#06C755" stroke-width="2" class="arch-line"/>
+        <path d="M 380 215 L 380 285" stroke="#15294B" stroke-width="2" class="arch-line"/>
+        <path d="M 240 320 L 270 320" stroke="#FF0000" stroke-width="2"/>
+        <path d="M 450 320 L 480 320" stroke="#C9A96E" stroke-width="2"/>
+        <path d="M 660 320 L 690 320" stroke="#FF9900" stroke-width="2"/>
+        <path d="M 870 320 L 900 320" stroke="#FF9900" stroke-width="2"/>
+        <path d="M 570 355 L 570 395 L 150 395" stroke="#FF9900" stroke-width="2" class="arch-line"/>
+        <path d="M 570 355 L 390 395" stroke="#FF9900" stroke-width="2" class="arch-line"/>
+        <path d="M 780 355 L 610 395" stroke="#FF9900" stroke-width="2" class="arch-line"/>
+
+        <!-- truebusiness watermark -->
+        <text x="1075" y="555" text-anchor="end" fill="var(--text-faint)" font-size="10" font-weight="700">delivered through truebusiness · AWS Strategic Partner</text>
+      </svg>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--accent-primary)">Cloud-Native</div>
+        <div class="font-bold mb-1">AWS Public Shared Tenancy</div>
+        <div class="text-xs" style="color:var(--text-muted)">Cost-optimized. Pay only for what you use. Auto-scaling baked in.</div>
+      </div>
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--accent-primary)">Same as Plan B</div>
+        <div class="font-bold mb-1">Identical schema &amp; APIs</div>
+        <div class="text-xs" style="color:var(--text-muted)">Upgrade path requires NO re-platform — just activate higher-tier services.</div>
+      </div>
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] uppercase tracking-widest mb-1" style="color:var(--accent-primary)">PDPA-Ready</div>
+        <div class="font-bold mb-1">Singapore Region</div>
+        <div class="text-xs" style="color:var(--text-muted)">ap-southeast-1, EU/Thai PDPA compliance, encryption at rest + in transit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 7. CUSTOMER JOURNEY =============== -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Customer Journey — Simplified</div>
+        <h2 class="text-3xl md:text-4xl font-black">From LINE Login to Reward — in 4 Steps</h2>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-8">
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="journey-step text-center">
+          <div class="feature-icon mx-auto mb-3" style="background:rgba(6,199,85,0.15); color:#06C755">📱</div>
+          <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">STEP 1</div>
+          <div class="font-bold mb-1">Discover via LINE OA</div>
+          <div class="text-xs" style="color:var(--text-muted)">Member taps Rich Menu → opens LIFF inside LINE — no app install needed</div>
+        </div>
+        <div class="journey-step text-center">
+          <div class="feature-icon mx-auto mb-3" style="background:rgba(201,169,110,0.15); color:#a78344">✓</div>
+          <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">STEP 2</div>
+          <div class="font-bold mb-1">Register / Sign-in</div>
+          <div class="text-xs" style="color:var(--text-muted)">LINE Login → AWS Cognito → linked to MGC PrivilegeCard ID</div>
+        </div>
+        <div class="journey-step text-center">
+          <div class="feature-icon mx-auto mb-3" style="background:rgba(255,0,0,0.12); color:#FF0000">⭐</div>
+          <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">STEP 3</div>
+          <div class="font-bold mb-1">Earn Points</div>
+          <div class="text-xs" style="color:var(--text-muted)">POS / service event → webhook → Lambda → real-time points credit + LINE push</div>
+        </div>
+        <div class="journey-step text-center">
+          <div class="feature-icon mx-auto mb-3" style="background:rgba(21,41,75,0.12); color:#15294B">🎁</div>
+          <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">STEP 4</div>
+          <div class="font-bold mb-1">Redeem &amp; Re-engage</div>
+          <div class="text-xs" style="color:var(--text-muted)">Browse catalog → confirm → reward delivered → continue earning + tier journey</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 8. AI น้องใบเตย — BASIC TIER =============== -->
+<section id="ai" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">น้องใบเตย — Basic Tier</div>
+        <h2 class="text-3xl md:text-4xl font-black">AI That Starts Smart, Scales Smart</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Plan C ships 5 essential AI use cases for member self-service and basic insights — with a clear upgrade path to the full 20-use-case suite in Plan B.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+      <!-- UC18 -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">INCLUDED</span>
+          <span class="text-[10px]" style="color:var(--text-muted)">UC #18</span>
+        </div>
+        <h4 class="font-bold mb-1">Personal Points &amp; Tier Inquiry</h4>
+        <p class="text-xs mb-3" style="color:var(--text-muted)">Persona: Member (in LINE OA)</p>
+        <div class="rounded-lg p-3 text-xs italic" style="background:var(--bg-card-inner); color:var(--text-secondary)">
+          "ใบเตย points ฉันเหลือเท่าไหร่ และต้องใช้อะไรอีกถึงจะ upgrade Black Diamond"
+        </div>
+        <div class="text-xs mt-3" style="color:var(--text-secondary)">→ Real-time balance, expiry alert, personalized upgrade path</div>
+      </div>
+
+      <!-- UC19 -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">INCLUDED</span>
+          <span class="text-[10px]" style="color:var(--text-muted)">UC #19</span>
+        </div>
+        <h4 class="font-bold mb-1">Personalized Reward Recommendation</h4>
+        <p class="text-xs mb-3" style="color:var(--text-muted)">Persona: Member (in LINE OA)</p>
+        <div class="rounded-lg p-3 text-xs italic" style="background:var(--bg-card-inner); color:var(--text-secondary)">
+          "ใบเตย แนะนำของแลกที่เหมาะกับฉันหน่อย"
+        </div>
+        <div class="text-xs mt-3" style="color:var(--text-secondary)">→ Catalog filtered by tier + balance + browsing history (basic CF)</div>
+      </div>
+
+      <!-- UC20 -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">INCLUDED</span>
+          <span class="text-[10px]" style="color:var(--text-muted)">UC #20</span>
+        </div>
+        <h4 class="font-bold mb-1">Service Appointment &amp; FAQ Concierge</h4>
+        <p class="text-xs mb-3" style="color:var(--text-muted)">Persona: Member (in LINE OA)</p>
+        <div class="rounded-lg p-3 text-xs italic" style="background:var(--bg-card-inner); color:var(--text-secondary)">
+          "ใบเตย รถ BMW ฉันมีไฟ check engine ขึ้น ทำไงดี"
+        </div>
+        <div class="text-xs mt-3" style="color:var(--text-secondary)">→ Intent classify → nearest dealer slots → booking flow</div>
+      </div>
+
+      <!-- UC14 -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">INCLUDED</span>
+          <span class="text-[10px]" style="color:var(--text-muted)">UC #14</span>
+        </div>
+        <h4 class="font-bold mb-1">Member Service Issue Resolution</h4>
+        <p class="text-xs mb-3" style="color:var(--text-muted)">Persona: Customer Service Agent</p>
+        <div class="rounded-lg p-3 text-xs italic" style="background:var(--bg-card-inner); color:var(--text-secondary)">
+          "ใบเตย ลูกค้า ID 33421 บอก points หาย 5,000 — ตรวจให้หน่อย"
+        </div>
+        <div class="text-xs mt-3" style="color:var(--text-secondary)">→ Audit trail diff, expiry trace, recommended action</div>
+      </div>
+
+      <!-- UC1 (basic) -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest tag-core">INCLUDED</span>
+          <span class="text-[10px]" style="color:var(--text-muted)">UC #1 (basic)</span>
+        </div>
+        <h4 class="font-bold mb-1">Real-Time Performance Inquiry</h4>
+        <p class="text-xs mb-3" style="color:var(--text-muted)">Persona: Marketing / Ops</p>
+        <div class="rounded-lg p-3 text-xs italic" style="background:var(--bg-card-inner); color:var(--text-secondary)">
+          "ใบเตย เดือนนี้ BMW issue points กี่แต้ม"
+        </div>
+        <div class="text-xs mt-3" style="color:var(--text-secondary)">→ Standard reports + simple text-to-SQL on key metrics</div>
+      </div>
+
+      <!-- Upgrade Card -->
+      <div class="glass rounded-2xl p-6 upgrade-stripe">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-gold)">UPGRADE TO PLAN B</div>
+        <h4 class="font-bold mb-2">+15 Advanced Use Cases</h4>
+        <p class="text-xs mb-3" style="color:var(--text-secondary)">Churn prediction · CLV forecasting · NBA recommendation · Cross-brand cross-sell · Sentiment / VoC analysis · Anomaly detection · Campaign uplift modeling · Tier override decision support · Branch benchmarking · A/B test interpretation · Reward inventory forecasting…</p>
+        <div class="text-[11px]" style="color:var(--text-muted)">Activate with Plan B upgrade — same architecture, no migration.</div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6 text-sm" style="color:var(--text-secondary)">
+      <strong>Tech stack (Basic):</strong> AWS Bedrock (Claude / Llama) + lightweight RAG on FAQ corpus + simple text-to-SQL on read-replica + LINE Messaging API. No custom ML training, no real-time prediction service.
+    </div>
+  </div>
+</section>
+
+<!-- =============== 9. TECH STACK =============== -->
+<section id="stack" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Technology Stack</div>
+        <h2 class="text-3xl md:text-4xl font-black">Cloud-Native, Mainstream, Proven</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(6,199,85,0.15); color:#06C755">🌿</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">FRONTEND / CHANNEL</div>
+        <div class="font-bold mb-1">LINE LIFF + Admin React</div>
+        <div class="text-xs" style="color:var(--text-muted)">React 18 + Vite + TypeScript · LIFF SDK · Tailwind UI</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(255,153,0,0.15); color:#FF9900">⚡</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">BACKEND</div>
+        <div class="font-bold mb-1">Node.js + Lambda + ECS</div>
+        <div class="text-xs" style="color:var(--text-muted)">Node 20 LTS · NestJS / Express · serverless-first</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(21,41,75,0.12); color:#15294B">🗄</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">DATABASE</div>
+        <div class="font-bold mb-1">RDS PostgreSQL + DynamoDB</div>
+        <div class="text-xs" style="color:var(--text-muted)">Single-AZ (Plan B = Multi-AZ) · DynamoDB on-demand</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(255,0,0,0.12); color:#FF0000">🤖</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">AI</div>
+        <div class="font-bold mb-1">AWS Bedrock</div>
+        <div class="text-xs" style="color:var(--text-muted)">Claude Haiku / Llama 3 8B · pay-per-token · no fine-tune</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(255,153,0,0.15); color:#FF9900">☁️</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">CLOUD</div>
+        <div class="font-bold mb-1">AWS Public (shared)</div>
+        <div class="text-xs" style="color:var(--text-muted)"><strong>ap-southeast-1 (Singapore)</strong> · cost-optimized · PDPA-aligned</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.18); color:#a78344">🛡</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">SECURITY</div>
+        <div class="font-bold mb-1">AWS WAF + Cognito + KMS</div>
+        <div class="text-xs" style="color:var(--text-muted)">Encryption at rest/transit · IAM least-privilege · CloudTrail</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(21,41,75,0.12); color:#15294B">📊</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">OBSERVABILITY</div>
+        <div class="font-bold mb-1">CloudWatch + X-Ray</div>
+        <div class="text-xs" style="color:var(--text-muted)">Logs · metrics · tracing · self-service dashboards</div>
+      </div>
+      <div class="glass rounded-xl p-5 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(255,0,0,0.12); color:#FF0000">🔧</div>
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">DEVOPS</div>
+        <div class="font-bold mb-1">GitHub Actions + Terraform</div>
+        <div class="text-xs" style="color:var(--text-muted)">IaC · CI/CD · automated rollback</div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6 mt-8 text-sm" style="color:var(--text-secondary)">
+      <div class="font-bold mb-2" style="color:var(--accent-primary)">PDPA &amp; Data Residency</div>
+      All MGC member data resides in AWS Singapore (ap-southeast-1), aligned with Thai PDPA cross-border guidance. Encryption at rest (KMS) and in transit (TLS 1.3). Customer is data controller, True Business + AWS act as joint data processors under DPA.
+    </div>
+  </div>
+</section>
+
+<!-- =============== 10. IMPLEMENTATION PLAN =============== -->
+<section id="timeline" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Draft Implementation Plan</div>
+        <h2 class="text-3xl md:text-4xl font-black">5-Month Lean Delivery</h2>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-8">
+      <div class="grid md:grid-cols-5 gap-4">
+        <div class="text-center">
+          <div class="timeline-dot mx-auto mb-3"></div>
+          <div class="text-[10px] font-bold tracking-widest" style="color:var(--accent-primary)">MONTH 1</div>
+          <div class="font-bold mt-1 mb-2">Discovery &amp; Design</div>
+          <div class="text-xs space-y-1" style="color:var(--text-muted)">
+            <div>• Kick-off &amp; requirements</div>
+            <div>• Data model &amp; API spec</div>
+            <div>• AWS account setup</div>
+            <div>• POS integration spec (BMW)</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="timeline-dot mx-auto mb-3"></div>
+          <div class="text-[10px] font-bold tracking-widest" style="color:var(--accent-primary)">MONTH 2</div>
+          <div class="font-bold mt-1 mb-2">Core Build — Sprint 1</div>
+          <div class="text-xs space-y-1" style="color:var(--text-muted)">
+            <div>• Auth (Cognito + LINE)</div>
+            <div>• Member &amp; tier engine</div>
+            <div>• Points engine</div>
+            <div>• DB schema + migrations</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="timeline-dot mx-auto mb-3"></div>
+          <div class="text-[10px] font-bold tracking-widest" style="color:var(--accent-primary)">MONTH 3</div>
+          <div class="font-bold mt-1 mb-2">Core Build — Sprint 2</div>
+          <div class="text-xs space-y-1" style="color:var(--text-muted)">
+            <div>• Reward catalog + redemption</div>
+            <div>• Campaign engine</div>
+            <div>• LIFF UI</div>
+            <div>• Admin portal MVP</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="timeline-dot mx-auto mb-3"></div>
+          <div class="text-[10px] font-bold tracking-widest" style="color:var(--accent-primary)">MONTH 4</div>
+          <div class="font-bold mt-1 mb-2">AI + Integration + UAT</div>
+          <div class="text-xs space-y-1" style="color:var(--text-muted)">
+            <div>• Bedrock chatbot (5 UCs)</div>
+            <div>• POS BMW integration</div>
+            <div>• Data migration (48,520 members)</div>
+            <div>• UAT cycle 1</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="timeline-dot mx-auto mb-3"></div>
+          <div class="text-[10px] font-bold tracking-widest" style="color:var(--accent-primary)">MONTH 5</div>
+          <div class="font-bold mt-1 mb-2">Launch &amp; Hand-off</div>
+          <div class="text-xs space-y-1" style="color:var(--text-muted)">
+            <div>• Performance testing</div>
+            <div>• Security review</div>
+            <div>• Go-live (BMW first)</div>
+            <div>• Training + runbook hand-off</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t" style="border-color:var(--border-glass)">
+        <div class="grid md:grid-cols-3 gap-4 text-xs">
+          <div><strong style="color:var(--accent-primary)">Team:</strong> 1 Project Manager · 2 Backend · 1 Frontend · 1 DevOps · 0.5 QA · 0.5 Solution Architect</div>
+          <div><strong style="color:var(--accent-primary)">Methodology:</strong> Agile Scrum, 2-week sprints, weekly demo to MGC product owner</div>
+          <div><strong style="color:var(--accent-primary)">Acceptance:</strong> UAT sign-off + 2-week hyper-care after go-live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 11. BILL OF MATERIAL =============== -->
+<section id="bom" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Proposed Solutions — Bill of Material</div>
+        <h2 class="text-3xl md:text-4xl font-black">What's Delivered</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Separated from pricing — see Commercial Proposal for cost breakdown.</p>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-2 overflow-x-auto">
+      <table class="true-table w-full min-w-[800px]">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Qty / Unit</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- AWS -->
+          <tr><td rowspan="8" style="font-weight:700; color:var(--accent-primary)">AWS Services</td><td>API Gateway</td><td>REST APIs, throttling, Cognito auth</td><td>1 stage</td><td>~5M req/mo</td></tr>
+          <tr><td>AWS Lambda</td><td>Serverless compute (Node 20)</td><td>~25 functions</td><td>~10M invocations/mo</td></tr>
+          <tr><td>ECS Fargate</td><td>Container compute (admin API, workers)</td><td>2 services</td><td>Fargate Spot eligible</td></tr>
+          <tr><td>RDS PostgreSQL</td><td>Primary OLTP (single-AZ db.t3.medium)</td><td>1 instance</td><td>Plan B = Multi-AZ</td></tr>
+          <tr><td>DynamoDB</td><td>Sessions, audit, cache (on-demand)</td><td>4 tables</td><td>Pay-per-request</td></tr>
+          <tr><td>S3</td><td>Assets, reports, backup</td><td>3 buckets</td><td>Standard + IA</td></tr>
+          <tr><td>Bedrock</td><td>AI: Claude Haiku / Llama 3 8B</td><td>Pay-per-token</td><td>~50K msgs/mo budget</td></tr>
+          <tr><td>CloudWatch + X-Ray</td><td>Logs, metrics, tracing</td><td>—</td><td>30-day retention</td></tr>
+
+          <!-- Software / SaaS -->
+          <tr><td rowspan="3" style="font-weight:700; color:var(--accent-primary)">Software / SaaS</td><td>LINE Messaging API</td><td>Push, broadcast, rich menu</td><td>1 OA / 8 brands</td><td>LINE Premium tier</td></tr>
+          <tr><td>LINE LIFF</td><td>In-LINE web app SDK</td><td>1 LIFF channel</td><td>Free</td></tr>
+          <tr><td>Sentry / Datadog (lite)</td><td>Error monitoring (open tier)</td><td>1 project</td><td>Self-managed</td></tr>
+
+          <!-- Pro Services -->
+          <tr><td rowspan="6" style="font-weight:700; color:var(--accent-primary)">Professional Services</td><td>Project Management</td><td>1 PM × 5 mo (50%)</td><td>2.5 person-mo</td><td>Lean engagement</td></tr>
+          <tr><td>Solution Architecture</td><td>1 SA × 5 mo (50%)</td><td>2.5 person-mo</td><td>—</td></tr>
+          <tr><td>Backend Development</td><td>2 Devs × 5 mo</td><td>10 person-mo</td><td>Node + AWS</td></tr>
+          <tr><td>Frontend Development</td><td>1 Dev × 5 mo</td><td>5 person-mo</td><td>React + LIFF</td></tr>
+          <tr><td>DevOps + QA</td><td>1.5 × 5 mo</td><td>7.5 person-mo</td><td>IaC + automation</td></tr>
+          <tr><td>Training &amp; Hand-off</td><td>Admin portal training, runbook</td><td>4 sessions</td><td>End-of-project</td></tr>
+
+          <!-- Mandays -->
+          <tr><td rowspan="2" style="font-weight:700; color:var(--accent-primary)">Mandays Pool</td><td>CR / Enhancement</td><td>Reserved for change requests</td><td>20 mandays</td><td>Over 3 years</td></tr>
+          <tr><td>Per-brand POS rollout</td><td>From mandays pool</td><td>~3 md/brand</td><td>7 brands × 3 md = 21 md (carve-out)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 12. COMMERCIAL =============== -->
+<section id="commercial" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Commercial Proposal</div>
+        <h2 class="text-3xl md:text-4xl font-black">Pricing — One-time or As-a-Service</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Total: <strong class="gradient-red">฿5.5M</strong> over 3 years (excludes VAT 7%)</p>
+      </div>
+    </div>
+
+    <!-- Three big cards -->
+    <div class="grid md:grid-cols-3 gap-4 mb-10">
+      <!-- CAPEX -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">CAPEX — Year 1</div>
+        <div class="text-3xl font-black gradient-red mb-1">฿3.5M</div>
+        <div class="text-xs mb-4" style="color:var(--text-muted)">Platform development &amp; deployment</div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Platform development</span><span class="font-bold">฿1.40M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>LINE LIFF + Login integration</span><span class="font-bold">฿0.50M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Basic AI chatbot (Bedrock)</span><span class="font-bold">฿0.40M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Admin Portal</span><span class="font-bold">฿0.50M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Integration + testing + deployment</span><span class="font-bold">฿0.40M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Project Management (5 mo lean)</span><span class="font-bold">฿0.30M</span></div>
+        </div>
+      </div>
+
+      <!-- OPEX -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">OPEX — 3-Year Recurring</div>
+        <div class="text-3xl font-black gradient-red mb-1">฿1.75M</div>
+        <div class="text-xs mb-4" style="color:var(--text-muted)">≈ ฿0.58M / year average</div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>AWS services (3 yrs)</span><span class="font-bold">฿0.90M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Self-service + email support (3 yrs)</span><span class="font-bold">฿0.45M</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Maintenance &amp; security (3 yrs)</span><span class="font-bold">฿0.40M</span></div>
+        </div>
+        <div class="mt-4 pt-3 border-t text-[11px]" style="border-color:var(--border-glass); color:var(--text-muted)">
+          Includes patching, version upgrades, dependency updates, security advisories.
+        </div>
+      </div>
+
+      <!-- Mandays -->
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">MANDAYS POOL — CR Reserve</div>
+        <div class="text-3xl font-black gradient-red mb-1">฿0.25M</div>
+        <div class="text-xs mb-4" style="color:var(--text-muted)">20 mandays @ ฿12,000 = ฿240K (rounded)</div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Pool size</span><span class="font-bold">20 md</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Rate per manday</span><span class="font-bold">฿12,000</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Coverage period</span><span class="font-bold">3 yrs</span></div>
+          <div class="flex justify-between budget-row p-1.5 rounded"><span>Top-up rate (additional)</span><span class="font-bold">฿12K/md</span></div>
+        </div>
+        <div class="mt-4 pt-3 border-t text-[11px]" style="border-color:var(--border-glass); color:var(--text-muted)">
+          Use for: per-brand POS rollout, new reports, minor feature tweaks, CR.
+        </div>
+      </div>
+    </div>
+
+    <!-- Total bar -->
+    <div class="glass rounded-2xl p-8 mb-10" style="border-color: var(--accent-primary); border-width: 2px">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div>
+          <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">TOTAL — 3 YEARS</div>
+          <div class="text-5xl font-black gradient-red">฿5.5M</div>
+          <div class="text-xs mt-1" style="color:var(--text-muted)">Excludes VAT 7%</div>
+        </div>
+        <div class="text-sm">
+          <div class="font-bold mb-2">Breakdown</div>
+          <div class="flex justify-between text-xs"><span>CAPEX (Year 1)</span><span class="font-bold">฿3.50M</span></div>
+          <div class="flex justify-between text-xs"><span>OPEX (3 yrs recurring)</span><span class="font-bold">฿1.75M</span></div>
+          <div class="flex justify-between text-xs"><span>Mandays pool (3 yrs)</span><span class="font-bold">฿0.25M</span></div>
+          <div class="flex justify-between text-sm mt-2 pt-2 border-t font-bold" style="border-color:var(--border-glass)"><span>TOTAL</span><span class="gradient-red">฿5.5M</span></div>
+        </div>
+        <div class="text-sm">
+          <div class="font-bold mb-2">vs. Plan B / Plan A</div>
+          <div class="flex justify-between text-xs"><span>Plan C — Lean</span><span class="font-bold">฿5.5M</span></div>
+          <div class="flex justify-between text-xs"><span>Plan B — Standard</span><span style="color:var(--text-muted)">฿9.5M</span></div>
+          <div class="flex justify-between text-xs"><span>Plan A — Premium</span><span style="color:var(--text-muted)">฿18M</span></div>
+          <div class="text-[11px] mt-2" style="color:var(--text-muted)">Plan C = 58% of Plan B at the same architecture. Upgrade later without re-platform.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two flexible business models -->
+    <div class="text-center mb-6">
+      <div class="text-[11px] font-bold tracking-widest" style="color:var(--accent-primary)">FLEXIBLE BUSINESS MODEL</div>
+      <h3 class="text-2xl font-black">One-time Purchase OR As-a-Service</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="glass rounded-2xl p-8" style="border-top:4px solid var(--option-a-accent)">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--option-a-accent)">OPTION A — ONE-TIME PURCHASE</div>
+        <h4 class="text-xl font-black mb-3">CAPEX-led</h4>
+        <div class="text-3xl font-black mb-1" style="color:var(--text-heading)">฿3.5M <span class="text-base font-medium" style="color:var(--text-muted)">+ ฿0.67M / yr</span></div>
+        <p class="text-xs mb-4" style="color:var(--text-muted)">Pay platform up-front, OPEX + mandays billed annually.</p>
+        <ul class="text-xs space-y-1.5" style="color:var(--text-secondary)">
+          <li>✓ Asset on balance sheet (depreciable)</li>
+          <li>✓ Lowest 3-year TCO</li>
+          <li>✓ Predictable annual run-rate</li>
+          <li>✓ Source code ownership at end of contract</li>
+        </ul>
+      </div>
+      <div class="glass rounded-2xl p-8" style="border-top:4px solid var(--option-b-accent)">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--option-b-accent)">OPTION B — AS-A-SERVICE</div>
+        <h4 class="text-xl font-black mb-3">OPEX-led monthly</h4>
+        <div class="text-3xl font-black mb-1" style="color:var(--text-heading)">฿155K / mo <span class="text-base font-medium" style="color:var(--text-muted)">× 36 mo</span></div>
+        <p class="text-xs mb-4" style="color:var(--text-muted)">Single monthly bundle — no upfront capital, includes mandays pool.</p>
+        <ul class="text-xs space-y-1.5" style="color:var(--text-secondary)">
+          <li>✓ 100% OPEX (no capex approval needed)</li>
+          <li>✓ Cancel-flex from month 13 with 90-day notice</li>
+          <li>✓ Bundled support &amp; mandays</li>
+          <li>✓ Auto-upgrade path to Plan B / A</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 13. COMPLIANCE STATEMENT =============== -->
+<section id="compliance" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Compliance Statement</div>
+        <h2 class="text-3xl md:text-4xl font-black">Customer Requirement → True's Response</h2>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-2 overflow-x-auto">
+      <table class="true-table w-full min-w-[800px]">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Customer's Requirement</th>
+            <th>True's Response (Plan C)</th>
+            <th>Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Loyalty platform replacing legacy MGC PrivilegeCard</td><td>Plan C delivers full replacement on AWS-native stack</td><td>§6 Architecture</td></tr>
+          <tr><td>2</td><td>Support 48,520 members across 8 brands</td><td>RDS PostgreSQL + DynamoDB sized for 500K members; one-time migration scoped</td><td>§5c, §11 BOM</td></tr>
+          <tr><td>3</td><td>LINE-first member experience</td><td>LINE LIFF + LINE Login + LINE Messaging API</td><td>§9 Tech Stack</td></tr>
+          <tr><td>4</td><td>4-tier program (Member → Diamond → Black → Infinite)</td><td>Tier engine included in core (Feature #2)</td><td>§5b</td></tr>
+          <tr><td>5</td><td>Points earn / burn / expire engine</td><td>Real-time engine via Lambda + RDS (Feature #3)</td><td>§5b, §6</td></tr>
+          <tr><td>6</td><td>Reward catalog + redemption</td><td>Catalog + redemption flow included (Features #4, #6)</td><td>§5b</td></tr>
+          <tr><td>7</td><td>Campaign / promotion engine</td><td>Bonus, multiplier, time-bound rules (Feature #5)</td><td>§5b</td></tr>
+          <tr><td>8</td><td>Admin portal for marketing &amp; ops</td><td>React-based admin portal (Feature #7)</td><td>§5b, §6</td></tr>
+          <tr><td>9</td><td>Standard reporting</td><td>Pre-built dashboards (Feature #8)</td><td>§5b</td></tr>
+          <tr><td>10</td><td>POS integration for points issuance</td><td>BMW at launch; other 7 brands via expansion mandays pool</td><td>§5c, §11</td></tr>
+          <tr><td>11</td><td>AI / smart features</td><td>5 basic use cases via Bedrock; advanced 15 use cases via Plan B upgrade</td><td>§8 น้องใบเตย</td></tr>
+          <tr><td>12</td><td>PDPA-compliant data handling</td><td>Singapore region, encryption, consent capture, DSR support</td><td>§9 Tech Stack</td></tr>
+          <tr><td>13</td><td>High availability</td><td>99.0% (single-AZ); upgrade to 99.5% Multi-AZ via Plan B</td><td>§14 SLA</td></tr>
+          <tr><td>14</td><td>24×7 support</td><td>Self-service + email (business hours); 24×7 phone via Plan B/A upgrade</td><td>§15 Support</td></tr>
+          <tr><td>15</td><td>ISO 27001 / SOC 2 alignment</td><td>Inherits AWS shared-responsibility certifications; full True ISO via Plan A</td><td>—</td></tr>
+          <tr><td>16</td><td>Single point of accountability</td><td>True Business as prime contractor — single contact point</td><td>§16 Why True</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 14. SLA COMMITMENT =============== -->
+<section class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Scope of Work &amp; SLA</div>
+        <h2 class="text-3xl md:text-4xl font-black">Service Level Commitment</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">UPTIME</div>
+        <div class="text-5xl font-black gradient-red">99.0%</div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">Single-AZ · monthly measurement<br/>(Plan B = 99.5%, Plan A = 99.9%)</div>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">CRITICAL RESPONSE</div>
+        <div class="text-5xl font-black gradient-red">4 hr</div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">P1 acknowledgement<br/>Business hours (8×5)</div>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">RESOLUTION TARGET</div>
+        <div class="text-5xl font-black gradient-red">24 hr</div>
+        <div class="text-xs mt-2" style="color:var(--text-muted)">P1 resolution target<br/>Best-effort outside business hours</div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-2 overflow-x-auto">
+      <table class="true-table w-full min-w-[700px]">
+        <thead>
+          <tr>
+            <th>Severity</th>
+            <th>Definition</th>
+            <th>Response Time</th>
+            <th>Resolution Target</th>
+            <th>Channel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong style="color:#dc2626">P1 — Critical</strong></td><td>Production down · members unable to login or transact</td><td>4 hours</td><td>24 hours</td><td>Email + portal (business hr)</td></tr>
+          <tr><td><strong style="color:#ea580c">P2 — High</strong></td><td>Degraded service · partial feature outage</td><td>1 business day</td><td>3 business days</td><td>Email + portal</td></tr>
+          <tr><td><strong style="color:#ca8a04">P3 — Medium</strong></td><td>Non-critical issue · workaround exists</td><td>2 business days</td><td>10 business days</td><td>Portal</td></tr>
+          <tr><td><strong style="color:#16a34a">P4 — Low</strong></td><td>CR / enhancement / cosmetic</td><td>5 business days</td><td>Mandays-funded</td><td>Portal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-xs mt-6 italic" style="color:var(--text-muted)">
+      Note: Plan C ships at <strong>Tier 1 support (self-service + email, 8×5 business hours)</strong>. Upgrade to Tier 2 (24×7 phone, dedicated TAM) is available via Plan B or top-up.
+    </div>
+  </div>
+</section>
+
+<!-- =============== 15. SUPPORT FLOW =============== -->
+<section id="support" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Appendix-1 — Customer Support Escalation Flow</div>
+        <h2 class="text-3xl md:text-4xl font-black">Single Contact Point, 4-Level Escalation</h2>
+        <p class="text-sm mt-1" style="color:var(--text-muted)">Plan C = Tier 1 emphasis (self-service + email). Phone &amp; on-site reserved for true emergencies.</p>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-2 overflow-x-auto">
+      <table class="true-table w-full min-w-[800px]">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>SLA Trigger</th>
+            <th>Owner / Contact</th>
+            <th>Channel</th>
+            <th>Plan C scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tier-pill tier-1">LEVEL-1</span></td>
+            <td>Immediate (self-service)</td>
+            <td>Business Customer Helpdesk · Self-service portal · Knowledge base</td>
+            <td>Web portal · Email <code style="background:var(--bg-card-inner); padding:2px 6px; border-radius:4px">smc@truecorp.co.th</code></td>
+            <td><strong>Primary channel for Plan C</strong> — 8×5 business hours</td>
+          </tr>
+          <tr>
+            <td><span class="tier-pill tier-1">LEVEL-2</span></td>
+            <td>&gt; 4 hrs unresolved (P1) / 1 BD (P2)</td>
+            <td>Named Service Manager (assigned at kick-off)</td>
+            <td>Email escalation · scheduled call</td>
+            <td>Plan C: shared SM (1:N accounts). Plan B/A = dedicated TAM.</td>
+          </tr>
+          <tr>
+            <td><span class="tier-pill tier-1">LEVEL-3</span></td>
+            <td>&gt; 8 hrs (P1) — engineering escalation</td>
+            <td>Managed Service Center · Solution Consultant · Account Pre-sales</td>
+            <td>Email + bridge call</td>
+            <td>Reserved for true production incidents on AWS infra</td>
+          </tr>
+          <tr>
+            <td><span class="tier-pill tier-1">LEVEL-4</span></td>
+            <td>&gt; 24 hrs unresolved · executive escalation</td>
+            <td>Head of Corporate Service Management Center · Head of Technical Sales · Head of Sector</td>
+            <td>Direct executive contact</td>
+            <td>Crisis-only — covered under standard True executive escalation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-6">
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">SELF-SERVICE PORTAL</div>
+        <div class="text-sm font-bold">support.mobilife.co.th</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">Ticket submission, knowledge base, runbooks, status page</div>
+      </div>
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">EMAIL</div>
+        <div class="text-sm font-bold">smc@truecorp.co.th</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">Primary channel · Business hours response</div>
+      </div>
+      <div class="glass rounded-xl p-5">
+        <div class="text-[10px] font-bold tracking-widest mb-1" style="color:var(--accent-primary)">PHONE (P1 ONLY)</div>
+        <div class="text-sm font-bold">1239 *2 / +662-700-9191</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">Reserved for production-down incidents</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 16. WHY TRUE BUSINESS =============== -->
+<section id="whytrue" class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Appendix-2 — Why True Business?</div>
+        <h2 class="text-3xl md:text-4xl font-black">The Total Digital Solution Provider for Business Customers</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="glass rounded-2xl p-7 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(255,0,0,0.12); color:#FF0000">📡</div>
+        <h4 class="text-lg font-black mb-2">Strong &amp; Proven Network</h4>
+        <p class="text-sm" style="color:var(--text-secondary)">Reach to MGC's 48,520 members nationwide via 5G + 4G coverage (>51M subscribers). LINE LIFF backed by Thailand's #1 connectivity infrastructure.</p>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(192,0,0,0.12); color:#C00000">💡</div>
+        <h4 class="text-lg font-black mb-2">Digital Business Solutions Consultancy</h4>
+        <p class="text-sm" style="color:var(--text-secondary)">MOBILIFE Lean co-designed with MGC's CRM team. From discovery to launch in 5 months — backed by True's enterprise consultancy practice.</p>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(126,42,142,0.12); color:#7E2A8E">🔧</div>
+        <h4 class="text-lg font-black mb-2">Fully Managed Service by True</h4>
+        <p class="text-sm" style="color:var(--text-secondary)"><strong>Single contact point and fully managed</strong> — Tier 1 self-service + email at Plan C. Upgradeable to dedicated TAM (Plan B) or 24×7 NOC (Plan A) without re-platform.</p>
+      </div>
+      <div class="glass rounded-2xl p-7 card-hover">
+        <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.18); color:#a78344">💰</div>
+        <h4 class="text-lg font-black mb-2">Flexible Business Model</h4>
+        <p class="text-sm" style="color:var(--text-secondary)"><strong>One-time Purchase OR As-a-Service</strong> — choose CAPEX (฿3.5M up-front) or OPEX (฿155K/mo × 36). Plus guaranteed upgrade path to Plan B / A.</p>
+      </div>
+    </div>
+
+    <!-- Plan C specific 5th pillar -->
+    <div class="glass rounded-2xl p-7 upgrade-stripe">
+      <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-gold)">PLAN C SPECIFIC</div>
+      <h4 class="text-xl font-black mb-2">Cloud-Native Flexibility — AWS through True Partnership</h4>
+      <p class="text-sm" style="color:var(--text-secondary)">True is an <strong>AWS Strategic Partner</strong>. Plan C delivers a 100% AWS-native architecture with full pass-through of AWS service quality, billing flexibility (consolidated billing through True), and access to True's AWS-certified architects. You get hyperscaler scale at SME pricing — with True as the single accountable partner.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 17. COMPETITIVE LANDSCAPE =============== -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Competitive Landscape</div>
+        <h2 class="text-3xl md:text-4xl font-black">TCO Comparison &amp; Positioning</h2>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-2 overflow-x-auto mb-8">
+      <table class="true-table w-full min-w-[900px]">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Plan C — Lean<br/><span style="font-weight:400;font-size:11px">(this proposal)</span></th>
+            <th>Plan B — Standard</th>
+            <th>Plan A — Premium</th>
+            <th>BuzzeBee SaaS</th>
+            <th>Choco CRM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3-yr TCO</td><td><strong style="color:var(--accent-primary)">฿5.5M</strong></td><td>฿9.5M</td><td>฿18M</td><td>฿7-9M</td><td>฿8-12M</td></tr>
+          <tr><td>Cloud / hosting</td><td>AWS Public (single-AZ)</td><td>AWS Multi-AZ</td><td>AWS Hybrid + DR</td><td>SaaS (vendor cloud)</td><td>SaaS (vendor cloud)</td></tr>
+          <tr><td>Channel</td><td>LINE LIFF</td><td>LINE LIFF + Mobile App</td><td>LINE + App + Web + Branch</td><td>App + Web</td><td>App + Web</td></tr>
+          <tr><td>AI capability</td><td>Basic chatbot (5 UCs)</td><td>Advanced AI (20 UCs)</td><td>Custom AI + ML pipeline</td><td>None / Basic</td><td>Basic chatbot</td></tr>
+          <tr><td>SLA</td><td>99.0%</td><td>99.5%</td><td>99.9%</td><td>99.5%</td><td>99.5%</td></tr>
+          <tr><td>Support</td><td>Self-service + email (8×5)</td><td>Dedicated TAM (12×5)</td><td>24×7 NOC + on-site</td><td>Email + chat</td><td>Email</td></tr>
+          <tr><td>Customization</td><td>20 mandays / 3 yrs</td><td>60 mandays / 3 yrs</td><td>120 mandays / 3 yrs</td><td>Limited (config only)</td><td>Limited</td></tr>
+          <tr><td>Source ownership</td><td>✓ At end of contract</td><td>✓ At end of contract</td><td>✓ At end of contract</td><td>✗ Vendor-locked</td><td>✗ Vendor-locked</td></tr>
+          <tr><td>Upgrade path</td><td>✓ → Plan B / A (no re-platform)</td><td>✓ → Plan A</td><td>—</td><td>✗</td><td>✗</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="glass rounded-2xl p-7 upgrade-stripe">
+      <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-gold)">POSITIONING</div>
+      <h4 class="text-xl font-black mb-2">Same Architecture as Plan B — Fewer Features — Upgradeable</h4>
+      <p class="text-sm" style="color:var(--text-secondary)">Plan C is <strong>not a stripped-down product</strong>. It's the same enterprise-grade architecture, deployed in lean configuration. When you're ready to scale: activate Multi-AZ (Plan B) or Hybrid + DR (Plan A) — your data, APIs, and codebase carry forward unchanged. Compare that to BuzzeBee or Choco where you're locked into their roadmap and re-platforming is the only escape.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 18. ROI / BUSINESS CASE =============== -->
+<section class="py-24" style="background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">ROI / Business Case</div>
+        <h2 class="text-3xl md:text-4xl font-black">The Lowest Entry Point for Premium Loyalty</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">PLAN C INVESTMENT</div>
+        <div class="text-4xl font-black gradient-red">฿5.5M</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">3-year all-in</div>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">MGC ANNUAL REVENUE</div>
+        <div class="text-4xl font-black gradient-red">฿3.6B+</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">Across 8 brands</div>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-[10px] font-bold tracking-widest mb-2" style="color:var(--accent-primary)">PLAN C / REVENUE</div>
+        <div class="text-4xl font-black gradient-red">0.15%</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted)">Of potential revenue impact</div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-8">
+      <h4 class="text-lg font-black mb-4">The Plan C Business Case</h4>
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <div class="font-bold mb-2" style="color:var(--accent-primary)">Conservative payback drivers</div>
+          <ul class="space-y-1.5" style="color:var(--text-secondary)">
+            <li>• <strong>Churn prevention 1%</strong> on top tiers = ฿18M+ retained revenue (3 yrs)</li>
+            <li>• <strong>Redemption rate +5%</strong> = ฿2.5M liability reduction</li>
+            <li>• <strong>Self-service deflection 30%</strong> = ฿3M call-center savings (3 yrs)</li>
+            <li>• <strong>Cross-brand activation 0.5%</strong> = ฿18M incremental revenue</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold mb-2" style="color:var(--accent-primary)">Plan C cumulative value (3 yrs)</div>
+          <ul class="space-y-1.5" style="color:var(--text-secondary)">
+            <li>• Total estimated value: <strong style="color:var(--accent-primary)">฿41.5M+</strong></li>
+            <li>• Plan C investment: <strong>฿5.5M</strong></li>
+            <li>• Net 3-year value: <strong style="color:var(--accent-primary)">~฿36M</strong></li>
+            <li>• ROI: <strong>7.5x</strong> at conservative assumptions</li>
+            <li>• Payback period: <strong>~10 months</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 pt-4 border-t text-xs italic" style="border-color:var(--border-glass); color:var(--text-muted)">
+        Conservative model. Upgrading to Plan B unlocks an additional ~฿60-80M in advanced AI-driven uplift (churn, CLV, NBA, cross-brand) — Plan C proves the foundation, Plan B compounds it.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 19. NEXT STEPS / CTA =============== -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-1 h-10 true-bar"></div>
+      <div>
+        <div class="text-[11px] uppercase tracking-widest" style="color:var(--accent-primary)">Next Steps</div>
+        <h2 class="text-3xl md:text-4xl font-black">Ready to Start Smart?</h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-4 mb-10">
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl font-black gradient-red mb-2">1</div>
+        <div class="font-bold mb-1">Decision &amp; LOI</div>
+        <div class="text-xs" style="color:var(--text-muted)">Confirm Plan C scope · sign Letter of Intent · select CAPEX or As-a-Service model</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl font-black gradient-red mb-2">2</div>
+        <div class="font-bold mb-1">SOW &amp; MSA</div>
+        <div class="text-xs" style="color:var(--text-muted)">Statement of Work + Master Services Agreement (~2 weeks)</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl font-black gradient-red mb-2">3</div>
+        <div class="font-bold mb-1">Kick-off</div>
+        <div class="text-xs" style="color:var(--text-muted)">Project charter, team intro, AWS account provisioning, sprint planning</div>
+      </div>
+      <div class="glass rounded-2xl p-6 card-hover">
+        <div class="text-3xl font-black gradient-red mb-2">4</div>
+        <div class="font-bold mb-1">Go-Live (Month 5)</div>
+        <div class="text-xs" style="color:var(--text-muted)">BMW first → roll out 7 remaining brands via mandays pool</div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-10 text-center">
+      <h3 class="text-3xl md:text-4xl font-black mb-3">Better Together.</h3>
+      <p class="text-base mb-6" style="color:var(--text-secondary)">Start lean. Scale smart. Upgrade when MOBILIFE proves itself.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="./plan-b.html" class="px-6 py-3 rounded-lg font-bold text-sm" style="background:var(--accent-primary); color:white">Compare Plan B (Standard) &nearr;</a>
+        <a href="./plan-a.html" class="px-6 py-3 rounded-lg font-bold text-sm border-2" style="border-color:var(--accent-primary); color:var(--accent-primary)">Compare Plan A (Premium) &nearr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 20. FOOTER =============== -->
+<footer class="py-12 border-t" style="border-color:var(--border-nav); background:var(--bg-secondary)">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-1 h-12 true-bar"></div>
+        <div>
+          <div class="true-mark"><span class="true-mark-red">true</span><span class="true-mark-business">business</span></div>
+          <div class="text-xs" style="color:var(--text-muted)">True Internet Corporation Co., Ltd.</div>
+        </div>
+      </div>
+      <div class="text-sm" style="color:var(--text-secondary)">
+        <div><strong>For MGC-ASIA Group / By True Business</strong></div>
+        <div class="text-xs" style="color:var(--text-muted)">MOBILIFE Loyalty Platform — Plan C Lean — March 2026</div>
+      </div>
+      <div class="flex items-center gap-3 text-xs">
+        <a href="./plan-a.html" class="px-3 py-1.5 rounded-md border" style="border-color:var(--border-glass); color:var(--text-muted)">Plan A &nearr;</a>
+        <a href="./plan-b.html" class="px-3 py-1.5 rounded-md border" style="border-color:var(--border-glass); color:var(--text-muted)">Plan B &nearr;</a>
+        <a href="../v1/plan-c-v1.html" class="px-3 py-1.5 rounded-md border" style="border-color:var(--border-glass); color:var(--text-muted)">v1 Archive &nearr;</a>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t text-center text-xs" style="border-color:var(--border-glass); color:var(--text-faint)">
+      © 2026 True Internet Corporation Co., Ltd. · All proposals subject to MSA · Pricing valid 90 days · Confidential.
+    </div>
+  </div>
+</footer>
+
+<!-- =============== JS =============== -->
+<script>
+// THEME TOGGLE
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('mobilife-theme-c') || 'light';
+html.setAttribute('data-theme', savedTheme);
+themeToggle.addEventListener('click', () => {
+  const cur = html.getAttribute('data-theme');
+  const next = cur === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('mobilife-theme-c', next);
+});
+
+// SCROLL PROGRESS
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+});
+
+// SECTION ENTER ANIMATION
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('section').forEach(s => { s.classList.add('section-enter'); observer.observe(s); });
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.target;
+    if (el.dataset.done) return;
+    el.dataset.done = '1';
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const t = setInterval(() => {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(t); }
+      el.textContent = cur.toLocaleString();
+    }, 22);
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => counterObserver.observe(c));
+
+// PARTICLES
+const particleHost = document.getElementById('particles');
+if (particleHost) {
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 5 + 2;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (Math.random() * 14 + 12) + 's';
+    p.style.animationDelay = (Math.random() * 8) + 's';
+    particleHost.appendChild(p);
+  }
+}
+
+// NAV ACTIVE
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  const sects = document.querySelectorAll('section[id]');
+  const y = window.scrollY + 120;
+  let cur = '';
+  sects.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+  navLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
+
+</body>
+</html>
