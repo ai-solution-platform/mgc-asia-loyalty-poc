@@ -127,6 +127,54 @@ section { scroll-margin-top: 80px; }
 .gradient-red { background: linear-gradient(135deg, #E2231A, #B91B14, #7E2A8E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .gradient-gold-text { background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
+/* ================ PHONE MOCKUP ================ */
+.phone-frame {
+  position: relative;
+  max-width: 280px;
+  margin: 0 auto;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.phone-frame:hover {
+  transform: translateY(-6px);
+}
+.phone-screen {
+  border-radius: 28px;
+  border: 8px solid #1a1a2e;
+  box-shadow: 0 20px 50px rgba(27,43,91,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+  overflow: hidden;
+  height: 480px;
+  background: #fff;
+  position: relative;
+}
+[data-theme="dark"] .phone-screen {
+  border-color: #0a0a14;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.phone-line-bar {
+  background: #06C755;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.line-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+}
+.line-dot::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #06C755;
+}
+
 /* ================ HERO BG ================ */
 .hero-bg { background: radial-gradient(ellipse at 18% 40%, var(--hero-bg-1) 0%, transparent 55%), radial-gradient(ellipse at 80% 25%, var(--hero-bg-2) 0%, transparent 55%), radial-gradient(ellipse at 60% 90%, var(--hero-bg-3) 0%, transparent 55%); }
 
@@ -344,7 +392,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
           <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">Cloud-Native</span>
         </div>
         <div class="kpi-chip">
-          <span class="text-2xl font-black" style="color:var(--accent-primary)">99.5%</span>
+          <span class="text-2xl font-black" style="color:var(--accent-primary)">99.0%</span>
           <span class="text-[10px] uppercase tracking-widest" style="color:var(--text-muted)">SLA Uptime</span>
         </div>
         <div class="kpi-chip">
@@ -397,7 +445,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
             </div>
           </div>
           <div class="text-[11px] text-center px-3 py-2 rounded-lg" style="background: rgba(201,169,110,0.12); color:var(--text-primary); border: 1px solid rgba(201,169,110,0.3);">
-            Milestone-based payment · 99.5% Uptime · 5-Month Delivery
+            Milestone Payment · 99.0% Uptime Target · 5 Months
           </div>
         </div>
       </div>
@@ -854,22 +902,51 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
     </div>
 
     <!-- Capacity Capability Cards -->
-    <div class="grid md:grid-cols-3 gap-5 mb-8">
-      <div class="glass rounded-2xl p-6">
-        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#1B2B5B">Member Base</div>
-        <div class="text-3xl font-display font-black mb-2" style="color:var(--text-primary)">500,000+</div>
-        <p class="text-sm" style="color:var(--text-muted)">Active members across 8 brands. Cloud-native auto-scaling provides headroom for organic growth without re-architecting.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">Member Base</div>
+        <div class="text-3xl font-display font-black mb-1" style="color:var(--text-primary)">500,000+</div>
+        <p class="text-xs" style="color:var(--text-muted)">Active members across 8 brands. Cloud-native auto-scaling provides headroom for organic growth.</p>
       </div>
-      <div class="glass rounded-2xl p-6">
-        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#E2231A">Performance Standard</div>
-        <div class="text-3xl font-display font-black gradient-red mb-2">99.5%</div>
-        <p class="text-sm" style="color:var(--text-muted)">Uptime commitment with credit-back. Sub-2-second page load. Sub-500ms API response under normal operating conditions.</p>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Concurrent Sessions</div>
+        <div class="text-3xl font-display font-black gradient-red mb-1">5,000</div>
+        <p class="text-xs" style="color:var(--text-muted)">Simultaneous LIFF sessions during peak campaigns. Auto-scales above baseline as needed.</p>
       </div>
-      <div class="glass rounded-2xl p-6">
-        <div class="text-[10px] uppercase tracking-widest font-bold mb-3" style="color:#C9A96E">Resilience</div>
-        <div class="text-3xl font-display font-black gradient-gold-text mb-2">24/7</div>
-        <p class="text-sm" style="color:var(--text-muted)">Continuous monitoring with automated failover, daily encrypted backups, and quarterly disaster recovery drills.</p>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">API Throughput</div>
+        <div class="text-3xl font-display font-black gradient-gold-text mb-1">200/s</div>
+        <p class="text-xs" style="color:var(--text-muted)">Sustained baseline requests per second. Scales with demand for marketing bursts.</p>
       </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#7E2A8E">AI Agent Capacity</div>
+        <div class="text-3xl font-display font-black mb-1" style="color:#7E2A8E">5,000/d</div>
+        <p class="text-xs" style="color:var(--text-muted)">น้องใบเตย daily query baseline. Designed to scale with adoption.</p>
+      </div>
+    </div>
+
+    <!-- Volume Capacity Card -->
+    <div class="glass rounded-2xl p-6 mb-6">
+      <h4 class="font-display font-bold text-lg mb-4">Daily Volume Capacity (Baseline)</h4>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Page Views</div>
+          <div class="text-xl font-bold" style="color:var(--text-primary)">500,000 / day</div>
+        </div>
+        <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Points Transactions</div>
+          <div class="text-xl font-bold" style="color:var(--text-primary)">100,000 / day</div>
+        </div>
+        <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Notifications</div>
+          <div class="text-xl font-bold" style="color:var(--text-primary)">500,000 / day</div>
+        </div>
+        <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Campaign Redemptions</div>
+          <div class="text-xl font-bold" style="color:var(--text-primary)">10,000 / launch</div>
+        </div>
+      </div>
+      <p class="text-xs mt-3" style="color:var(--text-muted)">Baseline figures sized for the agreed 500K member base under typical engagement patterns. Higher volumes during peak campaigns are absorbed by cloud auto-scaling. Sustained growth beyond baseline triggers a capacity planning review.</p>
     </div>
 
     <!-- Performance Targets - Plain Language -->
@@ -897,7 +974,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
         <ul class="space-y-3">
           <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
             <span style="color:var(--text-muted)">System uptime</span>
-            <span class="font-bold" style="color:#16a34a">99.5% target</span>
+            <span class="font-bold" style="color:#16a34a">99.0% target</span>
           </li>
           <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
             <span style="color:var(--text-muted)">Recovery time objective</span>
@@ -997,7 +1074,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   </div>
 
   <!-- 4 Tier band -->
-  <div class="glass rounded-2xl p-6">
+  <div class="glass rounded-2xl p-6 mb-10">
     <h4 class="font-display font-bold text-lg mb-5">4-Tier Recognition</h4>
     <div class="grid md:grid-cols-4 gap-3">
       <div class="tier-band tier-1 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Entry</div><div class="text-base">Member</div></div>
@@ -1005,6 +1082,154 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <div class="tier-band tier-2 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Spend ≥ ฿2.5M/yr</div><div class="text-base">Black Diamond</div></div>
       <div class="tier-band tier-3 text-center"><div class="text-[10px] uppercase tracking-widest opacity-80">Invitation Only</div><div class="text-base">Infinite Blue Diamond</div></div>
     </div>
+  </div>
+
+  <!-- Visual: LIFF UI Showcase (3 phone mockups side-by-side) -->
+  <div>
+    <h4 class="font-display font-bold text-lg mb-1 text-center">Inside LINE — Member Experience Preview</h4>
+    <p class="text-sm text-center mb-8" style="color:var(--text-muted)">A glimpse of the LINE LIFF interface members will see when interacting with MOBILIFE</p>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <!-- Phone 1: Home / Points -->
+      <div class="phone-frame">
+        <div class="phone-screen" style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+          <div class="phone-line-bar">
+            <div class="line-dot"></div>
+            <span>MOBILIFE</span>
+          </div>
+          <div class="p-3">
+            <div class="rounded-xl p-3 mb-3" style="background: linear-gradient(135deg, #1B2B5B 0%, #2B4A8E 100%); color:#fff;">
+              <div class="text-[9px] opacity-80 uppercase tracking-widest">Diamond Tier</div>
+              <div class="text-2xl font-black mt-1">12,450</div>
+              <div class="text-[10px] opacity-80">points · ฿62,250 value</div>
+              <div class="mt-2 h-1 rounded-full" style="background:rgba(255,255,255,0.2)"><div style="width:75%; height:100%; background:#C9A96E; border-radius:9999px;"></div></div>
+              <div class="text-[9px] mt-1 opacity-80">2,550 to Black Diamond</div>
+            </div>
+            <div class="grid grid-cols-4 gap-1 text-center">
+              <div class="rounded-lg p-2" style="background:#f1f5f9"><div class="text-base">⭐</div><div class="text-[8px] mt-1" style="color:#475569">Earn</div></div>
+              <div class="rounded-lg p-2" style="background:#f1f5f9"><div class="text-base">🎁</div><div class="text-[8px] mt-1" style="color:#475569">Redeem</div></div>
+              <div class="rounded-lg p-2" style="background:#f1f5f9"><div class="text-base">💳</div><div class="text-[8px] mt-1" style="color:#475569">Wallet</div></div>
+              <div class="rounded-lg p-2" style="background:#f1f5f9"><div class="text-base">🤖</div><div class="text-[8px] mt-1" style="color:#475569">ใบเตย</div></div>
+            </div>
+            <div class="mt-3">
+              <div class="text-[10px] font-bold mb-2" style="color:#1B2B5B">Latest Campaigns</div>
+              <div class="rounded-lg p-2 mb-1" style="background:linear-gradient(90deg, rgba(226,35,26,0.08), transparent); border-left:2px solid #E2231A">
+                <div class="text-[9px] font-bold" style="color:#1B2B5B">BMW Summer Drive</div>
+                <div class="text-[8px]" style="color:#64748b">Earn 2x points</div>
+              </div>
+              <div class="rounded-lg p-2" style="background:linear-gradient(90deg, rgba(201,169,110,0.1), transparent); border-left:2px solid #C9A96E">
+                <div class="text-[9px] font-bold" style="color:#1B2B5B">Rolls-Royce Lucky Draw</div>
+                <div class="text-[8px]" style="color:#64748b">Black Badge experience</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#C9A96E">Home Screen</div>
+          <div class="text-xs" style="color:var(--text-muted)">Points · Tier · Quick Actions</div>
+        </div>
+      </div>
+
+      <!-- Phone 2: AI Chat with น้องใบเตย -->
+      <div class="phone-frame">
+        <div class="phone-screen" style="background: #fafafa;">
+          <div class="phone-line-bar">
+            <div class="line-dot"></div>
+            <span>น้องใบเตย AI</span>
+          </div>
+          <div class="p-3 space-y-2">
+            <div class="flex gap-2">
+              <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0" style="background:linear-gradient(135deg, #1B2B5B, #7E2A8E); color:#fff;">ใ</div>
+              <div class="rounded-2xl rounded-tl-sm p-2 max-w-[80%]" style="background:#fff; border:1px solid #e2e8f0;">
+                <div class="text-[10px]" style="color:#1B2B5B">สวัสดีค่ะ! ใบเตยช่วยอะไรได้บ้างคะ? 🌿</div>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="rounded-2xl rounded-tr-sm p-2 max-w-[80%]" style="background:#1B2B5B; color:#fff;">
+                <div class="text-[10px]">"คะแนนของฉันเหลือเท่าไหร่"</div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0" style="background:linear-gradient(135deg, #1B2B5B, #7E2A8E); color:#fff;">ใ</div>
+              <div class="rounded-2xl rounded-tl-sm p-2 max-w-[80%]" style="background:#fff; border:1px solid #e2e8f0;">
+                <div class="text-[10px]" style="color:#1B2B5B">คุณมี <b>12,450</b> คะแนน (Diamond Tier) — ขาดอีก 2,550 คะแนนจะอัพเป็น Black Diamond ค่ะ ✨</div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0" style="background:linear-gradient(135deg, #1B2B5B, #7E2A8E); color:#fff;">ใ</div>
+              <div class="rounded-2xl rounded-tl-sm p-2 max-w-[80%]" style="background:#fff; border:1px solid #e2e8f0;">
+                <div class="text-[10px]" style="color:#1B2B5B">ลอง campaign "BMW Summer Drive" ที่จะถึง — earn 2x points พิเศษ คุณจะได้ Black Diamond เร็วขึ้นค่ะ 💎</div>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-1 rounded-full text-[8px] font-bold" style="background:rgba(201,169,110,0.15); color:#C9A96E;">Show campaigns</span>
+              <span class="px-2 py-1 rounded-full text-[8px] font-bold" style="background:rgba(126,42,142,0.10); color:#7E2A8E;">My rewards</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#C9A96E">AI Concierge</div>
+          <div class="text-xs" style="color:var(--text-muted)">Conversational · Thai/English</div>
+        </div>
+      </div>
+
+      <!-- Phone 3: Rewards / Coupons -->
+      <div class="phone-frame">
+        <div class="phone-screen" style="background: #fafafa;">
+          <div class="phone-line-bar">
+            <div class="line-dot"></div>
+            <span>Rewards</span>
+          </div>
+          <div class="p-3">
+            <div class="text-[10px] font-bold mb-2" style="color:#1B2B5B">Curated for Diamond</div>
+            <div class="space-y-2">
+              <div class="rounded-xl overflow-hidden border" style="border-color:#e2e8f0; background:#fff;">
+                <div class="h-12" style="background:linear-gradient(135deg, #1B2B5B 0%, #2B4A8E 100%); position:relative;">
+                  <div class="absolute right-2 top-2 px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:rgba(255,255,255,0.2); color:#fff;">BMW</div>
+                </div>
+                <div class="p-2">
+                  <div class="text-[10px] font-bold" style="color:#1B2B5B">Service Voucher</div>
+                  <div class="flex justify-between mt-1">
+                    <span class="text-[9px]" style="color:#64748b">Track Day Lounge access</span>
+                    <span class="text-[9px] font-bold" style="color:#C9A96E">8,000 pts</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-xl overflow-hidden border" style="border-color:#e2e8f0; background:#fff;">
+                <div class="h-12" style="background:linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%); position:relative;">
+                  <div class="absolute right-2 top-2 px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:rgba(201,169,110,0.4); color:#fff;">RR</div>
+                </div>
+                <div class="p-2">
+                  <div class="text-[10px] font-bold" style="color:#1B2B5B">Champagne Set</div>
+                  <div class="flex justify-between mt-1">
+                    <span class="text-[9px]" style="color:#64748b">Limited Edition · Black Badge</span>
+                    <span class="text-[9px] font-bold" style="color:#C9A96E">12,000 pts</span>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-xl overflow-hidden border" style="border-color:#e2e8f0; background:#fff;">
+                <div class="h-12" style="background:linear-gradient(135deg, #C9A96E 0%, #A88845 100%); position:relative;">
+                  <div class="absolute right-2 top-2 px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:rgba(255,255,255,0.3); color:#fff;">MINI</div>
+                </div>
+                <div class="p-2">
+                  <div class="text-[10px] font-bold" style="color:#1B2B5B">Lifestyle Collection</div>
+                  <div class="flex justify-between mt-1">
+                    <span class="text-[9px]" style="color:#64748b">30% discount voucher</span>
+                    <span class="text-[9px] font-bold" style="color:#C9A96E">4,500 pts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <div class="text-[10px] uppercase tracking-widest font-bold" style="color:#C9A96E">Reward Catalog</div>
+          <div class="text-xs" style="color:var(--text-muted)">Personalised · Tier-Appropriate</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-xs mt-8" style="color:var(--text-muted)">A live working prototype is available at <a href="https://ai-solution-platform.github.io/mgc-asia-loyalty-poc/" target="_blank" style="color:#E2231A; text-decoration:underline;">our POC environment</a> — every screen is functional with realistic mock data.</p>
   </div>
 </div>
 </section>
@@ -1048,52 +1273,150 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
     </div>
   </div>
 
-  <!-- Sample AI capabilities -->
+  <!-- Sample AI capabilities — 20 illustrative samples -->
   <div class="mb-5">
-    <h3 class="font-display font-bold text-xl mb-2">What น้องใบเตย Can Do — Sample Capabilities</h3>
-    <p class="text-sm" style="color:var(--text-muted)">The examples below are illustrative of the AI agent's capabilities. The specific use cases delivered will be co-defined with MGC-ASIA during discovery, prioritised by business value, and continuously expanded over the platform lifetime.</p>
+    <h3 class="font-display font-bold text-xl mb-2">Sample AI Use Cases — Illustrative Capability Showcase</h3>
+    <p class="text-sm" style="color:var(--text-muted)">The 20 samples below illustrate what น้องใบเตย can do across executive, marketing, customer intelligence, operations, and member self-service. The specific use cases delivered will be co-defined with MGC-ASIA during discovery, prioritised by business value, and progressively expanded over time.</p>
   </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(226,35,26,0.12); color:#E2231A">EXEC INSIGHTS</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Real-Time Brand Performance</h4>
-      <p class="text-xs" style="color:var(--text-muted)">"Rolls-Royce vs BMW เดือนนี้" → SQL + chart + insight in 5 sec.</p>
+
+  <!-- 5 category sections, 4 use cases each = 20 -->
+  <div class="space-y-4 mb-10">
+
+    <!-- Category 1: Executive Insights -->
+    <div class="glass rounded-2xl p-5">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(226,35,26,0.12); color:#E2231A">📊</div>
+        <h4 class="font-display font-bold text-base">Executive Insights — for C-Level &amp; Leadership</h4>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Real-Time Brand Performance</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Cross-brand performance comparison on demand</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Cross-Brand Leaderboard</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Ranked performance across the 8-brand portfolio</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Point Liability Forecasting</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">CFO-grade liability projections with scenarios</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #E2231A;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Anomaly Auto-Detection</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Proactive alerts on unusual patterns</div>
+        </div>
+      </div>
     </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(226,35,26,0.12); color:#E2231A">EXEC INSIGHTS</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Forecasting & Trends</h4>
-      <p class="text-xs" style="color:var(--text-muted)">CFO point liability + IFRS 15 scenarios with sensitivity analysis.</p>
+
+    <!-- Category 2: Marketing Optimization -->
+    <div class="glass rounded-2xl p-5">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(201,169,110,0.18); color:#C9A96E">🎯</div>
+        <h4 class="font-display font-bold text-base">Marketing Optimization — for Marketing &amp; CRM Teams</h4>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Campaign ROI &amp; Uplift</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Causal uplift attribution per cohort</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Dynamic Segmentation</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">RFM segments updated continuously</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Next-Best-Action</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Per-customer recommendation engine</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #C9A96E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">A/B Test Interpretation</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Statistical significance + plain-language summary</div>
+        </div>
+      </div>
     </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(201,169,110,0.18); color:#C9A96E">MARKETING</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Campaign ROI Analysis</h4>
-      <p class="text-xs" style="color:var(--text-muted)">Uplift modeling per cohort — find best-performing segment automatically.</p>
+
+    <!-- Category 3: Customer Intelligence -->
+    <div class="glass rounded-2xl p-5">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(126,42,142,0.15); color:#7E2A8E">🧠</div>
+        <h4 class="font-display font-bold text-base">Customer Intelligence — Predictive &amp; Behavioural</h4>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Churn Prediction</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">At-risk member identification + retention plays</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Top-Tier Behaviour DNA</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Patterns of best customers — replicable signals</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Lifetime Value Forecast</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Member CLV projections by cohort</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #7E2A8E;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Cross-Brand Propensity</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Likelihood of upgrading or cross-buying</div>
+        </div>
+      </div>
     </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(201,169,110,0.18); color:#C9A96E">MARKETING</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Next-Best-Action</h4>
-      <p class="text-xs" style="color:var(--text-muted)">Per-customer NBA — Maserati Track Day vs trade-in vs redemption.</p>
+
+    <!-- Category 4: Operations Support -->
+    <div class="glass rounded-2xl p-5">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(27,43,91,0.12); color:#1B2B5B">⚙️</div>
+        <h4 class="font-display font-bold text-base">Operations Support — for Service &amp; Branch Teams</h4>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Service Issue Resolution</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Member context + resolution suggestions</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Tier Override Decision</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Manager-grade override recommendations</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Reward Inventory Forecast</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Demand prediction for stock planning</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #1B2B5B;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Branch Benchmarking</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Branch performance comparison &amp; insights</div>
+        </div>
+      </div>
     </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(126,42,142,0.15); color:#7E2A8E">CUSTOMER INTEL</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Churn Prediction</h4>
-      <p class="text-xs" style="color:var(--text-muted)">Top 5% churn risk + auto-generated win-back campaign — protect ฿1.5B+.</p>
+
+    <!-- Category 5: Member Self-Service -->
+    <div class="glass rounded-2xl p-5">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(34,197,94,0.15); color:#16a34a">💬</div>
+        <h4 class="font-display font-bold text-base">Member Self-Service — Inside LINE for Customers</h4>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personal Points &amp; Tier</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">"Points ฉันเหลือเท่าไหร่" — instant answer</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Personalised Rewards</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Tailored reward recommendations on LINE</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">Service Concierge</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Service triage + booking via natural language</div>
+        </div>
+        <div class="rounded-lg p-3 text-sm" style="background:var(--bg-card-inner); border-left: 3px solid #16a34a;">
+          <div class="font-bold text-xs mb-1" style="color:var(--text-primary)">FAQ &amp; Support</div>
+          <div class="text-[11px]" style="color:var(--text-muted)">Conversational support, escalation when needed</div>
+        </div>
+      </div>
     </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(126,42,142,0.15); color:#7E2A8E">CUSTOMER INTEL</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Cross-Brand Propensity</h4>
-      <p class="text-xs" style="color:var(--text-muted)">BMW → RR/Maserati propensity map — ฿385M activation opportunity.</p>
-    </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(34,197,94,0.15); color:#16a34a">MEMBER LINE</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Sample Use Cases · Personal Tier Status</h4>
-      <p class="text-xs" style="color:var(--text-muted)">"Points ฉันเหลือเท่าไหร่" → personalized upgrade roadmap on LINE.</p>
-    </div>
-    <div class="usecase-card">
-      <span class="usecase-tag" style="background:rgba(34,197,94,0.15); color:#16a34a">MEMBER LINE</span>
-      <h4 class="font-bold text-sm mt-2 mb-2">Sample Use Cases · Service Concierge</h4>
-      <p class="text-xs" style="color:var(--text-muted)">"Check engine ขึ้น" → triage + booking + Black Diamond benefits surfaced.</p>
-    </div>
+
+  </div>
+
+  <!-- Note: not a commitment -->
+  <div class="rounded-xl p-4 mb-10 text-xs" style="background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.25); color:var(--text-muted)">
+    <b style="color:var(--text-primary)">Important:</b> The 20 samples above demonstrate what the AI agent architecture is capable of. The actual use cases activated for MGC-ASIA will be agreed during discovery and rolled out in priority order based on business impact. Additional capabilities are added through the Change Request process or in future enhancement releases.
   </div>
 
   <!-- Competitive comparison -->
@@ -1372,9 +1695,9 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   <!-- Detailed CAPEX breakdown -->
   <div class="glass rounded-2xl p-8 mb-6">
     <div class="text-[10px] uppercase tracking-widest font-bold mb-4" style="color:#1B2B5B">CAPEX Year 1 Breakdown · ฿4.5M</div>
-    <table class="true-table">
+    <table class="true-table" style="table-layout: fixed; width: 100%;">
       <thead>
-        <tr><th style="width:42%">Work Package</th><th style="width:43%">Scope &amp; Deliverables</th><th class="text-right" style="width:15%">Cost</th></tr>
+        <tr><th style="width:22%; text-align:left;">Work Package</th><th style="width:68%; text-align:left;">Scope &amp; Deliverables</th><th class="text-right" style="width:10%">Cost</th></tr>
       </thead>
       <tbody>
         <tr class="price-row">
@@ -1433,25 +1756,30 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   <!-- Detailed OPEX breakdown -->
   <div class="glass rounded-2xl p-8 mb-6">
     <div class="text-[10px] uppercase tracking-widest font-bold mb-4" style="color:#7E2A8E">OPEX Year 2-3 Breakdown · ฿3.0M (฿1.5M per year)</div>
-    <table class="true-table">
+    <table class="true-table" style="table-layout: fixed; width: 100%;">
       <thead>
-        <tr><th style="width:42%">Service Component</th><th style="width:43%">Scope</th><th class="text-right" style="width:15%">2-Year Cost</th></tr>
+        <tr><th style="width:22%; text-align:left;">Service Component</th><th style="width:68%; text-align:left;">Scope</th><th class="text-right" style="width:10%">2-Year Cost</th></tr>
       </thead>
       <tbody>
         <tr class="price-row">
           <td><b>Cloud Infrastructure</b></td>
-          <td>Compute, storage, network, backup, monitoring tools, CDN, security services</td>
-          <td class="text-right font-bold">฿1.2M</td>
-        </tr>
-        <tr class="price-row">
-          <td><b>Managed Services</b></td>
-          <td>Business-hours support with on-call escalation, incident response, problem management, change management</td>
+          <td>Compute, storage, network, backup, monitoring tools, CDN, security services — sized for the agreed member base with auto-scaling for peak</td>
           <td class="text-right font-bold">฿1.0M</td>
         </tr>
         <tr class="price-row">
-          <td><b>Maintenance &amp; Security</b></td>
-          <td>Software patches, security updates, vulnerability management, performance tuning, capacity planning</td>
-          <td class="text-right font-bold">฿0.8M</td>
+          <td><b>Platform Managed Services</b></td>
+          <td>Keep the platform running smoothly — proactive system health monitoring, application bug fixes, error resolution, performance optimisation, regular minor updates, log review, capacity tuning, application-level support</td>
+          <td class="text-right font-bold">฿1.0M</td>
+        </tr>
+        <tr class="price-row">
+          <td><b>Operational Support</b></td>
+          <td>Business-hours service desk with on-call escalation, incident response, problem management, change management, monthly service reviews</td>
+          <td class="text-right font-bold">฿0.6M</td>
+        </tr>
+        <tr class="price-row">
+          <td><b>Security &amp; Compliance</b></td>
+          <td>Security patches, vulnerability management, security event monitoring, PDPA compliance maintenance, penetration testing (annual)</td>
+          <td class="text-right font-bold">฿0.4M</td>
         </tr>
         <tr style="background: rgba(126,42,142,0.08)">
           <td colspan="2" class="font-black">OPEX Subtotal · Year 2-3</td>
@@ -1461,74 +1789,68 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
     </table>
   </div>
 
-  <!-- Milestone Payment Schedule -->
+  <!-- Milestone Payment Schedule (4 milestones, round numbers) -->
   <div class="glass rounded-2xl p-8 mb-10">
-    <div class="text-[10px] uppercase tracking-widest font-bold mb-4" style="color:#E2231A">Year 1 CAPEX Milestone Payment Schedule</div>
-    <div class="grid md:grid-cols-5 gap-3">
-      <div class="rounded-xl p-4 text-center" style="background: rgba(27,43,91,0.06); border: 1px solid var(--border-glass);">
-        <div class="text-3xl font-display font-black mb-1" style="color:#1B2B5B">25%</div>
-        <div class="text-[11px] font-bold mb-1" style="color:var(--text-primary)">Contract Signing</div>
-        <div class="text-[10px]" style="color:var(--text-muted)">฿1.125M</div>
-        <div class="text-[10px] mt-1" style="color:var(--text-muted)">Project initiation</div>
+    <div class="text-[10px] uppercase tracking-widest font-bold mb-5" style="color:#E2231A">Year 1 CAPEX Milestone Payment Schedule</div>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="rounded-xl p-5 text-center" style="background: rgba(27,43,91,0.06); border: 1px solid var(--border-glass);">
+        <div class="text-4xl font-display font-black mb-1" style="color:#1B2B5B">20%</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--text-primary)">฿1.0M</div>
+        <div class="text-sm font-bold mb-1" style="color:var(--text-primary)">Contract Signing</div>
+        <div class="text-xs" style="color:var(--text-muted)">Project kickoff &amp; team mobilisation</div>
       </div>
-      <div class="rounded-xl p-4 text-center" style="background: rgba(126,42,142,0.06); border: 1px solid var(--border-glass);">
-        <div class="text-3xl font-display font-black mb-1" style="color:#7E2A8E">20%</div>
-        <div class="text-[11px] font-bold mb-1" style="color:var(--text-primary)">Requirements Sign-off</div>
-        <div class="text-[10px]" style="color:var(--text-muted)">฿0.9M</div>
-        <div class="text-[10px] mt-1" style="color:var(--text-muted)">BRD acceptance</div>
+      <div class="rounded-xl p-5 text-center" style="background: rgba(126,42,142,0.06); border: 1px solid var(--border-glass);">
+        <div class="text-4xl font-display font-black mb-1" style="color:#7E2A8E">30%</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--text-primary)">฿1.5M</div>
+        <div class="text-sm font-bold mb-1" style="color:var(--text-primary)">Requirements + SRS Sign-off</div>
+        <div class="text-xs" style="color:var(--text-muted)">BRD &amp; system requirements specification accepted</div>
       </div>
-      <div class="rounded-xl p-4 text-center" style="background: rgba(201,169,110,0.08); border: 1px solid var(--border-glass);">
-        <div class="text-3xl font-display font-black mb-1" style="color:#C9A96E">25%</div>
-        <div class="text-[11px] font-bold mb-1" style="color:var(--text-primary)">SRS Sign-off</div>
-        <div class="text-[10px]" style="color:var(--text-muted)">฿1.125M</div>
-        <div class="text-[10px] mt-1" style="color:var(--text-muted)">Design acceptance</div>
+      <div class="rounded-xl p-5 text-center" style="background: rgba(226,35,26,0.06); border: 1px solid var(--border-glass);">
+        <div class="text-4xl font-display font-black mb-1" style="color:#E2231A">30%</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--text-primary)">฿1.5M</div>
+        <div class="text-sm font-bold mb-1" style="color:var(--text-primary)">UAT Sign-off</div>
+        <div class="text-xs" style="color:var(--text-muted)">User acceptance testing complete</div>
       </div>
-      <div class="rounded-xl p-4 text-center" style="background: rgba(226,35,26,0.06); border: 1px solid var(--border-glass);">
-        <div class="text-3xl font-display font-black mb-1" style="color:#E2231A">20%</div>
-        <div class="text-[11px] font-bold mb-1" style="color:var(--text-primary)">UAT Sign-off</div>
-        <div class="text-[10px]" style="color:var(--text-muted)">฿0.9M</div>
-        <div class="text-[10px] mt-1" style="color:var(--text-muted)">User acceptance</div>
-      </div>
-      <div class="rounded-xl p-4 text-center" style="background: rgba(22,163,74,0.06); border: 1px solid var(--border-glass);">
-        <div class="text-3xl font-display font-black mb-1" style="color:#16a34a">10%</div>
-        <div class="text-[11px] font-bold mb-1" style="color:var(--text-primary)">Go-Live</div>
-        <div class="text-[10px]" style="color:var(--text-muted)">฿0.45M</div>
-        <div class="text-[10px] mt-1" style="color:var(--text-muted)">Production launch</div>
+      <div class="rounded-xl p-5 text-center" style="background: rgba(22,163,74,0.06); border: 1px solid var(--border-glass);">
+        <div class="text-4xl font-display font-black mb-1" style="color:#16a34a">10%</div>
+        <div class="text-2xl font-bold mb-2" style="color:var(--text-primary)">฿0.5M</div>
+        <div class="text-sm font-bold mb-1" style="color:var(--text-primary)">Go-Live</div>
+        <div class="text-xs" style="color:var(--text-muted)">Production launch &amp; hypercare start</div>
       </div>
     </div>
-    <p class="text-xs mt-4 text-center" style="color:var(--text-muted)">Year 2-3 OPEX billed quarterly in advance · Change Request Pool drawn down per approved CR work order</p>
+    <p class="text-xs mt-5 text-center" style="color:var(--text-muted)">Year 2-3 OPEX billed quarterly in advance · Change Request Pool drawn down per approved work order</p>
   </div>
 
-  <!-- Two purchase options -->
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="glass rounded-2xl p-6" style="border-top: 4px solid #1B2B5B">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-[10px] uppercase tracking-widest font-bold" style="color:#1B2B5B">Option A</span>
-        <span class="text-[10px] px-2 py-0.5 rounded font-bold" style="background:rgba(27,43,91,0.10); color:#1B2B5B">CAPEX-led</span>
-      </div>
-      <h4 class="font-display font-bold text-lg mb-3">Milestone CAPEX + Annual OPEX</h4>
-      <ul class="space-y-2 text-sm mb-4">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 1 (CAPEX milestones)</span><span class="font-bold">฿4.5M</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 2 (OPEX)</span><span class="font-bold">฿1.5M</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Year 3 (OPEX)</span><span class="font-bold">฿1.5M</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Change Request Pool</span><span class="font-bold">฿0.5M</span></li>
-        <li class="flex justify-between border-t pt-2 mt-2" style="border-color:var(--border-glass)"><span class="font-bold" style="color:var(--text-primary)">Total 3 years</span><span class="font-black gradient-text">฿8.0M</span></li>
-      </ul>
-      <p class="text-xs" style="color:var(--text-muted)">Asset capitalised on MGC books · Lower total cost of ownership · Best for capital allocation flexibility.</p>
+  <!-- Investment summary at-a-glance -->
+  <div class="glass rounded-2xl p-6" style="border-top: 4px solid #1B2B5B">
+    <div class="flex items-center gap-2 mb-4">
+      <span class="text-[10px] uppercase tracking-widest font-bold" style="color:#1B2B5B">Investment at a Glance</span>
     </div>
-    <div class="glass rounded-2xl p-6" style="border-top: 4px solid #C9A96E">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-[10px] uppercase tracking-widest font-bold" style="color:#C9A96E">Option B</span>
-        <span class="text-[10px] px-2 py-0.5 rounded font-bold" style="background:rgba(201,169,110,0.15); color:#C9A96E">As-a-Service</span>
+    <div class="grid md:grid-cols-4 gap-4 text-sm">
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Year 1 (CAPEX)</div>
+        <div class="text-2xl font-bold" style="color:var(--text-primary)">฿4.5M</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Build &amp; deployment</div>
       </div>
-      <h4 class="font-display font-bold text-lg mb-3">As-a-Service · 36 Equal Monthly Payments</h4>
-      <ul class="space-y-2 text-sm mb-4">
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Monthly fee (36 months)</span><span class="font-bold">฿222K</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Upfront commitment</span><span class="font-bold">฿0</span></li>
-        <li class="flex justify-between"><span style="color:var(--text-muted)">Coverage</span><span class="font-bold">All-inclusive</span></li>
-        <li class="flex justify-between border-t pt-2 mt-2" style="border-color:var(--border-glass)"><span class="font-bold" style="color:var(--text-primary)">Total 3 years</span><span class="font-black gradient-gold-text">฿8.0M</span></li>
-      </ul>
-      <p class="text-xs" style="color:var(--text-muted)">Pure operating expense · Predictable monthly cost · Best for cash-flow management and tax efficiency.</p>
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Year 2 (OPEX)</div>
+        <div class="text-2xl font-bold" style="color:var(--text-primary)">฿1.5M</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Cloud + managed services</div>
+      </div>
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:var(--text-muted)">Year 3 (OPEX)</div>
+        <div class="text-2xl font-bold" style="color:var(--text-primary)">฿1.5M</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Cloud + managed services</div>
+      </div>
+      <div class="rounded-xl p-4" style="background: rgba(226,35,26,0.06);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-1" style="color:#E2231A">CR Pool</div>
+        <div class="text-2xl font-bold" style="color:#E2231A">฿0.5M</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">40 mandays reserved</div>
+      </div>
+    </div>
+    <div class="mt-4 pt-4 border-t flex justify-between items-center" style="border-color:var(--border-glass)">
+      <span class="font-bold" style="color:var(--text-primary)">3-Year Total Investment (Excl. VAT)</span>
+      <span class="font-black gradient-text text-3xl">฿8.0M</span>
     </div>
   </div>
 </div>
@@ -1565,7 +1887,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
         <tr><td>9</td><td>Service appointment booking via concierge</td><td>True can support — calendar integration · slot reservation · LINE confirmation · Black Diamond perks surfaced.</td><td>Section 5b F16, Section 8 Sample Use Cases </td></tr>
         <tr><td>10</td><td>B2B fleet program + corporate accounts</td><td>True can support — separate B2B portal · volume tier rules · approval workflows.</td><td>Section 5b F14</td></tr>
         <tr><td>11</td><td>Reward inventory with auto-PO</td><td>True can support — demand forecasting · reorder point · vendor lead-time tracking.</td><td>Section 5b F15, Section 8 Sample Use Cases </td></tr>
-        <tr><td>12</td><td>SLA 99.5% with 30-min P1 response</td><td>True can support — Tier 2 managed service · business hours + on-call · escalation flow per Section 15.</td><td>Section 14 SLA, Section 15 Escalation</td></tr>
+        <tr><td>12</td><td>Service level targets per Section 12</td><td>True can support — Tier 2 managed service · business hours + on-call · escalation flow per Section 15.</td><td>Section 14 SLA, Section 15 Escalation</td></tr>
         <tr><td>13</td><td>5-month go-live timeline</td><td>True can support — phased delivery with weekly cadence · UAT gates · 30-day hypercare.</td><td>Section 10 Roadmap</td></tr>
         <tr><td>14</td><td>Budget alignment ฿8M (3-year)</td><td>True delivers exactly within ฿8M budget · CAPEX + OPEX + Mandays transparent.</td><td>Section 12 Commercial</td></tr>
         <tr><td>15</td><td>Voice-of-Customer sentiment analytics</td><td>True can support — Thai-tuned LLM sentiment · topic modeling · weekly trend report.</td><td>Section 5b F13, Section 8 Sample Use Cases </td></tr>
@@ -1576,33 +1898,78 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
 </div>
 </section>
 
-<!-- ===== 14. SLA ===== -->
+<!-- ===== 12. SLA ===== -->
 <section id="sla" class="py-24 px-10" style="background:var(--bg-secondary)">
 <div class="max-w-7xl mx-auto section-enter">
   <div class="text-center mb-12">
-    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">14 — Service Level Agreement</div>
-    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">SLA Commitment</h2>
-    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">We guarantee 99.5% uptime, fast response on every severity, and a service credit if we miss it.</p>
+    <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">12 — Service Level Agreement</div>
+    <h2 class="font-display text-4xl md:text-5xl font-black mb-3">Service Level Targets</h2>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Standard service level targets included in the proposal. Higher tiers are available as an upgrade option for customers requiring stricter commitments.</p>
   </div>
 
+  <!-- Standard SLA Cards -->
   <div class="grid md:grid-cols-4 gap-5 mb-8">
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">UPTIME</div><div class="text-4xl font-display font-black gradient-red counter">99.5%</div><div class="text-xs mt-1" style="color:var(--text-muted)">≤ 3.6 hr/mo downtime</div></div>
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P1 Critical</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">30<span class="text-2xl">min</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P2 Major</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">1<span class="text-2xl">hr</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">P3 Minor</div><div class="text-4xl font-display font-black" style="color:#1B2B5B">4<span class="text-2xl">hr</span></div><div class="text-xs mt-1" style="color:var(--text-muted)">First response</div></div>
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Uptime Target</div>
+      <div class="text-4xl font-display font-black gradient-red">99.0%</div>
+      <div class="text-xs mt-1" style="color:var(--text-muted)">Standard tier</div>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Critical Issue</div>
+      <div class="text-4xl font-display font-black" style="color:#1B2B5B">2<span class="text-2xl">hr</span></div>
+      <div class="text-xs mt-1" style="color:var(--text-muted)">First response</div>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Major Issue</div>
+      <div class="text-4xl font-display font-black" style="color:#1B2B5B">4<span class="text-2xl">hr</span></div>
+      <div class="text-xs mt-1" style="color:var(--text-muted)">First response</div>
+    </div>
+    <div class="glass rounded-2xl p-6 text-center">
+      <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">Minor Issue</div>
+      <div class="text-4xl font-display font-black" style="color:#1B2B5B">1<span class="text-2xl">bd</span></div>
+      <div class="text-xs mt-1" style="color:var(--text-muted)">First response</div>
+    </div>
   </div>
 
-  <div class="glass rounded-2xl p-6">
-    <h4 class="font-display font-bold text-lg mb-4">SLA Definitions & Service Credits</h4>
+  <!-- SLA Detail Table -->
+  <div class="glass rounded-2xl p-6 mb-6">
+    <h4 class="font-display font-bold text-lg mb-4">Service Level Detail</h4>
     <table class="true-table">
-      <thead><tr><th>Severity</th><th>Definition</th><th>Response</th><th>Resolution Target</th><th>Credit if Missed</th></tr></thead>
+      <thead><tr><th>Severity</th><th>Definition</th><th>Response Target</th><th>Resolution Target</th></tr></thead>
       <tbody>
-        <tr><td><b style="color:#E2231A">P1 — Critical</b></td><td>Production down · members can't login or earn points</td><td>30 min</td><td>4 hours</td><td>10% monthly fee</td></tr>
-        <tr><td><b style="color:#C9A96E">P2 — Major</b></td><td>Major feature impaired · workaround available</td><td>1 hour</td><td>1 business day</td><td>5% monthly fee</td></tr>
-        <tr><td><b style="color:#1B2B5B">P3 — Minor</b></td><td>Minor defect · cosmetic · no business impact</td><td>4 hours</td><td>5 business days</td><td>—</td></tr>
-        <tr><td><b style="color:#7E2A8E">P4 — Request</b></td><td>How-to · enhancement · CR scoping</td><td>1 business day</td><td>per CR pool plan</td><td>—</td></tr>
+        <tr><td><b style="color:#E2231A">Critical</b></td><td>Production down · members cannot login or earn points</td><td>2 hours</td><td>1 business day</td></tr>
+        <tr><td><b style="color:#C9A96E">Major</b></td><td>Major feature impaired · workaround available</td><td>4 hours</td><td>3 business days</td></tr>
+        <tr><td><b style="color:#1B2B5B">Minor</b></td><td>Minor defect · limited business impact</td><td>1 business day</td><td>10 business days</td></tr>
+        <tr><td><b style="color:#7E2A8E">Request</b></td><td>How-to · enhancement · change request scoping</td><td>2 business days</td><td>Per change request plan</td></tr>
       </tbody>
     </table>
+    <p class="text-xs mt-4" style="color:var(--text-muted)">Service level targets are best-effort commitments measured monthly under standard operating conditions. Performance is reviewed in monthly service review meetings with continuous improvement actions where appropriate.</p>
+  </div>
+
+  <!-- Optional SLA Upgrades -->
+  <div class="glass rounded-2xl p-6" style="border-left: 4px solid #C9A96E">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg" style="background:rgba(201,169,110,0.15); color:#C9A96E">⭐</div>
+      <h4 class="font-display font-bold text-lg">Premium SLA — Available as Upgrade</h4>
+    </div>
+    <p class="text-sm mb-4" style="color:var(--text-muted)">If MGC-ASIA requires a stricter service level, we can offer a Premium SLA tier with the commitments below. Pricing is quoted separately based on selected upgrades.</p>
+    <div class="grid md:grid-cols-3 gap-4 text-sm">
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">Premium Uptime</div>
+        <div class="text-2xl font-bold mb-1" style="color:var(--text-primary)">99.5% target</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Stricter availability target with monthly performance reporting</div>
+      </div>
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">Premium Response</div>
+        <div class="text-2xl font-bold mb-1" style="color:var(--text-primary)">30 min Critical</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Faster response targets across all severity levels</div>
+      </div>
+      <div class="rounded-xl p-4" style="background: var(--bg-card-inner);">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">24×7 Coverage</div>
+        <div class="text-2xl font-bold mb-1" style="color:var(--text-primary)">Round-the-clock</div>
+        <div class="text-[11px]" style="color:var(--text-muted)">Dedicated 24×7 support coverage with named escalation</div>
+      </div>
+    </div>
   </div>
 </div>
 </section>
@@ -1664,7 +2031,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
         <tr><td>PDPA in-Thailand sovereignty</td><td class="text-center" style="color:#f59e0b">Partial</td><td class="text-center" style="color:#94a3b8">SaaS-shared</td><td class="text-center font-bold" style="color:#16a34a">✓ Full Sovereignty</td></tr>
         <tr><td>Customization vs platform constraint</td><td class="text-center">Constrained</td><td class="text-center">Constrained</td><td class="text-center font-bold" style="color:#16a34a">Full custom build</td></tr>
         <tr><td>True Managed Service + SOC</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">B-Hrs + On-Call</td></tr>
-        <tr><td>SLA Uptime</td><td class="text-center">99.0%</td><td class="text-center">99.0%</td><td class="text-center font-bold" style="color:#16a34a">99.5%</td></tr>
+        <tr><td>SLA Uptime Target</td><td class="text-center">99.0%</td><td class="text-center">99.0%</td><td class="text-center font-bold" style="color:#16a34a">99.0% (Premium 99.5%)</td></tr>
         <tr><td>True ecosystem (5G/SOC/Academy)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓ Included</td></tr>
         <tr><td>True ecosystem (5G/SOC/Academy)</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center" style="color:#94a3b8">✗</td><td class="text-center font-bold" style="color:#16a34a">✓ Full Access</td></tr>
       </tbody>
