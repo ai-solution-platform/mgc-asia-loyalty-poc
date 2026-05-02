@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { currentUser, tierConfig } from '../../data/mockData';
-import { ChevronRight, LogOut, Shield, Bell as BellIcon, Globe, HelpCircle, Star, Edit3, X, Check } from 'lucide-react';
+import { ChevronRight, LogOut, Shield, Bell as BellIcon, Globe, HelpCircle, Star, Edit3, X, Check, History } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const languageOptions: Array<{ code: 'TH' | 'EN' | 'CN'; label: string; flag: string }> = [
@@ -32,6 +32,7 @@ export default function ProfilePage() {
   };
 
   const menuItems = [
+    { icon: History, label: 'ประวัติคะแนน', action: () => navigate('/app/point-history') },
     { icon: Edit3, label: 'แก้ไขข้อมูลส่วนตัว', action: () => setShowEdit(true) },
     { icon: Star, label: 'สิทธิประโยชน์ตาม Tier', action: () => navigate('/app/tier-benefits') },
     { icon: Shield, label: 'ความเป็นส่วนตัว & PDPA', action: () => navigate('/app/privacy') },

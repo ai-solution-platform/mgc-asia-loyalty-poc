@@ -8,183 +8,339 @@ interface CampaignArtworkProps {
 }
 
 const brandGradients: Record<string, [string, string]> = {
-  'BMW': ['#0066B1', '#1B3A6B'],
-  'Rolls-Royce': ['#2B0040', '#460073'],
-  'MINI': ['#2D8C3C', '#1A5C27'],
-  'Honda': ['#CC0000', '#8B0000'],
-  'Triumph': ['#000000', '#333333'],
-  'MORGAN': ['#1B4D3E', '#0D2B1F'],
-  'Harley-Davidson': ['#FF6600', '#993D00'],
-  'Maserati': ['#003366', '#001a33'],
+  'BMW': ['#1B4D8C', '#2563eb'],
+  'Rolls-Royce': ['#0a0a0a', '#1a1a2e'],
+  'MINI': ['#8B4513', '#C9A96E'],
+  'Honda': ['#c1121f', '#8b0000'],
+  'Triumph': ['#dc2626', '#1f2937'],
+  'MORGAN': ['#16a34a', '#d4a853'],
+  'Morgan': ['#16a34a', '#d4a853'],
+  'Harley-Davidson': ['#ff6b35', '#1a1a1a'],
+  'Maserati': ['#1a1a2e', '#4a5568'],
   'Sixt': ['#FF5F00', '#CC4C00'],
-  'All Brands': ['#D97706', '#92400E'],
+  'All Brands': ['#1B2B5B', '#C9A96E'],
 };
 
-// BMW Sport Sedan (5 Series style)
+// BMW Sport Sedan — sleek modern (5 Series / M3 silhouette: long hood, sloped roof, Hofmeister kink)
 function BMWSilhouette() {
   return (
-    <g opacity="0.9">
-      <path d="M60,120 L70,120 L75,105 L85,95 L110,88 L145,85 L180,85 L210,88 L230,95 L240,100 L250,105 L255,120 L260,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M60,120 L70,120 L75,105 L85,95 L110,88 L145,85 L180,85 L210,88 L230,95 L240,100 L250,105 L255,120 L260,120" fill="white" fillOpacity="0.08"/>
-      {/* Windows */}
-      <path d="M120,88 L115,95 L110,100 L145,98 L145,86 Z" fill="white" fillOpacity="0.15"/>
-      <path d="M148,86 L148,98 L195,98 L205,90 L195,86 Z" fill="white" fillOpacity="0.15"/>
-      {/* Wheels */}
-      <circle cx="95" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="95" cy="122" r="8" fill="white" fillOpacity="0.1"/>
-      <circle cx="230" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="230" cy="122" r="8" fill="white" fillOpacity="0.1"/>
-      {/* Headlight */}
-      <ellipse cx="70" cy="112" rx="6" ry="4" fill="white" fillOpacity="0.3"/>
+    <g opacity="0.95">
+      {/* Body — long hood + fastback roofline */}
+      <path d="M40,128 L52,128 L55,118 L62,110 L78,102 L100,96 L130,88 L165,84 L195,86 L218,93 L235,100 L248,108 L258,116 L270,120 L278,128 L286,128"
+            fill="white" fillOpacity="0.12" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+      {/* Greenhouse - sloped fastback */}
+      <path d="M120,90 L112,99 L107,108 L155,106 L155,87 Z" fill="white" fillOpacity="0.22"/>
+      <path d="M158,87 L158,106 L205,106 L218,98 L207,90 L195,87 Z" fill="white" fillOpacity="0.22"/>
+      {/* Hofmeister kink */}
+      <path d="M205,94 L218,96 L213,103 L208,102 Z" fill="white" fillOpacity="0.08"/>
+      {/* Belt line */}
+      <line x1="65" y1="115" x2="265" y2="115" stroke="white" strokeWidth="0.8" opacity="0.4"/>
+      {/* Kidney grille hint */}
+      <rect x="44" y="116" width="6" height="10" rx="1" fill="white" fillOpacity="0.25"/>
+      <rect x="51" y="116" width="6" height="10" rx="1" fill="white" fillOpacity="0.25"/>
+      {/* Headlight - angular */}
+      <path d="M48,112 L62,108 L68,112 L62,116 Z" fill="white" fillOpacity="0.45"/>
       {/* Tail light */}
-      <rect x="254" y="108" width="4" height="8" rx="1" fill="#ff3333" fillOpacity="0.5"/>
-    </g>
-  );
-}
-
-// Rolls-Royce Luxury Sedan
-function RollsRoyceSilhouette() {
-  return (
-    <g opacity="0.9">
-      <path d="M50,120 L60,120 L65,105 L70,92 L90,82 L130,78 L190,78 L230,82 L250,90 L258,100 L262,110 L265,120 L270,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M50,120 L60,120 L65,105 L70,92 L90,82 L130,78 L190,78 L230,82 L250,90 L258,100 L262,110 L265,120 L270,120" fill="white" fillOpacity="0.06"/>
-      {/* Spirit of Ecstasy hint */}
-      <line x1="68" y1="92" x2="68" y2="78" stroke="white" strokeWidth="1.5" opacity="0.6"/>
-      <path d="M64,78 L68,72 L72,78" fill="white" fillOpacity="0.4"/>
-      {/* Windows */}
-      <path d="M105,82 L100,90 L95,100 L155,98 L155,80 Z" fill="white" fillOpacity="0.12"/>
-      <path d="M158,80 L158,98 L215,98 L225,88 L210,80 Z" fill="white" fillOpacity="0.12"/>
-      {/* Grille lines */}
-      <rect x="56" y="105" width="10" height="12" rx="2" fill="none" stroke="white" strokeWidth="1" opacity="0.3"/>
-      {/* Wheels */}
-      <circle cx="90" cy="122" r="15" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="90" cy="122" r="9" fill="white" fillOpacity="0.08"/>
-      <circle cx="240" cy="122" r="15" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="240" cy="122" r="9" fill="white" fillOpacity="0.08"/>
-    </g>
-  );
-}
-
-// MINI Compact
-function MINISilhouette() {
-  return (
-    <g opacity="0.9">
-      <path d="M80,120 L88,120 L92,108 L100,97 L115,90 L140,88 L170,88 L195,90 L210,97 L218,108 L222,120 L230,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M80,120 L88,120 L92,108 L100,97 L115,90 L140,88 L170,88 L195,90 L210,97 L218,108 L222,120 L230,120" fill="white" fillOpacity="0.08"/>
-      {/* Rounded roof - classic MINI */}
-      <path d="M120,90 L118,97 L116,104 L155,102 L155,89 Z" fill="white" fillOpacity="0.18"/>
-      <path d="M158,89 L158,102 L190,102 L198,95 L188,89 Z" fill="white" fillOpacity="0.18"/>
-      {/* Bonnet stripe */}
-      <line x1="82" y1="112" x2="98" y2="99" stroke="white" strokeWidth="1" opacity="0.3"/>
-      {/* Wheels */}
-      <circle cx="108" cy="122" r="13" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="108" cy="122" r="7" fill="white" fillOpacity="0.1"/>
-      <circle cx="205" cy="122" r="13" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="205" cy="122" r="7" fill="white" fillOpacity="0.1"/>
-      {/* Headlight */}
-      <circle cx="86" cy="110" r="5" fill="white" fillOpacity="0.25"/>
-    </g>
-  );
-}
-
-// Honda Modern Sedan
-function HondaSilhouette() {
-  return (
-    <g opacity="0.9">
-      <path d="M65,120 L75,120 L78,106 L88,96 L108,89 L145,86 L185,86 L215,89 L235,96 L245,106 L248,120 L258,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M65,120 L75,120 L78,106 L88,96 L108,89 L145,86 L185,86 L215,89 L235,96 L245,106 L248,120 L258,120" fill="white" fillOpacity="0.07"/>
-      {/* Windows */}
-      <path d="M120,89 L115,96 L112,102 L155,100 L155,87 Z" fill="white" fillOpacity="0.15"/>
-      <path d="M158,87 L158,100 L200,100 L210,92 L198,87 Z" fill="white" fillOpacity="0.15"/>
-      {/* Wheels */}
-      <circle cx="98" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="98" cy="122" r="8" fill="white" fillOpacity="0.1"/>
-      <circle cx="232" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="232" cy="122" r="8" fill="white" fillOpacity="0.1"/>
-    </g>
-  );
-}
-
-// Triumph / Harley-Davidson Motorcycle
-function MotorcycleSilhouette() {
-  return (
-    <g opacity="0.9">
-      {/* Body */}
-      <path d="M120,110 L135,95 L155,88 L175,88 L190,92 L195,100 L200,110" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M120,110 L135,95 L155,88 L175,88 L190,92 L195,100 L200,110" fill="white" fillOpacity="0.08"/>
-      {/* Tank */}
-      <ellipse cx="160" cy="92" rx="18" ry="8" fill="white" fillOpacity="0.12"/>
-      {/* Seat */}
-      <path d="M170,90 L185,88 L195,92 L188,95 Z" fill="white" fillOpacity="0.1"/>
-      {/* Handlebars */}
-      <line x1="135" y1="95" x2="128" y2="82" stroke="white" strokeWidth="1.5"/>
-      <line x1="128" y1="82" x2="122" y2="80" stroke="white" strokeWidth="1.5"/>
-      <line x1="128" y1="82" x2="134" y2="80" stroke="white" strokeWidth="1.5"/>
-      {/* Front fork */}
-      <line x1="132" y1="98" x2="125" y2="118" stroke="white" strokeWidth="1.5"/>
-      {/* Exhaust */}
-      <path d="M195,105 L215,108 L220,110" fill="none" stroke="white" strokeWidth="1.5" opacity="0.5"/>
-      {/* Front wheel */}
-      <circle cx="122" cy="120" r="16" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="122" cy="120" r="4" fill="white" fillOpacity="0.15"/>
-      {/* Rear wheel */}
-      <circle cx="200" cy="120" r="16" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="200" cy="120" r="4" fill="white" fillOpacity="0.15"/>
-      {/* Spokes hint */}
-      <line x1="122" y1="104" x2="122" y2="136" stroke="white" strokeWidth="0.5" opacity="0.3"/>
-      <line x1="106" y1="120" x2="138" y2="120" stroke="white" strokeWidth="0.5" opacity="0.3"/>
-      <line x1="200" y1="104" x2="200" y2="136" stroke="white" strokeWidth="0.5" opacity="0.3"/>
-      <line x1="184" y1="120" x2="216" y2="120" stroke="white" strokeWidth="0.5" opacity="0.3"/>
-      {/* Headlight */}
-      <circle cx="128" cy="90" r="4" fill="white" fillOpacity="0.3"/>
-    </g>
-  );
-}
-
-// MORGAN Classic Vintage Car
-function MORGANSilhouette() {
-  return (
-    <g opacity="0.9">
-      <path d="M70,120 L78,120 L82,108 L88,100 L100,94 L115,90 L140,88 L165,88 L190,90 L210,95 L225,102 L232,110 L238,120 L245,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M70,120 L78,120 L82,108 L88,100 L100,94 L115,90 L140,88 L165,88 L190,90 L210,95 L225,102 L232,110 L238,120 L245,120" fill="white" fillOpacity="0.07"/>
-      {/* Rounded fenders */}
-      <path d="M78,115 Q75,105 85,100" fill="none" stroke="white" strokeWidth="1.5" opacity="0.5"/>
-      <path d="M235,115 Q238,105 228,100" fill="none" stroke="white" strokeWidth="1.5" opacity="0.5"/>
-      {/* Open top / windshield */}
-      <path d="M130,90 L128,95 L128,100 L155,99 L155,89 Z" fill="white" fillOpacity="0.15"/>
-      {/* Louvres on bonnet */}
-      <line x1="88" y1="102" x2="92" y2="96" stroke="white" strokeWidth="0.7" opacity="0.4"/>
-      <line x1="93" y1="101" x2="97" y2="95" stroke="white" strokeWidth="0.7" opacity="0.4"/>
-      <line x1="98" y1="100" x2="102" y2="94" stroke="white" strokeWidth="0.7" opacity="0.4"/>
-      {/* Wheels */}
-      <circle cx="100" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="100" cy="122" r="7" fill="white" fillOpacity="0.1"/>
-      <circle cx="220" cy="122" r="14" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="220" cy="122" r="7" fill="white" fillOpacity="0.1"/>
-      {/* Wire wheel spokes */}
-      {[0,45,90,135].map(a => (
-        <line key={a} x1={100 + 14*Math.cos(a*Math.PI/180)} y1={122 + 14*Math.sin(a*Math.PI/180)} x2={100 - 14*Math.cos(a*Math.PI/180)} y2={122 - 14*Math.sin(a*Math.PI/180)} stroke="white" strokeWidth="0.5" opacity="0.3"/>
+      <rect x="270" y="110" width="10" height="5" rx="1" fill="#ff3333" fillOpacity="0.55"/>
+      {/* Wheels — M-style */}
+      <circle cx="92" cy="130" r="16" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="92" cy="130" r="11" fill="white" fillOpacity="0.05"/>
+      <circle cx="92" cy="130" r="4" fill="white" fillOpacity="0.4"/>
+      {[0,72,144,216,288].map(a => (
+        <line key={a} x1="92" y1="130" x2={92 + 11*Math.cos((a-90)*Math.PI/180)} y2={130 + 11*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.5" opacity="0.5"/>
+      ))}
+      <circle cx="232" cy="130" r="16" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="232" cy="130" r="11" fill="white" fillOpacity="0.05"/>
+      <circle cx="232" cy="130" r="4" fill="white" fillOpacity="0.4"/>
+      {[0,72,144,216,288].map(a => (
+        <line key={`r${a}`} x1="232" y1="130" x2={232 + 11*Math.cos((a-90)*Math.PI/180)} y2={130 + 11*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.5" opacity="0.5"/>
       ))}
     </g>
   );
 }
 
-// Maserati Luxury Sport
+// Rolls-Royce — long, stately Phantom/Ghost silhouette with prominent vertical Pantheon grille
+function RollsRoyceSilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Long stately body — flat roof, suicide-door wheelbase */}
+      <path d="M22,128 L34,128 L36,108 L38,96 L48,86 L66,80 L96,74 L150,72 L210,72 L242,76 L262,84 L274,96 L282,108 L286,128 L298,128"
+            fill="white" fillOpacity="0.10" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+      {/* Pantheon grille — tall vertical */}
+      <rect x="26" y="88" width="14" height="34" rx="1" fill="white" fillOpacity="0.25" stroke="white" strokeWidth="1"/>
+      {[91,96,101,106,111,116].map(y => (
+        <line key={y} x1="28" y1={y} x2="38" y2={y} stroke="white" strokeWidth="0.6" opacity="0.5"/>
+      ))}
+      <line x1="33" y1="88" x2="33" y2="122" stroke="white" strokeWidth="0.8" opacity="0.4"/>
+      {/* Spirit of Ecstasy */}
+      <line x1="33" y1="88" x2="33" y2="76" stroke="white" strokeWidth="1.5" opacity="0.85"/>
+      <path d="M28,76 L33,68 L38,76 L33,80 Z" fill="white" fillOpacity="0.7"/>
+      {/* Greenhouse — flat formal roof */}
+      <path d="M70,80 L62,90 L60,100 L150,98 L150,72 Z" fill="white" fillOpacity="0.16"/>
+      <path d="M152,72 L152,98 L240,98 L255,90 L228,76 L195,72 Z" fill="white" fillOpacity="0.16"/>
+      {/* Hidden B-pillar (suicide door gap) */}
+      <line x1="150" y1="74" x2="150" y2="98" stroke="white" strokeWidth="0.5" opacity="0.3"/>
+      {/* Body chrome line */}
+      <line x1="48" y1="118" x2="282" y2="118" stroke="white" strokeWidth="0.8" opacity="0.45"/>
+      {/* Square headlights */}
+      <rect x="42" y="100" width="10" height="8" rx="1" fill="white" fillOpacity="0.5"/>
+      {/* Tail light */}
+      <rect x="276" y="106" width="6" height="8" rx="1" fill="#ff3333" fillOpacity="0.5"/>
+      {/* Wheels — large with white-walls feel */}
+      <circle cx="86" cy="130" r="17" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="86" cy="130" r="12" fill="white" fillOpacity="0.06"/>
+      <circle cx="86" cy="130" r="5" fill="white" fillOpacity="0.5"/>
+      <circle cx="248" cy="130" r="17" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="248" cy="130" r="12" fill="white" fillOpacity="0.06"/>
+      <circle cx="248" cy="130" r="5" fill="white" fillOpacity="0.5"/>
+    </g>
+  );
+}
+
+// MINI Cooper — short hatchback, short overhangs, round headlight, contrast roof
+function MINISilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Short body — distinctive stubby proportions */}
+      <path d="M88,128 L96,128 L98,116 L102,104 L114,94 L132,88 L162,86 L188,88 L204,94 L214,104 L218,116 L222,128 L232,128"
+            fill="white" fillOpacity="0.14" stroke="white" strokeWidth="2.2" strokeLinejoin="round"/>
+      {/* Iconic dome roof (contrast color hint) */}
+      <path d="M118,90 Q116,98 116,108 L162,108 L162,86 Q140,84 118,90 Z" fill="white" fillOpacity="0.28"/>
+      <path d="M164,86 L164,108 L198,108 Q204,100 200,93 Q183,86 164,86 Z" fill="white" fillOpacity="0.28"/>
+      {/* Roof rim (contrast roof line) */}
+      <path d="M112,92 Q160,82 206,92" fill="none" stroke="white" strokeWidth="2" opacity="0.6"/>
+      {/* Black grille bar */}
+      <rect x="92" y="116" width="14" height="6" rx="2" fill="white" fillOpacity="0.4"/>
+      {/* Round MINI headlight */}
+      <circle cx="100" cy="110" r="6" fill="white" fillOpacity="0.55"/>
+      <circle cx="100" cy="110" r="3" fill="white" fillOpacity="0.85"/>
+      {/* Round taillight */}
+      <rect x="218" y="106" width="6" height="9" rx="2" fill="#ff3333" fillOpacity="0.55"/>
+      {/* Side body line */}
+      <line x1="100" y1="120" x2="220" y2="120" stroke="white" strokeWidth="0.7" opacity="0.4"/>
+      {/* Wheels */}
+      <circle cx="118" cy="130" r="14" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="118" cy="130" r="9" fill="white" fillOpacity="0.06"/>
+      <circle cx="118" cy="130" r="3" fill="white" fillOpacity="0.5"/>
+      <circle cx="206" cy="130" r="14" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="206" cy="130" r="9" fill="white" fillOpacity="0.06"/>
+      <circle cx="206" cy="130" r="3" fill="white" fillOpacity="0.5"/>
+    </g>
+  );
+}
+
+// Honda — modern crossover/sedan (Civic/CR-V silhouette: balanced, slightly raised)
+function HondaSilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Body — slightly raised crossover stance */}
+      <path d="M50,128 L62,128 L64,114 L72,104 L88,96 L114,90 L145,86 L180,86 L208,90 L228,96 L242,104 L252,114 L258,128 L272,128"
+            fill="white" fillOpacity="0.12" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+      {/* Greenhouse — modern wraparound */}
+      <path d="M122,90 L116,98 L113,106 L152,104 L152,87 Z" fill="white" fillOpacity="0.22"/>
+      <path d="M154,87 L154,104 L202,104 L212,96 L200,90 Z" fill="white" fillOpacity="0.22"/>
+      {/* Honda H-grille (chrome bar) */}
+      <rect x="56" y="112" width="12" height="3" rx="0.5" fill="white" fillOpacity="0.5"/>
+      <rect x="56" y="118" width="12" height="3" rx="0.5" fill="white" fillOpacity="0.3"/>
+      {/* Headlight - swept */}
+      <path d="M58,108 L72,104 L78,108 L72,112 Z" fill="white" fillOpacity="0.45"/>
+      {/* Tail light */}
+      <rect x="248" y="108" width="10" height="6" rx="1" fill="#ff3333" fillOpacity="0.55"/>
+      {/* Body crease */}
+      <line x1="72" y1="118" x2="252" y2="118" stroke="white" strokeWidth="0.7" opacity="0.4"/>
+      {/* Wheels */}
+      <circle cx="100" cy="130" r="15" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="100" cy="130" r="10" fill="white" fillOpacity="0.06"/>
+      <circle cx="100" cy="130" r="3.5" fill="white" fillOpacity="0.5"/>
+      {[0,60,120,180,240,300].map(a => (
+        <line key={a} x1="100" y1="130" x2={100 + 10*Math.cos((a-90)*Math.PI/180)} y2={130 + 10*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.2" opacity="0.5"/>
+      ))}
+      <circle cx="232" cy="130" r="15" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="232" cy="130" r="10" fill="white" fillOpacity="0.06"/>
+      <circle cx="232" cy="130" r="3.5" fill="white" fillOpacity="0.5"/>
+      {[0,60,120,180,240,300].map(a => (
+        <line key={`r${a}`} x1="232" y1="130" x2={232 + 10*Math.cos((a-90)*Math.PI/180)} y2={130 + 10*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.2" opacity="0.5"/>
+      ))}
+    </g>
+  );
+}
+
+// Harley-Davidson — cruiser style (long, low, ape-hangers, big front fender, V-twin engine, rider position)
+function HarleySilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Big rounded fenders */}
+      <path d="M60,128 Q80,108 110,116" fill="none" stroke="white" strokeWidth="2.2" opacity="0.6"/>
+      <path d="M210,116 Q240,108 260,128" fill="none" stroke="white" strokeWidth="2.2" opacity="0.6"/>
+      {/* Big teardrop fuel tank */}
+      <path d="M138,98 Q150,82 175,84 Q188,92 188,104 L138,104 Z" fill="white" fillOpacity="0.22" stroke="white" strokeWidth="1.8"/>
+      {/* V-twin engine block */}
+      <path d="M148,108 L152,118 L160,124 L172,124 L180,118 L184,108 Z" fill="white" fillOpacity="0.3" stroke="white" strokeWidth="1.5"/>
+      <line x1="156" y1="110" x2="158" y2="120" stroke="white" strokeWidth="1.2"/>
+      <line x1="174" y1="110" x2="176" y2="120" stroke="white" strokeWidth="1.2"/>
+      {/* Cruiser seat — low, dipped */}
+      <path d="M186,98 Q198,94 216,100 L216,106 Q200,104 188,106 Z" fill="white" fillOpacity="0.25" stroke="white" strokeWidth="1.5"/>
+      {/* Sissy bar / tall backrest */}
+      <line x1="216" y1="100" x2="220" y2="80" stroke="white" strokeWidth="2" opacity="0.7"/>
+      <path d="M214,80 L220,76 L226,80" fill="none" stroke="white" strokeWidth="1.5" opacity="0.7"/>
+      {/* Ape-hanger handlebars */}
+      <path d="M132,98 Q126,80 118,72" fill="none" stroke="white" strokeWidth="2.2" opacity="0.85"/>
+      <line x1="113" y1="70" x2="123" y2="74" stroke="white" strokeWidth="2.2"/>
+      {/* Front fork (raked) */}
+      <line x1="135" y1="100" x2="118" y2="124" stroke="white" strokeWidth="2" opacity="0.85"/>
+      {/* Round headlight */}
+      <circle cx="124" cy="98" r="6" fill="white" fillOpacity="0.55"/>
+      <circle cx="124" cy="98" r="3" fill="white" fillOpacity="0.85"/>
+      {/* Big chrome dual exhausts */}
+      <path d="M180,118 L228,124 L246,126" fill="none" stroke="white" strokeWidth="3" opacity="0.6"/>
+      <path d="M182,122 L226,128 L244,130" fill="none" stroke="white" strokeWidth="2.5" opacity="0.45"/>
+      {/* Front wheel - large with white-wall feel */}
+      <circle cx="118" cy="128" r="18" fill="none" stroke="white" strokeWidth="2.8"/>
+      <circle cx="118" cy="128" r="13" fill="white" fillOpacity="0.06"/>
+      <circle cx="118" cy="128" r="4" fill="white" fillOpacity="0.5"/>
+      {[0,45,90,135].map(a => (
+        <line key={a} x1={118 + 13*Math.cos(a*Math.PI/180)} y1={128 + 13*Math.sin(a*Math.PI/180)} x2={118 - 13*Math.cos(a*Math.PI/180)} y2={128 - 13*Math.sin(a*Math.PI/180)} stroke="white" strokeWidth="0.8" opacity="0.5"/>
+      ))}
+      {/* Rear wheel */}
+      <circle cx="220" cy="128" r="18" fill="none" stroke="white" strokeWidth="2.8"/>
+      <circle cx="220" cy="128" r="13" fill="white" fillOpacity="0.06"/>
+      <circle cx="220" cy="128" r="4" fill="white" fillOpacity="0.5"/>
+      {[0,45,90,135].map(a => (
+        <line key={`r${a}`} x1={220 + 13*Math.cos(a*Math.PI/180)} y1={128 + 13*Math.sin(a*Math.PI/180)} x2={220 - 13*Math.cos(a*Math.PI/180)} y2={128 - 13*Math.sin(a*Math.PI/180)} stroke="white" strokeWidth="0.8" opacity="0.5"/>
+      ))}
+    </g>
+  );
+}
+
+// Triumph — sport/cafe-racer (forward-leaning, tucked rider, rear-set pegs, sportier proportions)
+function TriumphSilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Aggressive faired tank */}
+      <path d="M138,96 Q146,82 168,82 Q186,88 188,102 L150,106 Z" fill="white" fillOpacity="0.22" stroke="white" strokeWidth="1.8"/>
+      {/* Engine — parallel-twin, more compact */}
+      <rect x="146" y="106" width="40" height="14" rx="2" fill="white" fillOpacity="0.28" stroke="white" strokeWidth="1.4"/>
+      <line x1="158" y1="108" x2="158" y2="118" stroke="white" strokeWidth="1.2"/>
+      <line x1="172" y1="108" x2="172" y2="118" stroke="white" strokeWidth="1.2"/>
+      {/* Sport seat — humped tail */}
+      <path d="M186,94 L210,90 Q218,90 216,98 L188,100 Z" fill="white" fillOpacity="0.22" stroke="white" strokeWidth="1.5"/>
+      {/* Tail hump */}
+      <path d="M204,90 Q214,84 218,92" fill="none" stroke="white" strokeWidth="1.5" opacity="0.7"/>
+      {/* Clip-on (low) bars */}
+      <line x1="135" y1="92" x2="125" y2="92" stroke="white" strokeWidth="2.2"/>
+      <line x1="125" y1="92" x2="120" y2="96" stroke="white" strokeWidth="2"/>
+      {/* Front fork — straighter, sportier rake */}
+      <line x1="135" y1="96" x2="125" y2="122" stroke="white" strokeWidth="2"/>
+      {/* Round-headlight Triumph (Bonneville-ish) */}
+      <circle cx="130" cy="96" r="6" fill="white" fillOpacity="0.55"/>
+      <circle cx="130" cy="96" r="3" fill="white" fillOpacity="0.85"/>
+      {/* Twin upswept exhausts */}
+      <path d="M186,118 L210,114 L226,108" fill="none" stroke="white" strokeWidth="2.5" opacity="0.6"/>
+      <path d="M186,122 L210,118 L226,112" fill="none" stroke="white" strokeWidth="2" opacity="0.45"/>
+      {/* Sport mag wheels */}
+      <circle cx="128" cy="126" r="17" fill="none" stroke="white" strokeWidth="2.6"/>
+      <circle cx="128" cy="126" r="12" fill="white" fillOpacity="0.06"/>
+      {[0,72,144,216,288].map(a => (
+        <line key={a} x1="128" y1="126" x2={128 + 12*Math.cos((a-90)*Math.PI/180)} y2={126 + 12*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.4" opacity="0.55"/>
+      ))}
+      <circle cx="128" cy="126" r="3.5" fill="white" fillOpacity="0.5"/>
+      <circle cx="216" cy="126" r="17" fill="none" stroke="white" strokeWidth="2.6"/>
+      <circle cx="216" cy="126" r="12" fill="white" fillOpacity="0.06"/>
+      {[0,72,144,216,288].map(a => (
+        <line key={`r${a}`} x1="216" y1="126" x2={216 + 12*Math.cos((a-90)*Math.PI/180)} y2={126 + 12*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1.4" opacity="0.55"/>
+      ))}
+      <circle cx="216" cy="126" r="3.5" fill="white" fillOpacity="0.5"/>
+    </g>
+  );
+}
+
+// MORGAN — vintage open-top roadster (separate fenders, low slung, classic windshield)
+function MORGANSilhouette() {
+  return (
+    <g opacity="0.95">
+      {/* Open-top, low-slung body */}
+      <path d="M58,128 L70,128 L72,114 L80,104 L100,96 L130,92 L160,90 L196,94 L222,102 L240,114 L246,128 L260,128"
+            fill="white" fillOpacity="0.10" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+      {/* Long classic bonnet line */}
+      <line x1="80" y1="106" x2="148" y2="98" stroke="white" strokeWidth="1.2" opacity="0.5"/>
+      {/* Bonnet louvres */}
+      {[0,1,2,3,4,5].map(i => (
+        <line key={i} x1={92 + i*8} y1="104" x2={96 + i*8} y2="98" stroke="white" strokeWidth="1" opacity="0.55"/>
+      ))}
+      {/* Vertical chrome grille */}
+      <rect x="60" y="106" width="10" height="18" rx="1" fill="white" fillOpacity="0.25" stroke="white" strokeWidth="1"/>
+      <line x1="63" y1="108" x2="63" y2="122" stroke="white" strokeWidth="0.6" opacity="0.5"/>
+      <line x1="65" y1="108" x2="65" y2="122" stroke="white" strokeWidth="0.6" opacity="0.5"/>
+      <line x1="67" y1="108" x2="67" y2="122" stroke="white" strokeWidth="0.6" opacity="0.5"/>
+      {/* Round headlights — separate, on fender */}
+      <circle cx="84" cy="102" r="6" fill="white" fillOpacity="0.55"/>
+      <circle cx="84" cy="102" r="3" fill="white" fillOpacity="0.9"/>
+      {/* Tiny windshield */}
+      <path d="M150,98 L146,82 L182,82 L184,98" fill="white" fillOpacity="0.15" stroke="white" strokeWidth="1.5"/>
+      {/* Open cockpit dip */}
+      <path d="M148,98 Q165,108 198,98" fill="none" stroke="white" strokeWidth="1.5" opacity="0.6"/>
+      {/* Separate front fender (sweeping arch) */}
+      <path d="M70,116 Q88,84 116,108" fill="none" stroke="white" strokeWidth="2.2" opacity="0.7"/>
+      {/* Rear fender */}
+      <path d="M196,108 Q220,86 246,116" fill="none" stroke="white" strokeWidth="2.2" opacity="0.7"/>
+      {/* Spare tire on side (classic touch) */}
+      <circle cx="232" cy="108" r="6" fill="none" stroke="white" strokeWidth="1.2" opacity="0.5"/>
+      {/* Wire wheels */}
+      <circle cx="100" cy="128" r="15" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="100" cy="128" r="11" fill="white" fillOpacity="0.05"/>
+      <circle cx="100" cy="128" r="3" fill="white" fillOpacity="0.6"/>
+      {[0,30,60,90,120,150].map(a => (
+        <line key={a} x1={100 + 11*Math.cos(a*Math.PI/180)} y1={128 + 11*Math.sin(a*Math.PI/180)} x2={100 - 11*Math.cos(a*Math.PI/180)} y2={128 - 11*Math.sin(a*Math.PI/180)} stroke="white" strokeWidth="0.8" opacity="0.5"/>
+      ))}
+      <circle cx="218" cy="128" r="15" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="218" cy="128" r="11" fill="white" fillOpacity="0.05"/>
+      <circle cx="218" cy="128" r="3" fill="white" fillOpacity="0.6"/>
+      {[0,30,60,90,120,150].map(a => (
+        <line key={`r${a}`} x1={218 + 11*Math.cos(a*Math.PI/180)} y1={128 + 11*Math.sin(a*Math.PI/180)} x2={218 - 11*Math.cos(a*Math.PI/180)} y2={128 - 11*Math.sin(a*Math.PI/180)} stroke="white" strokeWidth="0.8" opacity="0.5"/>
+      ))}
+    </g>
+  );
+}
+
+// Maserati — sport coupe (low, aggressive, sleek GT/MC20 inspired)
 function MaseratiSilhouette() {
   return (
-    <g opacity="0.9">
-      <path d="M55,120 L65,120 L70,105 L80,94 L105,86 L145,83 L190,83 L225,86 L245,94 L252,105 L258,120 L265,120" fill="none" stroke="white" strokeWidth="2"/>
-      <path d="M55,120 L65,120 L70,105 L80,94 L105,86 L145,83 L190,83 L225,86 L245,94 L252,105 L258,120 L265,120" fill="white" fillOpacity="0.07"/>
-      {/* Sporty windows */}
-      <path d="M118,86 L112,94 L110,102 L155,100 L155,84 Z" fill="white" fillOpacity="0.14"/>
-      <path d="M158,84 L158,100 L210,100 L222,90 L205,84 Z" fill="white" fillOpacity="0.14"/>
-      {/* Trident hint */}
-      <line x1="75" y1="100" x2="75" y2="94" stroke="white" strokeWidth="1" opacity="0.4"/>
-      {/* Wheels */}
-      <circle cx="95" cy="122" r="15" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="95" cy="122" r="8" fill="white" fillOpacity="0.1"/>
-      <circle cx="240" cy="122" r="15" fill="none" stroke="white" strokeWidth="2"/>
-      <circle cx="240" cy="122" r="8" fill="white" fillOpacity="0.1"/>
+    <g opacity="0.95">
+      {/* Low-slung coupe body */}
+      <path d="M36,128 L48,128 L50,116 L56,108 L70,100 L96,92 L130,86 L170,84 L208,90 L236,100 L254,110 L264,120 L272,128 L286,128"
+            fill="white" fillOpacity="0.12" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+      {/* Sloped fastback roofline */}
+      <path d="M108,92 Q102,100 100,110 L155,108 L155,86 Q132,86 108,92 Z" fill="white" fillOpacity="0.22"/>
+      <path d="M158,86 L158,108 L218,108 Q230,98 222,90 Q188,84 158,86 Z" fill="white" fillOpacity="0.22"/>
+      {/* Trident grille — concave oval */}
+      <ellipse cx="58" cy="116" rx="12" ry="6" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.2"/>
+      {/* Trident emblem hint */}
+      <line x1="58" y1="110" x2="58" y2="122" stroke="white" strokeWidth="1.2" opacity="0.7"/>
+      <line x1="54" y1="113" x2="54" y2="120" stroke="white" strokeWidth="1" opacity="0.6"/>
+      <line x1="62" y1="113" x2="62" y2="120" stroke="white" strokeWidth="1" opacity="0.6"/>
+      {/* Side air intakes (port) */}
+      <path d="M170,108 L182,104 L196,108 L184,112 Z" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1"/>
+      {/* Side three-port vents */}
+      <line x1="160" y1="112" x2="170" y2="112" stroke="white" strokeWidth="1.5" opacity="0.6"/>
+      <line x1="162" y1="116" x2="172" y2="116" stroke="white" strokeWidth="1.5" opacity="0.6"/>
+      <line x1="164" y1="120" x2="174" y2="120" stroke="white" strokeWidth="1.5" opacity="0.6"/>
+      {/* Sharp headlight */}
+      <path d="M44,108 L62,104 L66,110 L60,114 Z" fill="white" fillOpacity="0.5"/>
+      {/* Tail light strip */}
+      <rect x="262" y="108" width="14" height="4" rx="1" fill="#ff3333" fillOpacity="0.55"/>
+      {/* Wheels - performance multi-spoke */}
+      <circle cx="92" cy="130" r="16" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="92" cy="130" r="11" fill="white" fillOpacity="0.06"/>
+      <circle cx="92" cy="130" r="3.5" fill="white" fillOpacity="0.5"/>
+      {[0,36,72,108,144,180,216,252,288,324].map(a => (
+        <line key={a} x1="92" y1="130" x2={92 + 11*Math.cos((a-90)*Math.PI/180)} y2={130 + 11*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1" opacity="0.5"/>
+      ))}
+      <circle cx="246" cy="130" r="16" fill="none" stroke="white" strokeWidth="2.5"/>
+      <circle cx="246" cy="130" r="11" fill="white" fillOpacity="0.06"/>
+      <circle cx="246" cy="130" r="3.5" fill="white" fillOpacity="0.5"/>
+      {[0,36,72,108,144,180,216,252,288,324].map(a => (
+        <line key={`r${a}`} x1="246" y1="130" x2={246 + 11*Math.cos((a-90)*Math.PI/180)} y2={130 + 11*Math.sin((a-90)*Math.PI/180)} stroke="white" strokeWidth="1" opacity="0.5"/>
+      ))}
     </g>
   );
 }
@@ -195,9 +351,10 @@ function getVehicleSilhouette(brand: string) {
     case 'Rolls-Royce': return <RollsRoyceSilhouette />;
     case 'MINI': return <MINISilhouette />;
     case 'Honda': return <HondaSilhouette />;
-    case 'Triumph':
-    case 'Harley-Davidson': return <MotorcycleSilhouette />;
-    case 'MORGAN': return <MORGANSilhouette />;
+    case 'Triumph': return <TriumphSilhouette />;
+    case 'Harley-Davidson': return <HarleySilhouette />;
+    case 'MORGAN':
+    case 'Morgan': return <MORGANSilhouette />;
     case 'Maserati': return <MaseratiSilhouette />;
     case 'Sixt': return <BMWSilhouette />;
     default: return <BMWSilhouette />;
@@ -465,14 +622,14 @@ function GenericElements() {
 
 function getCampaignElements(title: string, category: string) {
   const lower = (title + ' ' + category).toLowerCase();
+  if (lower.includes('refer') || lower.includes('friend') || lower.includes('ชวนเพื่อน') || lower.includes('family & friends')) return <ReferralElements />;
+  if (lower.includes('lucky') || lower.includes('mystery') || lower.includes('wheel of fortune') || lower.includes('spin') || lower.includes('lucky_draw')) return <LuckyDrawElements />;
   if (lower.includes('summer') || lower.includes('drive experience')) return <SummerDriveElements />;
-  if (lower.includes('lucky') || lower.includes('lucky_draw')) return <LuckyDrawElements />;
   if (lower.includes('lifestyle') || lower.includes('collection') || lower.includes('merchandise')) return <LifestyleElements />;
   if (lower.includes('service') || lower.includes('point') || lower.includes('triple') || lower.includes('multiplier')) return <ServiceElements />;
   if (lower.includes('track') || lower.includes('m performance') || lower.includes('racing')) return <TrackDayElements />;
   if (lower.includes('adventure') || lower.includes('riding') || lower.includes('tiger') || lower.includes('camp')) return <AdventureElements />;
   if (lower.includes('birthday') || lower.includes('surprise')) return <BirthdayElements />;
-  if (lower.includes('refer') || lower.includes('friend') || lower.includes('bonus')) return <ReferralElements />;
   if (lower.includes('travel') || lower.includes('getaway') || lower.includes('weekend') || lower.includes('sixt')) return <TravelElements />;
   if (lower.includes('ultra') || lower.includes('sea') || lower.includes('yacht') || lower.includes('azimut')) return <UltraPremiumElements />;
   return <GenericElements />;

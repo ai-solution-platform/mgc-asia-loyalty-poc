@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { currentUser, campaigns, pointTransactions, tierConfig } from '../../data/mockData';
-import { ArrowUpRight, ArrowDownLeft, Repeat, Calendar, ChevronRight, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, ArrowDownLeft, ChevronRight, TrendingUp } from 'lucide-react';
 import { CampaignArtwork } from '../../components/CampaignArtwork';
 
 export default function HomePage() {
@@ -57,14 +57,18 @@ export default function HomePage() {
       {/* Quick Actions */}
       <div className="grid grid-cols-4 gap-3">
         {[
-          { icon: ArrowDownLeft, label: 'Earn', color: 'bg-green-50 text-green-600', action: () => navigate('/app/earn') },
-          { icon: ArrowUpRight, label: 'Redeem', color: 'bg-[#1B2B5B]/5 text-[#1B2B5B]', action: () => navigate('/app/rewards') },
-          { icon: Repeat, label: 'Transfer', color: 'bg-blue-50 text-blue-600', action: () => navigate('/app/transfer') },
-          { icon: Calendar, label: 'Appointment', color: 'bg-purple-50 text-purple-600', action: () => navigate('/app/appointment') },
+          { emoji: '💰', label: 'Earn Points', action: () => navigate('/app/earn') },
+          { emoji: '🎁', label: 'Redeem', action: () => navigate('/app/rewards') },
+          { emoji: '🎫', label: 'My Coupons', action: () => navigate('/app/wallet') },
+          { emoji: '📋', label: 'History', action: () => navigate('/app/point-history') },
         ].map(item => (
-          <button key={item.label} onClick={item.action} className={`flex flex-col items-center gap-1.5 p-3 rounded-xl ${item.color} transition-all active:scale-95 shadow-sm`}>
-            <item.icon size={20} />
-            <span className="text-[10px] font-medium">{item.label}</span>
+          <button
+            key={item.label}
+            onClick={item.action}
+            className="flex flex-col items-center justify-center bg-white rounded-2xl p-4 text-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95"
+          >
+            <span className="text-4xl mb-2 leading-none">{item.emoji}</span>
+            <span className="text-sm font-semibold text-[#1B2B5B] leading-tight">{item.label}</span>
           </button>
         ))}
       </div>
@@ -104,7 +108,7 @@ export default function HomePage() {
       <div>
         <div className="flex items-center justify-between mb-3">
           <h2 className="font-bold text-sm text-[#1B2B5B]">ประวัติล่าสุด</h2>
-          <button onClick={() => navigate('/app/wallet')} className="text-xs text-[#1B2B5B] font-semibold flex items-center gap-1 hover:text-[#C9A96E]">ดูทั้งหมด <ChevronRight size={14} /></button>
+          <button onClick={() => navigate('/app/point-history')} className="text-xs text-[#1B2B5B] font-semibold flex items-center gap-1 hover:text-[#C9A96E]">ดูทั้งหมด <ChevronRight size={14} /></button>
         </div>
         <div className="space-y-2">
           {userTxns.map(txn => (

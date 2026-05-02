@@ -6,7 +6,6 @@ const typeFilters = [
   { key: 'all', label: 'All' },
   { key: 'e_coupon', label: 'E-Coupon' },
   { key: 'physical', label: 'Merchandise' },
-  { key: 'lucky_draw', label: 'Lucky Draw' },
 ];
 
 export default function RewardsPage() {

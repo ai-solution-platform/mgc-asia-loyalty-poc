@@ -36,7 +36,7 @@ export interface Campaign {
   name: string;
   nameEN: string;
   code: string;
-  type: 'coupon' | 'lucky_draw' | 'physical' | 'points';
+  type: 'coupon' | 'lucky_draw' | 'physical' | 'points' | 'referral';
   status: 'active' | 'inactive' | 'draft' | 'expired';
   startDate: string;
   endDate: string;
@@ -48,6 +48,11 @@ export interface Campaign {
   description: string;
   brand: string;
   category: string;
+  mechanic?: 'spin-wheel' | 'open-box';
+  spinLimit?: number;
+  rewards?: string[];
+  referrerReward?: number;
+  refereeReward?: number;
 }
 
 export interface Coupon {

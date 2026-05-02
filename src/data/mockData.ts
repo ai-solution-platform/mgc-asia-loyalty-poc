@@ -18,10 +18,10 @@ export const brandColors: Record<string, string> = {
 };
 
 export const tierConfig = {
-  'Member': { color: '#94a3b8', bg: '#1e293b', icon: '⬜', minSpending: 0, maxSpending: 999999 },
+  'Member': { color: '#94a3b8', bg: '#1e293b', icon: '🔹', minSpending: 0, maxSpending: 999999 },
   'Diamond': { color: '#60a5fa', bg: '#1e3a5f', icon: '💎', minSpending: 1, maxSpending: 999999 },
-  'Black Diamond': { color: '#a78bfa', bg: '#2d1b69', icon: '🖤', minSpending: 1000000, maxSpending: 4999999 },
-  'Infinite Blue Diamond': { color: '#06b6d4', bg: '#0c4a6e', icon: '🔷', minSpending: 5000000, maxSpending: Infinity },
+  'Black Diamond': { color: '#a78bfa', bg: '#2d1b69', icon: '♦️', minSpending: 1000000, maxSpending: 4999999 },
+  'Infinite Blue Diamond': { color: '#06b6d4', bg: '#0c4a6e', icon: '💠', minSpending: 5000000, maxSpending: Infinity },
 };
 
 // Create 20 realistic members with Thai names
@@ -149,9 +149,11 @@ export const campaigns: Campaign[] = [
     id: 'c2', name: 'Rolls-Royce Black Badge Lucky Draw', nameEN: 'Rolls-Royce Black Badge Lucky Draw',
     code: 'RR-BBLD-2026', type: 'lucky_draw', status: 'active',
     startDate: '2026-03-01', endDate: '2026-06-30',
-    targetAudience: 'black_diamond', pointsRequired: 10000, totalRedemptions: 89, maxRedemptions: 200,
-    image: '', description: 'ลุ้นรับ Private Dinner กับ Rolls-Royce Design Team ที่ Goodwood, England',
-    brand: 'Rolls-Royce', category: 'Experience'
+    targetAudience: 'black_diamond', pointsRequired: 500, totalRedemptions: 89, maxRedemptions: 200,
+    image: '', description: 'หมุนวงล้อลุ้นรางวัล Rolls-Royce Black Badge experience รางวัลรวม 5 ล้านบาท',
+    brand: 'Rolls-Royce', category: 'Lucky Draw',
+    mechanic: 'spin-wheel', spinLimit: 5,
+    rewards: ['Black Badge Drive', 'Private Dinner', 'RR Umbrella', 'RR Keychain', '500 pts Refund', '1,000 Bonus pts', 'Tea at Goodwood', 'Try Again']
   },
   {
     id: 'c3', name: 'MINI Lifestyle Collection', nameEN: 'MINI Lifestyle Collection',
@@ -167,7 +169,7 @@ export const campaigns: Campaign[] = [
     startDate: '2026-03-15', endDate: '2026-04-15',
     targetAudience: 'all', pointsRequired: 0, totalRedemptions: 1250, maxRedemptions: 5000,
     image: '', description: 'รับคะแนน x3 เมื่อเข้ารับบริการที่ Honda Summit ทุกสาขา',
-    brand: 'Honda', category: 'Points Multiplier'
+    brand: 'Honda', category: 'Points Multipliers'
   },
   {
     id: 'c5', name: 'Harley-Davidson Riding Camp', nameEN: 'Harley-Davidson Riding Camp',
@@ -200,6 +202,52 @@ export const campaigns: Campaign[] = [
     targetAudience: 'infinite_blue', pointsRequired: 20000, totalRedemptions: 12, maxRedemptions: 50,
     image: '', description: 'ลุ้นรับ Exclusive Yacht Day Trip กับ Azimut + Maserati Test Drive Experience',
     brand: 'Maserati', category: 'Ultra-Premium Experience'
+  },
+  {
+    id: 'c9', name: 'BMW Mystery Box', nameEN: 'BMW Mystery Box',
+    code: 'BMW-MB-2026', type: 'lucky_draw', status: 'active',
+    startDate: '2026-04-01', endDate: '2026-06-30',
+    targetAudience: 'all', pointsRequired: 200, totalRedemptions: 145, maxRedemptions: 1000,
+    image: '', description: 'เปิดกล่องสุ่มลุ้นรางวัล BMW Driving Experience, BMW Merch, BMW Service Voucher',
+    brand: 'BMW', category: 'Lucky Draw',
+    mechanic: 'open-box',
+    rewards: ['BMW Driving Experience', 'BMW Cap', 'BMW Keychain', 'BMW Service Voucher ฿2,000', 'BMW Lifestyle T-Shirt', '300 Bonus Points']
+  },
+  {
+    id: 'c10', name: 'MINI Wheel of Fortune', nameEN: 'MINI Wheel of Fortune',
+    code: 'MINI-WOF-2026', type: 'lucky_draw', status: 'active',
+    startDate: '2026-03-15', endDate: '2026-06-15',
+    targetAudience: 'all', pointsRequired: 100, totalRedemptions: 320, maxRedemptions: 2000,
+    image: '', description: 'หมุนวงล้อรับ MINI Lifestyle Voucher, ส่วนลดเปลี่ยนถ่ายน้ำมัน, MINI Cap',
+    brand: 'MINI', category: 'Lucky Draw',
+    mechanic: 'spin-wheel', spinLimit: 10,
+    rewards: ['MINI Cap', 'Oil Change 50% Off', 'MINI Lifestyle Voucher', 'MINI Tote Bag', '200 Bonus pts', 'Free Car Wash', 'MINI Keychain', 'Try Again']
+  },
+  {
+    id: 'c11', name: 'ชวนเพื่อนเข้า MOBILIFE', nameEN: 'Refer-a-Friend to MOBILIFE',
+    code: 'MOB-RAF-2026', type: 'referral', status: 'active',
+    startDate: '2026-01-01', endDate: '2026-12-31',
+    targetAudience: 'all', pointsRequired: 0, totalRedemptions: 612, maxRedemptions: 99999,
+    image: '', description: 'ชวนเพื่อนสมัคร MOBILIFE รับ 500 คะแนน เพื่อนได้ 200 คะแนน Welcome Bonus',
+    brand: 'All Brands', category: 'Friend Get Friends',
+    referrerReward: 500, refereeReward: 200
+  },
+  {
+    id: 'c12', name: 'BMW Owner Refer-a-Friend', nameEN: 'BMW Owner Refer-a-Friend',
+    code: 'BMW-RAF-2026', type: 'referral', status: 'active',
+    startDate: '2026-02-01', endDate: '2026-12-31',
+    targetAudience: 'all', pointsRequired: 0, totalRedemptions: 87, maxRedemptions: 500,
+    image: '', description: 'ชวนเพื่อนซื้อ BMW รับ Service Voucher 5,000 คะแนน + เพื่อน Welcome 2,000 คะแนน',
+    brand: 'BMW', category: 'Friend Get Friends',
+    referrerReward: 5000, refereeReward: 2000
+  },
+  {
+    id: 'c13', name: 'Family & Friends Drive', nameEN: 'Family & Friends Drive',
+    code: 'MGC-FFD-2026', type: 'referral', status: 'active',
+    startDate: '2026-03-01', endDate: '2026-08-31',
+    targetAudience: 'all', pointsRequired: 0, totalRedemptions: 234, maxRedemptions: 1500,
+    image: '', description: 'ชวนคนในครอบครัว/เพื่อนทดลองขับ รับสิทธิ์ Family Day Event',
+    brand: 'All Brands', category: 'Friend Get Friends'
   },
 ];
 

@@ -3,10 +3,10 @@ import { ArrowLeft, Check, Lock } from 'lucide-react';
 import { currentUser, tierConfig } from '../../data/mockData';
 
 const tiers = [
-  { name: 'Member' as const, spending: '฿0 - ฿999,999', icon: '⬜', benefits: ['สะสมคะแนน 1 คะแนนต่อ ฿100', 'แลกรางวัลในแคตตาล็อก', 'รับ E-Coupon วันเกิด', 'เข้าร่วมแคมเปญทั่วไป', 'ข่าวสารและโปรโมชั่น'] },
+  { name: 'Member' as const, spending: '฿0 - ฿999,999', icon: '🔹', benefits: ['สะสมคะแนน 1 คะแนนต่อ ฿100', 'แลกรางวัลในแคตตาล็อก', 'รับ E-Coupon วันเกิด', 'เข้าร่วมแคมเปญทั่วไป', 'ข่าวสารและโปรโมชั่น'] },
   { name: 'Diamond' as const, spending: '฿1,000,000 - ฿4,999,999', icon: '💎', benefits: ['สะสมคะแนน 1.5x ทุกรายการ', 'Priority Service ที่ศูนย์บริการ', 'Exclusive Event Invitations', 'Birthday Double Points', 'Free Car Wash 12 ครั้ง/ปี', 'Sixt Rent A Car ราคาพิเศษ'] },
-  { name: 'Black Diamond' as const, spending: '฿5,000,000 - ฿49,999,999', icon: '🖤', benefits: ['สะสมคะแนน 2x ทุกรายการ', 'Dedicated Personal Assistant', 'VIP Lounge Access ทุกสาขา', 'Airport Transfer Service', 'Exclusive Test Drive Events', 'Birthday Triple Points + Gift', 'Partner Luxury Benefits', 'Annual Dinner Invitation'] },
-  { name: 'Infinite Blue Diamond' as const, spending: '฿50,000,000+', icon: '🔷', benefits: ['สะสมคะแนน 3x ทุกรายการ', 'Private Concierge 24/7', 'Factory Tour Invitation (Global)', 'First Priority — New Model Access', 'Complimentary Annual Service', 'Yacht & Jet Experience', 'Exclusive Art & Wine Events', 'Birthday 5x Points + Premium Gift', 'Family Member Benefit Sharing', 'Rolls-Royce / Maserati Private Events'] },
+  { name: 'Black Diamond' as const, spending: '฿5,000,000 - ฿49,999,999', icon: '♦️', benefits: ['สะสมคะแนน 2x ทุกรายการ', 'Dedicated Personal Assistant', 'VIP Lounge Access ทุกสาขา', 'Airport Transfer Service', 'Exclusive Test Drive Events', 'Birthday Triple Points + Gift', 'Partner Luxury Benefits', 'Annual Dinner Invitation'] },
+  { name: 'Infinite Blue Diamond' as const, spending: '฿50,000,000+', icon: '💠', benefits: ['สะสมคะแนน 3x ทุกรายการ', 'Private Concierge 24/7', 'Factory Tour Invitation (Global)', 'First Priority — New Model Access', 'Complimentary Annual Service', 'Yacht & Jet Experience', 'Exclusive Art & Wine Events', 'Birthday 5x Points + Premium Gift', 'Family Member Benefit Sharing', 'Rolls-Royce / Maserati Private Events'] },
 ];
 
 export default function TierBenefitsPage() {

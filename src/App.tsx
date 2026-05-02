@@ -17,6 +17,7 @@ import NotificationSettingsPage from './pages/app/NotificationSettingsPage';
 import HelpPage from './pages/app/HelpPage';
 import EarnPage from './pages/app/EarnPage';
 import TransferPage from './pages/app/TransferPage';
+import PointHistoryPage from './pages/app/PointHistoryPage';
 import DashboardPage from './pages/admin/DashboardPage';
 import MembersPage from './pages/admin/MembersPage';
 import CampaignsAdminPage from './pages/admin/CampaignsAdminPage';
@@ -51,6 +52,7 @@ function App() {
             <Route path="help" element={<HelpPage />} />
             <Route path="earn" element={<EarnPage />} />
             <Route path="transfer" element={<TransferPage />} />
+            <Route path="point-history" element={<PointHistoryPage />} />
           </Route>
 
           {/* Admin Operation Portal */}

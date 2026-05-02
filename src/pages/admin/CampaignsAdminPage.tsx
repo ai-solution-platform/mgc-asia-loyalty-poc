@@ -72,7 +72,7 @@ export default function CampaignsAdminPage() {
         <div className="space-y-4">
           <div><label className="block text-xs font-medium text-[#334155]/60 mb-1">Campaign Name *</label><input type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value, nameEN: e.target.value })} className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-[#1B2B5B]/30" placeholder="Campaign name" /></div>
           <div className="grid grid-cols-2 gap-4">
-            <div><label className="block text-xs font-medium text-[#334155]/60 mb-1">Type *</label><select value={form.type} onChange={e => setForm({ ...form, type: e.target.value as Campaign['type'] })} className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm"><option value="coupon">Coupon</option><option value="lucky_draw">Lucky Draw</option><option value="physical">Physical</option><option value="points">Points</option></select></div>
+            <div><label className="block text-xs font-medium text-[#334155]/60 mb-1">Type *</label><select value={form.type} onChange={e => setForm({ ...form, type: e.target.value as Campaign['type'] })} className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm"><option value="coupon">Coupon</option><option value="lucky_draw">Lucky Draw</option><option value="physical">Physical</option><option value="points">Points</option><option value="referral">Referral</option></select></div>
             <div><label className="block text-xs font-medium text-[#334155]/60 mb-1">Brand *</label><input type="text" value={form.brand} onChange={e => setForm({ ...form, brand: e.target.value })} className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm" placeholder="Brand" /></div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -117,7 +117,7 @@ export default function CampaignsAdminPage() {
         {filtered.map(c => (
           <div key={c.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-[#1B2B5B]/20 transition-all shadow-sm hover:shadow-md">
             <div className="h-32 bg-gradient-to-br from-[#F5F7FA] to-gray-100 flex items-center justify-center text-4xl relative">
-              {c.type === 'coupon' ? '🎫' : c.type === 'lucky_draw' ? '🎰' : c.type === 'physical' ? '🎁' : '⭐'}
+              {c.type === 'coupon' ? '🎫' : c.type === 'lucky_draw' ? '🎰' : c.type === 'physical' ? '🎁' : c.type === 'referral' ? '👥' : '⭐'}
               <div className="absolute top-2 right-2"><span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${statusBadge(c.status)}`}>{c.status}</span></div>
             </div>
             <div className="p-4">

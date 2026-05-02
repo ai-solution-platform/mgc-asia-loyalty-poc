@@ -2,9 +2,22 @@ import { useState } from 'react';
 import { campaigns, currentUser } from '../../data/mockData';
 import { Search, Bookmark, BookmarkCheck, Share2, Check } from 'lucide-react';
 import { CampaignArtwork } from '../../components/CampaignArtwork';
+import { LuckyDrawModal } from '../../components/LuckyDrawModal';
 import { useLanguage } from '../../contexts/LanguageContext';
 
-const categories = ['All', 'Service', 'Experience', 'Merchandise', 'Points Multiplier', 'Birthday', 'Travel', 'Ultra-Premium Experience'];
+const categoryLabels: { key: string; label: string }[] = [
+  { key: 'All', label: 'ทั้งหมด' },
+  { key: 'Points Multipliers', label: 'Points Multipliers' },
+  { key: 'Birthday', label: 'Birthday' },
+  { key: 'Lucky Draw', label: 'Lucky Draw' },
+  { key: 'Friend Get Friends', label: 'Friend Get Friends' },
+  { key: 'Service', label: 'Service' },
+  { key: 'Lifestyle', label: 'Lifestyle' },
+  { key: 'Experience', label: 'Experience' },
+  { key: 'Merchandise', label: 'Merchandise' },
+  { key: 'Travel', label: 'Travel' },
+  { key: 'Ultra-Premium Experience', label: 'Ultra-Premium' },
+];
 
 export default function CampaignsPage() {
   const { triggerToast } = useLanguage();
@@ -13,6 +26,7 @@ export default function CampaignsPage() {
   const [selectedCampaign, setSelectedCampaign] = useState<string | null>(null);
   const [showRedeemConfirm, setShowRedeemConfirm] = useState(false);
   const [showRedeemSuccess, setShowRedeemSuccess] = useState(false);
+  const [showLuckyDraw, setShowLuckyDraw] = useState(false);
   const [savedCampaigns, setSavedCampaigns] = useState<Set<string>>(new Set());
 
   const filtered = campaigns.filter(c => {
@@ -33,7 +47,14 @@ export default function CampaignsPage() {
   };
 
   const handleShare = () => triggerToast('คัดลอกลิงก์แคมเปญแล้ว');
-  const handleRedeem = () => { setShowRedeemConfirm(false); setShowRedeemSuccess(true); };
+  const handleRedeem = () => {
+    setShowRedeemConfirm(false);
+    if (selected?.category === 'Lucky Draw' && selected?.mechanic) {
+      setShowLuckyDraw(true);
+    } else {
+      setShowRedeemSuccess(true);
+    }
+  };
 
   return (
     <div className="px-4 py-4 space-y-4">
@@ -46,10 +67,10 @@ export default function CampaignsPage() {
       </div>
 
       <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4">
-        {categories.map(cat => (
-          <button key={cat} onClick={() => setCategory(cat)}
-            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all ${category === cat ? 'bg-[#1B2B5B] text-white' : 'bg-white text-[#334155] hover:bg-gray-100 border border-gray-200'}`}>
-            {cat}
+        {categoryLabels.map(cat => (
+          <button key={cat.key} onClick={() => setCategory(cat.key)}
+            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all ${category === cat.key ? 'bg-[#1B2B5B] text-white' : 'bg-white text-[#334155] hover:bg-gray-100 border border-gray-200'}`}>
+            {cat.label}
           </button>
         ))}
       </div>
@@ -122,7 +143,11 @@ export default function CampaignsPage() {
               <button onClick={handleShare} className="py-3 px-4 bg-[#F5F7FA] rounded-xl"><Share2 size={16} className="text-[#1B2B5B]" /></button>
             </div>
             <button onClick={() => setShowRedeemConfirm(true)} className="w-full py-3 bg-[#1B2B5B] text-white rounded-xl font-bold text-sm active:scale-[0.98] transition-transform hover:bg-[#0D1B4A]">
-              {selected.pointsRequired > 0 ? `แลก ${selected.pointsRequired.toLocaleString()} คะแนน` : 'รับสิทธิ์ฟรี'}
+              {selected.category === 'Lucky Draw'
+                ? (selected.mechanic === 'open-box' ? `เปิดกล่องสุ่ม (${selected.pointsRequired.toLocaleString()} คะแนน)` : `หมุนวงล้อ (${selected.pointsRequired.toLocaleString()} คะแนน)`)
+                : selected.category === 'Friend Get Friends'
+                ? 'ชวนเพื่อน'
+                : selected.pointsRequired > 0 ? `แลก ${selected.pointsRequired.toLocaleString()} คะแนน` : 'รับสิทธิ์ฟรี'}
             </button>
           </div>
         </div>
@@ -160,6 +185,17 @@ export default function CampaignsPage() {
             <button onClick={() => { setShowRedeemSuccess(false); setSelectedCampaign(null); }} className="w-full py-3 bg-[#1B2B5B] text-white rounded-xl font-bold text-sm hover:bg-[#0D1B4A]">ตกลง</button>
           </div>
         </div>
+      )}
+
+      {/* Lucky Draw Interactive Modal */}
+      {showLuckyDraw && selected && selected.mechanic && (
+        <LuckyDrawModal
+          mechanic={selected.mechanic}
+          rewards={selected.rewards || ['Reward 1', 'Reward 2', 'Reward 3', 'Reward 4', 'Reward 5', 'Reward 6', 'Reward 7', 'Try Again']}
+          campaignName={selected.name}
+          brand={selected.brand}
+          onClose={() => { setShowLuckyDraw(false); setSelectedCampaign(null); }}
+        />
       )}
     </div>
   );
