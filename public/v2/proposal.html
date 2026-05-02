@@ -276,7 +276,8 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <a href="#truebusiness" class="nav-link">True Group</a>
       <a href="#summary" class="nav-link">Summary</a>
       <a href="#discovery" class="nav-link">Discovery</a>
-      <a href="#solution" class="nav-link">Solution</a>
+      <a href="#solution" class="nav-link">Architecture</a>
+      <a href="#solution" class="nav-link">Capacity</a>
       <a href="#ai" class="nav-link">AI</a>
       <a href="#stack" class="nav-link">Stack</a>
       <a href="#bom" class="nav-link">BOM</a>
@@ -651,7 +652,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   <div class="mb-10">
     <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#E2231A; color:#fff;">5a</span> Basic Requirements</h3>
     <div class="grid md:grid-cols-3 gap-4">
-      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">👥</div><h4 class="font-bold text-sm mb-1">48,520 Existing Members</h4><p class="text-xs" style="color:var(--text-muted)">Across 8 brands. Need migration + dedup + tier mapping (Member → Diamond → Black Diamond → Infinite Blue Diamond).</p></div>
+      <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">👥</div><h4 class="font-bold text-sm mb-1">500,000+ Member Base</h4><p class="text-xs" style="color:var(--text-muted)">Across 8 brands. Need migration + dedup + tier mapping (Member → Diamond → Black Diamond → Infinite Blue Diamond).</p></div>
       <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">🚗</div><h4 class="font-bold text-sm mb-1">8-Brand Portfolio</h4><p class="text-xs" style="color:var(--text-muted)">BMW, Rolls-Royce, MINI, Maserati, Honda, Harley-Davidson, Triumph, Morgan — each with its own tier rules, points multipliers, and merch.</p></div>
       <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">📱</div><h4 class="font-bold text-sm mb-1">LINE LIFF Channel</h4><p class="text-xs" style="color:var(--text-muted)">Primary touchpoint — Thailand-first. Optional native app extension supported via roadmap.</p></div>
       <div class="glass rounded-2xl p-5"><div class="text-2xl mb-2">🇹🇭</div><h4 class="font-bold text-sm mb-1">PDPA Compliance</h4><p class="text-xs" style="color:var(--text-muted)">Thai PDPA 2019 — consent capture, data retention, right-to-erasure. Member PII stays on Thailand-jurisdiction infrastructure.</p></div>
@@ -729,15 +730,17 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <div class="grid md:grid-cols-2 gap-4 text-sm">
         <ul class="space-y-2">
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> MGC-ASIA provides API access to existing DMS (BMW SAP DMS, Honda DMS, etc.) within first 4 weeks of project kickoff.</li>
-          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Member data migration scope: 48,520 records + 24-month transaction history.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Member data migration scope: <b style="color:var(--text-primary)">500K+ active members</b> + 24-month transaction history. Final volume confirmed at discovery sessions.</li>
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> LINE OA verified business account exists; True Business handles LIFF setup and webhook config.</li>
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> AI use cases scoped to the 20 documented in Section 8; additional cases via CR mandays.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> System capacity sized for <b style="color:var(--text-primary)">500K-1M members</b> with 2x safety buffer (see §6b Performance &amp; Capacity).</li>
         </ul>
         <ul class="space-y-2">
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Cloud zone selected by True: Tier-3 certified Thai jurisdiction. Workload-optimized for performance and compliance.</li>
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> PDPA Data Processing Agreement signed before go-live; True acts as Data Processor.</li>
           <li class="flex gap-2"><span style="color:#C9A96E">▸</span> 5-month timeline assumes UAT acceptance within 10 business days per phase.</li>
-          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Pricing valid 90 days from proposal date. VAT 7% excluded throughout.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Marketing content (creative, copy, artwork) provided by MGC-ASIA marketing team.</li>
+          <li class="flex gap-2"><span style="color:#C9A96E">▸</span> Pricing valid 90 days from proposal date. VAT 7% excluded throughout. SMS/LINE broadcast credits pass-through.</li>
         </ul>
       </div>
     </div>
@@ -969,6 +972,163 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
       <div class="feature-icon mb-3" style="background:rgba(226,35,26,0.12); color:#E2231A">💰</div>
       <h4 class="font-display font-bold text-lg mb-2">Cloud Optimized</h4>
       <p class="text-sm" style="color:var(--text-muted)">Smart cloud architecture — orchestrated by True Business as one unified platform. Right-sized resources, savings plans, full transparency.</p>
+    </div>
+  </div>
+
+  <!-- ===== PERFORMANCE & CAPACITY ===== -->
+  <div class="mt-10">
+    <div class="text-center mb-8">
+      <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">06b — Performance &amp; Capacity</div>
+      <h3 class="font-display text-3xl md:text-4xl font-black mb-3">System Capacity &amp; Load Assumptions</h3>
+      <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Designed and sized for MGC-ASIA's 500K+ member base, with 2x headroom built in for growth and peak event handling.</p>
+    </div>
+
+    <!-- Capacity Specs Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">MEMBER CAPACITY</div>
+        <div class="text-3xl font-display font-black gradient-text mb-1">1M+</div>
+        <p class="text-xs" style="color:var(--text-muted)">Sized for 500K active members with headroom to 1M without re-architecting.</p>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">CONCURRENT SESSIONS</div>
+        <div class="text-3xl font-display font-black gradient-red mb-1">50K</div>
+        <p class="text-xs" style="color:var(--text-muted)">Simultaneous active LIFF sessions during peak campaign launches.</p>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">API THROUGHPUT</div>
+        <div class="text-3xl font-display font-black gradient-gold-text mb-1">2K/s</div>
+        <p class="text-xs" style="color:var(--text-muted)">Burst capacity 2,000 RPS · sustained baseline 500 RPS · auto-scaling.</p>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#7E2A8E">AI QUERIES</div>
+        <div class="text-3xl font-display font-black mb-1" style="color:#7E2A8E">50K/d</div>
+        <p class="text-xs" style="color:var(--text-muted)">น้องใบเตย daily capacity · 10K baseline · 50K burst on peak.</p>
+      </div>
+    </div>
+
+    <!-- Detailed Capacity Tables -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Performance SLA -->
+      <div class="glass rounded-2xl p-6">
+        <h4 class="font-display font-bold text-lg mb-4 flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#E2231A; color:#fff;">⚡</span>
+          Performance SLA Targets (P95)
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">LIFF page load</span>
+            <span class="font-bold" style="color:var(--text-primary)">&lt; 2 sec</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">API response</span>
+            <span class="font-bold" style="color:var(--text-primary)">&lt; 500 ms</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Database query</span>
+            <span class="font-bold" style="color:var(--text-primary)">&lt; 100 ms</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">น้องใบเตย AI response</span>
+            <span class="font-bold" style="color:var(--text-primary)">&lt; 5 sec</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Notification delivery</span>
+            <span class="font-bold" style="color:var(--text-primary)">&lt; 30 sec</span>
+          </li>
+          <li class="flex justify-between">
+            <span style="color:var(--text-muted)">Uptime SLA</span>
+            <span class="font-bold" style="color:#16a34a">99.5%</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Volume Capacity -->
+      <div class="glass rounded-2xl p-6">
+        <h4 class="font-display font-bold text-lg mb-4 flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold" style="background:#1B2B5B; color:#fff;">📊</span>
+          Volume Capacity (Daily)
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Points transactions</span>
+            <span class="font-bold" style="color:var(--text-primary)">1M+ / day</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Campaign redemptions</span>
+            <span class="font-bold" style="color:var(--text-primary)">100K / launch</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">LIFF page views</span>
+            <span class="font-bold" style="color:var(--text-primary)">5M / day</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Push notifications</span>
+            <span class="font-bold" style="color:var(--text-primary)">5M / day</span>
+          </li>
+          <li class="flex justify-between border-b pb-2" style="border-color:var(--border-glass)">
+            <span style="color:var(--text-muted)">Member data records</span>
+            <span class="font-bold" style="color:var(--text-primary)">500K-1M</span>
+          </li>
+          <li class="flex justify-between">
+            <span style="color:var(--text-muted)">5-yr transaction history</span>
+            <span class="font-bold" style="color:var(--text-primary)">50M+ records</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scalability & Risk Mitigation -->
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#16a34a">✓ AUTO-SCALING</div>
+        <h4 class="font-bold text-sm mb-2">Cloud-Native Elasticity</h4>
+        <p class="text-xs" style="color:var(--text-muted)">Horizontal auto-scaling on load. Vertical scaling 2x within hours. Pre-configured for marketing campaign 5x bursts.</p>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#16a34a">✓ DR &amp; BACKUP</div>
+        <h4 class="font-bold text-sm mb-2">Business Continuity</h4>
+        <p class="text-xs" style="color:var(--text-muted)">RTO 4 hours · RPO 1 hour · Daily encrypted backups · 30-day retention · Multi-AZ failover · Quarterly DR drills.</p>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#16a34a">✓ 24/7 MONITORING</div>
+        <h4 class="font-bold text-sm mb-2">Proactive Operations</h4>
+        <p class="text-xs" style="color:var(--text-muted)">True SOC 24/7 · APM &amp; observability · Alert-based response · Capacity forecasting · Quarterly performance review.</p>
+      </div>
+    </div>
+
+    <!-- Limitations / Out of Scope -->
+    <div class="mt-8 glass rounded-2xl p-6" style="border-left: 4px solid #E2231A;">
+      <h4 class="font-display font-bold text-lg mb-4 flex items-center gap-2">
+        <span style="color:#E2231A">⚠</span>
+        Limitations &amp; Out-of-Scope (Risk-Protected)
+      </h4>
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:var(--text-muted)">SOLUTION LIMITATIONS</div>
+          <ul class="space-y-2">
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Performance SLA assumes data quality from migration meets True's data validation criteria</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">AI accuracy depends on completeness of historical transaction &amp; member data</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">LINE platform constraints apply: message size, rate limits, broadcast quotas per LINE Corp ToS</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Concurrent capacity above 50K sessions requires advance notice (24 hrs) for capacity pre-warming</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Member base growth beyond 1M triggers re-sizing review (quoted separately as expansion)</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:var(--text-muted)">EXPLICITLY OUT-OF-SCOPE</div>
+          <ul class="space-y-2">
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Hardware procurement (servers, networking devices, end-user devices)</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">On-site staffing beyond agreed managed-service hours</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Marketing content creation (creative assets, campaign copy, brand artwork)</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Custom integrations beyond agreed scope (charged via CR mandays @ ฿12K/MD)</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">SMS gateway costs &amp; LINE Messaging API broadcast credits (pass-through)</span></li>
+            <li class="flex gap-2"><span style="color:#E2231A">▸</span><span style="color:var(--text-secondary)">Data migration from legacy systems beyond 24-month transaction history</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-5 p-3 rounded-lg text-xs" style="background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.25); color:var(--text-muted)">
+        <b style="color:var(--text-primary)">Risk Protection Note:</b> All capacity figures include 2x safety buffer above the 500K member baseline. True Business commits to capacity planning reviews quarterly — if MGC-ASIA's actual usage approaches 80% of designed capacity, we will proactively engineer expansion ahead of impact.
+      </div>
     </div>
   </div>
 </div>
@@ -1477,7 +1637,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
         </tr>
       </thead>
       <tbody>
-        <tr><td>1</td><td>48,520 member migration with PDPA consent re-capture</td><td>True can support — Cloud (Thailand) Bang Na DC · PDPA-certified · automated re-consent flow on first LINE login.</td><td>§5a, §6 Cloud zone</td></tr>
+        <tr><td>1</td><td>Mass member migration (500K+) with PDPA consent re-capture</td><td>True can support — Cloud (Thailand) Bang Na DC · PDPA-certified · automated re-consent flow on first LINE login.</td><td>§5a, §6 Cloud zone</td></tr>
         <tr><td>2</td><td>8-brand multi-tier points engine</td><td>True can support — fully configurable rules engine on Cloud (Thailand); per-brand multipliers; tier auto-progression with override.</td><td>§5b F5-F7</td></tr>
         <tr><td>3</td><td>LINE LIFF as primary channel</td><td>True can support — LINE Login + LIFF SDK · 60-sec onboarding · Thai-first.</td><td>§5b F1, §7 Stage 2</td></tr>
         <tr><td>4</td><td>Real-time DMS integration (BMW SAP, Honda, etc.)</td><td>True can support — REST + webhook adapters · queue-buffered for resilience · per-brand SLA handling.</td><td>§9 Backend, §10 M3</td></tr>
@@ -1573,7 +1733,7 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
     <div class="glass rounded-2xl p-7 card-hover">
       <div class="feature-icon mb-3" style="background:rgba(226,35,26,0.10); color:#E2231A">📡</div>
       <h3 class="font-display font-bold text-xl mb-2">Strong & Proven Network</h3>
-      <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Domestic + international reach. >51M subscribers, 90% 5G, 99% 4G — connecting MOBILIFE to MGC-ASIA's 48,520 members and every dealer nationwide. <b>Best-positioned in connected cars.</b></p>
+      <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Domestic + international reach. >51M subscribers, 90% 5G, 99% 4G — connecting MOBILIFE to MGC-ASIA's 500K+ member base and every dealer nationwide. <b>Best-positioned in connected cars.</b></p>
     </div>
     <div class="glass rounded-2xl p-7 card-hover">
       <div class="feature-icon mb-3" style="background:rgba(201,169,110,0.15); color:#C9A96E">🧠</div>
@@ -1648,31 +1808,36 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   <div class="text-center mb-12">
     <div class="text-[11px] font-bold tracking-widest uppercase mb-3" style="color:#E2231A">18 — Business Case</div>
     <h2 class="font-display text-4xl md:text-5xl font-black mb-3">ROI · Payback &lt; 5 Months</h2>
-    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Conservative 3% revenue uplift on 48,520 members yields ฿3.6B incremental — our ฿8M is just 0.22% of the unlocked revenue.</p>
+    <p class="max-w-3xl mx-auto" style="color:var(--text-muted)">Conservative 2% engagement uplift on 500K+ members yields ฿3B annual incremental — our ฿8M investment is just 0.067% of the 4-year unlocked revenue.</p>
   </div>
 
   <div class="grid md:grid-cols-3 gap-5 mb-8">
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">MEMBERS</div><div class="text-4xl font-display font-black counter" style="color:#1B2B5B">48,520</div><div class="text-xs mt-1" style="color:var(--text-muted)">Existing across 8 brands</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#1B2B5B">MEMBER BASE</div><div class="text-4xl font-display font-black counter" style="color:#1B2B5B">500K+</div><div class="text-xs mt-1" style="color:var(--text-muted)">Active members across 8 brands</div></div>
     <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#C9A96E">UPLIFT</div><div class="text-4xl font-display font-black gradient-gold-text">3%</div><div class="text-xs mt-1" style="color:var(--text-muted)">Conservative · industry avg 5-8%</div></div>
-    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">AVG SPEND</div><div class="text-4xl font-display font-black gradient-red">฿2.5M</div><div class="text-xs mt-1" style="color:var(--text-muted)">Per member · annualized</div></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="text-[10px] uppercase tracking-widest font-bold mb-2" style="color:#E2231A">AVG SPEND</div><div class="text-4xl font-display font-black gradient-red">฿300K</div><div class="text-xs mt-1" style="color:var(--text-muted)">Blended avg per member · annual</div></div>
   </div>
 
   <!-- ROI math -->
   <div class="glass rounded-2xl p-8 mb-8">
-    <h4 class="font-display font-bold text-lg mb-5">The Math</h4>
+    <h4 class="font-display font-bold text-lg mb-5">The Math (Conservative Estimate)</h4>
     <div class="grid md:grid-cols-2 gap-6">
       <div class="space-y-3">
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Members</span><span class="font-bold">48,520</span></div>
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Uplift % (conservative)</span><span class="font-bold">× 3%</span></div>
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Avg incremental spend</span><span class="font-bold">× ฿2.5M</span></div>
-        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">3-Year Incremental</span><span class="gradient-red text-2xl">฿3.6B</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Active Member Base</span><span class="font-bold">500,000+</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Engagement Uplift (conservative)</span><span class="font-bold">× 2%</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Blended Avg Annual Spend</span><span class="font-bold">× ฿300K</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Annual Incremental</span><span class="font-bold">฿3B</span></div>
+        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">4-Year Incremental Revenue</span><span class="gradient-red text-2xl">฿12B</span></div>
       </div>
       <div class="space-y-3 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(226,35,26,0.05), rgba(201,169,110,0.05));">
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Total Investment</span><span class="font-bold">฿8M</span></div>
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">% of Incremental Revenue</span><span class="font-bold">0.22%</span></div>
-        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Monthly run-rate uplift</span><span class="font-bold">฿100M</span></div>
-        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">Payback Period</span><span class="gradient-red text-2xl">&lt; 5 mo</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Total Investment (4-yr)</span><span class="font-bold">฿8M</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">% of Unlocked Revenue</span><span class="font-bold">0.067%</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">Monthly Run-Rate Uplift</span><span class="font-bold">฿250M</span></div>
+        <div class="flex justify-between items-center text-sm border-b pb-2" style="border-color:var(--border-glass)"><span style="color:var(--text-muted)">ROI Multiple</span><span class="font-bold">1,500x</span></div>
+        <div class="flex justify-between items-center text-base font-bold pt-2"><span style="color:var(--text-primary)">Payback Period</span><span class="gradient-red text-2xl">&lt; 2 mo</span></div>
       </div>
+    </div>
+    <div class="mt-5 p-3 rounded-lg text-xs" style="background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.25); color:var(--text-muted)">
+      <b style="color:var(--text-primary)">Note:</b> Industry benchmark engagement uplift from premium loyalty programs is 5-12%. We use 2% as a deliberately conservative baseline. ฿300K blended average reflects the diverse 8-brand portfolio (Honda mass-market through Rolls-Royce ultra-premium) including service revenue, parts, accessories, and accessories.
     </div>
   </div>
 
@@ -1680,11 +1845,11 @@ table.true-table tr:nth-child(even) { background: var(--table-stripe); }
   <div class="glass rounded-2xl p-6">
     <h4 class="font-display font-bold text-lg mb-4">Where the AI Compounds Returns</h4>
     <div class="grid md:grid-cols-3 gap-4">
-      <div class="rounded-xl p-4 border-l-4" style="border-color:#E2231A; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Churn Prevention</div><div class="text-2xl font-black gradient-red">฿1.5B+</div><div class="text-[11px]" style="color:var(--text-muted)">UC9 · top 5% risk × win-back</div></div>
-      <div class="rounded-xl p-4 border-l-4" style="border-color:#C9A96E; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Cross-Brand Activation</div><div class="text-2xl font-black gradient-gold-text">฿385M</div><div class="text-[11px]" style="color:var(--text-muted)">UC12 · BMW → RR/Maserati</div></div>
-      <div class="rounded-xl p-4 border-l-4" style="border-color:#1B2B5B; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#1B2B5B">Tier Acceleration</div><div class="text-2xl font-black" style="color:#1B2B5B">฿200M+</div><div class="text-[11px]" style="color:var(--text-muted)">UC11/18 · borderline upgraders</div></div>
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#E2231A; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#E2231A">Churn Prevention</div><div class="text-2xl font-black gradient-red">฿8B+</div><div class="text-[11px]" style="color:var(--text-muted)">UC9 · top 5% risk × win-back on 500K base</div></div>
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#C9A96E; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#C9A96E">Cross-Brand Activation</div><div class="text-2xl font-black gradient-gold-text">฿2B+</div><div class="text-[11px]" style="color:var(--text-muted)">UC12 · BMW → RR/Maserati uplift</div></div>
+      <div class="rounded-xl p-4 border-l-4" style="border-color:#1B2B5B; background:var(--bg-card-inner)"><div class="text-xs uppercase tracking-widest font-bold mb-1" style="color:#1B2B5B">Tier Acceleration</div><div class="text-2xl font-black" style="color:#1B2B5B">฿1B+</div><div class="text-[11px]" style="color:var(--text-muted)">UC11/18 · borderline tier upgraders</div></div>
     </div>
-    <div class="mt-4 text-center text-sm" style="color:var(--text-muted)"><b style="color:var(--text-primary)">Total estimated AI-driven impact:</b> ฿2.1B+ annual</div>
+    <div class="mt-4 text-center text-sm" style="color:var(--text-muted)"><b style="color:var(--text-primary)">Total estimated AI-driven impact:</b> ฿11B+ over 4 years (additive to base case)</div>
   </div>
 </div>
 </section>
