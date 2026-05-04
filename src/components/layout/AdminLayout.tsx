@@ -171,7 +171,7 @@ export default function AdminLayout() {
         </main>
       </div>
 
-      {/* AI Chat — น้องใบเตย */}
+      {/* AI Chat — Able */}
       <AIChatBai context="admin" />
     </div>
   );

@@ -20,7 +20,7 @@ export default function LandingPage() {
         {/* POC Demo Section */}
         <p className="text-xs text-[#C9A96E] uppercase tracking-widest font-semibold mb-1">Live POC Demo</p>
         <p className="text-[11px] text-emerald-300/90 mb-4 flex items-center justify-center gap-1.5">
-          <Sparkles size={11} /> Powered by AI น้องใบเตย
+          <Sparkles size={11} /> Powered by Able AI Agent
         </p>
         <div className="grid md:grid-cols-2 gap-6 max-w-lg mx-auto mb-12">
           {/* Customer Experience — LINE LIFF */}
@@ -95,7 +95,7 @@ export default function LandingPage() {
                 <p className="text-sm font-bold text-white">99.5%</p>
               </div>
             </div>
-            <p className="text-xs text-white/60 mb-4">Cloud-Native · LINE-First · AI-Powered (น้องใบเตย) · CAPEX ฿4.5M + OPEX ฿3M + CR Pool ฿0.5M</p>
+            <p className="text-xs text-white/60 mb-4">Cloud-Native · LINE-First · AI-Powered (Able) · CAPEX ฿4.5M + OPEX ฿3M + CR Pool ฿0.5M</p>
             <div className="flex items-center gap-2 text-[#FFD700] text-sm font-semibold">
               ดู Proposal <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>

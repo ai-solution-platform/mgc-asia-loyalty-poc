@@ -5,8 +5,8 @@ interface AIChatBaiProps {
   context: 'customer' | 'admin';
 }
 
-// Custom AI icon — friendly chatbot face with sparkle (represents น้องใบเตย AI assistant)
-function BaiSaiIcon({ size = 24, className = '' }: { size?: number; className?: string }) {
+// Custom AI icon — friendly chatbot face with sparkle (represents Able AI Assistant)
+function AbleIcon({ size = 24, className = '' }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -81,7 +81,7 @@ interface Message {
 // Allow other components to programmatically open the chat with a prefilled prompt
 declare global {
   interface WindowEventMap {
-    'baisai:open': CustomEvent<{ prompt?: string }>;
+    'able:open': CustomEvent<{ prompt?: string }>;
   }
 }
 
@@ -172,7 +172,7 @@ function generateResponse(input: string, context: 'customer' | 'admin'): { conte
     // 4. Appointment / จองศูนย์บริการ
     if (text.includes('จองศูนย์') || text.includes('appointment') || text.includes('บริการ') || text.includes('จอง')) {
       return {
-        content: 'ใบเตยจองศูนย์บริการให้ได้ค่ะ — เลือกแบรนด์ของคุณ:',
+        content: 'Able จองศูนย์บริการให้ได้ — เลือกแบรนด์ของคุณ:',
         rich: {
           brandChips: ['BMW', 'MINI', 'Honda', 'Rolls-Royce'],
         },
@@ -213,7 +213,7 @@ function generateResponse(input: string, context: 'customer' | 'admin'): { conte
     if (text.includes('birthday') || text.includes('วันเกิด')) {
       return {
         content:
-          'วันเกิดคุณคือ **15 มีนาคม** 🎂\nใบเตยเตรียม Birthday Bonus **1,000 คะแนน** ให้แล้วค่ะ — พร้อมส่วนลด After-Sales Service 15% ตลอดเดือนเกิด',
+          'วันเกิดของคุณคือ **15 มีนาคม** 🎂\nAble เตรียม Birthday Bonus **1,000 คะแนน** ให้แล้ว — พร้อมส่วนลด After-Sales Service 15% ตลอดเดือนเกิด',
         rich: {
           chips: ['รับ Bonus เลย', 'ดู Birthday Campaign'],
         },
@@ -223,7 +223,7 @@ function generateResponse(input: string, context: 'customer' | 'admin'): { conte
     // 8. Help / ติดต่อ / ช่วยเหลือ
     if (text.includes('ติดต่อ') || text.includes('help') || text.includes('ช่วยเหลือ') || text.includes('contact')) {
       return {
-        content: 'ใบเตยช่วยได้ค่ะ! เลือกหัวข้อที่ต้องการ:',
+        content: 'Able ช่วยได้! เลือกหัวข้อที่ต้องการ:',
         rich: {
           chips: ['Call Center', 'LINE OA', 'ศูนย์บริการใกล้ฉัน', 'FAQ'],
         },
@@ -244,7 +244,7 @@ function generateResponse(input: string, context: 'customer' | 'admin'): { conte
 
     // Default fallback for customer
     return {
-      content: 'ใบเตยกำลังเรียนรู้เรื่องนี้อยู่ค่ะ 🌿 ลองถาม:',
+      content: 'Able กำลังเรียนรู้เรื่องนี้อยู่ ✨ ลองถาม:',
       rich: {
         chips: fallbackChips,
       },
@@ -307,7 +307,7 @@ function generateResponse(input: string, context: 'customer' | 'admin'): { conte
     };
   }
   return {
-    content: 'ขออภัยค่ะ ใบเตยกำลังเรียนรู้เรื่องนี้อยู่ ลองถามใหม่ได้นะคะ',
+    content: 'ขออภัย Able กำลังเรียนรู้เรื่องนี้อยู่ ลองถามใหม่ได้',
   };
 }
 
@@ -341,7 +341,7 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
     {
       id: 1,
       role: 'bot',
-      content: 'สวัสดีค่ะ! ใบเตยช่วยอะไรได้บ้างคะ? 🌿',
+      content: 'สวัสดี! Able ยินดีให้บริการ ✨ ถามอะไรก็ได้เลย',
       timestamp: new Date(),
     },
   ]);
@@ -361,8 +361,8 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
         }, 50);
       }
     };
-    window.addEventListener('baisai:open', handler);
-    return () => window.removeEventListener('baisai:open', handler);
+    window.addEventListener('able:open', handler);
+    return () => window.removeEventListener('able:open', handler);
   }, []);
 
   // Auto-scroll
@@ -415,7 +415,7 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          aria-label="Open AI Assistant น้องใบเตย"
+          aria-label="Open Able AI Assistant"
           className="fixed bottom-24 right-4 md:bottom-6 md:right-6 z-[60] flex items-center gap-2 pl-2 pr-4 py-2 rounded-full shadow-2xl hover:scale-105 transition-transform group"
           style={{
             background: 'linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 50%, #E2231A 100%)',
@@ -427,13 +427,13 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
             className="relative flex items-center justify-center w-12 h-12 rounded-full drop-shadow"
             style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
           >
-            <BaiSaiIcon size={28} />
+            <AbleIcon size={28} />
           </span>
           <span className="relative flex flex-col items-start text-white">
             <span className="text-[10px] uppercase tracking-widest font-bold opacity-90 flex items-center gap-1">
               <Sparkles size={9} className="text-[#FFD700]" /> AI Assistant
             </span>
-            <span className="text-sm font-bold leading-tight">น้องใบเตย</span>
+            <span className="text-sm font-bold leading-tight">Able</span>
           </span>
         </button>
       )}
@@ -459,12 +459,12 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
                   className="w-10 h-10 rounded-full flex items-center justify-center shadow-md"
                   style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
                 >
-                  <BaiSaiIcon size={26} />
+                  <AbleIcon size={26} />
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-sm leading-tight">น้องใบเตย</h3>
+                <h3 className="font-bold text-sm leading-tight">Able</h3>
                 <p className="text-[11px] text-white/85 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse" />
                   AI Assistant — Online
@@ -721,7 +721,7 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
             {/* Suggested prompts */}
             {messages.length <= 2 && !typing && (
               <div className="px-3 pb-2 shrink-0 bg-[#F5F7FA]">
-                <p className="text-[10px] text-[#334155]/50 mb-1.5 px-1">ลองถามได้เลยค่ะ</p>
+                <p className="text-[10px] text-[#334155]/50 mb-1.5 px-1">ลองถามได้เลย</p>
                 <div className="flex flex-wrap gap-1.5">
                   {suggestedPrompts.map(prompt => (
                     <button
@@ -742,7 +742,7 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
                 type="text"
                 value={input}
                 onChange={e => setInput(e.target.value)}
-                placeholder="พิมพ์ข้อความถึงใบเตย..."
+                placeholder="พิมพ์ข้อความถึง Able..."
                 className="flex-1 px-3 py-2 text-xs bg-[#F5F7FA] rounded-full outline-none focus:ring-2 focus:ring-emerald-500/30 text-[#1B2B5B]"
               />
               <button
@@ -762,6 +762,6 @@ export default function AIChatBai({ context }: AIChatBaiProps) {
 }
 
 // Helper function for other components to open the chat with a pre-filled prompt
-export function openBaiSai(prompt?: string) {
-  window.dispatchEvent(new CustomEvent('baisai:open', { detail: { prompt } }));
+export function openAble(prompt?: string) {
+  window.dispatchEvent(new CustomEvent('able:open', { detail: { prompt } }));
 }

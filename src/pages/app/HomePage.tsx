@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import { currentUser, campaigns, pointTransactions, tierConfig } from '../../data/mockData';
 import { ArrowUpRight, ArrowDownLeft, ChevronRight, TrendingUp, Sparkles } from 'lucide-react';
 import { CampaignArtwork } from '../../components/CampaignArtwork';
-import { openBaiSai } from '../../components/AIChatBai';
+import { openAble } from '../../components/AIChatBai';
 
-// น้องใบเตย AI icon (matches AIChatBai's BaiSaiIcon)
-const BaiSaiIcon = ({ size = 24 }: { size?: number }) => (
+// Able AI icon (matches AIChatBai's AbleIcon)
+const AbleIcon = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <rect x="6" y="8" width="20" height="18" rx="6" fill="#1B2B5B"/>
     <line x1="16" y1="8" x2="16" y2="4" stroke="#1B2B5B" strokeWidth="2" strokeLinecap="round"/>
@@ -88,9 +88,9 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* AI Assistant Banner — น้องใบเตย */}
+      {/* AI Assistant Banner — Able */}
       <button
-        onClick={() => openBaiSai()}
+        onClick={() => openAble()}
         className="w-full rounded-2xl p-4 flex items-center gap-3 text-left shadow-lg hover:shadow-xl transition-all active:scale-[0.99] relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1B2B5B 0%, #7E2A8E 55%, #E2231A 100%)' }}
       >
@@ -99,14 +99,14 @@ export default function HomePage() {
           className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
           style={{ background: 'linear-gradient(135deg, #C9A96E, #D4A853)' }}
         >
-          <BaiSaiIcon size={32} />
+          <AbleIcon size={32} />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 mb-0.5">
             <Sparkles size={11} className="text-[#FFD700]" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-[#FFD700]">AI Assistant</span>
           </div>
-          <h3 className="font-bold text-base text-white leading-tight">สวัสดีค่ะ ใบเตยช่วยอะไรได้บ้าง?</h3>
+          <h3 className="font-bold text-base text-white leading-tight">สวัสดี! Able ยินดีให้บริการ</h3>
           <p className="text-xs text-white/80 mt-0.5">ถามคะแนน · แลกรางวัล · จองศูนย์ · ชวนเพื่อน</p>
         </div>
         <ChevronRight size={20} className="text-white/70 flex-shrink-0" />

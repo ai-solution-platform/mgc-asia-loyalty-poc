@@ -125,7 +125,7 @@ export default function MobileLayout() {
         </div>
       </nav>
 
-      {/* AI Chat — น้องใบเตย */}
+      {/* AI Chat — Able */}
       <AIChatBai context="customer" />
     </div>
   );
